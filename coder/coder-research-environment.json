@@ -1,0 +1,33 @@
+{
+  "rich_parameter_values": [
+    {
+      "name": "Enable Jupyter Lab?",
+      "value": "1"
+    },
+    {
+      "name": "Enable RStudio?",
+      "value": "1"
+    },
+    {
+      "name": "Enable VS Code Server?",
+      "value": "0"
+    },
+    {
+      "name": "Your Dotfiles URL",
+      "value": ""
+    },
+    {
+      "name": "Samply.Beam: Enable file receiver",
+      "value": "1"
+    },
+    {
+      "name": "Samply.Beam: App ID (short)",
+      "value": "${APP_ID}"
+    },
+    {
+      "name": "Samply.Beam: App Secret",
+      "value": "${APP_SECRET}"
+    }
+  ],
+  "template_version_id": "b105a87d-19a4-40d0-bc00-f444976868da"
+}

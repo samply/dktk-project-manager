@@ -1,0 +1,30 @@
+{
+  "config": {
+    "CCP-DataSHIELD": {
+      "type": "DATASHIELD",
+      "outputFormat": "OPAL",
+      "templateId": "opal-ccp",
+      "label": "Federated Data Analysis with DataSHIELD",
+      "description": "Enable secure, privacy-preserving analysis by allowing researchers to query data directly at the site level without transferring sensitive data. DataSHIELD ensures compliance with data protection regulations while providing advanced analytical capabilities."
+    },
+    "CCP-Export": {
+      "type": "EXPORT",
+      "outputFormat": "EXCEL",
+      "templateId": "ccp",
+      "label": "Decentralized File-Based Export",
+      "description": "Provide sites with the ability to export pseudonymized datasets in tabular file formats, which are directly shared with researchers by the site. This approach gives sites full responsibility and control over the data-sharing process."
+    },
+    "CCP-Research-Environment": {
+      "type": "RESEARCH_ENVIRONMENT",
+      "outputFormat": "CSV",
+      "templateId": "ccp",
+      "label": "Centralized Safe Research Environment",
+      "description": "Facilitate collaborative research by exporting data to a secure, central research environment. Authorized researchers can access and analyze data in a controlled setting, ensuring compliance and high security standards."
+    },
+    "CUSTOM": {
+      "label": "Customizable Data Export Service",
+      "description": "Offer a highly configurable export service tailored to advanced users. Researchers can customize export templates, select output formats, and define various parameters to suit specific project needs. This service is ideal for users with in-depth technical knowledge and complex requirements.",
+      "customConfig": "true"
+    }
+  }
+}

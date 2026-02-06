@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="de">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{styles/clinical-data-form.css}"/>
+    <style th:inline="css">
+        @page {
+            size: A4;
+            margin: 2cm 1.5cm 3cm 1.5cm;
+
+            @bottom-left {
+                content: element(footerLeft);
+            }
+
+            @bottom-right {
+                content: "[(${page})] " counter(page) " [(${of})] " counter(pages);
+                font-family: Arial, sans-serif;
+                font-size: 8pt;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="footer-left-content"
+     style="position: running(footerLeft); font-family: Arial, sans-serif; font-size: 8pt; line-height: 1.2;">
+    <span th:text="${questions_office}"></span><br/>
+    <a href="mailto:ccp@dkfz.de" class="footer-email-link">ccp@dkfz.de</a><br/>
+    069-6301 84237
+</div>
+
+<div class="header-container">
+    <div class="header-left">
+        <div class="antrag-row">
+            <span class="antrag-label-text" th:text="${request_number}"></span>
+            <form style="display:inline;">
+                <input type="text" name="antragsnummer_office" class="antrag-input-small"/>
+            </form>
+        </div>
+        <div class="admin-only"><span th:text="${ccp_office_to_be_filled}"></span></div>
+    </div>
+    <div class="header-right">
+        <img th:src="@{assets/dkfz-logo.png}" alt="DKFZ Logo" class="logo-dkfz"/>
+    </div>
+</div>
+
+<h2 class="form-title"><span th:text="${form_title}"></span></h2>
+
+<form>
+    <table class="main-form-table">
+        <colgroup>
+            <col style="width: 35%;"/>
+            <col style="width: 30%;"/>
+            <col style="width: 35%;"/>
+        </colgroup>
+
+        <th:block th:each="entry, iterStat : ${fields}">
+            <th:block th:with="
+                field=${entry.value},
+                fieldKey=${entry.key},
+                currentSection=${field.groups != null and field.groups.length > 0 ? field.groups[0].group : ''},
+                currentSectionName=${field.groups != null and field.groups.length > 0 ? field.groups[0].displayName : ''},
+                currentSectionDesc=${field.groups != null and field.groups.length > 0 ? field.groups[0].description : null},
+                prevSection=${!iterStat.first and fields.values()[iterStat.index - 1].groups != null and fields.values()[iterStat.index - 1].groups.length > 0 ? fields.values()[iterStat.index - 1].groups[0].group : ''}">
+
+                <tr th:if="${iterStat.first || currentSection != prevSection}" class="section-row">
+                    <td colspan="3" class="section-header-cell">
+                        <div th:text="${currentSectionName}">Section Name</div>
+                        <div class="group-description" th:if="${currentSectionDesc}"
+                             th:utext="${currentSectionDesc}"></div>
+                    </td>
+                </tr>
+
+                <tr th:if="${currentSection == 'requested_biosamples' and (iterStat.first || currentSection != prevSection)}"
+                    class="grid-header-row">
+                    <td class="grid-header no-border-right"><span th:text="${material}"></span></td>
+                    <td class="grid-header no-border-right"><span th:text="${specifications}"></span></td>
+                    <td class="grid-header"><span th:text="${volume_concentration}"></span></td>
+                </tr>
+
+                <tr th:if="${field.groups != null and field.groups.length == 1}" class="field-row">
+                    <td class="label-column no-border-right">
+                        <div class="field-label">
+                            <b th:text="${field.labelDisplayName}">Label</b><span th:if="${field.mandatory}"> *</span>
+                        </div>
+                        <div class="field-description" th:if="${field.labelDescription}"
+                             th:utext="${field.labelDescription}"></div>
+                    </td>
+                    <td colspan="2" class="value-column">
+                        <div th:switch="${field.type}">
+                            <textarea th:case="${DataType.STRING}" th:name="${fieldKey}" class="pdf-input"
+                                      th:text="${field.value}"></textarea>
+                            <input th:case="${DataType.INTEGER}" type="text" th:name="${fieldKey}"
+                                   class="pdf-input-single" th:value="${field.value}"/>
+                            <input th:case="${DataType.DATE}" type="text" th:name="${fieldKey}"
+                                   class="pdf-input-single" th:value="${field.value}"/>
+                            <div th:case="${DataType.BOOLEAN}" class="pdf-checkbox-wrapper">
+                                <input type="checkbox" th:name="${fieldKey}" th:checked="${field.value == 'true'}"/>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr th:if="${currentSection == 'requested_biosamples' and field.groups != null and field.groups.length > 1 and
+                           field.groups[field.groups.length - 1].group == 'material'}"
+                    class="biomaterial-row">
+                    <td class="grid-cell no-border-right">
+                        <div class="checkbox-group">
+                            <input type="checkbox" th:name="${fieldKey}" th:checked="${field.value == 'true'}"/>
+                            <b th:text="${field.labelDisplayName}">Material</b>
+                        </div>
+                    </td>
+                    <td class="grid-cell no-border-right">
+                        <th:block th:each="specEntry : ${fields}" th:with="spec=${specEntry.value}">
+                            <div th:if="${spec != null and spec.groups != null and spec.groups.length > 1 and
+                                         spec.groups[1].group == field.groups[1].group and
+                                         spec.groups[spec.groups.length - 1].group == 'specifications'}">
+                                <div th:switch="${spec.type}">
+                                    <div th:case="${DataType.BOOLEAN}" class="checkbox-group">
+                                        <input type="checkbox" th:name="${specEntry.key}"
+                                               th:checked="${spec.value == 'true'}"/>
+                                        <span th:text="${spec.labelDisplayName}">Spec</span>
+                                    </div>
+                                    <div th:case="${DataType.STRING}">
+                                        <input type="text" th:name="${specEntry.key}" class="pdf-input-single"
+                                               th:value="${spec.value}"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </th:block>
+                    </td>
+                    <td class="grid-cell">
+                        <th:block th:each="volEntry : ${fields}" th:with="vol=${volEntry.value}">
+                            <div th:if="${vol != null and vol.groups != null and vol.groups.length > 1 and
+                                         vol.groups[1].group == field.groups[1].group and
+                                         vol.groups[vol.groups.length - 1].group == 'volume_concentration'}">
+                                <input type="text" th:name="${volEntry.key}" class="pdf-input-single no-border"
+                                       th:value="${vol.value}"/>
+                            </div>
+                        </th:block>
+                    </td>
+                </tr>
+            </th:block>
+        </th:block>
+    </table>
+
+    <div class="signature-area">
+        <div class="sig-field">
+            <input type="text" name="location_date" class="sig-input"/>
+            <div class="sig-line"></div>
+            <div class="sig-label"><span th:text="${place_date}"></span></div>
+        </div>
+        <div class="sig-field">
+            <input type="text" name="signature_applicant" class="sig-input"/>
+            <div class="sig-line"></div>
+            <div class="sig-label"><span th:text="${signature_applicant}"></span></div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
