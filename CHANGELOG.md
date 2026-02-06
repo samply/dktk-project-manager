@@ -55,6 +55,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Project form fields for samples
 - Group fields in samples form template
 - Form config
+- Development Environment
 
 ### Changed
 - Replace Minus in bridgeheads
