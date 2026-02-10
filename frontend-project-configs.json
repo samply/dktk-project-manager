@@ -1,11 +1,16 @@
 {
   "config": {
-    "CCP-Export": {
+    "Export": {
       "type": "EXPORT",
       "outputFormat": "EXCEL",
       "templateId": "ccp",
       "label": "Clinical Data (Export Files)",
       "description": "Provide sites with the ability to export pseudonymized datasets in tabular file formats, which are directly shared with researchers by the site. This approach gives sites full responsibility and control over the data-sharing process."
+    },
+    "Samples": {
+      "type": "SAMPLES",
+      "label": "Samples",
+      "description": "Request and manage biobank samples through the negotiator."
     },
     "CUSTOM": {
       "label": "Custom",
