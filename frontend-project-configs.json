@@ -19,6 +19,8 @@
     "Samples": {
       "project": {
         "type": "SAMPLES",
+        "outputFormat": "EXCEL",
+        "templateId": "ccp-sample-list",
         "label": "Samples",
         "description": "Request and manage biobank samples through the negotiator."
       },

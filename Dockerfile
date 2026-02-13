@@ -63,6 +63,7 @@ ENV EXPLORER_REDIRECT_URI_PARAMETER="redirect_uri"
 ENV EXPLORER_URL="https://demo.lens.samply.de"
 ENV EXPORTER_CRON_EXPRESSION="*/30 * * * * *"
 ENV EXPORT_TEMPLATES="ccp,ccp-exliquid"
+ENV SAMPLES_TEMPLATES="ccp-sample-list"
 #ENV FRONTEND_BASEURL="http://project-manager-ui:8099" ###########################  <= Please configure me
 
 ENV FRONTEND_SITES_PROJECTMINUSDASHBOARD="/"
