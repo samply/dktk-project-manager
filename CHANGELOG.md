@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.1 - 2026-02-13]
+## [0.0.1 - 2026-03-20]
 ### Added
 - CHANGELOG
 - Dockerfile
@@ -59,6 +59,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Samples as service in configuration
 - Project and Forms configuration
 - Output format and template id in samples config
+- Data and Samples configuration
 
 ### Changed
 - Replace Minus in bridgeheads
