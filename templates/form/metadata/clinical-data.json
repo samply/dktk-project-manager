@@ -53,7 +53,7 @@
   ],
   "template": "clinical-data",
   "display_name": {
-    "en": "Clinical Data"
+    "en": "Data (Export Files)"
   },
   "project_fields": [
     {

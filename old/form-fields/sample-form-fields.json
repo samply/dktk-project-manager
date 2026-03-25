@@ -1,0 +1,164 @@
+{
+  "title": "sample_data",
+  "display_name": {
+    "en": "Samples"
+  },
+  "description": {
+    "en": "Request samples for your project."
+  },
+  "groups": {
+    "type_and_quantity": {
+      "display_name": {
+        "en": "Sample Type(s) and Quantity "
+      }
+    }
+  },
+  "fields": [
+    {
+      "label": "method",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Method"
+      },
+      "description": {
+        "en": "Please describe the analysis (e.g. CRP with ELISA, whole genome sequencing, etc.) you need the samples/data for. Who will do the analysis? Would you like the biobank to organise it?"
+      }
+    },
+    {
+      "label": "ethical_approval",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Ethical Approval"
+      },
+      "description": {
+        "en": "Is an ethical approval needed for your work? Is it already granted?"
+      }
+    },
+    {
+      "label": "gratification",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Gratification"
+      },
+      "description": {
+        "en": "Reimbursement possible, Scientific collaboration with respective Co-Authorship preferred"
+      }
+    },
+    {
+      "label": "donor",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Donor"
+      },
+      "description": {
+        "en": "<ul><li>How many different subjects (donors) do you need for your analysis?</li><li>Which disease code (ICD-10, OR-PHA, SNOMED, etc.) are you researching?</li></ul>"
+      }
+    },
+    {
+      "label": "collection_description",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Collection"
+      },
+      "description": {
+        "en": "Do you want to see a collection of the samples/data (prospective)? Do you want to request already given samples/data (retrospective)?"
+      }
+    },
+    {
+      "label": "liquid_sample",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Liquid Sample"
+      },
+      "description": {
+        "en": "<p>(e.g. serum, EDTA plasma, lithium heparin plasma, urine, citrated whole blood)</p><ul><li>Data on necessary pre-analytical conditions (e.g. max-imum storage time)</li><li>Number and quantity (e.g. 1 aliquot of 200 µl each) per pa-tient/subject</li></ul>"
+      },
+      "groups": [
+        "type_and_quantity"
+      ]
+    },
+    {
+      "label": "tissue_sample",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Tissue Sample"
+      },
+      "description": {
+        "en": "<p>(e.g. liver, colon, lung parenchyma)</p><ul><li>Type of fixation (e.g. paraffin, fresh frozen)</li><li>Type of collection (e.g. autopsy, biopsy)</li><li>Data on necessary pre-analytical conditions (e.g. ischaemia time, maximum storage time</li></ul>"
+      },
+      "groups": [
+        "type_and_quantity"
+      ]
+    },
+    {
+      "label": "derivatives_processed_samples",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Derivatives/processed samples"
+      },
+      "description": {
+        "en": "<p>(e.g. DNA, RNA, mononuclear cells, tissue microarray)</p><ul><li>Number and quantity (e.g. number of cells per aliquot) per patient/subject</li></ul>"
+      },
+      "groups": [
+        "type_and_quantity"
+      ]
+    },
+    {
+      "label": "matched_required",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "display_name": {
+        "en": "Matched samples required?"
+      },
+      "description": {
+        "en": "(e.g. tumour tissue and normal tissue)"
+      }
+    },
+    {
+      "label": "slides_per_sample",
+      "mandatory": false,
+      "data_type": "INTEGER",
+      "display_name": {
+        "en": "How many slides/sample?"
+      }
+    },
+    {
+      "label": "stained_slides",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "display_name": {
+        "en": "Would you need the slides to be stained?"
+      },
+      "description": {
+        "en": "(HE, IHC)"
+      }
+    },
+    {
+      "label": "slide_sufficiency_staining",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "display_name": {
+        "en": "Would digitised slides be sufficient? Which staining would those need to have?"
+      }
+    },
+    {
+      "label": "specific_requirements",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Specific Requirements?"
+      },
+      "description": {
+        "en": "Additional data required, matching the samples; inclusion or exclusion criteria for the samples"
+      }
+    }
+  ]
+}
