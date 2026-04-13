@@ -1,0 +1,65 @@
+{
+  "title": "project",
+  "display_name": {
+    "en": "Project",
+    "de": "Projekt"
+  },
+  "description": {
+    "en": "Project",
+    "de": "Projekt"
+  },
+  "fields": [
+    {
+      "label": "extra-affiliations",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Affiliations",
+        "de": "Zugehörigkeiten"
+      },
+      "description": {
+        "en": "Affiliation of the applicant",
+        "de": "Zugehörigkeit des Antragstellers"
+      }
+    },
+    {
+      "label": "collaborators",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Collaborators",
+        "de": "Kooperationspartner"
+      },
+      "description": {
+        "en": "Names and affiliations of collaborators from this and other sites (co-PIs, pathologists, biobanks, etc.)",
+        "de": "Namen und Zugehörigkeiten der Kooperationspartner von diesem und anderen Standorten (Co-PIs, Pathologen, Biobanken usw.)"
+      }
+    },
+    {
+      "label": "methodology",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Project methodology",
+        "de": "Projektmethodik"
+      },
+      "description": {
+        "en": "Short description of the planned analysis method used in the project(e.g. federated data analysis, CRP with ELISA, whole genome sequencing, etc.)",
+        "de": "Kurzbeschreibung der im Projekt verwendeten geplanten Analysemethode (z. B. föderierte Datenanalyse, CRP mit ELISA, Sequenzierung des gesamten Genoms usw.)"
+      }
+    },
+    {
+      "label": "comments",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Comments",
+        "de": "Kommentare"
+      },
+      "description": {
+        "en": "Please list any further inclusion or exclusion criteria for the data or samples here",
+        "de": "Bitte listen Sie hier alle weiteren Ein- oder Ausschlusskriterien für die Daten oder Proben auf"
+      }
+    }
+  ]
+}

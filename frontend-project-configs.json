@@ -14,7 +14,10 @@
       },
       "forms": [
         {
-          "title": "clinical_data"
+          "title": "project"
+        },
+        {
+          "title": "cohort"
         }
       ]
     },
@@ -32,7 +35,10 @@
       },
       "forms": [
         {
-          "title": "sample_data"
+          "title": "project"
+        },
+        {
+          "title": "samples"
         }
       ]
     },
@@ -55,10 +61,13 @@
       },
       "forms": [
         {
-          "title": "clinical_data"
+          "title": "project"
         },
         {
-          "title": "sample_data"
+          "title": "cohort"
+        },
+        {
+          "title": "samples"
         }
       ]
     },
