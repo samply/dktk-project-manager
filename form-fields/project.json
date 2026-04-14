@@ -14,12 +14,12 @@
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Affiliations",
-        "de": "Zugehörigkeiten"
+        "en": "Other Affiliations",
+        "de": "Andere Zugehörigkeiten"
       },
       "description": {
-        "en": "Affiliation of the applicant",
-        "de": "Zugehörigkeit des Antragstellers"
+        "en": "Other Affiliations of the applicant",
+        "de": "Andere Zugehörigkeiten des Antragstellers"
       }
     },
     {
@@ -46,6 +46,19 @@
       "description": {
         "en": "Short description of the planned analysis method used in the project(e.g. federated data analysis, CRP with ELISA, whole genome sequencing, etc.)",
         "de": "Kurzbeschreibung der im Projekt verwendeten geplanten Analysemethode (z. B. föderierte Datenanalyse, CRP mit ELISA, Sequenzierung des gesamten Genoms usw.)"
+      }
+    },
+    {
+      "label": "ethical_approval",
+      "mandatory": true,
+      "data_type": "BOOLEAN",
+      "display_name": {
+        "en": "Ethical approval",
+        "de": "Ethikgenehmigung"
+      },
+      "description": {
+        "en": "Is ethical approval needed for the work?",
+        "de": "Ist für die Arbeit eine Ethikgenehmigung erforderlich?"
       }
     },
     {

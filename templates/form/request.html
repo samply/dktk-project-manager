@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Biosample Request Form</title>
+    <meta charset="UTF-8"/>
+    <link rel="stylesheet" th:href="@{styles/request-form.css}"/>
+    <!-- Page numbering CSS (dynamic via Thymeleaf) -->
+    <style th:inline="css">
+        @page {
+            size: A4;
+            margin: 2.5cm 2cm 2cm 2cm;
+
+            /* HEADER (from page 2 onwards) */
+            @top-left {
+                content: "CCP-Bio: Biosample Request Form";
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 9pt;
+                color: #00457d;
+            }
+
+            @top-right {
+                content: "[[${currentDate}]]";
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 9pt;
+                color: #00457d;
+            }
+
+            /* FOOTER */
+            @bottom-right {
+                content: "[(${page})] " counter(page) " [(${of})] " counter(pages);
+                font-size: 9pt;
+                font-family: Helvetica, Arial, sans-serif;
+                padding-top: 3px;
+            }
+        }
+
+        /* FIRST PAGE: no header */
+        @page :first {
+            @top-left {
+                content: none;
+            }
+            @top-right {
+                content: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<table class="header-table">
+    <tr>
+        <td class="header-col-left">
+            <img th:src="@{assets/dktk-logo.png}" alt="DKTK Logo" class="logo-dktk"/>
+            <div class="title-container">
+                <h1 th:text="${#vars['form-title']}">DATA AND BIOSAMPLE REQUEST FORM</h1>
+                <p class="status" th:text="'Status: ' + ${#vars['project-creation-date']}" >Status</p>
+            </div>
+        </td>
+
+        <td class="header-col-right">
+            <img th:src="@{assets/dkfz-logo.png}" alt="DKFZ Logo" class="logo-dkfz"/>
+            <div class="ccp-text">
+                Biobanken der Clinical<br/>
+                Communication Platform (CCP-Bio)
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div class="intro-section">
+    <p>Thank you for your interest in obtaining biosamples through the Clinical Communication Platform of DKTK.</p>
+    <p>
+        To request samples directly from the biobanks of the DKTK and CCP sites please provide the following information
+        – as a basis for a smooth process:
+    </p>
+</div>
+
+<form>
+    <table class="form-table">
+        <th:block th:with="prevGroupName=''">
+            <tbody>
+            <th:block th:each="entry, iterStat : ${fields}">
+
+                <th:block
+                        th:with="currentGroup=${(entry.value.groups != null && entry.value.groups.length > 0) ? entry.value.groups[0] : null}">
+
+                    <tr th:if="${currentGroup != null && (iterStat.first || currentGroup.group != (fields.values()[iterStat.index - 1].groups != null && fields.values()[iterStat.index - 1].groups.length > 0 ? fields.values()[iterStat.index - 1].groups[0].group : ''))}"
+                        class="group-header-row">
+                        <td class="label-cell group-title-cell" colspan="1">
+                            <div class="group-name" th:text="${currentGroup.displayName}">Group Display Name</div>
+                            <div class="description" th:if="${currentGroup.description}"
+                                 th:text="${currentGroup.description}">Group Description
+                            </div>
+                        </td>
+                        <td class="value-cell empty-group-cell"></td>
+                    </tr>
+
+                    <tr class="field-row">
+                        <td class="label-cell">
+                            <div th:classappend="|${entry.value.mandatory ? 'mandatory' : ''} ${ (entry.value.groups != null && entry.value.groups.length > 0) ? 'grouped-label' : '' }|"
+                                 class="display-name"
+                                 th:text="${entry.value.labelDisplayName}">
+                                Label
+                            </div>
+                            <div class="description" th:utext="${entry.value.labelDescription}">
+                                Description
+                            </div>
+                        </td>
+                        <td class="value-cell">
+                            <div th:switch="${entry.value.type}" style="height: 100%;">
+                                <textarea th:case="${DataType.STRING}" class="pdf-input" th:name="${entry.key}"
+                                          th:text="${entry.value.value}"></textarea>
+                                <textarea th:case="${DataType.ENUM}" class="pdf-input" th:name="${entry.key}"
+                                          th:text="${entry.value.fetchDisplayValue}"></textarea>
+                                <input th:case="${DataType.INTEGER}" type="text" class="pdf-input-single"
+                                       th:name="${entry.key}" th:th:value="${entry.value.value}"/>
+                                <input th:case="${DataType.DOUBLE}" type="text" class="pdf-input-single"
+                                       th:name="${entry.key}" th:value="${entry.value.value}"/>
+                                <div th:case="${DataType.BOOLEAN}" class="pdf-checkbox-wrapper">
+                                    <input type="checkbox" th:name="${entry.key}"
+                                           th:checked="${entry.value.value == 'true'}"/>
+                                </div>
+                                <span th:case="*" class="pdf-input" th:text="${entry.value.value}"></span>
+                            </div>
+                        </td>
+                    </tr>
+                </th:block>
+            </th:block>
+            </tbody>
+        </th:block>
+    </table>
+</form>
+
+<p class="obligatory-note">*) Obligatory information</p>
+
+<div class="footer-section">
+    <p>
+        Looking forward to receiving your request.
+        Please feel free to contact me <u>c.engels@dkfz.de</u>
+        with any open questions you might have.
+    </p>
+</div>
+
+</body>
+</html>
