@@ -14,12 +14,12 @@
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Other Affiliations",
-        "de": "Andere Zugehörigkeiten"
+        "en": "Affiliations",
+        "de": "Zugehörigkeiten"
       },
       "description": {
-        "en": "Other Affiliations of the applicant",
-        "de": "Andere Zugehörigkeiten des Antragstellers"
+        "en": "Affiliations of the applicant",
+        "de": "Zugehörigkeiten des Antragstellers"
       }
     },
     {
