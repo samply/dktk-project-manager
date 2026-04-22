@@ -4,7 +4,6 @@ build-docker:
   stage: docker
   variables:
     IMGNAME: ccp/master-project-manager
-  image: docker:latest
   # Default branch leaves tag empty (= latest tag)
   # All other branches are tagged with the escaped branch name (commit ref slug)
   before_script:
