@@ -79,19 +79,6 @@
       }
     },
     {
-      "label": "definition",
-      "mandatory": true,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Cohort definition",
-        "de": "Kohortendefinition"
-      },
-      "description": {
-        "en": "What is the defining characteristic of your cohort (mol. marker, diagnosis, entity, control)?",
-        "de": "Was ist das charakteristische Merkmal Ihrer Kohorte (molekularer Marker, Diagnose, Entität, Kontrollgruppe)?"
-      }
-    },
-    {
       "label": "disease_code_tumour_entity",
       "mandatory": false,
       "data_type": "STRING",
