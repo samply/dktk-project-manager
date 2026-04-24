@@ -16,7 +16,6 @@ RUN mkdir /app/documents
 ####### Environment Variables ##############################
 
 ENV LOG_LEVEL="INFO" \
-    # Enable modules
     ENABLE_CODER="true" \
     ENABLE_EMAILS="true" \
     ENABLE_EXPORTER="true" \
@@ -198,6 +197,14 @@ ENV BRIDGEHEADS_CONFIG_MARBURG_FOCUSBEAMID="focus.marburg.broker.ccp-it.dktk.dkf
 ENV BRIDGEHEADS_CONFIG_MARBURG_HUMANREADABLE="Marburg"
 ENV BRIDGEHEADS_CONFIG_MARBURG_AFFILIATION="Marburg"
 ENV BRIDGEHEADS_CONFIG_MARBURG_TOKENMANAGERID="token-manager.marburg.broker.ccp-it.dktk.dkfz.de"
+
+# Master
+ENV BRIDGEHEADS_CONFIG_MASTER_EXPLORERID="lens-master"
+ENV BRIDGEHEADS_CONFIG_MASTER_FILEDISPATCHERBEAMID="beam-file.master.broker.ccp-it.dktk.dkfz.de"
+ENV BRIDGEHEADS_CONFIG_MASTER_FOCUSBEAMID="focus.master.broker.ccp-it.dktk.dkfz.de"
+ENV BRIDGEHEADS_CONFIG_MASTER_HUMANREADABLE="Master"
+ENV BRIDGEHEADS_CONFIG_MASTER_AFFILIATION="Master"
+ENV BRIDGEHEADS_CONFIG_MASTER_TOKENMANAGERID="token-manager.master.broker.ccp-it.dktk.dkfz.de"
 
 # München LMU
 ENV BRIDGEHEADS_CONFIG_MUENCHENMINUSLMU_EXPLORERID="lens-muenchen-lmu"
