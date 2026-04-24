@@ -1,4 +1,4 @@
-FROM samply/project-manager:develop
+FROM docker.io/samply/project-manager:develop
 
 COPY email-templates.json /app/
 COPY frontend-project-configs.json /app/
@@ -15,15 +15,14 @@ RUN mkdir /app/documents
 
 ####### Environment Variables ##############################
 
-ENV LOG_LEVEL="INFO"
-
-# Enable modules
-ENV ENABLE_CODER="true"
-ENV ENABLE_EMAILS="true"
-ENV ENABLE_EXPORTER="true"
-ENV ENABLE_RSTUDIO_GROUP_MANAGER="false"
-ENV ENABLE_TOKEN_MANAGER="true"
-ENV SECURITY_ENABLED="true"
+ENV LOG_LEVEL="INFO" \
+    # Enable modules
+    ENABLE_CODER="true" \
+    ENABLE_EMAILS="true" \
+    ENABLE_EXPORTER="true" \
+    ENABLE_RSTUDIO_GROUP_MANAGER="false" \
+    ENABLE_TOKEN_MANAGER="true" \
+    SECURITY_ENABLED="true"
 
 ENV FORM_FIELDS_DIRECTORY="/app/form-fields"
 ENV FORM_RESOURCES_DIRECTORY="/app/templates/form"
