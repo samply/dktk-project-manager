@@ -18,8 +18,8 @@
         "de": "Zugehörigkeiten"
       },
       "description": {
-        "en": "Affiliations of the applicant",
-        "de": "Zugehörigkeiten des Antragstellers"
+        "en": "Please provide the affiliation for your request",
+        "de": "Bitte geben Sie die Institution an, der Sie angehören, für die Sie eine Anfrage stellen"
       }
     },
     {
@@ -31,8 +31,8 @@
         "de": "Kooperationspartner"
       },
       "description": {
-        "en": "Names and affiliations of collaborators from this and other sites (co-PIs, pathologists, biobanks, etc.)",
-        "de": "Namen und Zugehörigkeiten der Kooperationspartner von diesem und anderen Standorten (Co-PIs, Pathologen, Biobanken usw.)"
+        "en": "If applicable, please provide the names and affiliations of your collaborators at the chosen sites",
+        "de": "Falls zutreffend, geben Sie bitte die Namen und Zugehörigkeiten Ihrer Mitarbeiter an den ausgewählten Standorten an."
       }
     },
     {
@@ -44,8 +44,8 @@
         "de": "Projektmethodik"
       },
       "description": {
-        "en": "Short description of the planned analysis method used in the project(e.g. federated data analysis, CRP with ELISA, whole genome sequencing, etc.)",
-        "de": "Kurzbeschreibung der im Projekt verwendeten geplanten Analysemethode (z. B. föderierte Datenanalyse, CRP mit ELISA, Sequenzierung des gesamten Genoms usw.)"
+        "en": "Please provide a short description of the analysis method planned for use in your project (e.g. federated data analysis, CRP with ELISA, Whole Genome Sequencing, Tissue Micro Array…)",
+        "de": "Bitte geben Sie eine kurze Beschreibung der Analysemethode an, die in Ihrem Projekt zum Einsatz kommen soll (z. B. föderierte Datenanalyse, CRP mit ELISA, Ganzgenomsequenzierung, Gewebemikroarray…)"
       }
     },
     {
@@ -53,12 +53,12 @@
       "mandatory": true,
       "data_type": "BOOLEAN",
       "display_name": {
-        "en": "Ethical approval",
-        "de": "Ethikgenehmigung"
+        "en": "Ethics vote",
+        "de": "Ethikabstimmung"
       },
       "description": {
-        "en": "Is ethical approval needed for the work?",
-        "de": "Ist für die Arbeit eine Ethikgenehmigung erforderlich?"
+        "en": "Has an ethics review been conducted for your project?",
+        "de": "Wurde für Ihr Projekt eine Ethikprüfung durchgeführt?"
       }
     },
     {

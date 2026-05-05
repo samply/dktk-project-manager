@@ -5,8 +5,8 @@
     "de": "Bioprobenanforderung"
   },
   "description": {
-    "en": "Biosample Request",
-    "de": "Bioprobenanforderung"
+    "en": "Please specify the biosamples you require for your project.",
+    "de": "Bitte geben Sie die für Ihr Projekt benötigten Bioproben an."
   },
   "fields": [
     {
@@ -726,8 +726,8 @@
         "de": "Menge der Bioprobe"
       },
       "description": {
-        "en": "Number of biosamples per subject",
-        "de": "Anzahl der Bioproben pro Proband"
+        "en": "What is the volume of serum, number of slides or DNA density required for your project?",
+        "de": "Welches Serumvolumen, welche Anzahl an Objektträgern oder welche DNA-Dichte wird für Ihr Projekt benötigt?"
       }
     },
     {

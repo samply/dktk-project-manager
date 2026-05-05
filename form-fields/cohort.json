@@ -62,6 +62,13 @@
           }
         },
         {
+          "label": "any",
+          "display_name": {
+            "en": "Any",
+            "de": "Beliebig"
+          }
+        },
+        {
           "label": "unknown",
           "display_name": {
             "en": "Unknown",
