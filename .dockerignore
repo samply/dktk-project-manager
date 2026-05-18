@@ -1,3 +1,5 @@
 .idea
 development.env
 documents
+development-secret.env
+development-secret-template.env
