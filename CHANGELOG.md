@@ -62,6 +62,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Data and Samples configuration
 - Cohort, Samples and Project configuration
 - Generate bridgeheads
+- Query forms
 
 ### Changed
 - Replace Minus in bridgeheads

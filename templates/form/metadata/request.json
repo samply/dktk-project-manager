@@ -18,6 +18,7 @@
   },
   "form_titles": [
     "project",
+    "query",
     "samples"
   ],
   "template_file": "request",
