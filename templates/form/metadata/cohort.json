@@ -18,8 +18,7 @@
   },
   "template_file": "request",
   "form_titles": [
-    "project",
-    "cohort"
+    "project"
   ],
   "template": "cohort",
   "display_name": {

@@ -36,7 +36,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Error message if a query is sent with an error
 - Send error email if error while sending a query to bridgehead
 - Mention to Exporter App for Teiler executions of the query
-- Results templates
+- Result templates
 - Create send credentials and find send credentials templates
 - Messages of email templates related to the results
 - Action Explanations regarding the results
@@ -85,3 +85,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Removed
 - Application Form
+- Only a sample option

@@ -18,7 +18,6 @@
   },
   "form_titles": [
     "project",
-    "cohort",
     "samples"
   ],
   "template_file": "request",

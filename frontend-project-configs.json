@@ -15,30 +15,6 @@
       "forms": [
         {
           "title": "project"
-        },
-        {
-          "title": "cohort"
-        }
-      ]
-    },
-    "Samples": {
-      "project": {
-        "label": "Biosamples",
-        "description": "Specify the biosamples you require. These will then be checked for availability at the local biobank.",
-        "outputs": [
-          {
-            "projectType": "SAMPLES",
-            "outputFormat": "EXCEL",
-            "templateId": "ccp-sample-list"
-          }
-        ]
-      },
-      "forms": [
-        {
-          "title": "project"
-        },
-        {
-          "title": "samples"
         }
       ]
     },
@@ -62,9 +38,6 @@
       "forms": [
         {
           "title": "project"
-        },
-        {
-          "title": "cohort"
         },
         {
           "title": "samples"
