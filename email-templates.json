@@ -131,6 +131,12 @@
         "DEFAULT": "default-new-publication.html"
       }
     },
+    "NEW_FINAL_REPORT": {
+      "subject": "New Final Report Available for Project <project-code/>",
+      "files": {
+        "DEFAULT": "default-new-report.html"
+      }
+    },
     "PROJECT_REJECTED": {
       "subject": "Project <project-code/> Rejected",
       "files": {

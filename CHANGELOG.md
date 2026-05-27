@@ -64,6 +64,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Generate bridgeheads
 - Query forms
 - Form attachments for new projects in emails
+- Final report emails
 
 ### Changed
 - Replace Minus in bridgeheads
