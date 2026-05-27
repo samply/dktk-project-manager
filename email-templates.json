@@ -2,7 +2,9 @@
   "templates": {
     "NEW_PROJECT": {
       "subject": "New project <project-code/> Notification",
+      "attachment_files": ["FORM"],
       "files": {
+        "CREATOR": "creator-new-project.html",
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-new-project.html"
       }
     },
