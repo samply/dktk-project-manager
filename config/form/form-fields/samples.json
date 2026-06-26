@@ -8,95 +8,134 @@
     "en": "Please specify the biosamples you require for your project.",
     "de": "Bitte geben Sie die für Ihr Projekt benötigten Bioproben an."
   },
+  "blocks": [
+    {
+      "label": "liquid",
+      "multiple": true,
+      "display_name": {
+        "en": "Liquid",
+        "de": "Flüssigkeit"
+      },
+      "description": {
+        "en": "Liquid biosamples.",
+        "de": "Flüssige Bioproben."
+      }
+    },
+    {
+      "label": "tissue",
+      "multiple": true,
+      "display_name": {
+        "en": "Tissue",
+        "de": "Gewebe"
+      },
+      "description": {
+        "en": "Tissue biosamples.",
+        "de": "Gewebebioproben."
+      }
+    },
+    {
+      "label": "derivatives",
+      "multiple": true,
+      "display_name": {
+        "en": "Derivative",
+        "de": "Abgeleitete Probe"
+      },
+      "description": {
+        "en": "Derivatives of the biosamples you have selected.",
+        "de": "Derivate der von Ihnen ausgewählten Bioproben."
+      }
+    }
+  ],
   "fields": [
     {
-      "label": "type",
+      "label": "liquid_type",
       "mandatory": true,
       "data_type": "ENUM",
       "display_name": {
-        "en": "Biosample type",
-        "de": "Bioprobentyp"
+        "en": "Liquid type",
+        "de": "Liquidtyp"
       },
       "description": {
-        "en": "Material type of the biosample",
-        "de": "Materialart der Bioprobe"
+        "en": "Liquid material type of the biosample.",
+        "de": "Liquidmaterialtyp der Bioprobe."
       },
+      "block": "liquid",
       "allowed_values": [
         {
-          "label": "amniotic_fluid",
+          "label": "plasma",
           "display_name": {
-            "en": "Amniotic fluid",
-            "de": "Fruchtwasser"
+            "en": "Plasma",
+            "de": "Plasma"
           },
           "description": {
-            "en": "A specimen that is derived from amniotic fluid.",
-            "de": "Eine Probe, die aus Fruchtwasser gewonnen wird."
+            "en": "A material entity which corresponds to the fluids component of blood, in which the blood cells are suspended.",
+            "de": "Eine materielle Entität, die dem flüssigen Bestandteil des Blutes entspricht, in dem die Blutzellen suspendiert sind."
           }
         },
         {
-          "label": "ascites_fluid",
+          "label": "serum",
           "display_name": {
-            "en": "Ascites fluid",
-            "de": "Aszitesflüssigkeit"
+            "en": "Serum",
+            "de": "Serum"
           },
           "description": {
-            "en": "The serous fluid which accumulates in the peritoneal cavity in ascites.",
-            "de": "Seröse Flüssigkeit, die sich bei Aszites in der Peritonealhöhle ansammelt."
+            "en": "A material entity which derives from blood and corresponds to blood plasma without fibrinogen or the other clotting factors.",
+            "de": "Eine materielle Entität, die aus Blut stammt und dem Blutplasma ohne Fibrinogen oder andere Gerinnungsfaktoren entspricht."
           }
         },
         {
-          "label": "bile",
+          "label": "buffy_coat",
           "display_name": {
-            "en": "Bile",
-            "de": "Galle"
+            "en": "Buffy coat",
+            "de": "Buffy-Coat"
           },
           "description": {
-            "en": "A specimen that is derived from bile.",
-            "de": "Eine Probe, die aus Galle gewonnen wird."
+            "en": "A processed specimen which is the output of a density gradient centrifugation of an anticoagulated blood specimen that contains most of the white blood cells and platelets.",
+            "de": "Ein verarbeitetes Probenmaterial, das als Ergebnis einer Dichtegradientenzentrifugation von antikoaguliertem Blut gewonnen wird und hauptsächlich weiße Blutzellen und Blutplättchen enthält."
           }
         },
         {
-          "label": "body_cavity_fluid",
+          "label": "whole_blood",
           "display_name": {
-            "en": "Body cavity fluid",
-            "de": "Körperhöhlenflüssigkeit"
+            "en": "Whole blood",
+            "de": "Vollblut"
           },
           "description": {
-            "en": "",
-            "de": "Flüssigkeit der Körperhöhlen"
+            "en": "A material entity derived from a portion of blood collected from an organism.",
+            "de": "Eine materielle Entität, die aus einer einem Organismus entnommenen Blutportion stammt."
           }
         },
         {
-          "label": "bone",
+          "label": "pbmc",
           "display_name": {
-            "en": "Bone",
-            "de": "Knochen"
+            "en": "Peripheral blood mononuclear cells (PBMC)",
+            "de": "Mononukleäre Zellen des peripheren Blutes (PBMC)"
           },
           "description": {
-            "en": "",
-            "de": "Knochen"
+            "en": "A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.",
+            "de": "Ein Leukozyt mit einem einzelnen, nicht segmentierten Kern in der reifen Form, der im zirkulierenden Blutpool gefunden wird."
           }
         },
         {
-          "label": "bone_marrow_aspirate",
+          "label": "bronchoalveolar_lavage",
           "display_name": {
-            "en": "Bone marrow aspirate",
-            "de": "Knochenmarkaspirat"
+            "en": "Bronchoalveolar lavage",
+            "de": "Bronchoalveoläre Lavage"
           },
           "description": {
-            "en": "Aspirate from bone marrow.",
-            "de": "Aspirat aus dem Knochenmark."
+            "en": "Group of biomaterials present in the bronchial alveolar space of an organism collected through lavage including reagents, organisms, cells, and cellular secretions.",
+            "de": "Gesamtheit der Biomaterialien im bronchoalveolären Raum, die durch Lavage gewonnen werden, einschließlich Reagenzien, Organismen, Zellen und zellulären Sekreten."
           }
         },
         {
-          "label": "bone_marrow_plasma",
+          "label": "cerebrospinal_fluid",
           "display_name": {
-            "en": "Bone marrow plasma",
-            "de": "Knochenmarkplasma"
+            "en": "Cerebrospinal fluid",
+            "de": "Zerebrospinalflüssigkeit"
           },
           "description": {
-            "en": "",
-            "de": ""
+            "en": "A specimen that is derived from cerebrospinal fluid.",
+            "de": "Eine Probe, die aus der Zerebrospinalflüssigkeit gewonnen wird."
           }
         },
         {
@@ -122,377 +161,14 @@
           }
         },
         {
-          "label": "bronchoalveolar_lavage",
+          "label": "bile",
           "display_name": {
-            "en": "Bronchoalveolar lavage",
-            "de": "Bronchoalveoläre Lavage"
+            "en": "Bile",
+            "de": "Galle"
           },
           "description": {
-            "en": "Group of biomaterials present in the bronchial alveolar space of an organism collected through lavage including reagents, organisms, cells, and cellular secretions.",
-            "de": "Gesamtheit der Biomaterialien im bronchoalveolären Raum, die durch Lavage gewonnen werden, einschließlich Reagenzien, Organismen, Zellen und zellulären Sekreten."
-          }
-        },
-        {
-          "label": "buffy_coat",
-          "display_name": {
-            "en": "Buffy coat",
-            "de": "Buffy-Coat"
-          },
-          "description": {
-            "en": "A processed specimen which is the output of a density gradient centrifugation of an anticoagulated blood specimen that contains most of the white blood cells and platelets.",
-            "de": "Ein verarbeitetes Probenmaterial, das als Ergebnis einer Dichtegradientenzentrifugation von antikoaguliertem Blut gewonnen wird und hauptsächlich weiße Blutzellen und Blutplättchen enthält."
-          }
-        },
-        {
-          "label": "cancer_cell_lines",
-          "display_name": {
-            "en": "Cancer cell lines",
-            "de": "Krebszelllinien"
-          },
-          "description": {
-            "en": "An immortal cell line derived from a transformed cell that was part of a malignant tumor.",
-            "de": "Eine unsterbliche Zelllinie, die aus einer transformierten Zelle eines malignen Tumors stammt."
-          }
-        },
-        {
-          "label": "cerebrospinal_fluid",
-          "display_name": {
-            "en": "Cerebrospinal fluid",
-            "de": "Zerebrospinalflüssigkeit"
-          },
-          "description": {
-            "en": "A specimen that is derived from cerebrospinal fluid.",
-            "de": "Eine Probe, die aus der Zerebrospinalflüssigkeit gewonnen wird."
-          }
-        },
-        {
-          "label": "cord_blood",
-          "display_name": {
-            "en": "Cord blood",
-            "de": "Nabelschnurblut"
-          },
-          "description": {
-            "en": "A specimen that is derived from umbilical cord blood.",
-            "de": "Eine Probe, die aus Nabelschnurblut gewonnen wird."
-          }
-        },
-        {
-          "label": "dental_pulp",
-          "display_name": {
-            "en": "Dental pulp",
-            "de": "Zahnpulpa"
-          },
-          "description": {
-            "en": "The part in the center of a tooth made up of living soft tissue and cells called odontoblasts.",
-            "de": "Der Teil im Inneren eines Zahns, bestehend aus lebendem Weichgewebe und Odontoblasten."
-          }
-        },
-        {
-          "label": "dna",
-          "display_name": {
-            "en": "DNA",
-            "de": "DNA"
-          },
-          "description": {
-            "en": "The output of an extraction process in which DNA molecules are purified in order to exclude DNA from organelles.",
-            "de": "Das Ergebnis eines Extraktionsprozesses, bei dem DNA-Moleküle gereinigt werden, um sie von Organellen zu trennen."
-          }
-        },
-        {
-          "label": "embryo",
-          "display_name": {
-            "en": "Embryo",
-            "de": "Embryo"
-          },
-          "description": {
-            "en": "",
-            "de": ""
-          }
-        },
-        {
-          "label": "entire_body_organ",
-          "display_name": {
-            "en": "Entire body organ",
-            "de": "Gesamtes Organ"
-          },
-          "description": {
-            "en": "",
-            "de": ""
-          }
-        },
-        {
-          "label": "faeces",
-          "display_name": {
-            "en": "Faeces",
-            "de": "Fäzes"
-          },
-          "description": {
-            "en": "A specimen that is derived from feces.",
-            "de": "Eine aus Fäzes gewonnene Probe."
-          }
-        },
-        {
-          "label": "fetal_tissue",
-          "display_name": {
-            "en": "Fetal tissue",
-            "de": "Fetales Gewebe"
-          },
-          "description": {
-            "en": "",
-            "de": ""
-          }
-        },
-        {
-          "label": "fibroblasts",
-          "display_name": {
-            "en": "Fibroblasts",
-            "de": "Fibroblasten"
-          },
-          "description": {
-            "en": "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching.",
-            "de": "Eine Bindegewebszelle, die eine extrazelluläre Matrix sekretiert, die reich an Kollagen und anderen Makromolekülen ist. Flach und unregelmäßig im Umriss mit Verzweigungen."
-          }
-        },
-        {
-          "label": "food_specimen",
-          "display_name": {
-            "en": "Food specimen",
-            "de": "Lebensmittelprobe"
-          },
-          "description": {
-            "en": "A processed specimen that is the output of a fixation process.",
-            "de": "Eine verarbeitete Probe, die das Ergebnis eines Fixierungsprozesses ist."
-          }
-        },
-        {
-          "label": "gas_exhaled",
-          "display_name": {
-            "en": "Gas, exhaled (breath)",
-            "de": "Ausgeatmetes Gas (Atem)"
-          },
-          "description": {
-            "en": "Gas exhaled from the lungs during respiration.",
-            "de": "Bei der Atmung aus der Lunge ausgeatmetes Gas."
-          }
-        },
-        {
-          "label": "gastric_fluid",
-          "display_name": {
-            "en": "Gastric fluid",
-            "de": "Magensaft"
-          },
-          "description": {
-            "en": "A specimen that is derived from digestive system fluid or secretion.",
-            "de": "Eine Probe, die aus der Flüssigkeit oder dem Sekret des Verdauungssystems stammt."
-          }
-        },
-        {
-          "label": "hair",
-          "display_name": {
-            "en": "Hair",
-            "de": "Haar"
-          },
-          "description": {
-            "en": "A specimen that is derived from hair.",
-            "de": "Eine aus Haaren gewonnene Probe."
-          }
-        },
-        {
-          "label": "immortalized_cell_lines",
-          "display_name": {
-            "en": "Immortalized cell lines",
-            "de": "Immortalisierte Zelllinien"
-          },
-          "description": {
-            "en": "A cultured cell population that represents a genetically stable and homogenous population of cultured cells that shares a common propagation history.",
-            "de": "Eine kultivierte Zellpopulation, die eine genetisch stabile und homogene Population von kultivierten Zellen darstellt, die eine gemeinsame Vermehrungsgeschichte haben."
-          }
-        },
-        {
-          "label": "isolated_microbes",
-          "display_name": {
-            "en": "Isolated microbes",
-            "de": "Isolierte Mikroben"
-          },
-          "description": {
-            "en": "A specific individual microbe and its genetically identical progeny separated on a single occasion from a sample taken from a host or culture system.",
-            "de": "Eine spezifische einzelne Mikrobe und ihre genetisch identischen Nachkommen, die bei einer einzigen Gelegenheit aus einer von einem Wirt oder Kultursystem entnommenen Probe getrennt wurden."
-          }
-        },
-        {
-          "label": "isolated_or_enriched_exosomes",
-          "display_name": {
-            "en": "Isolated or enriched exosomes",
-            "de": "Isolierte oder angereicherte Exosomen"
-          },
-          "description": {
-            "en": "Extracellular vesicles that are released from cells upon fusion of an intermediate endocytic compartment.",
-            "de": "Extrazelluläre Vesikel, die bei der Fusion eines intermediären endozytischen Kompartiments aus Zellen freigesetzt werden."
-          }
-        },
-        {
-          "label": "isolated_tumor_cell",
-          "display_name": {
-            "en": "Isolated Tumor Cell (neoplastic cell)",
-            "de": "Isolierte Tumorzelle (neoplastische Zelle)"
-          },
-          "description": {
-            "en": "An abnormal cell exhibiting dysregulation of cell proliferation or programmed cell death and capable of forming a neoplasm.",
-            "de": "Eine abnormale Zelle, die eine Dysregulation der Zellproliferation oder des programmierten Zelltods aufweist und in der Lage ist, ein Neoplasma zu bilden."
-          }
-        },
-        {
-          "label": "menstrual_blood",
-          "display_name": {
-            "en": "Menstrual blood",
-            "de": "Menstruationsblut"
-          },
-          "description": {
-            "en": "The discharged blood from the uterus during the reproductive years. The discharge occurs approximately once a month.",
-            "de": "Das aus der Gebärmutter während der reproduktiven Jahre ausgestoßene Blut. Der Ausstoß erfolgt etwa einmal im Monat."
-          }
-        },
-        {
-          "label": "nail",
-          "display_name": {
-            "en": "Nail",
-            "de": "Nagel"
-          },
-          "description": {
-            "en": "A horn-like keratin structure covering the dorsal aspect of the terminal phalanges of fingers and toes.",
-            "de": "Eine hornartige Keratinstruktur, die den dorsalen Aspekt der Endphalangen von Fingern und Zehen bedeckt."
-          }
-        },
-        {
-          "label": "nasal_washing",
-          "display_name": {
-            "en": "Nasal washing",
-            "de": "Nasenspülung"
-          },
-          "description": {
-            "en": "A biospecimen collected from the nasal passages by washing.",
-            "de": "Eine Bioprobe, die durch Waschen aus den Nasengängen gewonnen wurde."
-          }
-        },
-        {
-          "label": "organoids",
-          "display_name": {
-            "en": "Organoids",
-            "de": "Organoide"
-          },
-          "description": {
-            "en": "A three dimensional mass comprised of a cultured cell or tissue sample that resembles an in vivo tissue or organ.",
-            "de": "Eine dreidimensionale Masse aus einer kultivierten Zell- oder Gewebeprobe, die einem In-vivo-Gewebe oder -Organ ähnelt."
-          }
-        },
-        {
-          "label": "pericardial_fluid",
-          "display_name": {
-            "en": "Pericardial fluid",
-            "de": "Perikardflüssigkeit"
-          },
-          "description": {
-            "en": "A specimen that is derived from pericardial fluid.",
-            "de": "Eine Probe, die aus Herzbeutelflüssigkeit gewonnen wurde."
-          }
-        },
-        {
-          "label": "pbmc",
-          "display_name": {
-            "en": "Peripheral blood mononuclear cells (PBMC)",
-            "de": "Mononukleäre Zellen des peripheren Blutes (PBMC)"
-          },
-          "description": {
-            "en": "A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.",
-            "de": "Ein Leukozyt mit einem einzelnen, nicht segmentierten Kern in der reifen Form, der im zirkulierenden Blutpool gefunden wird."
-          }
-        },
-        {
-          "label": "placenta",
-          "display_name": {
-            "en": "Placenta",
-            "de": "Plazenta"
-          },
-          "description": {
-            "en": "A specimen that is derived from placenta.",
-            "de": "Eine Probe, die aus der Plazenta gewonnen wurde."
-          }
-        },
-        {
-          "label": "plasma",
-          "display_name": {
-            "en": "Plasma",
-            "de": "Plasma"
-          },
-          "description": {
-            "en": "A material entity which corresponds to the fluids component of blood, in which the blood cells are suspended.",
-            "de": "Eine materielle Entität, die dem flüssigen Bestandteil des Blutes entspricht, in dem die Blutzellen suspendiert sind."
-          }
-        },
-        {
-          "label": "pleural_fluid",
-          "display_name": {
-            "en": "Pleural fluid",
-            "de": "Pleuraflüssigkeit"
-          },
-          "description": {
-            "en": "A specimen that is derived from pleural fluid.",
-            "de": "Eine Probe, die aus Pleuraflüssigkeit gewonnen wurde."
-          }
-        },
-        {
-          "label": "post_mortem_tissue",
-          "display_name": {
-            "en": "Post-mortem tissue",
-            "de": "Post-mortem-Gewebe"
-          },
-          "description": {
-            "en": "A specimen that was taken from a dead organism.",
-            "de": "Eine Probe, die einem toten Organismus entnommen wurde."
-          }
-        },
-        {
-          "label": "primary_cells",
-          "display_name": {
-            "en": "Primary cells",
-            "de": "Primärzellen"
-          },
-          "description": {
-            "en": "A cell taken directly from a living organism, which is not immortalized.",
-            "de": "Eine direkt aus einem lebenden Organismus entnommene Zelle, die nicht immortalisiert ist."
-          }
-        },
-        {
-          "label": "proteins",
-          "display_name": {
-            "en": "Proteins",
-            "de": "Proteine"
-          },
-          "description": {
-            "en": "An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA.",
-            "de": "Eine Aminosäurekette, die de novo durch ribosomenvermittelte Translation einer genetisch kodierten mRNA hergestellt wird."
-          }
-        },
-        {
-          "label": "red_blood_cells",
-          "display_name": {
-            "en": "Red blood cells",
-            "de": "Rote Blutkörperchen (Erythrozyten)"
-          },
-          "description": {
-            "en": "A red blood cell. In mammals, mature erythrocytes are biconcave disks containing hemoglobin whose function is to transport oxygen.",
-            "de": "Eine rote Blutzelle. Bei Säugetieren sind reife Erythrozyten bikonkave Scheiben, die Hämoglobin enthalten und deren Funktion der Sauerstofftransport ist."
-          }
-        },
-        {
-          "label": "rna",
-          "display_name": {
-            "en": "RNA",
-            "de": "RNA"
-          },
-          "description": {
-            "en": "An extract which is the output of an extraction process in which RNA molecules are isolated from a specimen.",
-            "de": "Ein Extrakt, das das Ergebnis eines Extraktionsprozesses ist, bei dem RNA-Moleküle aus einer Probe isoliert werden."
+            "en": "A specimen that is derived from bile.",
+            "de": "Eine Probe, die aus Galle gewonnen wird."
           }
         },
         {
@@ -507,146 +183,14 @@
           }
         },
         {
-          "label": "semen",
+          "label": "faeces",
           "display_name": {
-            "en": "Semen",
-            "de": "Samen (Sperma)"
+            "en": "Faeces",
+            "de": "Fäzes"
           },
           "description": {
-            "en": "A specimen that is derived from some semen.",
-            "de": "Eine Probe, die aus Sperma gewonnen wurde."
-          }
-        },
-        {
-          "label": "serum",
-          "display_name": {
-            "en": "Serum",
-            "de": "Serum"
-          },
-          "description": {
-            "en": "A material entity which derives from blood and corresponds to blood plasma without fibrinogen or the other clotting factors.",
-            "de": "Eine materielle Entität, die aus Blut stammt und dem Blutplasma ohne Fibrinogen oder andere Gerinnungsfaktoren entspricht."
-          }
-        },
-        {
-          "label": "specimen_from_environment",
-          "display_name": {
-            "en": "Specimen from environment",
-            "de": "Umweltprobe"
-          },
-          "description": {
-            "en": "A specimen collected from environmental sources.",
-            "de": "Eine aus Umweltquellen entnommene Probe."
-          }
-        },
-        {
-          "label": "sputum",
-          "display_name": {
-            "en": "Sputum",
-            "de": "Sputum"
-          },
-          "description": {
-            "en": "A specimen that is derived from sputum.",
-            "de": "Eine Probe, die aus Sputum gewonnen wurde."
-          }
-        },
-        {
-          "label": "stem_cells",
-          "display_name": {
-            "en": "Stem cells (and iPS cells)",
-            "de": "Stammzellen (und iPS-Zellen)"
-          },
-          "description": {
-            "en": "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells.",
-            "de": "Eine relativ undifferenzierte Zelle, die lebenslang die Fähigkeit zur Teilung und Proliferation behält, um Vorläuferzellen bereitzustellen, die sich in spezialisierte Zellen differenzieren können."
-          }
-        },
-        {
-          "label": "swab",
-          "display_name": {
-            "en": "Swab",
-            "de": "Abstrich"
-          },
-          "description": {
-            "en": "A specimen that is stored on a swab as the output of a collecting specimen with swab process.",
-            "de": "Eine Probe, die auf einem Tupfer als Ergebnis eines Probenentnahmeverfahrens mit einem Tupfer gespeichert ist."
-          }
-        },
-        {
-          "label": "sweat",
-          "display_name": {
-            "en": "Sweat",
-            "de": "Schweiß"
-          },
-          "description": {
-            "en": "A specimen that is derived from sweat.",
-            "de": "Eine Probe, die aus Schweiß gewonnen wurde."
-          }
-        },
-        {
-          "label": "synovial_fluid",
-          "display_name": {
-            "en": "Synovial fluid",
-            "de": "Synovialflüssigkeit (Gelenkschmiere)"
-          },
-          "description": {
-            "en": "A specimen that is derived from synovial fluid.",
-            "de": "Eine Probe, die aus Synovialflüssigkeit gewonnen wurde."
-          }
-        },
-        {
-          "label": "tears",
-          "display_name": {
-            "en": "Tears",
-            "de": "Tränen"
-          },
-          "description": {
-            "en": "Aqueous substance secreted by the lacrimal gland.",
-            "de": "Wässrige Substanz, die von der Tränendrüse abgesondert wird."
-          }
-        },
-        {
-          "label": "teeth",
-          "display_name": {
-            "en": "Teeth",
-            "de": "Zähne"
-          },
-          "description": {
-            "en": "Skeletal element within the mouth composed of dentine used in procuring or masticating food.",
-            "de": "Skelettelement im Mund, das aus Dentin besteht und zur Nahrungsaufnahme oder zum Kauen verwendet wird."
-          }
-        },
-        {
-          "label": "tissue_fixed",
-          "display_name": {
-            "en": "Tissue (fixed)",
-            "de": "Gewebe (fixiert)"
-          },
-          "description": {
-            "en": "Biological tissue that has been preserved using a fixative.",
-            "de": "Biologisches Gewebe, das mit einem Fixiermittel konserviert wurde."
-          }
-        },
-        {
-          "label": "tissue_fresh_frozen",
-          "display_name": {
-            "en": "Tissue (fresh frozen)",
-            "de": "Gewebe (schockgefroren)"
-          },
-          "description": {
-            "en": "A specimen that has been frozen in order to store it.",
-            "de": "Eine Probe, die zur Lagerung eingefroren wurde."
-          }
-        },
-        {
-          "label": "umbilical_cord",
-          "display_name": {
-            "en": "Umbilical cord",
-            "de": "Nabelschnur"
-          },
-          "description": {
-            "en": "The connecting cord from the developing embryo to the placenta.",
-            "de": "Die Verbindungsschnur vom sich entwickelnden Embryo zur Plazenta."
+            "en": "A specimen that is derived from feces.",
+            "de": "Eine aus Fäzes gewonnene Probe."
           }
         },
         {
@@ -658,50 +202,6 @@
           "description": {
             "en": "A portion of urine collected from an organism.",
             "de": "Eine einem Organismus entnommene Urinprobe."
-          }
-        },
-        {
-          "label": "urine_sediment",
-          "display_name": {
-            "en": "Urine Sediment",
-            "de": "Urinsediment"
-          },
-          "description": {
-            "en": "Particles and solid matter settled from a urine sample.",
-            "de": "Abgesetzte Partikel und Feststoffe aus einer Urinprobe."
-          }
-        },
-        {
-          "label": "vitreous_fluid",
-          "display_name": {
-            "en": "Vitreous fluid",
-            "de": "Glaskörperflüssigkeit"
-          },
-          "description": {
-            "en": "A specimen that is derived from vitreous humor.",
-            "de": "Eine Probe, die aus dem Glaskörper des Auges gewonnen wurde."
-          }
-        },
-        {
-          "label": "whole_blood",
-          "display_name": {
-            "en": "Whole blood",
-            "de": "Vollblut"
-          },
-          "description": {
-            "en": "A material entity derived from a portion of blood collected from an organism.",
-            "de": "Eine materielle Entität, die aus einer einem Organismus entnommenen Blutportion stammt."
-          }
-        },
-        {
-          "label": "whole_blood_dried",
-          "display_name": {
-            "en": "Whole blood, dried (e.g. Guthrie cards)",
-            "de": "Vollblut, getrocknet (z. B. Guthrie-Karten)"
-          },
-          "description": {
-            "en": "Dried blood spots collected on filter paper.",
-            "de": "Auf Filterpapier gesammelte getrocknete Blutstropfen."
           }
         },
         {
@@ -718,43 +218,218 @@
       ]
     },
     {
-      "label": "quantity",
-      "mandatory": false,
-      "data_type": "INTEGER",
+      "label": "liquid_type_other",
+      "mandatory": true,
+      "data_type": "STRING",
       "display_name": {
-        "en": "Biosample quantity",
-        "de": "Menge der Bioprobe"
+        "en": "Other",
+        "de": "Andere"
       },
-      "description": {
-        "en": "What is the volume of serum, number of slides or DNA density required for your project?",
-        "de": "Welches Serumvolumen, welche Anzahl an Objektträgern oder welche DNA-Dichte wird für Ihr Projekt benötigt?"
-      }
+      "block": "liquid",
+      "condition": "['samples']['liquid_type']['value'] == 'other'"
     },
     {
-      "label": "preparation",
+      "label": "liquid_number_of_samples_per_subject",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Number of samples per subject",
+        "de": "Anzahl der Proben pro Person"
+      },
+      "description": {
+        "en": "For example: 1 aliquot/subject.",
+        "de": "Zum Beispiel: 1 Aliquot/Person."
+      },
+      "block": "liquid"
+    },
+    {
+      "label": "liquid_concentration",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Concentration (in ng/\u00b5l)",
+        "de": "Konzentration (in ng/\u00b5l)"
+      },
+      "block": "liquid"
+    },
+    {
+      "label": "liquid_volume",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Volume (in \u00b5l)",
+        "de": "Volumen (in \u00b5l)"
+      },
+      "block": "liquid"
+    },
+    {
+      "label": "liquid_additive",
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Biosample preparation",
-        "de": "Bioprobenvorbereitung"
+        "en": "Additive",
+        "de": "Zusatzstoff"
       },
-      "description": {
-        "en": "Please specify how the sample should be prepared (e.g. tissue staining, thickness, digitised slides, or DNA, RNA or protein extraction)",
-        "de": "Bitte geben Sie an, wie die Probe vorbereitet werden soll (z. B. Gewebefärbung, Dicke, digitalisierte Objektträger oder DNA-, RNA- oder Proteinextraktion)"
-      }
+      "block": "liquid"
     },
     {
-      "label": "planned_analysis_method",
+      "label": "tissue_type",
+      "mandatory": true,
+      "data_type": "ENUM",
+      "display_name": {
+        "en": "Sample type",
+        "de": "Probentyp"
+      },
+      "description": {
+        "en": "Type of tissue sample.",
+        "de": "Typ der Gewebeprobe."
+      },
+      "block": "tissue",
+      "allowed_values": [
+        {
+          "label": "tissue_fixed",
+          "display_name": {
+            "en": "Tissue fixed",
+            "de": "Gewebe fixiert"
+          },
+          "description": {
+            "en": "Fixed tissue sample.",
+            "de": "Fixierte Gewebeprobe."
+          }
+        },
+        {
+          "label": "tissue_fresh_frozen",
+          "display_name": {
+            "en": "Tissue fresh frozen",
+            "de": "Gewebe frisch gefroren"
+          },
+          "description": {
+            "en": "Fresh frozen tissue sample.",
+            "de": "Frisch gefrorene Gewebeprobe."
+          }
+        }
+      ]
+    },
+    {
+      "label": "tissue_additive",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Additive",
+        "de": "Zusatzstoff"
+      },
+      "block": "tissue"
+    },
+    {
+      "label": "tissue_slices_per_subject",
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Biosample planned analysis method",
-        "de": "Geplante Analysemethode für Bioproben"
+        "en": "Number of slices per subject",
+        "de": "Anzahl der Schnitte pro Person"
       },
       "description": {
-        "en": "Provide a short description of the planned analysis method (e.g. CRP with ELISA, whole genome sequencing, etc.) that the samples will be required for. Who will perform the analysis (applicant, biobank or pathologist at the site)?",
-        "de": "Bitte geben Sie eine kurze Beschreibung der geplanten Analysemethode (z. B. CRP-Bestimmung mittels ELISA, Ganzgenomsequenzierung usw.) an, für die die Proben benötigt werden. Wer wird die Analyse durchführen (Antragsteller, Biobank oder Pathologe vor Ort)?"
-      }
+        "en": "For example: 5 slices/subject.",
+        "de": "Zum Beispiel: 5 Schnitte/Person."
+      },
+      "block": "tissue"
+    },
+    {
+      "label": "tissue_pieces_per_subject",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Tissue pieces per subject",
+        "de": "Gewebest\u00fccke pro Person"
+      },
+      "description": {
+        "en": "For example: 1/subject.",
+        "de": "Zum Beispiel: 1/Person."
+      },
+      "block": "tissue"
+    },
+    {
+      "label": "derivatives_type",
+      "mandatory": true,
+      "data_type": "ENUM",
+      "display_name": {
+        "en": "Sample type",
+        "de": "Probentyp"
+      },
+      "description": {
+        "en": "Type of derivative sample.",
+        "de": "Typ der abgeleiteten Probe."
+      },
+      "block": "derivatives",
+      "allowed_values": [
+        {
+          "label": "dna",
+          "display_name": {
+            "en": "DNA",
+            "de": "DNA"
+          },
+          "description": {
+            "en": "DNA",
+            "de": "DNA"
+          }
+        },
+        {
+          "label": "rna",
+          "display_name": {
+            "en": "RNA",
+            "de": "RNA"
+          },
+          "description": {
+            "en": "RNA",
+            "de": "RNA"
+          }
+        },
+        {
+          "label": "cfdna",
+          "display_name": {
+            "en": "cfDNA",
+            "de": "cfDNA"
+          },
+          "description": {
+            "en": "cfDNA",
+            "de": "cfDNA"
+          }
+        }
+      ]
+    },
+    {
+      "label": "derivatives_number_of_samples_per_subject",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Number of samples per subject",
+        "de": "Anzahl der Proben pro Person"
+      },
+      "description": {
+        "en": "For example: 1 aliquot of 200 \u00b5l each.",
+        "de": "Zum Beispiel: 1 Aliquot zu je 200 \u00b5l."
+      },
+      "block": "derivatives"
+    },
+    {
+      "label": "derivatives_concentration",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Concentration (in ng/µl)",
+        "de": "Konzentration (in ng/µl)"
+      },
+      "block": "derivatives"
+    },
+    {
+      "label": "derivatives_min_vol",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Volume (in µl)",
+        "de": "Volumen (in µl)"
+      },
+      "block": "derivatives"
     }
   ]
 }

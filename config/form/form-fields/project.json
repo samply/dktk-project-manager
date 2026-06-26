@@ -8,7 +8,7 @@
     "en": "Project",
     "de": "Projekt"
   },
-  "fieldBlocks": [
+  "blocks": [
     {
       "label": "collaborators",
       "multiple": true,
@@ -37,17 +37,30 @@
       }
     },
     {
+      "label": "principal_investigator",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Principal Investigator (Applicant)",
+        "de": "Hauptverantwortlicher (Antragsteller)"
+      },
+      "description": {
+        "en": "The applicant serves as the primary point of contact.",
+        "de": "Der Antragsteller dient als primärer Ansprechpartner."
+      }
+    },
+    {
       "label": "collaborator-first-name",
       "mandatory": false,
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
-        "en": "Collaborator first name",
-        "de": "Vorname des Kooperationspartners"
+        "en": "First Name",
+        "de": "Vorname"
       },
       "description": {
-        "en": "If applicable, please provide the first name of your collaborator at the chosen site",
-        "de": "Falls zutreffend, geben Sie bitte den Vornamen Ihres Kooperationspartners am ausgewählten Standort an."
+        "en": "First name of your collaborator at the chosen site",
+        "de": "Vornamen Ihres Kooperationspartners am ausgewählten Standort"
       }
     },
     {
@@ -56,12 +69,12 @@
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
-        "en": "Collaborator last name",
-        "de": "Nachname des Kooperationspartners"
+        "en": "Last Name",
+        "de": "Nachname"
       },
       "description": {
-        "en": "If applicable, please provide the last name of your collaborator at the chosen site",
-        "de": "Falls zutreffend, geben Sie bitte den Nachnamen Ihres Kooperationspartners am ausgewählten Standort an."
+        "en": "Last name of your collaborator at the chosen site",
+        "de": "Nachnamen Ihres Kooperationspartners am ausgewählten Standort"
       }
     },
     {
@@ -70,12 +83,12 @@
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
-        "en": "Collaborator email",
-        "de": "E-Mail des Kooperationspartners"
+        "en": "Email",
+        "de": "E-Mail"
       },
       "description": {
-        "en": "If applicable, please provide the email address of your collaborator at the chosen site",
-        "de": "Falls zutreffend, geben Sie bitte die E-Mail-Adresse Ihres Kooperationspartners am ausgewählten Standort an."
+        "en": "Email address of your collaborator at the chosen site",
+        "de": "E-Mail-Adresse Ihres Kooperationspartners am ausgewählten Standort"
       }
     },
     {
@@ -84,12 +97,12 @@
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
-        "en": "Collaborator affiliation",
-        "de": "Zugehörigkeit des Kooperationspartners"
+        "en": "Affiliation",
+        "de": "Zugehörigkeit"
       },
       "description": {
-        "en": "If applicable, please provide the affiliation of your collaborator at the chosen site",
-        "de": "Falls zutreffend, geben Sie bitte die Zugehörigkeit Ihres Kooperationspartners am ausgewählten Standort an."
+        "en": "Affiliation of your collaborator at the chosen site",
+        "de": "Zugehörigkeit Ihres Kooperationspartners am ausgewählten Standort"
       }
     },
     {
@@ -116,6 +129,19 @@
       "description": {
         "en": "Has an ethics review been conducted for your project?",
         "de": "Wurde für Ihr Projekt eine Ethikprüfung durchgeführt?"
+      }
+    },
+    {
+      "label": "funding",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Funding",
+        "de": "Förderung"
+      },
+      "description": {
+        "en": "Please indicate who is funding this project (e.g. institution, third-party funder, industry sponsor). If applicable, include the grant/funding reference number (Förderkennzeichen).",
+        "de": "Bitte geben Sie an, wer dieses Projekt finanziert (z. B. Institution, Drittmittelgeber, Industriesponsor). Falls zutreffend, geben Sie bitte das Förderkennzeichen an."
       }
     },
     {

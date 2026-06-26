@@ -10,19 +10,6 @@
   },
   "fields": [
     {
-      "label": "size",
-      "mandatory": true,
-      "data_type": "INTEGER",
-      "display_name": {
-        "en": "Cohort size",
-        "de": "Kohortengröße"
-      },
-      "description": {
-        "en": "What is the magnitude of patients (subjects) needed for the planned analysis?",
-        "de": "Welche Anzahl an Patienten (Probanden) wird für die geplante Analyse benötigt?"
-      }
-    },
-    {
       "label": "donor_age",
       "mandatory": false,
       "data_type": "INTEGER",
@@ -99,16 +86,16 @@
       }
     },
     {
-      "label": "tumour_documentation",
+      "label": "consultation_requested",
       "mandatory": true,
       "data_type": "BOOLEAN",
       "display_name": {
-        "en": "Tumor documentation",
-        "de": "Tumordokumentation"
+        "en": "Personal consultation",
+        "de": "Persönliches Gespräch"
       },
       "description": {
-        "en": "Would you like tumour documentation data for your selected cohort?",
-        "de": "Möchten Sie Tumordokumentationsdaten für Ihre ausgewählte Kohorte erhalten?"
+        "en": "Would you like a personal consultation regarding your request?",
+        "de": "Wünschen Sie ein persönliches Gespräch zu Ihrer Anfrage?"
       }
     },
     {

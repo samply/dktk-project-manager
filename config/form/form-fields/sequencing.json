@@ -1,0 +1,282 @@
+{
+  "title": "sequencing",
+  "display_name": {
+    "en": "Sequencing Data Request",
+    "de": "Sequenzierungsdaten-Anfrage"
+  },
+  "description": {
+    "en": "Please specify the sequencing data you would like to have exported for your research project.",
+    "de": "Bitte geben Sie die Sequenzierungsdaten an, die Sie für Ihr Forschungsprojekt exportiert haben möchten."
+  },
+  "groups": {
+    "data_format": {
+      "display_name": {
+        "en": "Data format",
+        "de": "Datenformat"
+      },
+      "description": {
+        "en": "Please indicate the required data format(s).",
+        "de": "Bitte geben Sie die gewünschten Datenformate an."
+      }
+    },
+    "data_layer": {
+      "display_name": {
+        "en": "Data layer",
+        "de": "Datenebene"
+      },
+      "description": {
+        "en": "Please indicate the required data layer(s). Note: Raw data (fastq, bam) of WGS and RNAseq have a size of approx. 600 GB per case.",
+        "de": "Bitte geben Sie die gewünschten Datenebenen an. Hinweis: Rohdaten (fastq, bam) von WGS und RNAseq haben eine Größe von ca. 600 GB pro Fall."
+      }
+    },
+    "cohort_definition": {
+      "display_name": {
+        "en": "Definition of the cohort",
+        "de": "Definition der Kohorte"
+      },
+      "description": {
+        "en": "Please specify how the requested cohort should be defined.",
+        "de": "Bitte geben Sie an, wie die angefragte Kohorte definiert werden soll."
+      }
+    }
+  },
+  "fields": [
+    {
+      "label": "data_format_fastq",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "fastq",
+        "de": "fastq"
+      },
+      "description": {
+        "en": "Raw sequencing reads in FASTQ format. Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Rohdaten der Sequenzierung im FASTQ-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
+      }
+    },
+    {
+      "label": "data_format_bam",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "bam",
+        "de": "bam"
+      },
+      "description": {
+        "en": "Aligned sequencing reads in BAM format. Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Alignierte Sequenzierungsdaten im BAM-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
+      }
+    },
+    {
+      "label": "data_format_analyses",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "Analyses (comparable to VCF)",
+        "de": "Analysen (vergleichbar mit VCF)"
+      },
+      "description": {
+        "en": "Variant-call style analysis output (comparable to VCF). Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Analyseergebnisse im Stil eines Variant-Calls (vergleichbar mit VCF). Bereitgestellt durch die Omics IT and Data Management Core Facility."
+      }
+    },
+    {
+      "label": "data_format_analyses_scores",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "Analyses, scores and other output",
+        "de": "Analysen, Scores und sonstige Ergebnisse"
+      },
+      "description": {
+        "en": "Derived analyses, scores and other computed output. Provided by Computational Oncology.",
+        "de": "Abgeleitete Analysen, Scores und sonstige berechnete Ergebnisse. Bereitgestellt durch Computational Oncology."
+      }
+    },
+    {
+      "label": "data_layer_wgs",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_layer"
+      ],
+      "display_name": {
+        "en": "WGS (whole genome sequencing)",
+        "de": "WGS (Ganzgenomsequenzierung)"
+      },
+      "description": {
+        "en": "",
+        "de": ""
+      }
+    },
+    {
+      "label": "data_layer_wes",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_layer"
+      ],
+      "display_name": {
+        "en": "WES (whole exome sequencing)",
+        "de": "WES (Exomsequenzierung)"
+      },
+      "description": {
+        "en": "",
+        "de": ""
+      }
+    },
+    {
+      "label": "data_layer_rnaseq",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_layer"
+      ],
+      "display_name": {
+        "en": "RNAseq (RNA sequencing)",
+        "de": "RNAseq (RNA-Sequenzierung)"
+      },
+      "description": {
+        "en": "",
+        "de": ""
+      }
+    },
+    {
+      "label": "data_layer_epic",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_layer"
+      ],
+      "display_name": {
+        "en": "EPIC (methylation array)",
+        "de": "EPIC (Methylierungs-Array)"
+      },
+      "description": {
+        "en": "",
+        "de": ""
+      }
+    },
+    {
+      "label": "data_layer_clinical_data",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_layer"
+      ],
+      "display_name": {
+        "en": "Clinical data",
+        "de": "Klinische Daten"
+      },
+      "description": {
+        "en": "Only birthdate, deathdate, diagnosis, treatments, responses.",
+        "de": "Nur Geburtsdatum, Sterbedatum, Diagnose, Therapien, Ansprechen."
+      }
+    },
+    {
+      "label": "data_layer_proteomics",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_layer"
+      ],
+      "display_name": {
+        "en": "Proteomics",
+        "de": "Proteomik"
+      },
+      "description": {
+        "en": "Data owner: Bernhard Küster / Annika Schneider (TUM) — a separate request is required.",
+        "de": "Dateneigentümer: Bernhard Küster / Annika Schneider (TUM) — hierfür ist eine gesonderte Anfrage erforderlich."
+      }
+    },
+    {
+      "label": "cohort_molecular_marker",
+      "mandatory": false,
+      "data_type": "STRING",
+      "groups": [
+        "cohort_definition"
+      ],
+      "display_name": {
+        "en": "Molecular marker",
+        "de": "Molekularer Marker"
+      },
+      "description": {
+        "en": "Define the cohort by a molecular marker (e.g. fusion, mutation), if applicable.",
+        "de": "Definieren Sie die Kohorte anhand eines molekularen Markers (z. B. Fusion, Mutation), falls zutreffend."
+      }
+    },
+    {
+      "label": "cohort_diagnosis_entity",
+      "mandatory": false,
+      "data_type": "STRING",
+      "groups": [
+        "cohort_definition"
+      ],
+      "display_name": {
+        "en": "Diagnosis / entity",
+        "de": "Diagnose / Entität"
+      },
+      "description": {
+        "en": "Define the cohort by diagnosis/entity. Please indicate all entities using oncotree codes, if applicable.",
+        "de": "Definieren Sie die Kohorte anhand von Diagnose/Entität. Bitte geben Sie alle Entitäten als Oncotree-Codes an, falls zutreffend."
+      }
+    },
+    {
+      "label": "cohort_entire_master_cohort",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "cohort_definition"
+      ],
+      "display_name": {
+        "en": "Entire MASTER cohort",
+        "de": "Gesamte MASTER-Kohorte"
+      },
+      "description": {
+        "en": "The entire DKFZ/NCT/DKTK MASTER cohort is essential for this project.",
+        "de": "Die gesamte DKFZ/NCT/DKTK MASTER-Kohorte wird für dieses Projekt benötigt."
+      }
+    },
+    {
+      "label": "cohort_control_cohort",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "cohort_definition"
+      ],
+      "display_name": {
+        "en": "Control cohort needed",
+        "de": "Kontrollkohorte erforderlich"
+      },
+      "description": {
+        "en": "A control cohort is needed (published DKFZ/NCT/DKTK cohort including 1310 cases).",
+        "de": "Es wird eine Kontrollkohorte benötigt (publizierte DKFZ/NCT/DKTK-Kohorte mit 1310 Fällen)."
+      }
+    },
+    {
+      "label": "comments",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Comments",
+        "de": "Anmerkungen"
+      },
+      "description": {
+        "en": "Additional comments regarding this data request.",
+        "de": "Weitere Anmerkungen zu dieser Datenanfrage."
+      }
+    }
+  ]
+}
