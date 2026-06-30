@@ -13,7 +13,6 @@ export LOG_LEVEL="INFO"
 export ENABLE_CODER="true"
 export ENABLE_EMAILS="true"
 export ENABLE_EXPORTER="true"
-export ENABLE_RSTUDIO_GROUP_MANAGER="false"
 export ENABLE_TOKEN_MANAGER="true"
 export SECURITY_ENABLED="true"
 
