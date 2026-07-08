@@ -8,6 +8,20 @@
     "en": "Project",
     "de": "Projekt"
   },
+  "fieldBlocks": [
+    {
+      "label": "collaborators",
+      "multiple": true,
+      "display_name": {
+        "en": "Collaborator",
+        "de": "Kooperationspartner"
+      },
+      "description": {
+        "en": "If applicable, please provide the details of your collaborators at the chosen sites",
+        "de": "Falls zutreffend, geben Sie bitte die Angaben zu Ihren Kooperationspartnern an den ausgewählten Standorten an."
+      }
+    }
+  ],
   "fields": [
     {
       "label": "extra-affiliations",
@@ -23,16 +37,59 @@
       }
     },
     {
-      "label": "collaborators",
+      "label": "collaborator-first-name",
       "mandatory": false,
       "data_type": "STRING",
+      "block": "collaborators",
       "display_name": {
-        "en": "Collaborators",
-        "de": "Kooperationspartner"
+        "en": "Collaborator first name",
+        "de": "Vorname des Kooperationspartners"
       },
       "description": {
-        "en": "If applicable, please provide the names and affiliations of your collaborators at the chosen sites",
-        "de": "Falls zutreffend, geben Sie bitte die Namen und Zugehörigkeiten Ihrer Mitarbeiter an den ausgewählten Standorten an."
+        "en": "If applicable, please provide the first name of your collaborator at the chosen site",
+        "de": "Falls zutreffend, geben Sie bitte den Vornamen Ihres Kooperationspartners am ausgewählten Standort an."
+      }
+    },
+    {
+      "label": "collaborator-last-name",
+      "mandatory": false,
+      "data_type": "STRING",
+      "block": "collaborators",
+      "display_name": {
+        "en": "Collaborator last name",
+        "de": "Nachname des Kooperationspartners"
+      },
+      "description": {
+        "en": "If applicable, please provide the last name of your collaborator at the chosen site",
+        "de": "Falls zutreffend, geben Sie bitte den Nachnamen Ihres Kooperationspartners am ausgewählten Standort an."
+      }
+    },
+    {
+      "label": "collaborator-email",
+      "mandatory": false,
+      "data_type": "STRING",
+      "block": "collaborators",
+      "display_name": {
+        "en": "Collaborator email",
+        "de": "E-Mail des Kooperationspartners"
+      },
+      "description": {
+        "en": "If applicable, please provide the email address of your collaborator at the chosen site",
+        "de": "Falls zutreffend, geben Sie bitte die E-Mail-Adresse Ihres Kooperationspartners am ausgewählten Standort an."
+      }
+    },
+    {
+      "label": "collaborator-affiliation",
+      "mandatory": false,
+      "data_type": "STRING",
+      "block": "collaborators",
+      "display_name": {
+        "en": "Collaborator affiliation",
+        "de": "Zugehörigkeit des Kooperationspartners"
+      },
+      "description": {
+        "en": "If applicable, please provide the affiliation of your collaborator at the chosen site",
+        "de": "Falls zutreffend, geben Sie bitte die Zugehörigkeit Ihres Kooperationspartners am ausgewählten Standort an."
       }
     },
     {
