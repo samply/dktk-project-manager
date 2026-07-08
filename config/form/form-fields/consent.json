@@ -1,0 +1,39 @@
+{
+  "title": "consent",
+  "display_name": {
+    "en": "Consent",
+    "de": "Konsent"
+  },
+  "description": {
+    "en": "Consent",
+    "de": "Konsent"
+  },
+  "fields": [
+    {
+      "label": "consent",
+      "mandatory": true,
+      "data_type": "BOOLEAN",
+      "display_name": {
+        "en": "Consent",
+        "de": "Konsent"
+      },
+      "description": {
+        "en": "I confirm that I have read and understood the <a href=\"https://hub.dkfz.de/s/5LPccy6fgRSoD65\" target=\"_blank\" rel=\"noopener noreferrer\">Data Protection Declaration</a>, and that my project complies with the requirements set out therein regarding the processing of personal health data.",
+        "de": "Ich bestätige, dass ich die <a href=\"https://hub.dkfz.de/s/5LPccy6fgRSoD65\" target=\"_blank\" rel=\"noopener noreferrer\">Datenschutzerklärung</a> gelesen und verstanden habe und dass mein Projekt die darin festgelegten Anforderungen an die Verarbeitung personenbezogener Gesundheitsdaten erfüllt."
+      }
+    },
+    {
+      "label": "usage-agreement",
+      "mandatory": true,
+      "data_type": "BOOLEAN",
+      "display_name": {
+        "en": "Usage Agreement",
+        "de": "Nutzungsvereinbarung"
+      },
+      "description": {
+        "en": "I confirm that I have read and understood the <a href=\"https://hub.dkfz.de/s/MPCg2kK23LH8Yii\" target=\"_blank\" rel=\"noopener noreferrer\">Usage Agreement</a>. I agree to its terms and understand that a final, binding agreement will be concluded individually with each participating site/project.",
+        "de": "Ich bestätige, dass ich die <a href=\"https://hub.dkfz.de/s/MPCg2kK23LH8Yii\" target=\"_blank\" rel=\"noopener noreferrer\">Nutzungsvereinbarung</a> gelesen und verstanden habe. Ich stimme den darin enthaltenen Bedingungen zu und bin mir bewusst, dass mit jeder teilnehmenden Einrichtung/jedem teilnehmenden Projekt individuell eine abschließende, rechtsverbindliche Vereinbarung geschlossen wird."
+      }
+    }
+  ]
+}
