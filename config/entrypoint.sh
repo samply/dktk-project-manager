@@ -1,10 +1,10 @@
 #!/bin/sh
 
 # Export environment variables with base64-encoded content
-export EMAIL_CONTEXT_B64SUPPORTMINUSINFO="$(base64 -w 0 /app/templates/email/support-info.html)"
-export EMAIL_CONTEXT_B64TEAMMINUSSIGNATURE="$(base64 -w 0 /app/templates/email/team-signature.html)"
-export EMAIL_CONTEXT_B64PROJECTMINUSVIEWMINUSLINK="$(base64 -w 0 /app/templates/email/project-view-link.html)"
-export EMAIL_CONTEXT_B64RESEARCHMINUSENVIRONMENTMINUSLINK="$(base64 -w 0 /app/templates/email/research-environment-link.html)"
+export EMAIL_CONTEXT_B64SUPPORTMINUSINFO="$(base64 -w 0 /app/email/templates/support-info.html)"
+export EMAIL_CONTEXT_B64TEAMMINUSSIGNATURE="$(base64 -w 0 /app/email/templates/team-signature.html)"
+export EMAIL_CONTEXT_B64PROJECTMINUSVIEWMINUSLINK="$(base64 -w 0 /app/email/templates/project-view-link.html)"
+export EMAIL_CONTEXT_B64RESEARCHMINUSENVIRONMENTMINUSLINK="$(base64 -w 0 /app/email/templates/research-environment-link.html)"
 
 
 # Export other environment variables:
@@ -16,11 +16,11 @@ export ENABLE_EXPORTER="true"
 export ENABLE_TOKEN_MANAGER="true"
 export SECURITY_ENABLED="true"
 
-export FORM_FIELDS_DIRECTORY="/app/form-fields"
-export FORM_RESOURCES_DIRECTORY="/app/templates/form"
-export FORM_TEMPLATE_METADATA_DIRECTORY="/app/templates/form/metadata"
+export FORM_FIELDS_DIRECTORY="/app/form/form-fields"
+export FORM_RESOURCES_DIRECTORY="/app/form/templates"
+export FORM_TEMPLATE_METADATA_DIRECTORY="/app/form/templates/metadata"
 
-export EMAIL_TEMPLATES_CONFIG_PATH="/app/email-templates.json"
+export EMAIL_TEMPLATES_CONFIG_PATH="/app/email/email-templates.json"
 export FRONTEND_PROJECT_CONFIG_PATH="/app/frontend-project-configs.json"
 export ACTION_EXPLANATION_CONFIG_PATH="/app/action-explanations.json"
 
@@ -52,7 +52,7 @@ export DATASHIELD_TEMPLATES="opal-ccp"
 export DB_ENCRYPTION_ALGORITHM="AES"
 # export DB_ENCRYPTION_PRIVATE_KEY_IN_BASE64="XXXX" #################################### <= Please configure me
 
-export EMAIL_TEMPLATES_DIRECTORY="/app/templates/email"
+export EMAIL_TEMPLATES_DIRECTORY="/app/email/templates"
 export EXPLORER_REDIRECT_URI_PARAMETER="redirect_uri"
 export EXPLORER_URL="https://demo.lens.samply.de"
 
@@ -85,9 +85,6 @@ export SPRING_MAIL_PRIMARY_PORT="25"
 # export SPRING_MAIL_PRIMARY_USERNAME=""
 
 # export TOKEN_MANAGER_URL="http://token-manager:3030" #################################### <= Please configure me
-
-export FORM_CONFIG_PATH_SAMPLE="/app/sample-form-config.json"
-export FORM_CONFIG_PATH_DKTK_DATA="/app/data-form-config.json"
 
 # Generate bridgehead exports
 /app/generate_bridgeheads.sh > /tmp/bridgeheads.env

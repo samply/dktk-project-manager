@@ -1,5 +1,5 @@
 .idea
-development.env
+development/development.env
 documents
-development-secret.env
-development-secret-template.env
+development/development-secret.env
+development/development-secret-template.env

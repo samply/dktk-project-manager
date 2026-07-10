@@ -1,15 +1,6 @@
 FROM docker.io/samply/project-manager:develop
 
-COPY email-templates.json /app/
-COPY frontend-project-configs.json /app/
-COPY action-explanations.json /app/
-
-COPY entrypoint.sh /app/
-COPY generate_bridgeheads.sh /app/
-
-COPY form-fields/ /app/form-fields/
-COPY templates/ /app/templates/
-COPY coder/ /app/coder/
+COPY config/ /app/
 
 WORKDIR /app
 
