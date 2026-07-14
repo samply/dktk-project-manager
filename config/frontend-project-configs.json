@@ -1,8 +1,8 @@
 {
   "config": {
-    "Export": {
+    "TumorDocumentation": {
       "project": {
-        "label": "Data Export",
+        "label": "Export of Tumor Documentation",
         "description": "Specify and request the datasets that you would like to be exported at the different sites for you in an anonymised, tabular file format (.csv).",
         "outputs": [
           {
@@ -21,16 +21,11 @@
         }
       ]
     },
-    "ExportAndSamples": {
+    "Biosamples": {
       "project": {
-        "label": "Biosamples and Data Export",
+        "label": "Biosamples",
         "description": "Specify which biosamples and annotation datasets you wish to request on site. These datasets will be exported at the different sites for you in an anonymised, tabular file format (.csv). The required biosamples will then be checked for their availability with the local biobank.",
         "outputs": [
-          {
-            "projectType": "EXPORT",
-            "outputFormat": "EXCEL",
-            "templateId": "ccp"
-          },
           {
             "projectType": "SAMPLES",
             "outputFormat": "EXCEL",
@@ -50,6 +45,30 @@
         }
       ]
     },
+    "Sequencing": {
+      "project": {
+        "label": "Export of Sequencing Data",
+        "description": "Specify and request the datasets you would like to have exported in anonymized form (e.g., .fastq, bam) for your research project.\n\nNote: This data is currently only available through DKFZ/NCT/DKTK MASTER.",
+        "outputs": [
+          {
+            "projectType": "SEQUENCING",
+            "outputFormat": "EXCEL",
+            "templateId": "sequencing"
+          }
+        ]
+      },
+      "forms": [
+        {
+          "title": "project"
+        },
+        {
+          "title": "query"
+        },
+        {
+          "title": "sequencing"
+        }
+      ]
+    },
     "CUSTOM": {
       "project": {
         "label": "Custom",
@@ -62,6 +81,12 @@
         },
         {
           "title": "query"
+        },
+        {
+          "title": "samples"
+        },
+        {
+          "title": "sequencing"
         }
       ]
     }
