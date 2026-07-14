@@ -44,6 +44,14 @@
         "en": "Derivatives of the biosamples you have selected.",
         "de": "Derivate der von Ihnen ausgewählten Bioproben."
       }
+    },
+    {
+      "label": "others",
+      "multiple": true,
+      "display_name": {
+        "en": "Other Sample",
+        "de": "Andere Probe"
+      }
     }
   ],
   "fields": [
@@ -216,17 +224,6 @@
           }
         }
       ]
-    },
-    {
-      "label": "liquid_type_other",
-      "mandatory": true,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Other",
-        "de": "Andere"
-      },
-      "block": "liquid",
-      "condition": "['samples']['liquid_type']['value'] == 'other'"
     },
     {
       "label": "liquid_number_of_samples_per_subject",
@@ -430,6 +427,16 @@
         "de": "Volumen (in µl)"
       },
       "block": "derivatives"
+    },
+    {
+      "label": "other_type",
+      "mandatory": true,
+      "data_type": "LONG_STRING",
+      "display_name": {
+        "en": "Other sample type",
+        "de": "Andere Probe-Typ"
+      },
+      "block": "others"
     }
   ]
 }
