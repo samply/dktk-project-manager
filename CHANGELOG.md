@@ -66,6 +66,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Form attachments for new projects in emails
 - Final report emails
 - Sequencing templates
+- Assets
 
 ### Changed
 - Replace Minus in bridgeheads

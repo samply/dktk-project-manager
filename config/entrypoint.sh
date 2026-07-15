@@ -85,6 +85,7 @@ export SPRING_MAIL_PRIMARY_PORT="25"
 # export SPRING_MAIL_PRIMARY_USERNAME=""
 
 # export TOKEN_MANAGER_URL="http://token-manager:3030" #################################### <= Please configure me
+export ASSETS_DIRECTORY=/app/config/frontend/assets
 
 # Generate bridgehead exports
 /app/generate_bridgeheads.sh > /tmp/bridgeheads.env
