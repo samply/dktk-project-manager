@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.1 - 2026-07-14]
+## [0.0.1 - 2026-07-15]
 ### Added
 - CHANGELOG
 - Dockerfile
@@ -73,6 +73,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 - Action Priorities
 - Configurations as files
+- Move frontend project configuration into `config/frontend` and update related paths
 - Rename mail server property
 - Messages in italic
 - Action explanation for start final stage for project type export

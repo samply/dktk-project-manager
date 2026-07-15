@@ -21,7 +21,7 @@ export FORM_RESOURCES_DIRECTORY="/app/form/templates"
 export FORM_TEMPLATE_METADATA_DIRECTORY="/app/form/templates/metadata"
 
 export EMAIL_TEMPLATES_CONFIG_PATH="/app/email/email-templates.json"
-export FRONTEND_PROJECT_CONFIG_PATH="/app/frontend-project-configs.json"
+export FRONTEND_PROJECT_CONFIG_PATH="/app/frontend/frontend-project-configs.json"
 export ACTION_EXPLANATION_CONFIG_PATH="/app/action-explanations.json"
 
 # export BEAM_API_KEY="App1Secret" #################################### <= Please configure me
