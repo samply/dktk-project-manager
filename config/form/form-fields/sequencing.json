@@ -268,7 +268,7 @@
     {
       "label": "comments",
       "mandatory": false,
-      "data_type": "STRING",
+      "data_type": "LONG_STRING",
       "display_name": {
         "en": "Comments",
         "de": "Anmerkungen"
