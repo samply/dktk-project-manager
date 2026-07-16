@@ -1,4 +1,4 @@
-{
+﻿{
   "title": "project",
   "display_name": {
     "en": "Project",
@@ -10,36 +10,8 @@
   },
   "blocks": [
     {
-      "label": "collaborators",
-      "multiple": true,
-      "display_name": {
-        "en": "Collaborator",
-        "de": "Kooperationspartner"
-      },
-      "description": {
-        "en": "If applicable, please provide the details of your collaborators at the chosen sites",
-        "de": "Falls zutreffend, geben Sie bitte die Angaben zu Ihren Kooperationspartnern an den ausgewählten Standorten an."
-      }
-    }
-  ],
-  "fields": [
-    {
-      "label": "extra-affiliations",
-      "mandatory": true,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Affiliations",
-        "de": "Zugehörigkeiten"
-      },
-      "description": {
-        "en": "Please provide the affiliation for your request",
-        "de": "Bitte geben Sie die Institution an, der Sie angehören, für die Sie eine Anfrage stellen"
-      }
-    },
-    {
-      "label": "principal_investigator",
-      "mandatory": false,
-      "data_type": "STRING",
+      "label": "principal-investigator",
+      "multiple": false,
       "display_name": {
         "en": "Principal Investigator (Applicant)",
         "de": "Hauptverantwortlicher (Antragsteller)"
@@ -47,6 +19,90 @@
       "description": {
         "en": "The applicant serves as the primary point of contact.",
         "de": "Der Antragsteller dient als primärer Ansprechpartner."
+      }
+    },
+    {
+      "label": "collaborators",
+      "multiple": true,
+      "display_name": {
+        "en": "Collaborator",
+        "de": "Kooperationspartner"
+      },
+      "description": {
+        "en": "If applicable, please provide the names, affiliations, and email addresses of your collaborators at the chosen sites. All fields within a started entry are required.",
+        "de": "Falls zutreffend, geben Sie bitte die Namen, Zugehörigkeiten und E-Mail-Adressen Ihrer Kooperationspartner an den ausgewählten Standorten an. Alle Felder innerhalb eines begonnenen Eintrags sind erforderlich."
+      }
+    }
+  ],
+  "fields": [
+    {
+      "label": "principal_investigator_title",
+      "mandatory": false,
+      "data_type": "STRING",
+      "block": "principal-investigator",
+      "display_name": {
+        "en": "Title",
+        "de": "Titel"
+      },
+      "description": {
+        "en": "Academic title of the principal investigator",
+        "de": "Akademischer Titel des Hauptverantwortlichen"
+      }
+    },
+    {
+      "label": "principal_investigator_first_name",
+      "mandatory": true,
+      "data_type": "STRING",
+      "block": "principal-investigator",
+      "display_name": {
+        "en": "First Name",
+        "de": "Vorname"
+      },
+      "description": {
+        "en": "First name of the principal investigator",
+        "de": "Vorname des Hauptverantwortlichen"
+      }
+    },
+    {
+      "label": "principal_investigator_last_name",
+      "mandatory": true,
+      "data_type": "STRING",
+      "block": "principal-investigator",
+      "display_name": {
+        "en": "Last Name",
+        "de": "Nachname"
+      },
+      "description": {
+        "en": "Last name of the principal investigator",
+        "de": "Nachname des Hauptverantwortlichen"
+      }
+    },
+    {
+      "label": "principal_investigator_affiliation",
+      "mandatory": true,
+      "data_type": "STRING",
+      "block": "principal-investigator",
+      "display_name": {
+        "en": "Affiliation",
+        "de": "Zugehörigkeit"
+      },
+      "description": {
+        "en": "Institution or organisation of the principal investigator",
+        "de": "Institution oder Organisation des Hauptverantwortlichen"
+      }
+    },
+    {
+      "label": "principal_investigator_email",
+      "mandatory": true,
+      "data_type": "STRING",
+      "block": "principal-investigator",
+      "display_name": {
+        "en": "Email Address",
+        "de": "E-Mail-Adresse"
+      },
+      "description": {
+        "en": "Contact email address of the principal investigator",
+        "de": "Kontakt-E-Mail-Adresse des Hauptverantwortlichen"
       }
     },
     {
@@ -59,8 +115,8 @@
         "de": "Vorname"
       },
       "description": {
-        "en": "First name of your collaborator at the chosen site",
-        "de": "Vornamen Ihres Kooperationspartners am ausgewählten Standort"
+        "en": "First name of the collaborator",
+        "de": "Vorname des Kooperationspartners"
       }
     },
     {
@@ -73,8 +129,8 @@
         "de": "Nachname"
       },
       "description": {
-        "en": "Last name of your collaborator at the chosen site",
-        "de": "Nachnamen Ihres Kooperationspartners am ausgewählten Standort"
+        "en": "Last name of the collaborator",
+        "de": "Nachname des Kooperationspartners"
       }
     },
     {
@@ -83,12 +139,12 @@
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
-        "en": "Email",
-        "de": "E-Mail"
+        "en": "Email Address",
+        "de": "E-Mail-Adresse"
       },
       "description": {
-        "en": "Email address of your collaborator at the chosen site",
-        "de": "E-Mail-Adresse Ihres Kooperationspartners am ausgewählten Standort"
+        "en": "Contact email address of the collaborator",
+        "de": "Kontakt-E-Mail-Adresse des Kooperationspartners"
       }
     },
     {
@@ -101,8 +157,8 @@
         "de": "Zugehörigkeit"
       },
       "description": {
-        "en": "Affiliation of your collaborator at the chosen site",
-        "de": "Zugehörigkeit Ihres Kooperationspartners am ausgewählten Standort"
+        "en": "Institution or organisation of the collaborator",
+        "de": "Institution oder Organisation des Kooperationspartners"
       }
     },
     {
@@ -114,8 +170,8 @@
         "de": "Projektmethodik"
       },
       "description": {
-        "en": "Please provide a short description of the analysis method planned for use in your project (e.g. federated data analysis, CRP with ELISA, Whole Genome Sequencing, Tissue Micro Array…)",
-        "de": "Bitte geben Sie eine kurze Beschreibung der Analysemethode an, die in Ihrem Projekt zum Einsatz kommen soll (z. B. föderierte Datenanalyse, CRP mit ELISA, Ganzgenomsequenzierung, Gewebemikroarray…)"
+        "en": "Please provide a short description of the analysis method planned for use in your project (e.g. federated data analysis, CRP with ELISA, Whole Genome Sequencing, Tissue Micro Array...)",
+        "de": "Bitte geben Sie eine kurze Beschreibung der Analysemethode an, die in Ihrem Projekt zum Einsatz kommen soll (z. B. föderierte Datenanalyse, CRP mit ELISA, Ganzgenomsequenzierung, Gewebemikroarray...)"
       }
     },
     {
