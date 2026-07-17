@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export PROJECT_MANAGER_URL="https://requests.dktk.dkfz.de/"
+
 # Export environment variables with base64-encoded content
 export EMAIL_CONTEXT_B64SUPPORTMINUSINFO="$(base64 -w 0 /app/email/templates/support-info.html)"
 export EMAIL_CONTEXT_B64TEAMMINUSSIGNATURE="$(base64 -w 0 /app/email/templates/team-signature.html)"
@@ -21,7 +23,6 @@ export FORM_RESOURCES_DIRECTORY="/app/form/templates"
 export FORM_TEMPLATE_METADATA_DIRECTORY="/app/form/templates/metadata"
 
 export EMAIL_TEMPLATES_CONFIG_PATH="/app/email/email-templates.json"
-export FRONTEND_PROJECT_CONFIG_PATH="/app/frontend/frontend-project-configs.json"
 export ACTION_EXPLANATION_CONFIG_PATH="/app/action-explanations.json"
 
 # export BEAM_API_KEY="App1Secret" #################################### <= Please configure me
@@ -60,11 +61,6 @@ export EXPORTER_CRON_EXPRESSION="*/30 * * * * *"
 export EXPORT_TEMPLATES="ccp,ccp-exliquid"
 export SAMPLES_TEMPLATES="ccp-sample-list"
 
-# export FRONTEND_BASEURL="http://project-manager-ui:8099" #################################### <= Please configure me
-
-export FRONTEND_SITES_PROJECTMINUSDASHBOARD="/"
-export FRONTEND_SITES_PROJECTMINUSVIEW="/project-view"
-
 export MANAGE_TOKENS_CRON_EXPRESSION="0 * * * * *"
 
 export JWT_GROUPS_CLAIM="groups"
@@ -85,7 +81,9 @@ export SPRING_MAIL_PRIMARY_PORT="25"
 # export SPRING_MAIL_PRIMARY_USERNAME=""
 
 # export TOKEN_MANAGER_URL="http://token-manager:3030" #################################### <= Please configure me
-export ASSETS_DIRECTORY=/app/frontend/assets
+
+# Load frontend-related environment variables into the current shell.
+. /app/frontend/frontend-environment.sh
 
 # Generate bridgehead exports
 /app/generate_bridgeheads.sh > /tmp/bridgeheads.env

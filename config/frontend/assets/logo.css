@@ -1,0 +1,20 @@
+.dk-logo__brand {
+    color: #00489c;
+    display: inline-block;
+    font-size: 48px;
+    margin-right: 15px;
+}
+
+.dk-logo__brand-part1 {
+    letter-spacing: -2px;
+}
+.dk-logo__brand-part2 {
+    letter-spacing: 2px;
+}
+.dk-logo__slogan {
+    color: #00489c;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 1.4;
+}
