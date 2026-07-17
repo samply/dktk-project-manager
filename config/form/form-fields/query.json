@@ -5,8 +5,8 @@
     "de": "Anfrage"
   },
   "description": {
-    "en": "Query",
-    "de": "Anfrage"
+    "en": "Your selection criteria and query logic",
+    "de": "Ihre Auswahlkriterien und Abfragelogik"
   },
   "fields": [
     {
