@@ -228,7 +228,7 @@
     {
       "label": "liquid_number_of_samples_per_subject",
       "mandatory": true,
-      "data_type": "STRING",
+      "data_type": "INTEGER",
       "display_name": {
         "en": "Number of samples per subject",
         "de": "Anzahl der Proben pro Person"
