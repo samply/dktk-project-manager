@@ -11,6 +11,7 @@
   "fields": [
     {
       "label": "donor_age",
+      "active": false,
       "mandatory": false,
       "data_type": "INTEGER",
       "display_name": {
@@ -25,6 +26,7 @@
     {
       "label": "donor_gender",
       "mandatory": false,
+      "active": false,
       "data_type": "ENUM",
       "allowed_values": [
         {
