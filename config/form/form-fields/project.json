@@ -11,6 +11,7 @@
   "blocks": [
     {
       "label": "principal-investigator",
+      "min_instances": 1,
       "multiple": false,
       "display_name": {
         "en": "Principal Investigator (Applicant)",
