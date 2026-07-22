@@ -5,8 +5,8 @@
     "de": "Sequenzierungsdaten-Anfrage"
   },
   "description": {
-    "en": "Please specify the sequencing data you would like to have exported for your research project.",
-    "de": "Bitte geben Sie die Sequenzierungsdaten an, die Sie für Ihr Forschungsprojekt exportiert haben möchten."
+    "en": "Please specify the sequencing data you require for your project.",
+    "de": "Bitte geben Sie Informationen über die benötigten Sequenzierungsdaten an."
   },
   "groups": {
     "data_format": {
