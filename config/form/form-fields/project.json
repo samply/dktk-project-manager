@@ -179,7 +179,7 @@
     {
       "label": "collaborator-data-recipient",
       "mandatory": false,
-      "data_type": "STRING",
+      "data_type": "BOOLEAN",
       "block": "collaborators",
       "display_name": {
         "en": "Data recipient",
@@ -193,7 +193,7 @@
     {
       "label": "collaborator-samples-recipient",
       "mandatory": false,
-      "data_type": "STRING",
+      "data_type": "BOOLEAN",
       "block": "collaborators",
       "display_name": {
         "en": "Biosample recipient",
