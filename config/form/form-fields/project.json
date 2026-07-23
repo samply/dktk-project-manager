@@ -107,6 +107,20 @@
       }
     },
     {
+      "label": "collaborator_title",
+      "mandatory": false,
+      "data_type": "STRING",
+      "block": "collaborators",
+      "display_name": {
+        "en": "Title",
+        "de": "Titel"
+      },
+      "description": {
+        "en": "Academic title of the principal investigator",
+        "de": "Akademischer Titel des Hauptverantwortlichen"
+      }
+    },
+    {
       "label": "collaborator-first-name",
       "mandatory": true,
       "data_type": "STRING",
@@ -160,6 +174,34 @@
       "description": {
         "en": "Institution or organisation of the collaborator",
         "de": "Institution oder Organisation des Kooperationspartners"
+      }
+    },
+    {
+      "label": "collaborator-data-recipient",
+      "mandatory": false,
+      "data_type": "STRING",
+      "block": "collaborators",
+      "display_name": {
+        "en": "Data recipient",
+        "de": "Datenempfänger"
+      },
+      "description": {
+        "en": "Participant receives access to the requested data (Export Tumor Documentation)",
+        "de": "Der Teilnehmer erhält Zugriff auf die angeforderten Daten (Export der Tumordokumentation)"
+      }
+    },
+    {
+      "label": "collaborator-samples-recipient",
+      "mandatory": false,
+      "data_type": "STRING",
+      "block": "collaborators",
+      "display_name": {
+        "en": "Biosample recipient",
+        "de": "Empfänger der Bioprobe"
+      },
+      "description": {
+        "en": "Participant receives access to the requested biosamples",
+        "de": "Der Teilnehmer erhält Zugang zu den angeforderten Bioproben."
       }
     },
     {
