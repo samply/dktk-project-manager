@@ -1,6 +1,5 @@
 #!/bin/sh
 
-export BACKEND_BASEURL="https://requests.dktk.dkfz.de/project-manager-api"
 
 # Export environment variables with base64-encoded content
 export EMAIL_CONTEXT_B64SUPPORTMINUSINFO="$(base64 -w 0 /app/email/templates/support-info.html)"
