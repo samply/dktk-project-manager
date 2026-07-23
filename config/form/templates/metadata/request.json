@@ -1,8 +1,8 @@
 {
   "variables": {
     "form-title": {
-      "en": "DATA AND BIOSAMPLES REQUEST FORM",
-      "de": "DATEN- UND PROBEANTRAGSFORMULAR"
+      "en": "DATA REQUEST FORM",
+      "de": "DATENANTRAGSFORMULAR"
     },
     "page": {
       "en": "Page",
@@ -19,12 +19,13 @@
   "form_titles": [
     "project",
     "query",
-    "samples"
+    "samples",
+    "sequencing"
   ],
   "template_file": "request",
   "template": "request",
   "display_name": {
-    "en": "Data and samples request"
+    "en": "Data request"
   },
   "project_fields": [
     {
