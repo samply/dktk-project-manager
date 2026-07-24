@@ -109,6 +109,7 @@
     {
       "label": "collaborator_title",
       "mandatory": false,
+      "condition": "['samples']['liquid_type']['value'] == 'other'",
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
