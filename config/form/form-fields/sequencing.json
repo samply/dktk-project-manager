@@ -9,16 +9,6 @@
     "de": "Bitte geben Sie Informationen über die benötigten Sequenzierungsdaten an."
   },
   "groups": {
-    "data_format": {
-      "display_name": {
-        "en": "Data format",
-        "de": "Datenformat"
-      },
-      "description": {
-        "en": "Please indicate the required data format(s).",
-        "de": "Bitte geben Sie die gewünschten Datenformate an."
-      }
-    },
     "data_layer": {
       "display_name": {
         "en": "Data layer",
@@ -27,6 +17,16 @@
       "description": {
         "en": "Please indicate the required data layer(s). Note: Raw data (fastq, bam) of WGS and RNAseq have a size of approx. 600 GB per case.",
         "de": "Bitte geben Sie die gewünschten Datenebenen an. Hinweis: Rohdaten (fastq, bam) von WGS und RNAseq haben eine Größe von ca. 600 GB pro Fall."
+      }
+    },
+    "data_format": {
+      "display_name": {
+        "en": "Data format",
+        "de": "Datenformat"
+      },
+      "description": {
+        "en": "Please indicate the required data format(s).",
+        "de": "Bitte geben Sie die gewünschten Datenformate an."
       }
     },
     "cohort_definition": {
@@ -41,70 +41,6 @@
     }
   },
   "fields": [
-    {
-      "label": "data_format_fastq",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "fastq",
-        "de": "fastq"
-      },
-      "description": {
-        "en": "Raw sequencing reads in FASTQ format. Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Rohdaten der Sequenzierung im FASTQ-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
-      }
-    },
-    {
-      "label": "data_format_bam",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "bam",
-        "de": "bam"
-      },
-      "description": {
-        "en": "Aligned sequencing reads in BAM format. Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Alignierte Sequenzierungsdaten im BAM-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
-      }
-    },
-    {
-      "label": "data_format_analyses",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "Analyses (comparable to VCF)",
-        "de": "Analysen (vergleichbar mit VCF)"
-      },
-      "description": {
-        "en": "Variant-call style analysis output (comparable to VCF). Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Analyseergebnisse im Stil eines Variant-Calls (vergleichbar mit VCF). Bereitgestellt durch die Omics IT and Data Management Core Facility."
-      }
-    },
-    {
-      "label": "data_format_analyses_scores",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "Analyses, scores and other output",
-        "de": "Analysen, Scores und sonstige Ergebnisse"
-      },
-      "description": {
-        "en": "Derived analyses, scores and other computed output. Provided by Computational Oncology.",
-        "de": "Abgeleitete Analysen, Scores und sonstige berechnete Ergebnisse. Bereitgestellt durch Computational Oncology."
-      }
-    },
     {
       "label": "data_layer_wgs",
       "mandatory": false,
@@ -199,6 +135,70 @@
       "description": {
         "en": "Data owner: Bernhard Küster / Annika Schneider (TUM) — a separate request is required.",
         "de": "Dateneigentümer: Bernhard Küster / Annika Schneider (TUM) — hierfür ist eine gesonderte Anfrage erforderlich."
+      }
+    },
+    {
+      "label": "data_format_fastq",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "fastq",
+        "de": "fastq"
+      },
+      "description": {
+        "en": "Raw sequencing reads in FASTQ format. Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Rohdaten der Sequenzierung im FASTQ-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
+      }
+    },
+    {
+      "label": "data_format_bam",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "bam",
+        "de": "bam"
+      },
+      "description": {
+        "en": "Aligned sequencing reads in BAM format. Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Alignierte Sequenzierungsdaten im BAM-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
+      }
+    },
+    {
+      "label": "data_format_analyses",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "Analyses (comparable to VCF)",
+        "de": "Analysen (vergleichbar mit VCF)"
+      },
+      "description": {
+        "en": "Variant-call style analysis output (comparable to VCF). Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Analyseergebnisse im Stil eines Variant-Calls (vergleichbar mit VCF). Bereitgestellt durch die Omics IT and Data Management Core Facility."
+      }
+    },
+    {
+      "label": "data_format_analyses_scores",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "Analyses, scores and other output",
+        "de": "Analysen, Scores und sonstige Ergebnisse"
+      },
+      "description": {
+        "en": "Derived analyses, scores and other computed output. Provided by Computational Oncology.",
+        "de": "Abgeleitete Analysen, Scores und sonstige berechnete Ergebnisse. Bereitgestellt durch Computational Oncology."
       }
     },
     {
