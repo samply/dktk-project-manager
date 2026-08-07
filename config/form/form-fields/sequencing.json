@@ -28,16 +28,6 @@
         "en": "Please indicate the required data format(s).",
         "de": "Bitte geben Sie die gewünschten Datenformate an."
       }
-    },
-    "cohort_definition": {
-      "display_name": {
-        "en": "Definition of the cohort",
-        "de": "Definition der Kohorte"
-      },
-      "description": {
-        "en": "Please specify how the requested cohort should be defined.",
-        "de": "Bitte geben Sie an, wie die angefragte Kohorte definiert werden soll."
-      }
     }
   },
   "fields": [
@@ -199,70 +189,6 @@
       "description": {
         "en": "Derived analyses, scores and other computed output. Provided by Computational Oncology.",
         "de": "Abgeleitete Analysen, Scores und sonstige berechnete Ergebnisse. Bereitgestellt durch Computational Oncology."
-      }
-    },
-    {
-      "label": "cohort_molecular_marker",
-      "mandatory": false,
-      "data_type": "STRING",
-      "groups": [
-        "cohort_definition"
-      ],
-      "display_name": {
-        "en": "Molecular marker",
-        "de": "Molekularer Marker"
-      },
-      "description": {
-        "en": "Define the cohort by a molecular marker (e.g. fusion, mutation), if applicable.",
-        "de": "Definieren Sie die Kohorte anhand eines molekularen Markers (z. B. Fusion, Mutation), falls zutreffend."
-      }
-    },
-    {
-      "label": "cohort_diagnosis_entity",
-      "mandatory": false,
-      "data_type": "STRING",
-      "groups": [
-        "cohort_definition"
-      ],
-      "display_name": {
-        "en": "Diagnosis / entity",
-        "de": "Diagnose / Entität"
-      },
-      "description": {
-        "en": "Define the cohort by diagnosis/entity. Please indicate all entities using oncotree codes, if applicable.",
-        "de": "Definieren Sie die Kohorte anhand von Diagnose/Entität. Bitte geben Sie alle Entitäten als Oncotree-Codes an, falls zutreffend."
-      }
-    },
-    {
-      "label": "cohort_entire_master_cohort",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "cohort_definition"
-      ],
-      "display_name": {
-        "en": "Entire MASTER cohort",
-        "de": "Gesamte MASTER-Kohorte"
-      },
-      "description": {
-        "en": "The entire DKFZ/NCT/DKTK MASTER cohort is essential for this project.",
-        "de": "Die gesamte DKFZ/NCT/DKTK MASTER-Kohorte wird für dieses Projekt benötigt."
-      }
-    },
-    {
-      "label": "cohort_control_cohort",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "cohort_definition"
-      ],
-      "display_name": {
-        "en": "Control cohort needed",
-        "de": "Kontrollkohorte erforderlich"
-      },
-      "description": {
-        "en": "A control cohort is needed (published DKFZ/NCT/DKTK cohort including 1310 cases).",
-        "de": "Es wird eine Kontrollkohorte benötigt (publizierte DKFZ/NCT/DKTK-Kohorte mit 1310 Fällen)."
       }
     },
     {
