@@ -399,8 +399,8 @@
       "mandatory": false,
       "data_type": "INTEGER",
       "display_name": {
-        "en": "Tissue weight (in mg)",
-        "de": "Gewebegewicht (in mg)"
+        "en": "Minimal tissue weight (in mg)",
+        "de": "Minimales Gewicht der Gewebeprobe (in mg)"
       },
       "description": {
         "en": "",
