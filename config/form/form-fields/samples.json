@@ -389,8 +389,8 @@
         "de": "Gewebest\u00fccke pro Person"
       },
       "description": {
-        "en": "For example: 1/subject.",
-        "de": "Zum Beispiel: 1/Person."
+        "en": "For example: 1 piece/subject.",
+        "de": "Zum Beispiel: 1 Stück/Person."
       },
       "block": "tissue"
     },
