@@ -358,7 +358,7 @@
     },
     {
       "label": "tissue_additive",
-      "mandatory": true,
+      "mandatory": false,
       "data_type": "STRING",
       "display_name": {
         "en": "Additive",
@@ -369,7 +369,7 @@
     {
       "label": "tissue_slices_per_subject",
       "mandatory": false,
-      "data_type": "STRING",
+      "data_type": "INTEGER",
       "display_name": {
         "en": "Number of slices per subject",
         "de": "Anzahl der Schnitte pro Person"
@@ -383,7 +383,7 @@
     {
       "label": "tissue_pieces_per_subject",
       "mandatory": false,
-      "data_type": "STRING",
+      "data_type": "INTEGER",
       "display_name": {
         "en": "Tissue pieces per subject",
         "de": "Gewebest\u00fccke pro Person"
@@ -391,6 +391,20 @@
       "description": {
         "en": "For example: 1/subject.",
         "de": "Zum Beispiel: 1/Person."
+      },
+      "block": "tissue"
+    },
+    {
+      "label": "tissue_weight",
+      "mandatory": false,
+      "data_type": "INTEGER",
+      "display_name": {
+        "en": "Tissue weight (in mg)",
+        "de": "Gewebegewicht (in mg)"
+      },
+      "description": {
+        "en": "",
+        "de": ""
       },
       "block": "tissue"
     },
