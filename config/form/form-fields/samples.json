@@ -54,6 +54,18 @@
       }
     }
   ],
+  "layouts": [
+    {
+      "rows": [
+        {"fields": ["liquid_concentration_volume", "liquid_unit"]}
+      ]
+    },
+    {
+      "rows": [
+        {"fields": ["derivatives_concentration_volume", "derivatives_unit"]}
+      ]
+    }
+  ],
   "fields": [
     {
       "label": "liquid_type",
@@ -240,24 +252,61 @@
       "block": "liquid"
     },
     {
-      "label": "liquid_concentration",
+      "label": "liquid_concentration_volume",
       "mandatory": true,
-      "data_type": "STRING",
+      "data_type": "INTEGER",
       "display_name": {
-        "en": "Concentration (in ng/\u00b5l)",
-        "de": "Konzentration (in ng/\u00b5l)"
+        "en": "Concentration / Volume",
+        "de": "Konzentration / Volumen"
       },
-      "block": "liquid"
+      "block": "liquid",
+      "properties": ["css-unit-value"]
     },
     {
-      "label": "liquid_volume",
+      "label": "liquid_unit",
       "mandatory": true,
-      "data_type": "STRING",
+      "data_type": "ENUM",
       "display_name": {
-        "en": "Volume (in \u00b5l)",
-        "de": "Volumen (in \u00b5l)"
+        "en": "Unit",
+        "de": "Einheit"
       },
-      "block": "liquid"
+      "block": "liquid",
+      "properties": ["css-unit"],
+      "allowed_values": [
+        {
+          "label": "µl",
+          "display_name": {
+            "en": "µl",
+            "de": "µl"
+          },
+          "description": {
+            "en": "µl",
+            "de": "µl"
+          }
+        },
+        {
+          "label": "ng/µl",
+          "display_name": {
+            "en": "ng/µl",
+            "de": "ng/µl"
+          },
+          "description": {
+            "en": "ng/µl",
+            "de": "ng/µl"
+          }
+        },
+        {
+          "label": "µg/ml",
+          "display_name": {
+            "en": "µg/ml",
+            "de": "µg/ml"
+          },
+          "description": {
+            "en": "µg/ml",
+            "de": "µg/ml"
+          }
+        }
+      ]
     },
     {
       "label": "liquid_additive",
@@ -409,24 +458,61 @@
       "block": "derivatives"
     },
     {
-      "label": "derivatives_concentration",
+      "label": "derivatives_concentration_volume",
       "mandatory": true,
-      "data_type": "STRING",
+      "data_type": "INTEGER",
       "display_name": {
-        "en": "Concentration (in ng/µl)",
-        "de": "Konzentration (in ng/µl)"
+        "en": "Concentration / Volume",
+        "de": "Konzentration / Volumen"
       },
-      "block": "derivatives"
+      "block": "derivatives",
+      "properties": ["css-unit-value"]
     },
     {
-      "label": "derivatives_min_vol",
+      "label": "derivatives_unit",
       "mandatory": true,
-      "data_type": "STRING",
+      "data_type": "ENUM",
       "display_name": {
-        "en": "Volume (in µl)",
-        "de": "Volumen (in µl)"
+        "en": "Unit",
+        "de": "Einheit"
       },
-      "block": "derivatives"
+      "block": "derivatives",
+      "properties": ["css-unit"],
+      "allowed_values": [
+        {
+          "label": "µl",
+          "display_name": {
+            "en": "µl",
+            "de": "µl"
+          },
+          "description": {
+            "en": "µl",
+            "de": "µl"
+          }
+        },
+        {
+          "label": "ng/µl",
+          "display_name": {
+            "en": "ng/µl",
+            "de": "ng/µl"
+          },
+          "description": {
+            "en": "ng/µl",
+            "de": "ng/µl"
+          }
+        },
+        {
+          "label": "µg/ml",
+          "display_name": {
+            "en": "µg/ml",
+            "de": "µg/ml"
+          },
+          "description": {
+            "en": "µg/ml",
+            "de": "µg/ml"
+          }
+        }
+      ]
     },
     {
       "label": "other_type",
