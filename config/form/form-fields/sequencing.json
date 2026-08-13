@@ -9,16 +9,6 @@
     "de": "Bitte geben Sie Informationen über die benötigten Sequenzierungsdaten an."
   },
   "groups": {
-    "data_format": {
-      "display_name": {
-        "en": "Data format",
-        "de": "Datenformat"
-      },
-      "description": {
-        "en": "Please indicate the required data format(s).",
-        "de": "Bitte geben Sie die gewünschten Datenformate an."
-      }
-    },
     "data_layer": {
       "display_name": {
         "en": "Data layer",
@@ -29,82 +19,18 @@
         "de": "Bitte geben Sie die gewünschten Datenebenen an. Hinweis: Rohdaten (fastq, bam) von WGS und RNAseq haben eine Größe von ca. 600 GB pro Fall."
       }
     },
-    "cohort_definition": {
+    "data_format": {
       "display_name": {
-        "en": "Definition of the cohort",
-        "de": "Definition der Kohorte"
+        "en": "Data format",
+        "de": "Datenformat"
       },
       "description": {
-        "en": "Please specify how the requested cohort should be defined.",
-        "de": "Bitte geben Sie an, wie die angefragte Kohorte definiert werden soll."
+        "en": "Please indicate the required data format(s).",
+        "de": "Bitte geben Sie die gewünschten Datenformate an."
       }
     }
   },
   "fields": [
-    {
-      "label": "data_format_fastq",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "fastq",
-        "de": "fastq"
-      },
-      "description": {
-        "en": "Raw sequencing reads in FASTQ format. Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Rohdaten der Sequenzierung im FASTQ-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
-      }
-    },
-    {
-      "label": "data_format_bam",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "bam",
-        "de": "bam"
-      },
-      "description": {
-        "en": "Aligned sequencing reads in BAM format. Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Alignierte Sequenzierungsdaten im BAM-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
-      }
-    },
-    {
-      "label": "data_format_analyses",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "Analyses (comparable to VCF)",
-        "de": "Analysen (vergleichbar mit VCF)"
-      },
-      "description": {
-        "en": "Variant-call style analysis output (comparable to VCF). Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Analyseergebnisse im Stil eines Variant-Calls (vergleichbar mit VCF). Bereitgestellt durch die Omics IT and Data Management Core Facility."
-      }
-    },
-    {
-      "label": "data_format_analyses_scores",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "Analyses, scores and other output",
-        "de": "Analysen, Scores und sonstige Ergebnisse"
-      },
-      "description": {
-        "en": "Derived analyses, scores and other computed output. Provided by Computational Oncology.",
-        "de": "Abgeleitete Analysen, Scores und sonstige berechnete Ergebnisse. Bereitgestellt durch Computational Oncology."
-      }
-    },
     {
       "label": "data_layer_wgs",
       "mandatory": false,
@@ -202,67 +128,67 @@
       }
     },
     {
-      "label": "cohort_molecular_marker",
-      "mandatory": false,
-      "data_type": "STRING",
-      "groups": [
-        "cohort_definition"
-      ],
-      "display_name": {
-        "en": "Molecular marker",
-        "de": "Molekularer Marker"
-      },
-      "description": {
-        "en": "Define the cohort by a molecular marker (e.g. fusion, mutation), if applicable.",
-        "de": "Definieren Sie die Kohorte anhand eines molekularen Markers (z. B. Fusion, Mutation), falls zutreffend."
-      }
-    },
-    {
-      "label": "cohort_diagnosis_entity",
-      "mandatory": false,
-      "data_type": "STRING",
-      "groups": [
-        "cohort_definition"
-      ],
-      "display_name": {
-        "en": "Diagnosis / entity",
-        "de": "Diagnose / Entität"
-      },
-      "description": {
-        "en": "Define the cohort by diagnosis/entity. Please indicate all entities using oncotree codes, if applicable.",
-        "de": "Definieren Sie die Kohorte anhand von Diagnose/Entität. Bitte geben Sie alle Entitäten als Oncotree-Codes an, falls zutreffend."
-      }
-    },
-    {
-      "label": "cohort_entire_master_cohort",
+      "label": "data_format_fastq",
       "mandatory": false,
       "data_type": "BOOLEAN",
       "groups": [
-        "cohort_definition"
+        "data_format"
       ],
       "display_name": {
-        "en": "Entire MASTER cohort",
-        "de": "Gesamte MASTER-Kohorte"
+        "en": "fastq",
+        "de": "fastq"
       },
       "description": {
-        "en": "The entire DKFZ/NCT/DKTK MASTER cohort is essential for this project.",
-        "de": "Die gesamte DKFZ/NCT/DKTK MASTER-Kohorte wird für dieses Projekt benötigt."
+        "en": "Raw sequencing reads in FASTQ format. Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Rohdaten der Sequenzierung im FASTQ-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
       }
     },
     {
-      "label": "cohort_control_cohort",
+      "label": "data_format_bam",
       "mandatory": false,
       "data_type": "BOOLEAN",
       "groups": [
-        "cohort_definition"
+        "data_format"
       ],
       "display_name": {
-        "en": "Control cohort needed",
-        "de": "Kontrollkohorte erforderlich"
+        "en": "bam",
+        "de": "bam"
       },
       "description": {
-        "en": "A control cohort is needed (published DKFZ/NCT/DKTK cohort including 1310 cases).",
-        "de": "Es wird eine Kontrollkohorte benötigt (publizierte DKFZ/NCT/DKTK-Kohorte mit 1310 Fällen)."
+        "en": "Aligned sequencing reads in BAM format. Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Alignierte Sequenzierungsdaten im BAM-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
+      }
+    },
+    {
+      "label": "data_format_analyses",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "Analyses (comparable to VCF)",
+        "de": "Analysen (vergleichbar mit VCF)"
+      },
+      "description": {
+        "en": "Variant-call style analysis output (comparable to VCF). Provided by the Omics IT and Data Management Core Facility.",
+        "de": "Analyseergebnisse im Stil eines Variant-Calls (vergleichbar mit VCF). Bereitgestellt durch die Omics IT and Data Management Core Facility."
+      }
+    },
+    {
+      "label": "data_format_analyses_scores",
+      "mandatory": false,
+      "data_type": "BOOLEAN",
+      "groups": [
+        "data_format"
+      ],
+      "display_name": {
+        "en": "Analyses, scores and other output",
+        "de": "Analysen, Scores und sonstige Ergebnisse"
+      },
+      "description": {
+        "en": "Derived analyses, scores and other computed output. Provided by Computational Oncology.",
+        "de": "Abgeleitete Analysen, Scores und sonstige berechnete Ergebnisse. Bereitgestellt durch Computational Oncology."
       }
     },
     {

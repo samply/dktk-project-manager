@@ -99,19 +99,6 @@
         "en": "Would you like a personal consultation regarding your request?",
         "de": "Wünschen Sie ein persönliches Gespräch zu Ihrer Anfrage?"
       }
-    },
-    {
-      "label": "data_analysis_method",
-      "mandatory": true,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Data analysis method",
-        "de": "Datenanalysemethode"
-      },
-      "description": {
-        "en": "Provide a short description of the planned analysis method for the cohort data (e.g. federated data analysis). Who will perform the analysis?",
-        "de": "Bitte beschreiben Sie kurz die geplante Analysemethode für die Kohortendaten (z. B. föderierte Datenanalyse). Wer wird die Analyse durchführen?"
-      }
     }
   ]
 }

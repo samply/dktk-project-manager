@@ -19,9 +19,6 @@
         },
         {
           "title": "query"
-        },
-        {
-          "title": "consent"
         }
       ]
     },
@@ -46,9 +43,6 @@
         },
         {
           "title": "samples"
-        },
-        {
-          "title": "consent"
         }
       ]
     },
@@ -73,9 +67,6 @@
         },
         {
           "title": "sequencing"
-        },
-        {
-          "title": "consent"
         }
       ]
     },
@@ -97,9 +88,6 @@
         },
         {
           "title": "sequencing"
-        },
-        {
-          "title": "consent"
         }
       ]
     }

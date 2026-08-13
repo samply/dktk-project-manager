@@ -37,6 +37,19 @@
   ],
   "fields": [
     {
+      "label": "methodology",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Project methodology",
+        "de": "Projektmethodik"
+      },
+      "description": {
+        "en": "Please provide a short description of the analysis method planned for use in your project (e.g. federated data analysis, CRP with ELISA, Whole Genome Sequencing, Tissue Micro Array...)",
+        "de": "Bitte geben Sie eine kurze Beschreibung der Analysemethode an, die in Ihrem Projekt zum Einsatz kommen soll (z. B. föderierte Datenanalyse, CRP mit ELISA, Ganzgenomsequenzierung, Gewebemikroarray...)"
+      }
+    },
+    {
       "label": "principal_investigator_title",
       "mandatory": false,
       "data_type": "STRING",
@@ -203,19 +216,6 @@
       "description": {
         "en": "Participant receives access to the requested biosamples",
         "de": "Der Teilnehmer erhält Zugang zu den angeforderten Bioproben."
-      }
-    },
-    {
-      "label": "methodology",
-      "mandatory": true,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Project methodology",
-        "de": "Projektmethodik"
-      },
-      "description": {
-        "en": "Please provide a short description of the analysis method planned for use in your project (e.g. federated data analysis, CRP with ELISA, Whole Genome Sequencing, Tissue Micro Array...)",
-        "de": "Bitte geben Sie eine kurze Beschreibung der Analysemethode an, die in Ihrem Projekt zum Einsatz kommen soll (z. B. föderierte Datenanalyse, CRP mit ELISA, Ganzgenomsequenzierung, Gewebemikroarray...)"
       }
     },
     {
