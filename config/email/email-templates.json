@@ -1,7 +1,7 @@
 {
   "templates": {
     "NEW_PROJECT": {
-      "subject": "New project <project-code/> Notification",
+      "subject": "New data request <project-code/> Notification",
       "attachment_files": ["FORM"],
       "files": {
         "CREATOR": "creator-new-project.html",
@@ -9,26 +9,26 @@
       }
     },
     "NEW_PROJECT_ACCEPTED": {
-      "subject": "New Project Acceptance - CCP Office",
+      "subject": "New Data Request Acceptance - CCP Office",
       "files": {
         "CREATOR": "creator-new-project-accepted.html",
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-new-project-accepted.html"
       }
     },
     "NEW_VOTUM": {
-      "subject": "New Votum from <bridgehead/> for Project <project-code/>",
+      "subject": "New Ethic Vote from <bridgehead/> for Data Request <project-code/>",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-new-votum.html"
       }
     },
     "NEW_VOTUM_FOR_ALL_BRIDGEHEADS": {
-      "subject": "New Votum for Project <project-code/> – Applicable to All Bridgeheads",
+      "subject": "New Ethic Vote for Data Request <project-code/> – Applicable to All Bridgeheads",
       "files": {
         "DEFAULT": "default-new-votum.html"
       }
     },
     "INVITATION": {
-      "subject": "Invitation to Participate in <project-type/> Project <project-code/>",
+      "subject": "Invitation to Participate in <project-type/> Data Request <project-code/>",
       "files": {
         "DEVELOPER": "developer-invitation.html",
         "PILOT": "pilot-invitation.html",
@@ -36,55 +36,55 @@
       }
     },
     "REQUEST_TECHNICAL_APPROVAL": {
-      "subject": "Action Required: Execute Query and Manage Access for Project <project-code/>",
+      "subject": "Action Required: Execute Query and Manage Access for Data Request <project-code/>",
       "files": {
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-request-technical-approval.html"
       }
     },
     "PROJECT_BRIDGEHEAD_ACCEPTED": {
-      "subject": "Bridgehead Admin of <bridgehead/> Has Executed Query and Granted Access for Project <project-code/>",
+      "subject": "Bridgehead Admin of <bridgehead/> Has Executed Query and Granted Access for Data Request <project-code/>",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-bridgehead-accepted.html"
       }
     },
     "PROJECT_BRIDGEHEAD_REJECTED": {
-      "subject": "Bridgehead Admin of <bridgehead/> Has Revoked Access for Project <project-code/>",
+      "subject": "Bridgehead Admin of <bridgehead/> Has Revoked Access for Data Request <project-code/>",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-bridgehead-rejected.html"
       }
     },
     "SCRIPT_ACCEPTED": {
-      "subject": "Script Accepted for Project <project-code/> by <project-bridgehead-user-name/>",
+      "subject": "Script Accepted for Data Request <project-code/> by <project-bridgehead-user-name/>",
       "files": {
         "DEFAULT": "default-script-accepted.html"
       }
     },
     "SCRIPT_REJECTED": {
-      "subject": "Script Blocked for Further Discussion in Project <project-code/> by <project-bridgehead-user-name/>",
+      "subject": "Script Blocked for Further Discussion in Data Request <project-code/> by <project-bridgehead-user-name/>",
       "files": {
         "DEFAULT": "default-script-rejected.html"
       }
     },
     "REQUEST_CHANGES_IN_SCRIPT": {
-      "subject": "Request for Script Changes in Project <project-code/> by <project-bridgehead-user-name/>",
+      "subject": "Request for Script Changes in Data Request <project-code/> by <project-bridgehead-user-name/>",
       "files": {
         "DEFAULT": "default-script-changes-requested.html"
       }
     },
     "RESULTS_ACCEPTED": {
-      "subject": "Agreement on Project Results for <project-code/>",
+      "subject": "Agreement on Data Request Results for <project-code/>",
       "files": {
         "DEFAULT": "default-results-accepted.html"
       }
     },
     "RESULTS_REJECTED": {
-      "subject": "Project Results Blocked for Further Discussion - <project-code/>",
+      "subject": "Data Request Results Blocked for Further Discussion - <project-code/>",
       "files": {
         "DEFAULT": "default-results-rejected.html"
       }
     },
     "REQUEST_CHANGES_IN_PROJECT": {
-      "subject": "Project Results Pending Changes - <project-code/>",
+      "subject": "Data Request Results Pending Changes - <project-code/>",
       "files": {
         "DEFAULT": "default-results-changes-requested.html"
       }
@@ -120,83 +120,83 @@
       }
     },
     "FINISHED_PROJECT": {
-      "subject": "Project <project-code/> Successfully Completed",
+      "subject": "Data Request <project-code/> Successfully Completed",
       "files": {
         "DEFAULT": "default-project-finished.html"
       }
     },
     "NEW_PUBLICATION": {
-      "subject": "New Publication Available for Project <project-code/>",
+      "subject": "New Publication Available for Data Request <project-code/>",
       "files": {
         "DEFAULT": "default-new-publication.html"
       }
     },
     "NEW_FINAL_REPORT": {
-      "subject": "New Final Report Available for Project <project-code/>",
+      "subject": "New Final Report Available for Data Request <project-code/>",
       "files": {
         "DEFAULT": "default-new-report.html"
       }
     },
     "PROJECT_REJECTED": {
-      "subject": "Project <project-code/> Rejected",
+      "subject": "Data Request <project-code/> Rejected",
       "files": {
         "DEFAULT": "default-reject-project.html"
       }
     },
     "QUERY_SAVED_IN_EXPORTER": {
-      "subject": "Query Sent to Teiler for Project <project-code/>",
+      "subject": "Query Sent to Teiler for Data Request <project-code/>",
       "files": {
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-query-saved.html"
       }
     },
     "QUERY_SAVED_IN_EXPORTER_AND_EXECUTED": {
-      "subject": "Query Sent and Executed for Project <project-code/>",
+      "subject": "Query Sent and Executed for Data Request <project-code/>",
       "files": {
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-query-saved-and-executed.html"
       }
     },
     "ERROR_WHILE_SAVING_QUERY_IN_EXPORTER": {
-      "subject": "Error Sending Query for Project <project-code/>",
+      "subject": "Error Sending Query for Data Request <project-code/>",
       "files": {
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-query-error.html"
       }
     },
     "PROJECT_BRIDGEHEAD_RESULTS_URL_ADDED": {
-      "subject": "Project <project-code/>: Results Generated by Bridgehead <bridgehead/>",
+      "subject": "Data Request <project-code/>: Results Generated by Bridgehead <bridgehead/>",
       "files": {
         "FINAL": "final-project-bridgehead-results-url-added.html",
         "CREATOR": "creator-project-bridgehead-results-url-added.html"
       }
     },
     "PROJECT_RESULTS_URL_ADDED": {
-      "subject": "Project <project-code/>: Final Results Submitted",
+      "subject": "Data Request <project-code/>: Final Results Submitted",
       "files": {
         "CREATOR": "creator-project-results-url-added.html"
       }
     },
     "PROJECT_RESULTS_ACCEPTED_BY_CREATOR": {
-      "subject": "Project <project-code/>: Results Accepted by Applicant",
+      "subject": "Data Request <project-code/>: Results Accepted by Applicant",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-results-accepted-by-creator.html",
         "FINAL": "final-project-results-accepted-by-creator.html"
       }
     },
     "PROJECT_RESULTS_REJECTED_BY_CREATOR": {
-      "subject": "Project <project-code/>: Results Blocked by Applicant for Discussion",
+      "subject": "Data Request <project-code/>: Results Blocked by Applicant for Discussion",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-results-rejected-by-creator.html",
         "FINAL": "final-project-results-rejected-by-creator.html"
       }
     },
     "PROJECT_RESULTS_REQUESTED_CHANGES_BY_CREATOR": {
-      "subject": "Project <project-code/>: Changes Requested by Applicant",
+      "subject": "Data Request <project-code/>: Changes Requested by Applicant",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-results-requested-changes-by-creator.html",
         "FINAL": "final-project-results-requested-changes-by-creator.html"
       }
     },
     "PROJECT_BRIDGEHEAD_RESULTS_ACCEPTED_BY_CREATOR": {
-      "subject": "Results Accepted for Project <project-code/> at Bridgehead <bridgehead/>",
+      "subject": "Results Accepted for Data Request <project-code/> at Bridgehead <bridgehead/>",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-bridgehead-results-accepted-by-creator.html",
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-project-bridgehead-results-accepted-by-creator.html",
@@ -204,7 +204,7 @@
       }
     },
     "PROJECT_BRIDGEHEAD_RESULTS_REJECTED_BY_CREATOR": {
-      "subject": "Results Blocked for Further Discussion: Project <project-code/> at Bridgehead <bridgehead/>",
+      "subject": "Results Blocked for Further Discussion: Data Request <project-code/> at Bridgehead <bridgehead/>",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-bridgehead-results-rejected-by-creator.html",
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-project-bridgehead-results-rejected-by-creator.html",
@@ -212,7 +212,7 @@
       }
     },
     "PROJECT_BRIDGEHEAD_RESULTS_REQUESTED_CHANGES_BY_CREATOR": {
-      "subject": "Changes Requested for Results: Project <project-code/> at Bridgehead <bridgehead/>",
+      "subject": "Changes Requested for Results: Data Request <project-code/> at Bridgehead <bridgehead/>",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-bridgehead-results-requested-changes-by-creator.html",
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-project-bridgehead-results-requested-changes-by-creator.html",
@@ -220,14 +220,14 @@
       }
     },
     "SEND_CREDENTIALS": {
-      "subject": "Credentials for Results of Project <project-code/>",
+      "subject": "Credentials for Results of Data Request <project-code/>",
       "files": {
         "CREATOR": "creator-send-credentials.html",
         "FINAL": "final-send-credentials.html"
       }
     },
     "SEND_CREDENTIALS_FROM_BRIDGEHEAD": {
-      "subject": "Credentials for Results of Project <project-code/> for bridgehead <bridgehead/>",
+      "subject": "Credentials for Results of Data Request <project-code/> for bridgehead <bridgehead/>",
       "files": {
         "CREATOR": "creator-send-credentials-from-bridgehead.html",
         "FINAL": "final-send-credentials-from-bridgehead.html"
