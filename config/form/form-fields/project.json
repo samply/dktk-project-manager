@@ -136,7 +136,7 @@
     },
     {
       "label": "collaborator-first-name",
-      "mandatory": false,
+      "mandatory": true,
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
@@ -150,7 +150,7 @@
     },
     {
       "label": "collaborator-last-name",
-      "mandatory": false,
+      "mandatory": true,
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
@@ -164,7 +164,7 @@
     },
     {
       "label": "collaborator-email",
-      "mandatory": false,
+      "mandatory": true,
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
@@ -178,7 +178,7 @@
     },
     {
       "label": "collaborator-affiliation",
-      "mandatory": false,
+      "mandatory": true,
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
