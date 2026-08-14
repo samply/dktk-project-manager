@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.1 - 2026-07-21]
+## [0.0.1 - 2026-08-14]
 ### Added
 - CHANGELOG
 - Dockerfile
@@ -87,6 +87,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Exporter cron expression every 30 seconds
 - Rename project state CREATED and ACCEPTED as REVIEW and APPROVAL
 - Docker VerbIS User for Gitlab CI
+- NOT SELECTED configuration
 
 ### Fixed
 - Avoid splitting fields in samples from the template

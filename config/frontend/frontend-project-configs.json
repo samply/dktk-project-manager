@@ -90,6 +90,16 @@
           "title": "sequencing"
         }
       ]
+    },
+    "NOT_SELECTED": {
+      "forms": [
+        {
+          "title": "project"
+        },
+        {
+          "title": "query"
+        }
+      ]
     }
   }
 }
