@@ -11,4 +11,5 @@ export FRONTEND_VARIABLES_PROJECT_URL="https://dktk.dkfz.de/"
 export FRONTEND_VARIABLES_LOGO_TEXT="dktk"
 export FRONTEND_VARIABLES_LOGO_HTML="${BACKEND_BASEURL}/assets/logo.html"
 export FRONTEND_VARIABLES_LOGO_CSS="${BACKEND_BASEURL}/assets/logo.css"
-
+export FRONTEND_VARIABLES_FRONTEND_NAME="<b>DKTK BioDataHub</b> Data Request"
+export FRONTEND_VARIABLES_PAGE_TITLE="Data Request"
