@@ -70,6 +70,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - DKTK logo configuration
 - Multiple selected configurations
 - Focus configuration for project feasibility queries
+- ENABLE_FEASIBILITY feature toggle
 
 ### Changed
 - Replace Minus in bridgeheads
