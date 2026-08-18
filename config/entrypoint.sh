@@ -55,6 +55,7 @@ export DB_ENCRYPTION_ALGORITHM="AES"
 export EMAIL_TEMPLATES_DIRECTORY="/app/email/templates"
 export EXPLORER_REDIRECT_URI_PARAMETER="redirect_uri"
 export EXPLORER_URL="https://demo.lens.samply.de"
+export FOCUS_LENS_PROJECT="default_obfuscation"
 
 export EXPORTER_CRON_EXPRESSION="*/30 * * * * *"
 export EXPORT_TEMPLATES="ccp,ccp-exliquid"

@@ -69,6 +69,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Assets
 - DKTK logo configuration
 - Multiple selected configurations
+- Focus configuration for project feasibility queries
 
 ### Changed
 - Replace Minus in bridgeheads
