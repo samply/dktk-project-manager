@@ -107,8 +107,8 @@
         "de": "Klinische Daten"
       },
       "description": {
-        "en": "Only birthdate, deathdate, diagnosis, treatments, responses.",
-        "de": "Nur Geburtsdatum, Sterbedatum, Diagnose, Therapien, Ansprechen."
+        "en": "e.g. birthdate, deathdate, diagnosis, treatments, responses.",
+        "de": "bspw. Geburtsdatum, Sterbedatum, Diagnose, Therapien, Ansprechen."
       }
     },
     {
