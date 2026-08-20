@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.1 - 2026-08-14]
+## [0.0.1 - 2026-08-21]
 ### Added
 - CHANGELOG
 - Dockerfile
@@ -71,6 +71,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Multiple selected configurations
 - Focus configuration for project feasibility queries
 - ENABLE_FEASIBILITY feature toggle
+- Feasibility mapping
 
 ### Changed
 - Replace Minus in bridgeheads
