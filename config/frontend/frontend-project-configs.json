@@ -1,5 +1,14 @@
 {
   "selectionType" : "MULTIPLE",
+  "formTitleOrder": [
+    "query",
+    "services",
+    "project",
+    "custom",
+    "samples",
+    "sequencing",
+    "summary"
+  ],
   "config": {
     "TumorDocumentation": {
       "project": {
@@ -15,10 +24,10 @@
       },
       "forms": [
         {
-          "title": "project"
+          "title": "query"
         },
         {
-          "title": "query"
+          "title": "project"
         }
       ]
     },
@@ -36,10 +45,10 @@
       },
       "forms": [
         {
-          "title": "project"
+          "title": "query"
         },
         {
-          "title": "query"
+          "title": "project"
         },
         {
           "title": "samples"
@@ -60,10 +69,10 @@
       },
       "forms": [
         {
-          "title": "project"
+          "title": "query"
         },
         {
-          "title": "query"
+          "title": "project"
         },
         {
           "title": "sequencing"
@@ -78,10 +87,10 @@
       },
       "forms": [
         {
-          "title": "project"
+          "title": "query"
         },
         {
-          "title": "query"
+          "title": "project"
         },
         {
           "title": "samples"
@@ -94,10 +103,10 @@
     "NOT_SELECTED": {
       "forms": [
         {
-          "title": "project"
+          "title": "query"
         },
         {
-          "title": "query"
+          "title": "project"
         }
       ]
     }
