@@ -15,7 +15,7 @@ export ENABLE_CODER="true"
 export ENABLE_EMAILS="true"
 export ENABLE_EXPORTER="true"
 export ENABLE_FEASIBILITY="true"
-export FEASIBILITY_MAPPING='[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}, {"label": "Molecular Markers", "value": .totals.MolecularMarker}]'
+export FEASIBILITY_MAPPING='[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}, {"label": "Molecular Data", "value": .totals.MolecularMarker}]'
 export ENABLE_TOKEN_MANAGER="true"
 export SECURITY_ENABLED="true"
 
