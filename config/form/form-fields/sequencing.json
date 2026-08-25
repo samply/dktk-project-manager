@@ -1,11 +1,11 @@
 {
   "title": "sequencing",
   "display_name": {
-    "en": "Sequencing Data Request",
-    "de": "Sequenzierungsdaten-Anfrage"
+    "en": "Molecular Data Request",
+    "de": "Molekulargenetische Daten-Anfrage"
   },
   "description": {
-    "en": "Please specify the sequencing data you require for your project.",
+    "en": "Please specify the molecular data which you request.",
     "de": "Bitte geben Sie Informationen über die benötigten Sequenzierungsdaten an."
   },
   "groups": {
@@ -13,20 +13,12 @@
       "display_name": {
         "en": "Data layer",
         "de": "Datenebene"
-      },
-      "description": {
-        "en": "Please indicate the required data layer(s). Note: Raw data (fastq, bam) of WGS and RNAseq have a size of approx. 600 GB per case.",
-        "de": "Bitte geben Sie die gewünschten Datenebenen an. Hinweis: Rohdaten (fastq, bam) von WGS und RNAseq haben eine Größe von ca. 600 GB pro Fall."
       }
     },
     "data_format": {
       "display_name": {
         "en": "Data format",
         "de": "Datenformat"
-      },
-      "description": {
-        "en": "Please indicate the required data format(s).",
-        "de": "Bitte geben Sie die gewünschten Datenformate an."
       }
     }
   },

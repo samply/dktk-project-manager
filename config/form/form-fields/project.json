@@ -1,12 +1,12 @@
 ﻿{
   "title": "project",
   "display_name": {
-    "en": "Project",
-    "de": "Projekt"
+    "en": "Your Project",
+    "de": "Ihr Projekt"
   },
   "description": {
-    "en": " Please provide information about your project",
-    "de": "Bitte geben Sie Informationen zu Ihrem Projekt an"
+    "en": "Please describe the project for which you are requesting resources",
+    "de": "Bitte beschreiben Sie das Projekt, für das Sie Ressourcen anfordern"
   },
   "blocks": [
     {
@@ -30,8 +30,8 @@
         "de": "Kooperationspartner"
       },
       "description": {
-        "en": "If applicable, please provide the names, affiliations, and email addresses of your collaborators at the chosen sites. All fields within a started entry are required.",
-        "de": "Falls zutreffend, geben Sie bitte die Namen, Zugehörigkeiten und E-Mail-Adressen Ihrer Kooperationspartner an den ausgewählten Standorten an. Alle Felder innerhalb eines begonnenen Eintrags sind erforderlich."
+        "en": "If applicable, please provide the names, affiliations, and email addresses of your collaborators. All fields within a started entry are required.",
+        "de": "Falls zutreffend, geben Sie bitte die Namen, Zugehörigkeiten und E-Mail-Adressen Ihrer Kooperationspartner an. Alle Felder innerhalb eines begonnenen Eintrags sind erforderlich."
       }
     }
   ],
@@ -41,11 +41,11 @@
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Project methodology",
+        "en": "Planned analyses",
         "de": "Projektmethodik"
       },
       "description": {
-        "en": "Please provide a short description of the analysis method planned for use in your project (e.g. federated data analysis, CRP with ELISA, Whole Genome Sequencing, Tissue Micro Array...)",
+        "en": "Please describe the analyses to be performed on the requested resources (e.g. federated data analysis, CRP ELISA, Whole Genome Sequencing)",
         "de": "Bitte geben Sie eine kurze Beschreibung der Analysemethode an, die in Ihrem Projekt zum Einsatz kommen soll (z. B. föderierte Datenanalyse, CRP mit ELISA, Ganzgenomsequenzierung, Gewebemikroarray...)"
       }
     },
@@ -122,7 +122,6 @@
     {
       "label": "collaborator_title",
       "mandatory": false,
-      "condition": "['samples']['liquid_type']['value'] == 'other'",
       "data_type": "STRING",
       "block": "collaborators",
       "display_name": {
@@ -163,20 +162,6 @@
       }
     },
     {
-      "label": "collaborator-email",
-      "mandatory": true,
-      "data_type": "STRING",
-      "block": "collaborators",
-      "display_name": {
-        "en": "Email Address",
-        "de": "E-Mail-Adresse"
-      },
-      "description": {
-        "en": "Contact email address of the collaborator",
-        "de": "Kontakt-E-Mail-Adresse des Kooperationspartners"
-      }
-    },
-    {
       "label": "collaborator-affiliation",
       "mandatory": true,
       "data_type": "STRING",
@@ -188,6 +173,20 @@
       "description": {
         "en": "Institution or organisation of the collaborator",
         "de": "Institution oder Organisation des Kooperationspartners"
+      }
+    },
+    {
+      "label": "collaborator-email",
+      "mandatory": true,
+      "data_type": "STRING",
+      "block": "collaborators",
+      "display_name": {
+        "en": "Email Address",
+        "de": "E-Mail-Adresse"
+      },
+      "description": {
+        "en": "Contact email address of the collaborator",
+        "de": "Kontakt-E-Mail-Adresse des Kooperationspartners"
       }
     },
     {
@@ -227,8 +226,8 @@
         "de": "Ethikabstimmung"
       },
       "description": {
-        "en": "Has an ethics review been conducted for your project?",
-        "de": "Wurde für Ihr Projekt eine Ethikprüfung durchgeführt?"
+        "en": "Have you requested an ethics review of your project? Has it been voted on by your local board? If so, please attach the voting document. This is necessary in order for us to grant you access to the data/biosamples.",
+        "de": "Haben Sie eine Ethikprüfung Ihres Projekts beantragt? Wurde darüber von Ihrem lokalen Gremium abgestimmt? Falls ja, fügen Sie bitte das Abstimmungsdokument bei. Dies ist erforderlich, damit wir Ihnen Zugang zu den Daten/Bioproben gewähren können."
       }
     },
     {
@@ -253,8 +252,8 @@
         "de": "Kommentare"
       },
       "description": {
-        "en": "Please list any further inclusion or exclusion criteria for the data or samples here",
-        "de": "Bitte listen Sie hier alle weiteren Ein- oder Ausschlusskriterien für die Daten oder Proben auf"
+        "en": "Please provide any additional information that helps us process your request here.",
+        "de": "Bitte geben Sie hier alle weiteren Informationen an, die uns bei der Bearbeitung Ihrer Anfrage helfen."
       }
     }
   ]
