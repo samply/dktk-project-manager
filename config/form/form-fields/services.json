@@ -1,0 +1,12 @@
+{
+  "title": "services",
+  "display_name": {
+    "en": "Requested Resources",
+    "de": "Angeforderte Ressourcen"
+  },
+  "description": {
+    "en": "Start by selecting the categories you want to request.",
+    "de": "Beginnen Sie mit der Auswahl der Kategorien, die Sie anfordern möchten."
+  },
+  "fields": []
+}
