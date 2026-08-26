@@ -231,6 +231,11 @@
       }
     },
     {
+      "label": "ETHIC_VOTE",
+      "field_type": "FIXED",
+      "active": false
+    },
+    {
       "label": "funding",
       "mandatory": false,
       "data_type": "STRING",
