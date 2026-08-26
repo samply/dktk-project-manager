@@ -260,7 +260,7 @@
         "de": "Konzentration / Volumen"
       },
       "block": "liquid",
-      "properties": ["css-unit-value"]
+      "properties": ["CSS_UNIT_VALUE"]
     },
     {
       "label": "liquid_unit",
@@ -271,7 +271,7 @@
         "de": "Einheit"
       },
       "block": "liquid",
-      "properties": ["css-unit"],
+      "properties": ["CSS_UNIT"],
       "allowed_values": [
         {
           "label": "µl",
@@ -480,7 +480,7 @@
         "de": "Konzentration / Volumen"
       },
       "block": "derivatives",
-      "properties": ["css-unit-value"]
+      "properties": ["CSS_UNIT_VALUE"]
     },
     {
       "label": "derivatives_unit",
@@ -491,7 +491,7 @@
         "de": "Einheit"
       },
       "block": "derivatives",
-      "properties": ["css-unit"],
+      "properties": ["CSS_UNIT"],
       "allowed_values": [
         {
           "label": "µl",
