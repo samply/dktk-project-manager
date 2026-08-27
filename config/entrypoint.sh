@@ -22,6 +22,7 @@ export SECURITY_ENABLED="true"
 export FORM_FIELDS_DIRECTORY="/app/form/form-fields"
 export FORM_RESOURCES_DIRECTORY="/app/form/templates"
 export FORM_TEMPLATE_METADATA_DIRECTORY="/app/form/templates/metadata"
+export MAILING_BLACK_LIST_FILE_PATH="/app/email/mailing-black-list.txt"
 
 export EMAIL_TEMPLATES_CONFIG_PATH="/app/email/email-templates.json"
 export ACTION_EXPLANATION_CONFIG_PATH="/app/action-explanations.json"

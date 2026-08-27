@@ -1,0 +1,8 @@
+# Users listed here are created (if necessary) and added to the project-manager
+# mailing blacklist during application startup.
+#
+# Add one email address per line. Empty lines and lines beginning with # are
+# ignored. A comment may also follow an email address on the same line.
+# WARNING: Project-manager administrators may add or remove additional users
+# manually through the frontend; those database changes are not represented here.
+m.lablans@dkfz-heidelberg.de
