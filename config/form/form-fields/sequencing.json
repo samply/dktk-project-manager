@@ -120,35 +120,19 @@
       }
     },
     {
-      "label": "data_format_fastq",
+      "label": "data_format_fastq_bam",
       "mandatory": false,
       "data_type": "BOOLEAN",
       "groups": [
         "data_format"
       ],
       "display_name": {
-        "en": "fastq",
-        "de": "fastq"
+        "en": "Raw data ",
+        "de": "Rohdaten"
       },
       "description": {
-        "en": "Raw sequencing reads in FASTQ format. Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Rohdaten der Sequenzierung im FASTQ-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
-      }
-    },
-    {
-      "label": "data_format_bam",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "bam",
-        "de": "bam"
-      },
-      "description": {
-        "en": "Aligned sequencing reads in BAM format. Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Alignierte Sequenzierungsdaten im BAM-Format. Bereitgestellt durch die Omics IT and Data Management Core Facility."
+        "en": "e.g. fastq, bam, ...",
+        "de": "bspw. fastq, bam, ..."
       }
     },
     {
@@ -159,28 +143,12 @@
         "data_format"
       ],
       "display_name": {
-        "en": "Analyses (comparable to VCF)",
-        "de": "Analysen (vergleichbar mit VCF)"
+        "en": "Analyses",
+        "de": "Analysen"
       },
       "description": {
-        "en": "Variant-call style analysis output (comparable to VCF). Provided by the Omics IT and Data Management Core Facility.",
-        "de": "Analyseergebnisse im Stil eines Variant-Calls (vergleichbar mit VCF). Bereitgestellt durch die Omics IT and Data Management Core Facility."
-      }
-    },
-    {
-      "label": "data_format_analyses_scores",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_format"
-      ],
-      "display_name": {
-        "en": "Analyses, scores and other output",
-        "de": "Analysen, Scores und sonstige Ergebnisse"
-      },
-      "description": {
-        "en": "Derived analyses, scores and other computed output. Provided by Computational Oncology.",
-        "de": "Abgeleitete Analysen, Scores und sonstige berechnete Ergebnisse. Bereitgestellt durch Computational Oncology."
+        "en": "e.g. variant calls, counts, scores",
+        "de": "bspw. Variant-Calls, Counts, Scores"
       }
     },
     {
