@@ -1,0 +1,75 @@
+{
+  "title": "funding",
+  "display_name": {
+    "en": "Funding and Conflicts of Interest",
+    "de": "Projekt"
+  },
+  "description": {
+    "en": "Information about funding and conflicts of interest",
+    "de": "Bitte geben Sie Informationen zu Ihrem Projekt an"
+  },
+  "layouts": [
+    {
+      "rows": [
+        {"fields": ["conflict_declaration", "conflict_declaration_text"]}
+      ]
+    }
+  ],
+  "fields": [
+    {
+      "label": "funding",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Funding",
+        "de": "Förderung"
+      },
+      "description": {
+        "en": "Please indicate who is funding this data request (e.g. institution, third-party funder, industry sponsor). If applicable, include the grant/funding reference number (Förderkennzeichen).",
+        "de": "Bitte geben Sie an, wer dieses Projekt finanziert (z. B. Institution, Drittmittelgeber, Industriesponsor). Falls zutreffend, geben Sie bitte das Förderkennzeichen an."
+      }
+    },
+    {
+      "label": "conflict_declaration",
+      "mandatory": false,
+      "data_type": "ENUM",
+      "multiple": false,
+      "properties": ["RADIO_BUTTON", "CSS_ENUM"],
+      "display_name": {
+        "en": "Conflict of Interest Declaration",
+        "de": "Conflict of Interest Declaration"
+      },
+      "description": {
+        "en": "Academic title of the principal investigator",
+        "de": "Akademischer Titel des Hauptverantwortlichen"
+      },
+      "allowed_values": [
+        {
+          "label": "no_conflict",
+          "display_name": {
+            "en": "No conflicts of interest",
+            "de": "No conflicts of interest"
+          }
+        },
+        {
+          "label": "potential_conflicts",
+          "display_name": {
+            "en": "Potential conflicts disclosed",
+            "de": "Potential conflicts disclosed"
+          }
+        }
+      ]
+    },
+    {
+      "label": "conflict_declaration_text",
+      "mandatory": false,
+      "data_type": "LONG_STRING",
+      "properties": ["CSS_ENUM_VALUE"],
+      "display_name": {
+        "en": "Potential conflicts",
+        "de": "Potenzielle Konflikte"
+      },
+      "condition": "['funding']['conflict_declaration']['value'] == 'potential_conflicts'"
+    }
+  ]
+}

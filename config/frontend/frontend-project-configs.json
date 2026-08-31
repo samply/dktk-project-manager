@@ -7,6 +7,8 @@
     "custom",
     "samples",
     "sequencing",
+    "ethics",
+    "funding",
     "summary"
   ],
   "config": {
@@ -28,6 +30,12 @@
         },
         {
           "title": "project"
+        },
+        {
+          "title": "ethics"
+        },
+        {
+          "title": "funding"
         }
       ]
     },
@@ -52,6 +60,12 @@
         },
         {
           "title": "samples"
+        },
+        {
+          "title": "ethics"
+        },
+        {
+          "title": "funding"
         }
       ]
     },
@@ -76,6 +90,12 @@
         },
         {
           "title": "sequencing"
+        },
+        {
+          "title": "ethics"
+        },
+        {
+          "title": "funding"
         }
       ]
     },
@@ -97,17 +117,21 @@
         },
         {
           "title": "sequencing"
+        },
+        {
+          "title": "ethics"
+        },
+        {
+          "title": "funding"
         }
       ]
     },
     "NOT_SELECTED": {
       "forms": [
-        {
-          "title": "query"
-        },
-        {
-          "title": "project"
-        }
+        { "title": "query" },
+        { "title": "project" },
+        { "title": "ethics" },
+        { "title": "funding" }
       ]
     }
   }

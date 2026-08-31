@@ -218,37 +218,6 @@
       }
     },
     {
-      "label": "ethical_approval",
-      "mandatory": true,
-      "data_type": "BOOLEAN",
-      "display_name": {
-        "en": "Ethics vote",
-        "de": "Ethikabstimmung"
-      },
-      "description": {
-        "en": "Have you requested an ethics review of your project? Has it been voted on by your local board? If so, please attach the voting document. This is necessary in order for us to grant you access to the data/biosamples.",
-        "de": "Haben Sie eine Ethikprüfung Ihres Projekts beantragt? Wurde darüber von Ihrem lokalen Gremium abgestimmt? Falls ja, fügen Sie bitte das Abstimmungsdokument bei. Dies ist erforderlich, damit wir Ihnen Zugang zu den Daten/Bioproben gewähren können."
-      }
-    },
-    {
-      "label": "ETHICS_VOTE",
-      "field_type": "FIXED",
-      "active": false
-    },
-    {
-      "label": "funding",
-      "mandatory": false,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Funding",
-        "de": "Förderung"
-      },
-      "description": {
-        "en": "Please indicate who is funding this project (e.g. institution, third-party funder, industry sponsor). If applicable, include the grant/funding reference number (Förderkennzeichen).",
-        "de": "Bitte geben Sie an, wer dieses Projekt finanziert (z. B. Institution, Drittmittelgeber, Industriesponsor). Falls zutreffend, geben Sie bitte das Förderkennzeichen an."
-      }
-    },
-    {
       "label": "comments",
       "mandatory": false,
       "data_type": "LONG_STRING",

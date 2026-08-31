@@ -1,0 +1,85 @@
+{
+  "title": "ethics",
+  "display_name": {
+    "en": "Ethics and Compliance",
+    "de": "Projekt"
+  },
+  "description": {
+    "en": "Information about ethics and compliance",
+    "de": "Bitte geben Sie Informationen zu Ihrem Projekt an"
+  },
+  "fields": [
+    {
+      "label": "ethics_approval_status",
+      "mandatory": true,
+      "data_type": "ENUM",
+      "display_name": {
+        "en": "Ethics Approval Status",
+        "de": "Ethics Approval Status"
+      },
+      "description": {
+        "en": "If approved, please attach the Ethics form",
+        "de": "Falls eine Genehmigung vorliegt, fügen Sie bitte das Ethik-Formular bei."
+      },
+      "allowed_values": [
+        {
+          "label": "approved",
+          "display_name": {
+            "en": "Approved",
+            "de": "Approved"
+          }
+        },
+        {
+          "label": "pending",
+          "display_name": {
+            "en": "Pending",
+            "de": "Pending"
+          }
+        },
+        {
+          "label": "not_required",
+          "display_name": {
+            "en": "Not Required",
+            "de": "Not Required"
+          }
+        }
+      ]
+    },
+    {
+      "label": "ethical_approval",
+      "mandatory": true,
+      "data_type": "BOOLEAN",
+      "display_name": {
+        "en": "Ethics vote",
+        "de": "Ethikabstimmung"
+      },
+      "description": {
+        "en": "Has an ethics review been conducted for your data request?",
+        "de": "Wurde für Ihr Projekt eine Ethikprüfung durchgeführt?"
+      }
+    },
+    {
+      "label": "ETHICS_VOTE_FOR_ALL_SITES",
+      "field_type": "FIXED"
+    },
+    {
+      "label": "ethics_confirmation",
+      "mandatory": false,
+      "data_type": "ENUM",
+      "properties": ["CHECK_BOX"],
+      "display_name": {
+        "en": "Compliance and Data Protection",
+        "de": "Compliance and Data Protection"
+      },
+      "allowed_values": [
+        {
+          "label": "confirmation",
+          "display_name": {
+            "en": "I confirm that the requested data will be used exclusively for the purpose described in this application and in compliance with applicable data protection and governance requirements.",
+            "de": "I confirm that the requested data will be used exclusively for the purpose described in this application and in compliance with applicable data protection and governance requirements."
+          }
+        }
+      ]
+    }
+  ]
+}
