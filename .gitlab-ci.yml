@@ -17,9 +17,12 @@ build-docker:
         tag=":$CI_COMMIT_REF_SLUG"
         echo "Running on branch '$CI_COMMIT_BRANCH': tag = $tag"
       fi
-    - IMGNAME=$DOCKER_VERBIS_REGISTRY/${IMGNAME}${TAG}
+    - IMGNAME=$DOCKER_VERBIS_REGISTRY/${IMGNAME}${tag}
     - docker build --pull -t "$IMGNAME" .
     - docker push "$IMGNAME"
-    # The CI/CD secrets are only available in protected branches.
+    # The CI/CD secrets are only available in protected branches, so a branch
+    # has to be protected before it can be built and pushed. With the tag above
+    # it publishes under its own slug, leaving the default branch's untagged
+    # (latest) image alone.
   rules:
     - if: '$CI_COMMIT_REF_PROTECTED == "true"'
