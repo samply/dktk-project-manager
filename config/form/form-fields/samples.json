@@ -34,23 +34,11 @@
       }
     },
     {
-      "label": "derivatives",
+      "label": "other",
       "multiple": true,
       "display_name": {
-        "en": "Derivative",
-        "de": "Abgeleitete Probe"
-      },
-      "description": {
-        "en": "Derivatives of the biosamples you have selected.",
-        "de": "Derivate der von Ihnen ausgewählten Bioproben."
-      }
-    },
-    {
-      "label": "others",
-      "multiple": true,
-      "display_name": {
-        "en": "Other Sample",
-        "de": "Andere Probe"
+        "en": "Other sample type",
+        "de": "Anderer Probentyp"
       }
     }
   ],
@@ -62,11 +50,24 @@
     },
     {
       "rows": [
-        {"fields": ["derivatives_concentration_volume", "derivatives_unit"]}
+        {"fields": ["other_concentration_volume", "other_unit"]}
       ]
     }
   ],
   "fields": [
+    {
+      "label": "minimum_patient_number",
+      "mandatory": true,
+      "data_type": "INTEGER",
+      "display_name": {
+        "en": "Minimum number of patients",
+        "de": "Minimale Anzahl an Patienten"
+      },
+      "description": {
+        "en": "Minimum number of patients from whom samples are required",
+        "de": "Minimale Anzahl an Patienten, von denen Proben benötigt werden."
+      }
+    },
     {
       "label": "liquid_type",
       "mandatory": true,
@@ -309,16 +310,6 @@
       ]
     },
     {
-      "label": "liquid_additive",
-      "mandatory": false,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Additive",
-        "de": "Zusatzstoff"
-      },
-      "block": "liquid"
-    },
-    {
       "label": "tissue_type",
       "mandatory": true,
       "data_type": "ENUM",
@@ -357,39 +348,39 @@
       ]
     },
     {
-      "label": "tissue_additive",
+      "label": "tissue_fixation",
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Additive",
+        "en": "Fixation",
         "de": "Zusatzstoff"
       },
       "block": "tissue"
     },
     {
-      "label": "tissue_slices_per_subject",
+      "label": "tissue_slices_per_sample",
       "mandatory": false,
       "data_type": "INTEGER",
       "display_name": {
-        "en": "Number of slices per subject",
-        "de": "Anzahl der Schnitte pro Person"
+        "en": "Number of slices per sample",
+        "de": "Anzahl der Schnitte pro Probe"
       },
       "description": {
-        "en": "For example: 5 slices/subject.",
-        "de": "Zum Beispiel: 5 Schnitte/Person."
+        "en": "For example: 5 slices/sample.",
+        "de": "Zum Beispiel: 5 Schnitte/Probe."
       },
       "block": "tissue"
     },
     {
-      "label": "tissue_pieces_per_subject",
+      "label": "tissue_pieces_per_donor",
       "mandatory": false,
       "data_type": "INTEGER",
       "display_name": {
-        "en": "Tissue pieces per subject",
+        "en": "Tissue pieces per donor",
         "de": "Gewebest\u00fccke pro Person"
       },
       "description": {
-        "en": "For example: 1 piece/subject.",
+        "en": "For example: 1 piece/donor.",
         "de": "Zum Beispiel: 1 Stück/Person."
       },
       "block": "tissue"
@@ -409,7 +400,7 @@
       "block": "tissue"
     },
     {
-      "label": "derivatives_type",
+      "label": "other_type",
       "mandatory": true,
       "data_type": "ENUM",
       "display_name": {
@@ -417,10 +408,10 @@
         "de": "Probentyp"
       },
       "description": {
-        "en": "Type of derivative sample.",
-        "de": "Typ der abgeleiteten Probe."
+        "en": "Type of sample.",
+        "de": "Typ der Probe."
       },
-      "block": "derivatives",
+      "block": "other",
       "allowed_values": [
         {
           "label": "dna",
@@ -458,7 +449,7 @@
       ]
     },
     {
-      "label": "derivatives_number_of_samples_per_subject",
+      "label": "other_number_of_samples_per_subject",
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
@@ -469,28 +460,28 @@
         "en": "For example: 1 aliquot of 200 \u00b5l each.",
         "de": "Zum Beispiel: 1 Aliquot zu je 200 \u00b5l."
       },
-      "block": "derivatives"
+      "block": "other"
     },
     {
-      "label": "derivatives_concentration_volume",
+      "label": "other_concentration_volume",
       "mandatory": true,
       "data_type": "INTEGER",
       "display_name": {
         "en": "Concentration / Volume",
         "de": "Konzentration / Volumen"
       },
-      "block": "derivatives",
+      "block": "other",
       "properties": ["CSS_UNIT_VALUE"]
     },
     {
-      "label": "derivatives_unit",
+      "label": "other_unit",
       "mandatory": true,
       "data_type": "ENUM",
       "display_name": {
         "en": "Unit",
         "de": "Einheit"
       },
-      "block": "derivatives",
+      "block": "other",
       "properties": ["CSS_UNIT"],
       "allowed_values": [
         {
@@ -529,14 +520,17 @@
       ]
     },
     {
-      "label": "other_type",
-      "mandatory": true,
+      "label": "sample_comments",
+      "mandatory": false,
       "data_type": "LONG_STRING",
       "display_name": {
-        "en": "Other sample type",
-        "de": "Andere Probe-Typ"
+        "en": "Comments",
+        "de": "Anmerkungen"
       },
-      "block": "others"
+      "description": {
+        "en": "Additional comments regarding biosamples.",
+        "de": "Weitere Anmerkungen zu Bioproben."
+      }
     }
   ]
 }

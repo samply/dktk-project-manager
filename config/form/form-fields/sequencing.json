@@ -88,38 +88,6 @@
       }
     },
     {
-      "label": "data_layer_clinical_data",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_layer"
-      ],
-      "display_name": {
-        "en": "Clinical data",
-        "de": "Klinische Daten"
-      },
-      "description": {
-        "en": "e.g. birthdate, deathdate, diagnosis, treatments, responses.",
-        "de": "bspw. Geburtsdatum, Sterbedatum, Diagnose, Therapien, Ansprechen."
-      }
-    },
-    {
-      "label": "data_layer_proteomics",
-      "mandatory": false,
-      "data_type": "BOOLEAN",
-      "groups": [
-        "data_layer"
-      ],
-      "display_name": {
-        "en": "Proteomics",
-        "de": "Proteomik"
-      },
-      "description": {
-        "en": "Data owner: Bernhard Küster / Annika Schneider (TUM) — a separate request is required.",
-        "de": "Dateneigentümer: Bernhard Küster / Annika Schneider (TUM) — hierfür ist eine gesonderte Anfrage erforderlich."
-      }
-    },
-    {
       "label": "data_format_fastq_bam",
       "mandatory": false,
       "data_type": "BOOLEAN",
@@ -152,7 +120,7 @@
       }
     },
     {
-      "label": "comments",
+      "label": "sequencing_comments",
       "mandatory": false,
       "data_type": "LONG_STRING",
       "display_name": {
@@ -160,8 +128,8 @@
         "de": "Anmerkungen"
       },
       "description": {
-        "en": "Additional comments regarding this data request.",
-        "de": "Weitere Anmerkungen zu dieser Datenanfrage."
+        "en": "Additional comments regarding molecular data.",
+        "de": "Weitere Anmerkungen zu Molekulardaten."
       }
     }
   ]
