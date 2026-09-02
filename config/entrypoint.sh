@@ -25,6 +25,9 @@ setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients
 setdefault ENABLE_TOKEN_MANAGER "true"
 setdefault SECURITY_ENABLED "true"
 
+# Select cache policy: beta during active development; stable after release.
+. /app/cache/cache-policy-beta.sh
+
 setdefault FORM_FIELDS_DIRECTORY "/app/form/form-fields"
 setdefault FORM_RESOURCES_DIRECTORY "/app/form/templates"
 setdefault FORM_TEMPLATE_METADATA_DIRECTORY "/app/form/templates/metadata"
