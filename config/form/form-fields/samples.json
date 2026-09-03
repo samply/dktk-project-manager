@@ -8,6 +8,12 @@
     "en": "Please specify the biosamples you require for your project.",
     "de": "Bitte geben Sie die für Ihr Projekt benötigten Bioproben an."
   },
+  "post_info": {
+    "content": {
+      "en": "Please be aware that selecting biosamples from local collections requires a material transfer agreement. The associated costs will be communicated to you in advance.",
+      "de": "Bitte beachten Sie, dass für die Auswahl von Bioproben aus lokalen Sammlungen eine Materialtransfervereinbarung erforderlich ist. Die damit verbundenen Kosten werden Ihnen vorab mitgeteilt."
+    }
+  },
   "blocks": [
     {
       "label": "liquid",
