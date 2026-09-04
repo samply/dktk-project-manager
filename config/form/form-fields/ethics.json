@@ -68,24 +68,32 @@
       "field_type": "FIXED",
       "condition": "['ethics']['ethical_approval']['value'] == 'true'"
     },
+
     {
       "label": "ethics_confirmation",
-      "mandatory": false,
-      "data_type": "ENUM",
-      "properties": ["CHECK_BOX"],
+      "mandatory": true,
+      "data_type": "BOOLEAN",
       "display_name": {
-        "en": "Compliance and Data Protection",
-        "de": "Compliance and Data Protection"
+        "en": "Compliance with Ethics and Data Protection",
+        "de": "Einhaltung der Vorschriften Ethik und Datenschutzes"
       },
-      "allowed_values": [
-        {
-          "label": "confirmation",
-          "display_name": {
-            "en": "I confirm that the requested data will be used exclusively for the purpose described in this application and in compliance with applicable data protection and governance requirements.",
-            "de": "I confirm that the requested data will be used exclusively for the purpose described in this application and in compliance with applicable data protection and governance requirements."
-          }
-        }
-      ]
+      "description": {
+        "en": "I confirm that the requested data will be used exclusively for the purpose described in this application and in compliance with applicable data protection.",
+        "de": "Ich bestätige, dass die angeforderten Daten ausschließlich für den in diesem Antrag beschriebenen Zweck und unter Einhaltung der geltenden Datenschutzbestimmungen verwendet werden."
+      }
+    },
+    {
+      "label": "ethics_feedback",
+      "mandatory": true,
+      "data_type": "BOOLEAN",
+      "display_name": {
+        "en": "Compliance with Feedback of Results",
+        "de": "Zustimmung Rückmeldung von Ergebnissen"
+      },
+      "description": {
+        "en": "If this project results in a manuscript, I agree to notify biodatahub@dkfz.de and master-projekte@nct-heidelberg.de in advance. They will then make recommendations regarding the acknowledgement of data owners from different DKTK and NCT sites, and prepare the database upload.",
+        "de": "Sollte aus diesem Projekt ein Manuskript entstehen, verpflichte ich mich, biodatahub@dkfz.de und master-projekte@nct-heidelberg.de vorab zu benachrichtigen. Diese werden dann Empfehlungen hinsichtlich der Nennung der Dateneigentümer der verschiedenen DKTK- und NCT-Standorte aussprechen und den Upload in die Datenbank vorbereiten."
+      }
     }
   ]
 }

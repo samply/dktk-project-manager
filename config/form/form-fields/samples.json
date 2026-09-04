@@ -63,7 +63,7 @@
   "fields": [
     {
       "label": "minimum_patient_number",
-      "mandatory": true,
+      "mandatory": false,
       "data_type": "INTEGER",
       "display_name": {
         "en": "Minimum number of patients",

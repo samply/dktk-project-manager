@@ -8,6 +8,12 @@
     "en": "Please specify the molecular data which you request.",
     "de": "Bitte geben Sie Informationen über die benötigten Sequenzierungsdaten an."
   },
+  "post_info": {
+    "content": {
+      "en": "<strong>Please note:</strong> Raw WGS and RNAseq data is around 600GB per case.",
+      "de": "<strong>Bitte beachten Sie:</strong> Rohdaten von WGS und RNAseq sind circa 600GB pro Fall."
+    }
+  },
   "groups": {
     "data_layer": {
       "display_name": {
