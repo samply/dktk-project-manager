@@ -8,13 +8,6 @@
     "en": "Information about funding and conflicts of interest",
     "de": "Bitte geben Sie Informationen zu Ihrem Projekt an"
   },
-  "layouts": [
-    {
-      "rows": [
-        {"fields": ["conflict_declaration", "conflict_declaration_text"]}
-      ]
-    }
-  ],
   "fields": [
     {
       "label": "funding",

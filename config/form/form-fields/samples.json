@@ -403,7 +403,13 @@
         "en": "",
         "de": ""
       },
-      "block": "tissue"
+      "block": "tissue",
+      "post_info": {
+        "content": {
+          "en": "Entire FFPE blocks will not be released.",
+          "de": "Vollständige FFPE-Blöcke werden nicht herausgegeben."
+        }
+      }
     },
     {
       "label": "other_type",

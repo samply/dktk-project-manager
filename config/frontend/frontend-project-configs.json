@@ -14,8 +14,8 @@
   "config": {
     "TumorDocumentation": {
       "project": {
-        "label": "Export of Tumor Documentation",
-        "description": "Specify and request the datasets that you would like to be exported at the different sites for you in an anonymised, tabular file format (.csv).",
+        "label": "Clinical Annotation",
+        "description": "Export of the the clinical data for the selected cohort as anonymised tabular files",
         "outputs": [
           {
             "projectType": "EXPORT",
@@ -42,7 +42,7 @@
     "Biosamples": {
       "project": {
         "label": "Biosamples",
-        "description": "Based on your selected cohort, please specify next the type of biosample (e.g.: tissue, blood, liquid biopsy, other body fluids, derivates (DNA, RNA, etc.)), and the volume, amount or concentration, that you wish to request from the biobanks of the selected sites.",
+        "description": "Based on your selected cohort, please specify next the type of biosample - e.g.: tissue, blood, liquid biopsy, other body fluids, derivates (DNA, RNA, etc.), and the volume, amount or concentration, that you wish to request from the biobanks of the selected sites.",
         "outputs": [
           {
             "projectType": "SAMPLES",
@@ -72,7 +72,7 @@
     "Sequencing": {
       "project": {
         "label": "Molecular Data",
-        "description": "Specify and request the datasets you would like to have exported in anonymized form (e.g.: sequencing, expression and methylation data (alt.: and proteomics data)) for your research project.\n\nNote: This data is currently only available through DKFZ/NCT/DKTK MASTER.",
+        "description": "Based on your selected cohort, please specify the datasets you would like to have exported in anonymized form - e.g.: sequencing, expression and methylation data (alt.: and proteomics data) for your research project.\n\nNote: This data is currently only available through DKFZ/NCT/DKTK MASTER.",
         "outputs": [
           {
             "projectType": "SEQUENCING",
