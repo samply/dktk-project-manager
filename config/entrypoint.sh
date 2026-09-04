@@ -34,7 +34,7 @@ setdefault FORM_TEMPLATE_METADATA_DIRECTORY "/app/form/templates/metadata"
 setdefault MAILING_BLACK_LIST_FILE_PATH "/app/email/mailing-black-list.txt"
 
 setdefault EMAIL_TEMPLATES_CONFIG_PATH "/app/email/email-templates.json"
-setdefault ACTION_EXPLANATION_CONFIG_PATH "/app/action-explanations.json"
+setdefault ACTION_MESSAGES_CONFIG_PATH "/app/action-messages.json"
 
 # export BEAM_API_KEY="App1Secret" #################################### <= Please configure me
 # export BEAM_PROJECT_MANAGER_ID="project-manager.proxy.broker.ccp-it.dktk.dkfz.de" #################################### <= Please configure me

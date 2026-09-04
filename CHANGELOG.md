@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.1 - 2026-09-02]
+## [0.0.1 - 2026-09-04]
 ### Added
 - CHANGELOG
 - Dockerfile
@@ -76,6 +76,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Mailing blacklist file
 - "Set default" function
 - Cache config
+- German translations for action explanations and user-action feedback messages
+- Merge action message proposals into the action message configuration
+- Success and error feedback messages for submitting a project
 
 ### Changed
 - Replace Minus in bridgeheads
@@ -95,6 +98,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Rename project state CREATED and ACCEPTED as REVIEW and APPROVAL
 - Docker VerbIS User for Gitlab CI
 - NOT SELECTED configuration
+- Rename the Action Explanations configuration to Action Messages
 
 ### Fixed
 - Avoid splitting fields in samples from the template
