@@ -1,11 +1,11 @@
 {
   "title": "funding",
   "display_name": {
-    "en": "Funding and Conflicts of Interest",
+    "en": "Conflicts of Interest",
     "de": "Projekt"
   },
   "description": {
-    "en": "Information about funding and conflicts of interest",
+    "en": "Information about conflicts of interest",
     "de": "Bitte geben Sie Informationen zu Ihrem Projekt an"
   },
   "fields": [
