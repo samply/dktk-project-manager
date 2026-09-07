@@ -21,7 +21,8 @@ setdefault ENABLE_CODER "true"
 setdefault ENABLE_EMAILS "true"
 setdefault ENABLE_EXPORTER "true"
 setdefault ENABLE_FEASIBILITY "true"
-setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}, {"label": "Molecular Data", "value": .totals.MolecularMarker}]'
+#setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}, {"label": "Molecular Data", "value": .totals.MolecularMarker}]'
+setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}]'
 setdefault ENABLE_TOKEN_MANAGER "true"
 setdefault SECURITY_ENABLED "true"
 
