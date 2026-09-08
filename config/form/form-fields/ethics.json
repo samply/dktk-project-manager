@@ -65,6 +65,14 @@
     },
     {
       "label": "ETHICS_VOTE_FOR_ALL_SITES",
+      "display_name": {
+        "en": "",
+        "de": ""
+      },
+      "description": {
+        "en": "Upload ethics vote file (optional)",
+        "de": "Datei zur Ethikabstimmung hochladen (optional)"
+      },
       "field_type": "FIXED",
       "condition": "['ethics']['ethical_approval']['value'] == 'true'"
     },
