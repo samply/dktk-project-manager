@@ -1,8 +1,8 @@
 /* Document Setup */
 body {
-    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-    line-height: 1.25;
-    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+    color: #202124;
     margin: 0;
     padding: 0;
 }
@@ -11,7 +11,9 @@ body {
 .header-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #dfe3e8;
     table-layout: fixed;
 }
 
@@ -38,12 +40,14 @@ body {
     font-weight: bold;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.2px;
 }
 
 .status {
     font-size: 9.5pt;
-    margin: 5px 0 0 0;
-    font-weight: bold;
+    margin: 6px 0 0 0;
+    font-weight: normal;
+    color: #5f6368;
 }
 
 .header-col-right {
@@ -57,18 +61,18 @@ body {
     margin-bottom: 12px;
 }
 
-.ccp-text {
+.biodatahub-text {
     font-size: 8.5pt;
     color: #00457d;
     font-weight: normal;
-    line-height: 1.1;
-    text-decoration: underline;
+    line-height: 1.2;
 }
 
 /* --- Intro Text Section --- */
 .intro-section {
     margin-bottom: 25px;
     font-size: 10.5pt;
+    color: #3c4043;
 }
 
 .intro-section p {
@@ -84,7 +88,8 @@ body {
 }
 
 .form-table td {
-    border: 1px solid #000;
+    border: none;
+    border-bottom: 1px solid #e3e6ea;
     padding: 0;
     vertical-align: top;
 }
@@ -102,36 +107,45 @@ body {
 
 .label-cell {
     width: 38%;
-    background-color: #f2f2f2;
-    padding: 10px 8px !important;
+    border-right: 1px solid #e3e6ea;
+    padding: 14px 12px 14px 4px !important;
 }
 
 .display-name {
     font-weight: bold;
     font-size: 10.5pt;
+    color: #202124;
 }
 
 .mandatory::after {
     content: " *";
     font-weight: bold;
+    color: #b3261e;
 }
 
 .description {
     font-size: 9pt;
     font-weight: normal;
-    color: #000;
+    color: #5f6368;
     display: block;
     margin-top: 4px;
 }
 
-/* --- Interactive Input Fields --- */
+/* --- Value display --- */
 .value-cell {
     width: 62%;
-    background-color: #ffffff;
-    height: 1px;
     vertical-align: top;
 }
 
+/*
+ * Real, editable <textarea>/<input> widgets (kept editable even when
+ * pre-filled - 2026-09-09 feedback point 2). Sized via the "rows" attribute
+ * (see fragments/form-fields.html's textareaValue fragment) rather than the
+ * old "height: 100%" trick, which openhtmltopdf could not turn into a real
+ * widget rectangle and caused wrapped values to overlap the row below
+ * (2026-09-09 feedback point 1) - min-height here is only a floor for short
+ * values, not the sizing mechanism.
+ */
 .pdf-input,
 .pdf-input-single {
     display: block;
@@ -139,56 +153,75 @@ body {
     border: none;
     background-color: transparent;
     box-sizing: border-box;
-    padding: 10px 8px;
-    font-family: Helvetica, Arial, sans-serif;
+    padding: 14px 12px;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 10.5pt;
-    line-height: 1.25;
-    color: #000;
+    line-height: 1.3;
+    color: #202124;
 }
 
 .pdf-input {
-    height: 100%;
-    min-height: 80px;
+    /* Sizing now comes from the "rows" attribute (see textareaValue in
+       fragments/form-fields.html), not this min-height - it's only a floor
+       so a 1-row box doesn't look clipped. */
+    min-height: 38px;
     resize: none;
 }
 
 .pdf-input-single {
-    height: 100%;
-    min-height: 38px;
+    /* Must comfortably exceed padding (28px) + one line of 10.5pt text, or
+       PDFBox's appearance generator auto-shrinks the font to an illegible
+       size to force-fit the content box - confirmed by rendering (the same
+       failure mode as the "rows" attribute bug on <textarea>, see
+       textareaValue's comment; here it's min-height leaving too little
+       content height once padding grew for this design pass). */
+    min-height: 46px;
     outline: none;
 }
 
 .pdf-checkbox-wrapper {
-    padding: 10px 8px;
+    padding: 14px 12px;
 }
 
 /* --- Footer Section --- */
 .obligatory-note {
     font-size: 9pt;
+    color: #5f6368;
     margin-top: 15px;
 }
 
 .footer-section {
     margin-top: 25px;
+    padding-top: 16px;
+    border-top: 1px solid #dfe3e8;
     font-size: 10.5pt;
-    border-top: none;
+    color: #3c4043;
+}
+
+.footer-section a,
+.footer-section .contact-email {
+    color: #00457d;
+    text-decoration: none;
 }
 
 /* --- Group Header Styles --- */
 .group-header-row {
-    background-color: #e6edf5 !important;
-    border-bottom: 1px solid #000;
+    background-color: transparent;
+}
+
+.group-header-row .group-title-cell {
+    border-left: 4px solid #00457d;
+    border-right: none;
+    padding: 18px 12px 10px 12px !important;
 }
 
 .group-name {
     font-weight: bold;
-    font-size: 11pt;
+    font-size: 12pt;
     color: #00457d;
-    text-transform: uppercase;
 }
 
 .empty-group-cell {
-    background-color: #ffffff;
     border-left: none !important;
 }
 
@@ -201,4 +234,17 @@ body {
 .display-name.grouped-label.mandatory::after {
     font-style: normal;
     font-weight: bold;
+}
+
+/* --- Layout rows (fields configured to render side by side) --- */
+.layout-field-label-wrapper,
+.layout-field-value-wrapper {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2%;
+}
+
+.layout-field-label-wrapper:last-child,
+.layout-field-value-wrapper:last-child {
+    margin-right: 0;
 }

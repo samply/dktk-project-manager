@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Form fields fragment</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+<!--
+    Reusable form-field rendering fragment.
+
+    Renders one row per form field (as produced by FormTemplateService's
+    "fields" context map), with:
+      - a group-header-row inserted whenever a field's first configured group
+        changes from the previous field;
+      - a group-header-row-styled heading inserted whenever a field's block,
+        or its block instance number, changes from the previous field (F1);
+      - fields configured into the same FormFieldLayoutRow (F2) rendered
+        side by side in one row instead of one field per row.
+
+    Parameters:
+      fields     - a Map<String, FormField> (label -> field), in the order it
+                   should be rendered in.
+      layoutRows - a FormFieldLayoutResolver (or null/absent if none apply),
+                   pre-resolved by FormTemplateService against "fields" and
+                   the configured FormFieldLayoutRows, so this template only
+                   needs two simple per-field lookups (see below) instead of
+                   cross-referencing fields and layouts itself.
+
+    This fragment relies on the caller's Thymeleaf context also exposing the
+    "DataType" enum class (added by FormTemplateService), used below to
+    switch on a field's type.
+
+    Intended to be shared by every deployment's form-PDF template via
+    th:replace, e.g.:
+      <table th:replace="~{fragments/form-fields :: fieldsTable(fields=${fields}, layoutRows=${layoutFieldRows})}"></table>
+-->
+<table th:fragment="fieldsTable(fields, layoutRows)" class="form-table">
+    <th:block th:with="prevGroupName=''">
+        <tbody>
+        <th:block th:each="entry, iterStat : ${fields}">
+
+            <th:block
+                    th:with="currentGroup=${(entry.value.groups != null && entry.value.groups.length > 0) ? entry.value.groups[0] : null},
+                             prevField=${iterStat.first ? null : fields.values()[iterStat.index - 1]},
+                             blockChanged=${entry.value.block != null && (prevField == null || prevField.block != entry.value.block)},
+                             blockInstanceChanged=${entry.value.block != null && (prevField == null || prevField.block != entry.value.block || prevField.blockInstance != entry.value.blockInstance)},
+                             rowFields=${layoutRows != null ? layoutRows.rowFieldsStartingAt(entry.key) : null},
+                             isRowMember=${layoutRows != null && layoutRows.isSkippedRowMember(entry.key)}">
+
+                <tr th:if="${currentGroup != null && (iterStat.first || currentGroup.group != (fields.values()[iterStat.index - 1].groups != null && fields.values()[iterStat.index - 1].groups.length > 0 ? fields.values()[iterStat.index - 1].groups[0].group : ''))}"
+                    class="group-header-row">
+                    <td class="label-cell group-title-cell" colspan="1">
+                        <div class="group-name" th:text="${currentGroup.displayName}">Group Display Name</div>
+                        <div class="description" th:if="${currentGroup.description}"
+                             th:text="${currentGroup.description}">Group Description
+                        </div>
+                    </td>
+                    <td class="value-cell empty-group-cell"></td>
+                </tr>
+
+                <!--
+                    Block-instance heading: printed whenever a field belongs to a
+                    block and either the block itself, or its instance number,
+                    changed since the previous field. Reuses the group-header-row
+                    styling (F1/§5.1). blockDescription is shown only the first
+                    time a block appears (blockChanged), not on every repeated
+                    instance, since it describes the block in general rather
+                    than one specific instance.
+                -->
+                <tr th:if="${blockInstanceChanged}" class="group-header-row">
+                    <td class="label-cell group-title-cell" colspan="1">
+                        <div class="group-name"
+                             th:text="${entry.value.multipleBlock ? entry.value.blockDisplayName + ' ' + entry.value.blockInstance : entry.value.blockDisplayName}">
+                            Block Display Name
+                        </div>
+                        <div class="description" th:if="${blockChanged && entry.value.blockDescription != null}"
+                             th:text="${entry.value.blockDescription}">Block Description
+                        </div>
+                    </td>
+                    <td class="value-cell empty-group-cell"></td>
+                </tr>
+
+                <!-- Plain single-field row: used whenever this field is neither a layout row's first field nor one of its other members. -->
+                <tr th:if="${rowFields == null && !isRowMember}" class="field-row">
+                    <td th:replace="~{::fieldLabel(field=${entry.value})}"></td>
+                    <td th:replace="~{::fieldValue(field=${entry.value}, key=${entry.key})}"></td>
+                </tr>
+
+                <!--
+                    Layout row (F2/§5.2): rendered once, at the first field of the
+                    row (rowFields != null), with every field in rowFields placed
+                    side by side (same 2-column label-cell/value-cell table
+                    structure, each cell holding one stacked/inline entry per
+                    field, so the table keeps a uniform 2-column layout the PDF
+                    renderer can size reliably). The row's other members are
+                    skipped by the plain-row condition above.
+                -->
+                <tr th:if="${rowFields != null}" class="field-row layout-row">
+                    <td class="label-cell">
+                        <th:block th:each="rowField : ${rowFields}">
+                            <div class="layout-field-label-wrapper"
+                                 th:style="|width: ${96 / #lists.size(rowFields)}%;|">
+                                <th:block th:replace="~{::fieldLabelContent(field=${rowField.field})}"></th:block>
+                            </div>
+                        </th:block>
+                    </td>
+                    <td class="value-cell">
+                        <th:block th:each="rowField : ${rowFields}">
+                            <div class="layout-field-value-wrapper"
+                                 th:style="|width: ${96 / #lists.size(rowFields)}%;|">
+                                <th:block th:replace="~{::fieldValueContent(field=${rowField.field}, key=${rowField.key})}"></th:block>
+                            </div>
+                        </th:block>
+                    </td>
+                </tr>
+            </th:block>
+        </th:block>
+        </tbody>
+    </th:block>
+</table>
+
+<!-- Label-cell content for one field: display name + description. Shared by the plain and layout-row rendering. -->
+<td th:fragment="fieldLabel(field)" class="label-cell">
+    <th:block th:replace="~{::fieldLabelContent(field=${field})}"></th:block>
+</td>
+<th:block th:fragment="fieldLabelContent(field)">
+    <!--
+        F7/§5.3: a multiple (non-block) field's instances are distinguished by
+        a numbered label suffix, e.g. "Comments (2)", rather than repeating the
+        same label with no indication of which instance it is.
+    -->
+    <div th:classappend="|${field.mandatory ? 'mandatory' : ''} ${ (field.groups != null && field.groups.length > 0) ? 'grouped-label' : '' }|"
+         class="display-name"
+         th:text="${(field.multiple != null && field.multiple && field.fieldInstance != null) ? field.labelDisplayName + ' (' + field.fieldInstance + ')' : field.labelDisplayName}">
+        Label
+    </div>
+    <div class="description" th:utext="${field.labelDescription}">
+        Description
+    </div>
+</th:block>
+
+<!-- Value-cell content for one field: the DataType switch. Shared by the plain and layout-row rendering. -->
+<td th:fragment="fieldValue(field, key)" class="value-cell">
+    <th:block th:replace="~{::fieldValueContent(field=${field}, key=${key})}"></th:block>
+</td>
+<!--
+    Value rendering keeps real, editable <textarea>/<input> AcroForm widgets
+    (the PDF is meant to stay fillable even for fields that already have a
+    value - 2026-09-09 feedback point 2), so a viewer can still type into
+    them. The overlap bug (2026-09-09 feedback point 1) was never about
+    editability - it was that these widgets were sized via a
+    "height: 100%" (child) + "height: 1px" (.value-cell parent) hack that
+    openhtmltopdf could not turn into a real widget rectangle (it logged
+    "no rectangle, no appearance stream created" for every one), so a value
+    wrapping onto a second line painted straight through into the row below.
+    The fix here sizes a <textarea> the native way instead: an explicit
+    "rows" attribute, estimated from the value's length and line count
+    (fetchEstimatedRows below), which openhtmltopdf can turn into a normal,
+    well-defined box - independent of any parent's height - the same way a
+    plain unstyled <textarea rows="n"> sizes in any renderer. The estimate
+    intentionally errs toward more rows (extra blank space) rather than too
+    few (overlap again).
+-->
+<th:block th:fragment="fieldValueContent(field, key)">
+    <div th:switch="${field.type}">
+        <!--
+            th:case and th:replace must NOT be combined on the same tag here:
+            doing so broke th:switch's exclusivity (STRING, LONG_STRING, and
+            the "*" default all rendered at once) - wrapping th:case on its
+            own th:block, with th:replace on a separate nested tag (as the
+            ENUM case below already did), is what makes it exclusive again.
+        -->
+        <!--
+            A shorter minRows (1-2) was tried here for STRING/ENUM, since many
+            of those fields hold short values and a tall box reads as dead
+            space in this lighter design. Reverted: openhtmltopdf's PDF
+            appearance generator auto-shrinks the font to an illegible size
+            whenever the widget's rows count is below ~3, regardless of the
+            CSS min-height - confirmed by rendering and visually inspecting
+            both rows=1 and rows=2. A few extra pixels of blank space is a
+            much smaller problem than unreadable text, so every text case
+            below shares the same safe minRows=3.
+        -->
+        <th:block th:case="${DataType.STRING}">
+            <textarea th:replace="~{::textareaValue(value=${field.value}, key=${key}, minRows=${3})}"></textarea>
+        </th:block>
+        <th:block th:case="${DataType.LONG_STRING}">
+            <textarea th:replace="~{::textareaValue(value=${field.value}, key=${key}, minRows=${3})}"></textarea>
+        </th:block>
+        <!--
+            F8/§5: an ENUM field's selected allowed value can carry its own
+            description, distinct from the field's labelDescription, so it is
+            shown alongside the plain display name rather than dropped.
+        -->
+        <th:block th:case="${DataType.ENUM}">
+            <textarea th:replace="~{::textareaValue(value=${field.fetchDisplayValue}, key=${key}, minRows=${3})}"></textarea>
+            <div class="description" th:if="${field.fetchDisplayDescription != null}"
+                 th:text="${field.fetchDisplayDescription}">Value description</div>
+        </th:block>
+        <input th:case="${DataType.INTEGER}" type="text" class="pdf-input-single"
+               th:name="${key}" th:value="${field.value}"/>
+        <input th:case="${DataType.DOUBLE}" type="text" class="pdf-input-single"
+               th:name="${key}" th:value="${field.value}"/>
+        <div th:case="${DataType.BOOLEAN}" class="pdf-checkbox-wrapper">
+            <input type="checkbox" th:name="${key}"
+                   th:checked="${field.value == 'true'}"/>
+        </div>
+        <span th:case="*" class="pdf-input" th:text="${field.value}"></span>
+    </div>
+</th:block>
+
+<!--
+    A single editable <textarea>, sized via a "rows" attribute estimated from
+    the value's length and line count instead of any percentage-height trick,
+    so openhtmltopdf can compute a real, well-defined widget rectangle (see
+    the comment above fieldValueContent for why that matters). The estimate
+    (~50 characters/row, plus one row per embedded newline, plus one row of
+    margin) deliberately errs toward more rows rather than too few. minRows
+    lets a short-value type (e.g. STRING) stay compact instead of always
+    reserving a LONG_STRING-sized block of empty space.
+-->
+<textarea th:fragment="textareaValue(value, key, minRows)" class="pdf-input" th:name="${key}"
+          th:with="lineCount=${value == null ? 1 : value.split('\n', -1).length},
+                   charCount=${value == null ? 0 : value.length()},
+                   estimatedRows=${lineCount + (charCount / 50) + 1},
+                   rows=${estimatedRows < minRows ? minRows : estimatedRows}"
+          th:style="|height: ${(rows * 14) + 20}pt;|"
+          th:text="${value}"></textarea>
+
+</body>
+</html>

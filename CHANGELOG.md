@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-## [0.0.1 - 2026-09-04]
+## [0.0.1 - 2026-09-09]
 ### Added
 - CHANGELOG
 - Dockerfile
@@ -99,6 +99,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Docker VerbIS User for Gitlab CI
 - NOT SELECTED configuration
 - Rename the Action Explanations configuration to Action Messages
+- PDF design
 
 ### Fixed
 - Avoid splitting fields in samples from the template

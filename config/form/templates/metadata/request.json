@@ -34,7 +34,7 @@
       "display_name": {
         "en": "Your name and DKTK-affiliation"
       },
-      "value": "${creator-name} (${creator-affiliations})"
+      "value": "${creator-name-with-affiliations}"
     },
     {
       "mandatory": true,
@@ -48,10 +48,10 @@
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Project ID"
+        "en": "Request ID"
       },
       "description": {
-        "en": "Technical ID for the project"
+        "en": "Technical ID for the request"
       },
       "value": "${project-code}"
     },
@@ -59,31 +59,151 @@
       "mandatory": true,
       "data_type": "DATE",
       "display_name": {
-        "en": "Project application date"
+        "en": "Request application date"
       },
       "value": "${project-creation-date}"
     },
     {
+      "label": "PROJECT_TITLE",
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Project title"
+        "en": "Request title"
       },
       "description": {
-        "en": "Please give a short title for your project"
+        "en": "Please give a short title for your request"
       },
       "value": "${project-title}"
     },
     {
+      "label": "PROJECT_DESCRIPTION",
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
         "en": "Study Objective"
       },
       "description": {
-        "en": "Short description of the project: What is the aim/objective of the project?"
+        "en": "Short description of the request: What is the aim/objective of the request?"
       },
       "value": "${project-description}"
+    },
+    {
+      "label": "SELECTED_COHORT",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Selected Cohort"
+      },
+      "description": {
+        "en": "This query was automatically imported from your Explorer session. Use \"Edit in Explorer\" to adjust your search criteria."
+      },
+      "value": "${selected-cohort}"
+    },
+    {
+      "label": "QUERY_FORMAT",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Query Format"
+      },
+      "value": "${query-format}"
+    },
+    {
+      "label": "ADDITIONAL_FILTER_CRITERIA",
+      "mandatory": false,
+      "data_type": "LONG_STRING",
+      "display_name": {
+        "en": "Additional filter criteria"
+      },
+      "description": {
+        "en": "Please provide filter criteria that could not be selected in the Explorer, or further notes on the resources you want to request"
+      },
+      "value": "${additional-filter-criteria}"
+    },
+    {
+      "label": "ENVIRONMENT_VARIABLES",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Environment Variables"
+      },
+      "value": "${environment-variables}"
+    },
+    {
+      "label": "ETHICS_VOTE_FOR_ALL_SITES",
+      "mandatory": false,
+      "data_type": "STRING",
+      "value": "${ethics-vote-for-all-sites-filename}"
+    },
+    {
+      "label": "DESCRIPTION_UPLOAD",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Request description document"
+      },
+      "value": "${description-upload-filename}"
+    },
+    {
+      "label": "QUERIED_SITES",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Selected Sites"
+      },
+      "description": {
+        "en": "Sites identified via the Explorer as having samples or data matching your search criteria."
+      },
+      "value": "${queried-sites}"
+    },
+    {
+      "label": "ETHICS_VOTE",
+      "mandatory": false,
+      "active": false,
+      "data_type": "LONG_STRING",
+      "display_name": {
+        "en": "Ethics vote per site"
+      },
+      "description": {
+        "en": "Per-site ethics vote status, where a request may need one per queried site rather than a single vote for all sites"
+      },
+      "value": "${ethics-votes-per-site}"
+    },
+    {
+      "label": "PROJECT_TYPE",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Type"
+      },
+      "value": "${project-types}"
+    },
+    {
+      "label": "OUTPUT_FORMAT",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Output Format"
+      },
+      "value": "${output-formats}"
+    },
+    {
+      "label": "TEMPLATE_ID",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Template ID"
+      },
+      "value": "${template-ids}"
+    },
+    {
+      "label": "PROJECT_CONFIGURATION",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Configuration"
+      },
+      "value": "${project-configuration}"
     }
   ]
 }
