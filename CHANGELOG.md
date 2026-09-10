@@ -56,6 +56,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Group fields in samples from the template
 - Form config
 - Development Environment
+- Configurable localized display formats without database or form-value persistence changes
+- Localized DATE values in generated form PDFs
 - Samples as service in configuration
 - Project and Forms configuration
 - Output format and template id in samples config
@@ -101,6 +103,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Rename the Action Explanations configuration to Action Messages
 - PDF design
 - Favicon as environment variable 
+- Localized display-format configuration
 
 ### Fixed
 - Avoid splitting fields in samples from the template

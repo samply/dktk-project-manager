@@ -208,6 +208,12 @@
                th:name="${key}" th:value="${field.value}"/>
         <input th:case="${DataType.DOUBLE}" type="text" class="pdf-input-single"
                th:name="${key}" th:value="${field.value}"/>
+        <span th:case="${DataType.DATE}" class="pdf-input"
+              th:text="${field.fetchDisplayValue}"></span>
+        <span th:case="${DataType.TIMESTAMP}" class="pdf-input"
+              th:text="${field.fetchDisplayValue}"></span>
+        <span th:case="${DataType.LOCAL_DATE_TIME}" class="pdf-input"
+              th:text="${field.fetchDisplayValue}"></span>
         <div th:case="${DataType.BOOLEAN}" class="pdf-checkbox-wrapper">
             <input type="checkbox" th:name="${key}"
                    th:checked="${field.value == 'true'}"/>

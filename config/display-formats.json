@@ -1,0 +1,20 @@
+{
+  "formats": {
+    "DATE_FORMAT": {
+      "en": "yyyy-MM-dd",
+      "de": "dd.MM.yyyy"
+    },
+    "LONG_DATE_FORMAT": {
+      "en": "MMMM d, yyyy",
+      "de": "d. MMMM yyyy"
+    },
+    "DATE_TIME_FORMAT": {
+      "en": "yyyy-MM-dd HH:mm",
+      "de": "dd.MM.yyyy HH:mm"
+    },
+    "DATE_TIME_WITH_SECONDS_FORMAT": {
+      "en": "yyyy-MM-dd HH:mm:ss",
+      "de": "dd.MM.yyyy HH:mm:ss"
+    }
+  }
+}

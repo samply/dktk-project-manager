@@ -36,6 +36,9 @@ setdefault MAILING_BLACK_LIST_FILE_PATH "/app/email/mailing-black-list.txt"
 
 setdefault EMAIL_TEMPLATES_CONFIG_PATH "/app/email/email-templates.json"
 setdefault ACTION_MESSAGES_CONFIG_PATH "/app/action-messages.json"
+setdefault DISPLAY_FORMATS_CONFIG_PATH "/app/display-formats.json"
+setdefault DEFAULT_DATE_FORM_FIELD_DISPLAY_FORMAT "DATE_FORMAT"
+setdefault DEFAULT_TIMESTAMP_FORM_FIELD_DISPLAY_FORMAT "DATE_TIME_FORMAT"
 
 # export BEAM_API_KEY="App1Secret" #################################### <= Please configure me
 # export BEAM_PROJECT_MANAGER_ID="project-manager.proxy.broker.ccp-it.dktk.dkfz.de" #################################### <= Please configure me
