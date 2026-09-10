@@ -100,6 +100,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - NOT SELECTED configuration
 - Rename the Action Explanations configuration to Action Messages
 - PDF design
+- Favicon as environment variable 
 
 ### Fixed
 - Avoid splitting fields in samples from the template

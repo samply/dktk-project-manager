@@ -7,6 +7,7 @@ setdefault FRONTEND_SITES_PROJECTMINUSDASHBOARD "/"
 setdefault FRONTEND_SITES_PROJECTMINUSVIEW "/project-view"
 setdefault ASSETS_DIRECTORY "/app/frontend/assets"
 
+setdefault FRONTEND_VARIABLES_FAVICON_URL "${BACKEND_BASEURL}/assets/favicon.png"
 setdefault FRONTEND_VARIABLES_LOGO_URL "${BACKEND_BASEURL}/assets/logo-dktk-sign.svg"
 setdefault FRONTEND_VARIABLES_PROJECT_URL "https://dktk.dkfz.de/"
 setdefault FRONTEND_VARIABLES_LOGO_TEXT "dktk"
