@@ -104,6 +104,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Fixed
 - Avoid splitting fields in samples from the template
+- PDF alignment
 
 ### Removed
 - Application Form

@@ -100,6 +100,7 @@
                     <td class="label-cell">
                         <th:block th:each="rowField : ${rowFields}">
                             <div class="layout-field-label-wrapper"
+                                 th:classappend="${rowField.field.labelDisplayName != null && !#strings.isEmpty(#strings.trim(rowField.field.labelDisplayName)) && (rowField.field.type == DataType.STRING || rowField.field.type == DataType.LONG_STRING || rowField.field.type == DataType.ENUM) ? 'textarea-value-label' : ''}"
                                  th:style="|width: ${96 / #lists.size(rowFields)}%;|">
                                 <th:block th:replace="~{::fieldLabelContent(field=${rowField.field})}"></th:block>
                             </div>
@@ -121,21 +122,26 @@
 </table>
 
 <!-- Label-cell content for one field: display name + description. Shared by the plain and layout-row rendering. -->
-<td th:fragment="fieldLabel(field)" class="label-cell">
+<td th:fragment="fieldLabel(field)" class="label-cell"
+    th:classappend="${field.labelDisplayName != null && !#strings.isEmpty(#strings.trim(field.labelDisplayName)) && (field.type == DataType.STRING || field.type == DataType.LONG_STRING || field.type == DataType.ENUM) ? 'textarea-value-label' : ''}">
     <th:block th:replace="~{::fieldLabelContent(field=${field})}"></th:block>
 </td>
-<th:block th:fragment="fieldLabelContent(field)">
+<th:block th:fragment="fieldLabelContent(field)"
+          th:with="hasDisplayName=${field.labelDisplayName != null && !#strings.isEmpty(#strings.trim(field.labelDisplayName))}">
     <!--
         F7/§5.3: a multiple (non-block) field's instances are distinguished by
         a numbered label suffix, e.g. "Comments (2)", rather than repeating the
         same label with no indication of which instance it is.
     -->
-    <div th:classappend="|${field.mandatory ? 'mandatory' : ''} ${ (field.groups != null && field.groups.length > 0) ? 'grouped-label' : '' }|"
+    <div th:if="${hasDisplayName}"
+         th:classappend="|${field.mandatory ? 'mandatory' : ''} ${ (field.groups != null && field.groups.length > 0) ? 'grouped-label' : '' }|"
          class="display-name"
          th:text="${(field.multiple != null && field.multiple && field.fieldInstance != null) ? field.labelDisplayName + ' (' + field.fieldInstance + ')' : field.labelDisplayName}">
         Label
     </div>
-    <div class="description" th:utext="${field.labelDescription}">
+    <div class="description"
+         th:classappend="${!hasDisplayName && field.mandatory ? 'mandatory' : ''}"
+         th:utext="${field.labelDescription}">
         Description
     </div>
 </th:block>

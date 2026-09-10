@@ -111,6 +111,13 @@ body {
     padding: 14px 12px 14px 4px !important;
 }
 
+/* AcroForm textarea text starts slightly below its widget's top edge. Align
+   the title with that visible value; untitled fields naturally align their
+   description through its existing top margin. */
+.label-cell.textarea-value-label {
+    padding-top: 19px !important;
+}
+
 .display-name {
     font-weight: bold;
     font-size: 10.5pt;
@@ -247,4 +254,9 @@ body {
 .layout-field-label-wrapper:last-child,
 .layout-field-value-wrapper:last-child {
     margin-right: 0;
+}
+
+.layout-field-label-wrapper.textarea-value-label {
+    padding-top: 5px;
+    box-sizing: border-box;
 }
