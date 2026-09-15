@@ -9,20 +9,20 @@
       }
     },
     "NEW_PROJECT_ACCEPTED": {
-      "subject": "New Data Request Acceptance - CCP Office",
+      "subject": "New Data Request Acceptance - BioDataHub",
       "files": {
         "CREATOR": "creator-new-project-accepted.html",
         "BRIDGEHEAD_ADMIN": "bridgehead-admin-new-project-accepted.html"
       }
     },
     "NEW_VOTUM": {
-      "subject": "New Ethic Vote from <bridgehead/> for Data Request <project-code/>",
+      "subject": "New Ethics Vote from <bridgehead/> for Data Request <project-code/>",
       "files": {
         "PROJECT_MANAGER_ADMIN": "project-manager-admin-new-votum.html"
       }
     },
     "NEW_VOTUM_FOR_ALL_BRIDGEHEADS": {
-      "subject": "New Ethic Vote for Data Request <project-code/> – Applicable to All Bridgeheads",
+      "subject": "New Ethics Vote for Data Request <project-code/> – Applicable to All Bridgeheads",
       "files": {
         "DEFAULT": "default-new-votum.html"
       }
