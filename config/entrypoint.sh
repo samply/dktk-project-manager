@@ -69,7 +69,8 @@ setdefault DB_ENCRYPTION_ALGORITHM "AES"
 
 setdefault EMAIL_TEMPLATES_DIRECTORY "/app/email/templates"
 setdefault EXPLORER_REDIRECT_URI_PARAMETER "redirect_uri"
-setdefault EXPLORER_URL "https://demo.lens.samply.de"
+#setdefault EXPLORER_URL "https://demo.lens.samply.de"
+setdefault EXPLORER_URL "https://data.dktk.dkfz.de"
 setdefault FOCUS_LENS_PROJECT "dktk"
 
 setdefault EXPORTER_CRON_EXPRESSION "*/30 * * * * *"
