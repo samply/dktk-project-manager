@@ -205,9 +205,9 @@
                  th:text="${field.fetchDisplayDescription}">Value description</div>
         </th:block>
         <input th:case="${DataType.INTEGER}" type="text" class="pdf-input-single"
-               th:name="${key}" th:value="${field.value}"/>
+               th:name="${key}" th:value="${field.fetchDisplayValue}"/>
         <input th:case="${DataType.DOUBLE}" type="text" class="pdf-input-single"
-               th:name="${key}" th:value="${field.value}"/>
+               th:name="${key}" th:value="${field.fetchDisplayValue}"/>
         <span th:case="${DataType.DATE}" class="pdf-input"
               th:text="${field.fetchDisplayValue}"></span>
         <span th:case="${DataType.TIMESTAMP}" class="pdf-input"

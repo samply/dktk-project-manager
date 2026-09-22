@@ -1,4 +1,8 @@
 {
+  "locales": {
+    "en": "en-US",
+    "de": "de-DE"
+  },
   "formats": {
     "DATE_FORMAT": {
       "en": "yyyy-MM-dd",
