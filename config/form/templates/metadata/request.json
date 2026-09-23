@@ -16,12 +16,6 @@
   "filename_templates": {
     "pdf": "request-${project-code}-${timestamp}.pdf"
   },
-  "form_titles": [
-    "project",
-    "query",
-    "samples",
-    "sequencing"
-  ],
   "template_file": "request",
   "template": "request",
   "display_name": {
@@ -64,112 +58,6 @@
       "value": "${project-creation-date}"
     },
     {
-      "label": "PROJECT_TITLE",
-      "mandatory": true,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Request title"
-      },
-      "description": {
-        "en": "Please give a short title for your request"
-      },
-      "value": "${project-title}"
-    },
-    {
-      "label": "PROJECT_DESCRIPTION",
-      "mandatory": true,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Study Objective"
-      },
-      "description": {
-        "en": "Short description of the request: What is the aim/objective of the request?"
-      },
-      "value": "${project-description}"
-    },
-    {
-      "label": "SELECTED_COHORT",
-      "mandatory": false,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Selected Cohort"
-      },
-      "description": {
-        "en": "This query was automatically imported from your Explorer session. Use \"Edit in Explorer\" to adjust your search criteria."
-      },
-      "value": "${selected-cohort}"
-    },
-    {
-      "label": "QUERY_FORMAT",
-      "mandatory": false,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Query Format"
-      },
-      "value": "${query-format}"
-    },
-    {
-      "label": "ADDITIONAL_FILTER_CRITERIA",
-      "mandatory": false,
-      "data_type": "LONG_STRING",
-      "display_name": {
-        "en": "Additional filter criteria"
-      },
-      "description": {
-        "en": "Please provide filter criteria that could not be selected in the Explorer, or further notes on the resources you want to request"
-      },
-      "value": "${additional-filter-criteria}"
-    },
-    {
-      "label": "ENVIRONMENT_VARIABLES",
-      "mandatory": false,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Environment Variables"
-      },
-      "value": "${environment-variables}"
-    },
-    {
-      "label": "ETHICS_VOTE_FOR_ALL_SITES",
-      "mandatory": false,
-      "data_type": "STRING",
-      "value": "${ethics-vote-for-all-sites-filename}"
-    },
-    {
-      "label": "DESCRIPTION_UPLOAD",
-      "mandatory": false,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Request description document"
-      },
-      "value": "${description-upload-filename}"
-    },
-    {
-      "label": "QUERIED_SITES",
-      "mandatory": false,
-      "data_type": "STRING",
-      "display_name": {
-        "en": "Selected Sites"
-      },
-      "description": {
-        "en": "Sites identified via the Explorer as having samples or data matching your search criteria."
-      },
-      "value": "${queried-sites}"
-    },
-    {
-      "label": "ETHICS_VOTE",
-      "mandatory": false,
-      "active": false,
-      "data_type": "LONG_STRING",
-      "display_name": {
-        "en": "Ethics vote per site"
-      },
-      "description": {
-        "en": "Per-site ethics vote status, where a request may need one per queried site rather than a single vote for all sites"
-      },
-      "value": "${ethics-votes-per-site}"
-    },
-    {
       "label": "PROJECT_TYPE",
       "mandatory": false,
       "data_type": "STRING",
@@ -197,6 +85,15 @@
       "value": "${template-ids}"
     },
     {
+      "label": "ENVIRONMENT_VARIABLES",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Environment Variables"
+      },
+      "value": "${environment-variables}"
+    },
+    {
       "label": "PROJECT_CONFIGURATION",
       "mandatory": false,
       "data_type": "STRING",
@@ -204,6 +101,110 @@
         "en": "Configuration"
       },
       "value": "${project-configuration}"
+    },
+    {
+      "label": "SELECTED_COHORT",
+      "form_title": "query",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Selected Cohort"
+      },
+      "description": {
+        "en": "This query was automatically imported from your Explorer session. Use \"Edit in Explorer\" to adjust your search criteria."
+      },
+      "value": "${selected-cohort}"
+    },
+    {
+      "label": "QUERIED_SITES",
+      "form_title": "query",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Selected Sites"
+      },
+      "description": {
+        "en": "Sites identified via the Explorer as having samples or data matching your search criteria."
+      },
+      "value": "${queried-sites}"
+    },
+    {
+      "label": "QUERY_FORMAT",
+      "form_title": "query",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Query Format"
+      },
+      "value": "${query-format}"
+    },
+    {
+      "label": "ADDITIONAL_FILTER_CRITERIA",
+      "form_title": "query",
+      "mandatory": false,
+      "data_type": "LONG_STRING",
+      "display_name": {
+        "en": "Additional filter criteria"
+      },
+      "description": {
+        "en": "Please provide filter criteria that could not be selected in the Explorer, or further notes on the resources you want to request"
+      },
+      "value": "${additional-filter-criteria}"
+    },
+    {
+      "label": "PROJECT_TITLE",
+      "form_title": "project",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Request title"
+      },
+      "description": {
+        "en": "Please give a short title for your request"
+      },
+      "value": "${project-title}"
+    },
+    {
+      "label": "PROJECT_DESCRIPTION",
+      "form_title": "project",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Study Objective"
+      },
+      "description": {
+        "en": "Short description of the request: What is the aim/objective of the request?"
+      },
+      "value": "${project-description}"
+    },
+    {
+      "label": "DESCRIPTION_UPLOAD",
+      "form_title": "project",
+      "mandatory": false,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Request description document"
+      },
+      "value": "${description-upload-filename}"
+    },
+    {
+      "label": "ETHICS_VOTE_FOR_ALL_SITES",
+      "mandatory": false,
+      "data_type": "STRING",
+      "value": "${ethics-vote-for-all-sites-filename}"
+    },
+    {
+      "label": "ETHICS_VOTE",
+      "mandatory": false,
+      "active": false,
+      "data_type": "LONG_STRING",
+      "display_name": {
+        "en": "Ethics vote per site"
+      },
+      "description": {
+        "en": "Per-site ethics vote status, where a request may need one per queried site rather than a single vote for all sites"
+      },
+      "value": "${ethics-votes-per-site}"
     }
   ]
 }

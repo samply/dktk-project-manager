@@ -76,7 +76,7 @@
 </div>
 
 <form>
-    <table th:replace="~{fragments/form-fields :: fieldsTable(fields=${fields}, layoutRows=${layoutFieldRows})}"></table>
+    <table th:replace="~{fragments/form-fields :: fieldsTable(document=${document})}"></table>
 </form>
 
 <p class="obligatory-note">*) Obligatory information</p>

@@ -190,6 +190,35 @@ body {
     padding: 14px 12px;
 }
 
+/* A CHECK_BOX field: one line per allowed value, checkbox first. Inline
+ * blocks, not flexbox (openhtmltopdf does not support it). */
+.checkbox-option {
+    padding: 8px 12px 0 12px;
+}
+
+.checkbox-option:last-child {
+    padding-bottom: 12px;
+}
+
+.checkbox-option input {
+    display: inline-block;
+    vertical-align: top;
+    margin: 2px 8px 0 0;
+}
+
+.checkbox-option-text {
+    display: inline-block;
+    vertical-align: top;
+    width: 90%;
+    font-size: 10.5pt;
+}
+
+/* A field without display name and description spans both columns. */
+.full-width-cell {
+    width: 100%;
+    padding-top: 6px;
+}
+
 /* --- Footer Section --- */
 .obligatory-note {
     font-size: 9pt;
@@ -228,8 +257,54 @@ body {
     color: #00457d;
 }
 
-.empty-group-cell {
-    border-left: none !important;
+/* Column widths, stated on the colgroup so they do not depend on which row
+ * comes first (a full-width section heading may). */
+.form-table col.label-column {
+    width: 38%;
+}
+
+.form-table col.value-column {
+    width: 62%;
+}
+
+/* Section heading: one per printed form, spanning both columns. */
+.section-header-row {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+}
+
+.section-header-row .section-title-cell {
+    border-bottom: 2px solid #00457d;
+    padding: 26px 12px 8px 0 !important;
+}
+
+.section-name {
+    font-weight: bold;
+    font-size: 14pt;
+    color: #00457d;
+}
+
+/* Nested groups: each deeper level indented, with a lighter heading. */
+.group-level-2 .group-title-cell {
+    border-left-width: 2px;
+    padding-left: 24px !important;
+}
+
+.group-level-2 .group-name {
+    font-size: 11pt;
+}
+
+.group-level-3 .group-title-cell,
+.group-level-4 .group-title-cell,
+.group-level-5 .group-title-cell {
+    border-left-width: 1px;
+    padding-left: 36px !important;
+}
+
+.group-level-3 .group-name,
+.group-level-4 .group-name,
+.group-level-5 .group-name {
+    font-size: 10.5pt;
 }
 
 .display-name.grouped-label {

@@ -7,118 +7,137 @@
 <body>
 
 <!--
-    Reusable form-field rendering fragment.
+    Reusable form-field rendering fragment, shared by every deployment's
+    form-PDF template via th:replace, e.g.:
+      <table th:replace="~{fragments/form-fields :: fieldsTable(document=${document})}"></table>
 
-    Renders one row per form field (as produced by FormTemplateService's
-    "fields" context map), with:
-      - a group-header-row inserted whenever a field's first configured group
-        changes from the previous field;
-      - a group-header-row-styled heading inserted whenever a field's block,
-        or its block instance number, changes from the previous field (F1);
-      - fields configured into the same FormFieldLayoutRow (F2) rendered
-        side by side in one row instead of one field per row.
-
-    Parameters:
-      fields     - a Map<String, FormField> (label -> field), in the order it
-                   should be rendered in.
-      layoutRows - a FormFieldLayoutResolver (or null/absent if none apply),
-                   pre-resolved by FormTemplateService against "fields" and
-                   the configured FormFieldLayoutRows, so this template only
-                   needs two simple per-field lookups (see below) instead of
-                   cross-referencing fields and layouts itself.
+    The structure (which headings and rows appear, and in which order) is
+    built in Java (FormTemplateDocumentBuilder) and passed as "document": an
+    ordered list of nodes, each with a "kind":
+      - "section": heading of a printed form; rows before the first section
+                   heading are the header block (the request's basic data);
+      - "group": heading of a field group, with its nesting "level" (1, 2, ...);
+      - "block": heading of a block instance, e.g. "Collaborator 2";
+      - "row":   one field, or ("layout") the fields of a configured layout
+                 row side by side, with their "widths"; "fullWidth" for a
+                 field without display name and description;
+      - "checkboxes": a CHECK_BOX field with all its options.
+    Descriptions are already resolved (full, else short).
+    This fragment only renders those nodes.
 
     This fragment relies on the caller's Thymeleaf context also exposing the
     "DataType" enum class (added by FormTemplateService), used below to
     switch on a field's type.
-
-    Intended to be shared by every deployment's form-PDF template via
-    th:replace, e.g.:
-      <table th:replace="~{fragments/form-fields :: fieldsTable(fields=${fields}, layoutRows=${layoutFieldRows})}"></table>
 -->
-<table th:fragment="fieldsTable(fields, layoutRows)" class="form-table">
-    <th:block th:with="prevGroupName=''">
-        <tbody>
-        <th:block th:each="entry, iterStat : ${fields}">
+<table th:fragment="fieldsTable(document)" class="form-table">
+    <!--
+        Column widths stated here, not only on the cells: with table-layout
+        fixed they would otherwise come from the first row, which may be a
+        full-width section heading.
+    -->
+    <colgroup>
+        <col class="label-column"/>
+        <col class="value-column"/>
+    </colgroup>
+    <tbody>
+    <th:block th:each="node : ${document.nodes}">
 
-            <th:block
-                    th:with="currentGroup=${(entry.value.groups != null && entry.value.groups.length > 0) ? entry.value.groups[0] : null},
-                             prevField=${iterStat.first ? null : fields.values()[iterStat.index - 1]},
-                             blockChanged=${entry.value.block != null && (prevField == null || prevField.block != entry.value.block)},
-                             blockInstanceChanged=${entry.value.block != null && (prevField == null || prevField.block != entry.value.block || prevField.blockInstance != entry.value.blockInstance)},
-                             rowFields=${layoutRows != null ? layoutRows.rowFieldsStartingAt(entry.key) : null},
-                             isRowMember=${layoutRows != null && layoutRows.isSkippedRowMember(entry.key)}">
+        <tr th:if="${node.kind == 'section'}" class="section-header-row">
+            <td class="section-title-cell" colspan="2">
+                <div class="section-name"
+                     th:text="${node.form.titleDisplayName != null ? node.form.titleDisplayName : node.form.title}">
+                    Section Display Name
+                </div>
+                <div class="description" th:if="${node.description != null}"
+                     th:text="${node.description}">Section Description
+                </div>
+            </td>
+        </tr>
 
-                <tr th:if="${currentGroup != null && (iterStat.first || currentGroup.group != (fields.values()[iterStat.index - 1].groups != null && fields.values()[iterStat.index - 1].groups.length > 0 ? fields.values()[iterStat.index - 1].groups[0].group : ''))}"
-                    class="group-header-row">
-                    <td class="label-cell group-title-cell" colspan="1">
-                        <div class="group-name" th:text="${currentGroup.displayName}">Group Display Name</div>
-                        <div class="description" th:if="${currentGroup.description}"
-                             th:text="${currentGroup.description}">Group Description
-                        </div>
-                    </td>
-                    <td class="value-cell empty-group-cell"></td>
-                </tr>
+        <!--
+            Group and block headings span both columns, so each deployment's
+            CSS decides their alignment (e.g. left in master, centred in cce).
+        -->
+        <tr th:if="${node.kind == 'group'}" class="group-header-row"
+            th:classappend="${'group-level-' + node.level}">
+            <td class="group-title-cell" colspan="2">
+                <div class="group-name" th:text="${node.group.displayName}">Group Display Name</div>
+                <div class="description" th:if="${node.description != null}"
+                     th:text="${node.description}">Group Description
+                </div>
+            </td>
+        </tr>
 
-                <!--
-                    Block-instance heading: printed whenever a field belongs to a
-                    block and either the block itself, or its instance number,
-                    changed since the previous field. Reuses the group-header-row
-                    styling (F1/§5.1). blockDescription is shown only the first
-                    time a block appears (blockChanged), not on every repeated
-                    instance, since it describes the block in general rather
-                    than one specific instance.
-                -->
-                <tr th:if="${blockInstanceChanged}" class="group-header-row">
-                    <td class="label-cell group-title-cell" colspan="1">
-                        <div class="group-name"
-                             th:text="${entry.value.multipleBlock ? entry.value.blockDisplayName + ' ' + entry.value.blockInstance : entry.value.blockDisplayName}">
-                            Block Display Name
-                        </div>
-                        <div class="description" th:if="${blockChanged && entry.value.blockDescription != null}"
-                             th:text="${entry.value.blockDescription}">Block Description
-                        </div>
-                    </td>
-                    <td class="value-cell empty-group-cell"></td>
-                </tr>
+        <tr th:if="${node.kind == 'block'}" class="group-header-row block-header-row">
+            <td class="group-title-cell" colspan="2">
+                <div class="group-name" th:text="${node.title}">Block Display Name</div>
+                <div class="description" th:if="${node.description != null}"
+                     th:text="${node.description}">Block Description
+                </div>
+            </td>
+        </tr>
 
-                <!-- Plain single-field row: used whenever this field is neither a layout row's first field nor one of its other members. -->
-                <tr th:if="${rowFields == null && !isRowMember}" class="field-row">
-                    <td th:replace="~{::fieldLabel(field=${entry.value})}"></td>
-                    <td th:replace="~{::fieldValue(field=${entry.value}, key=${entry.key})}"></td>
-                </tr>
+        <tr th:if="${node.kind == 'row' && !node.layout && !node.fullWidth}" class="field-row">
+            <td th:replace="~{::fieldLabel(field=${node.fields[0].field})}"></td>
+            <td th:replace="~{::fieldValue(field=${node.fields[0].field}, key=${node.fields[0].key})}"></td>
+        </tr>
 
-                <!--
-                    Layout row (F2/§5.2): rendered once, at the first field of the
-                    row (rowFields != null), with every field in rowFields placed
-                    side by side (same 2-column label-cell/value-cell table
-                    structure, each cell holding one stacked/inline entry per
-                    field, so the table keeps a uniform 2-column layout the PDF
-                    renderer can size reliably). The row's other members are
-                    skipped by the plain-row condition above.
-                -->
-                <tr th:if="${rowFields != null}" class="field-row layout-row">
-                    <td class="label-cell">
-                        <th:block th:each="rowField : ${rowFields}">
-                            <div class="layout-field-label-wrapper"
-                                 th:classappend="${rowField.field.labelDisplayName != null && !#strings.isEmpty(#strings.trim(rowField.field.labelDisplayName)) && (rowField.field.type == DataType.STRING || rowField.field.type == DataType.LONG_STRING || rowField.field.type == DataType.ENUM) ? 'textarea-value-label' : ''}"
-                                 th:style="|width: ${96 / #lists.size(rowFields)}%;|">
-                                <th:block th:replace="~{::fieldLabelContent(field=${rowField.field})}"></th:block>
-                            </div>
-                        </th:block>
-                    </td>
-                    <td class="value-cell">
-                        <th:block th:each="rowField : ${rowFields}">
-                            <div class="layout-field-value-wrapper"
-                                 th:style="|width: ${96 / #lists.size(rowFields)}%;|">
-                                <th:block th:replace="~{::fieldValueContent(field=${rowField.field}, key=${rowField.key})}"></th:block>
-                            </div>
-                        </th:block>
-                    </td>
-                </tr>
+        <!-- A field without display name and description: its value takes the whole row. -->
+        <tr th:if="${node.kind == 'row' && !node.layout && node.fullWidth}" class="field-row full-width-row">
+            <td class="value-cell full-width-cell" colspan="2">
+                <th:block th:replace="~{::fieldValueContent(field=${node.fields[0].field}, key=${node.fields[0].key})}"></th:block>
+            </td>
+        </tr>
+
+        <!--
+            A CHECK_BOX field: every allowed value with its own (fillable)
+            checkbox, checked if selected, so an unchecked option stays visible.
+        -->
+        <tr th:if="${node.kind == 'checkboxes'}" class="field-row checkbox-list-row">
+            <!-- th:replace runs before th:unless on one tag, so the condition wraps it. -->
+            <th:block th:unless="${node.fullWidth}">
+                <td th:replace="~{::fieldLabel(field=${node.field.field})}"></td>
             </th:block>
-        </th:block>
-        </tbody>
+            <td class="value-cell" th:classappend="${node.fullWidth ? 'full-width-cell' : ''}"
+                th:colspan="${node.fullWidth ? 2 : 1}">
+                <div class="checkbox-option" th:each="option : ${node.options}">
+                    <input type="checkbox" th:name="${option.name}" th:checked="${option.checked}"/>
+                    <div class="checkbox-option-text">
+                        <div class="checkbox-option-name" th:text="${option.displayName}">Option</div>
+                        <div class="description" th:if="${option.description != null}"
+                             th:text="${option.description}">Option description</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <!--
+            Layout row: every field of the row side by side, in the same
+            2-column label-cell/value-cell table structure (each cell holding
+            one entry per field), so the table keeps a uniform 2-column layout
+            the PDF renderer can size reliably.
+        -->
+        <tr th:if="${node.kind == 'row' && node.layout}" class="field-row layout-row">
+            <td class="label-cell">
+                <th:block th:each="rowField, stat : ${node.fields}">
+                    <div class="layout-field-label-wrapper"
+                         th:classappend="${rowField.field.labelDisplayName != null && !#strings.isEmpty(#strings.trim(rowField.field.labelDisplayName)) && (rowField.field.type == DataType.STRING || rowField.field.type == DataType.LONG_STRING || rowField.field.type == DataType.ENUM) ? 'textarea-value-label' : ''}"
+                         th:style="|width: ${node.widths[stat.index]}%;|">
+                        <th:block th:replace="~{::fieldLabelContent(field=${rowField.field})}"></th:block>
+                    </div>
+                </th:block>
+            </td>
+            <td class="value-cell">
+                <th:block th:each="rowField, stat : ${node.fields}">
+                    <div class="layout-field-value-wrapper"
+                         th:style="|width: ${node.widths[stat.index]}%;|">
+                        <th:block th:replace="~{::fieldValueContent(field=${rowField.field}, key=${rowField.key})}"></th:block>
+                    </div>
+                </th:block>
+            </td>
+        </tr>
     </th:block>
+    </tbody>
 </table>
 
 <!-- Label-cell content for one field: display name + description. Shared by the plain and layout-row rendering. -->
@@ -141,7 +160,7 @@
     </div>
     <div class="description"
          th:classappend="${!hasDisplayName && field.mandatory ? 'mandatory' : ''}"
-         th:utext="${field.labelDescription}">
+         th:utext="${field.fetchFullLabelDescription}">
         Description
     </div>
 </th:block>
