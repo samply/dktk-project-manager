@@ -112,8 +112,8 @@
         {
           "label": "confirmation",
           "display_name": {
-            "en": "If this project results in a manuscript, I agree to notify biodatahub@dkfz.de and master-projekte@nct-heidelberg.de in advance. They will then make recommendations regarding the acknowledgement of data owners from different DKTK and NCT sites, and prepare the database upload.",
-            "de": "Sollte aus diesem Projekt ein Manuskript entstehen, verpflichte ich mich, biodatahub@dkfz.de und master-projekte@nct-heidelberg.de vorab zu benachrichtigen. Diese werden dann Empfehlungen hinsichtlich der Nennung der Dateneigentümer der verschiedenen DKTK- und NCT-Standorte aussprechen und den Upload in die Datenbank vorbereiten."
+            "en": "If this project results in a manuscript, I agree to notify <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> and <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> in advance. They will then make recommendations regarding the acknowledgement of data owners from different DKTK and NCT sites, and prepare the database upload.",
+            "de": "Sollte aus diesem Projekt ein Manuskript entstehen, verpflichte ich mich, <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> und <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> vorab zu benachrichtigen. Diese werden dann Empfehlungen hinsichtlich der Nennung der Dateneigentümer der verschiedenen DKTK- und NCT-Standorte aussprechen und den Upload in die Datenbank vorbereiten."
           }
         }
       ]
