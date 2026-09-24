@@ -39,6 +39,9 @@ setdefault ACTION_MESSAGES_CONFIG_PATH "/app/action-messages.json"
 setdefault DISPLAY_FORMATS_CONFIG_PATH "/app/display-formats.json"
 setdefault DEFAULT_DATE_FORM_FIELD_DISPLAY_FORMAT "DATE_FORMAT"
 setdefault DEFAULT_TIMESTAMP_FORM_FIELD_DISPLAY_FORMAT "DATE_TIME_FORMAT"
+setdefault PROJECT_ID_TEMPLATE "REQ-{{YEAR}}-{{SEQUENCE:4}}"
+setdefault PROJECT_ID_EXPORTER_LENGTH "10"
+setdefault PROJECT_ID_EXPORTER_START "6"
 
 # export BEAM_API_KEY="App1Secret" #################################### <= Please configure me
 # export BEAM_PROJECT_MANAGER_ID="project-manager.proxy.broker.ccp-it.dktk.dkfz.de" #################################### <= Please configure me

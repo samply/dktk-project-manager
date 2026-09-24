@@ -1,5 +1,29 @@
 # dktk-project-manager
 
+## Project IDs
+
+Project IDs are generated from `PROJECT_ID_TEMPLATE`. This instance uses
+`REQ-{{YEAR}}-{{SEQUENCE:4}}`, which creates human-readable IDs such as `REQ-2026-0001`:
+a fixed prefix, the year of creation and a running number. The running number
+comes from a database sequence, so it never repeats; it is shared across years
+(it does not restart at `0001` on 1 January) and keeps growing past four digits.
+
+Supported tokens are `YEAR`, `MONTH`, `DAY`, `HOUR`, `MINUTE`, `SECOND`,
+`SEQUENCE:n`, `NUMBER:n` and `STRING:n`. Every template needs at least one
+`SEQUENCE`, `NUMBER` or `STRING` token. An empty template falls back to
+`{{STRING:20}}`, the previous 20-character random ID format.
+Literal text may contain only ASCII letters, digits, `-`, and `_` so generated
+IDs remain safe as URL path segments.
+
+The exporter query label shows a shorter form of the ID: `PROJECT_ID_EXPORTER_LENGTH`
+characters starting at `PROJECT_ID_EXPORTER_START` (0-based). With `6` and `10`,
+`REQ-2026-0001` is shown as `26-0001`. Keep these two values in sync when the
+template changes.
+
+The development environment uses the prefix `TEST-` instead (`TEST-2026-0001`,
+with `PROJECT_ID_EXPORTER_START=7`), so development projects can't be mistaken
+for production ones.
+
 ## Localized display formats
 
 Locale conventions are configured in the optional `locales` section of
