@@ -15,14 +15,45 @@ Supported tokens are `YEAR`, `MONTH`, `DAY`, `HOUR`, `MINUTE`, `SECOND`,
 Literal text may contain only ASCII letters, digits, `-`, and `_` so generated
 IDs remain safe as URL path segments.
 
-The exporter query label shows a shorter form of the ID: `PROJECT_ID_EXPORTER_LENGTH`
-characters starting at `PROJECT_ID_EXPORTER_START` (0-based). With `6` and `10`,
-`REQ-2026-0001` is shown as `26-0001`. Keep these two values in sync when the
-template changes.
+The development environment uses the prefix `TEST-` instead (`TEST-2026-0001`),
+so development projects can't be mistaken for production ones.
 
-The development environment uses the prefix `TEST-` instead (`TEST-2026-0001`,
-with `PROJECT_ID_EXPORTER_START=7`), so development projects can't be mistaken
-for production ones.
+## Exporter query label
+
+`EXPORTER_QUERY_LABEL_TEMPLATE` defines the label of the queries sent to the
+exporter. It is required: the project manager does not start without it.
+This instance uses `[{{PROJECT_CODE}}] {{QUERY_LABEL}}`.
+
+The template is literal text with expressions in double braces. Expressions are
+[Spring Expression Language (SpEL)](https://docs.spring.io/spring-framework/reference/core/expressions.html)
+and can use these variables:
+
+| Variable | Content | Example |
+|---|---|---|
+| `PROJECT_CODE` | Project ID | `REQ-2026-0001` |
+| `PROJECT_TYPE` | Type of the query | `EXPORT`, `DATASHIELD`, `RESEARCH_ENVIRONMENT`, `SAMPLES` |
+| `QUERY_LABEL` | Label of the query | `My query` |
+
+Any Java `String` method can be called on them, such as `substring`,
+`toLowerCase`, `toUpperCase` or `replace`. Examples for the project
+`REQ-2026-0001` with the query `My query`:
+
+| `EXPORTER_QUERY_LABEL_TEMPLATE` | Label |
+|---|---|
+| `[{{PROJECT_CODE}}] {{QUERY_LABEL}}` | `[REQ-2026-0001] My query` |
+| `[{{PROJECT_CODE.substring(6)}}] {{QUERY_LABEL}}` | `[26-0001] My query` |
+| `[{{PROJECT_TYPE}}-{{PROJECT_CODE}}] {{QUERY_LABEL}}` | `[EXPORT-REQ-2026-0001] My query` |
+| `{{PROJECT_CODE.toLowerCase()}}: {{QUERY_LABEL}}` | `req-2026-0001: My query` |
+| `{{PROJECT_CODE.replace('REQ-', '')}} {{QUERY_LABEL}}` | `2026-0001 My query` |
+
+`substring(6)` keeps the characters from position 6 (counting from 0) to the
+end; `substring(0, 8)` would keep the first 8 characters (`REQ-2026`).
+
+If the label is sent again, ` (Attempt: n)` is appended automatically. The
+template is checked at startup, so a mistake stops the project manager with a
+clear message. If an expression fails for a single project (for example
+`substring` on a shorter ID), the error is logged and the label falls back to
+`[PROJECT_CODE] QUERY_LABEL`.
 
 ## Localized display formats
 
