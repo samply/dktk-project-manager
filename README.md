@@ -18,6 +18,29 @@ IDs remain safe as URL path segments.
 The development environment uses the prefix `TEST-` instead (`TEST-2026-0001`),
 so development projects can't be mistaken for production ones.
 
+## Create request from the dashboard
+
+Requests are usually created from the Explorer, which sends the query and the
+selected sites. The dashboard can also show a **Create request** button, which
+creates a draft request with an empty query and no sites and opens it:
+
+| Variable | Content |
+|---|---|
+| `FRONTEND_VARIABLES_CREATE_REQUEST_ENABLED` | `true` shows the button; any other value or no value hides it |
+| `FRONTEND_VARIABLES_CREATE_REQUEST_DEFAULT_QUERY_FORMAT` | Format of the new request's query, e.g. `AST_DATA` |
+
+The button is enabled only in development for now. When a request has no
+Explorer URL (like the ones created with this button), its creator defines the
+query and its format in the request form; requests from the Explorer are still
+edited in the Explorer. The message shown after creating the request is
+`CREATE_QUERY_AND_DESIGN_PROJECT` in `action-messages.json`.
+
+After the Explorer (or any other client) creates or edits a request, the
+project manager returns the URL of the request with a one-time marker
+(`action-feedback=<ACTION>`). The request page shows that action's
+`success-message` from `action-messages.json` once and removes the marker:
+`CREATE_QUERY_AND_DESIGN_PROJECT` after creating, `EDIT_PROJECT` after editing.
+
 ## Exporter query label
 
 `EXPORTER_QUERY_LABEL_TEMPLATE` defines the label of the queries sent to the
