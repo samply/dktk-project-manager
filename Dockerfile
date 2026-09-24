@@ -1,6 +1,6 @@
 FROM docker.io/samply/project-manager:develop
 
-COPY config/ /app/
+COPY production/ /app/
 
 WORKDIR /app
 
