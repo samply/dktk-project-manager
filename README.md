@@ -41,6 +41,18 @@ project manager returns the URL of the request with a one-time marker
 `success-message` from `action-messages.json` once and removes the marker:
 `CREATE_QUERY_AND_DESIGN_PROJECT` after creating, `EDIT_PROJECT` after editing.
 
+## Credentials Sharing Tool
+
+The Results section can offer a **Credentials Sharing Tool**, which prepares
+email templates that send a results password separately from the results URL.
+It is a proposal and has not been approved, so it is hidden unless enabled:
+
+| Variable | Content |
+|---|---|
+| `FRONTEND_VARIABLES_CREDENTIALS_SHARING_TOOL_ENABLED` | `true` shows the tool; any other value or no value hides it |
+
+It is enabled only in development for now.
+
 ## Exporter query label
 
 `EXPORTER_QUERY_LABEL_TEMPLATE` defines the label of the queries sent to the
