@@ -16,6 +16,8 @@ setdefault FRONTEND_VARIABLES_LOGO_CSS "${BACKEND_BASEURL}/assets/logo.css"
 setdefault FRONTEND_VARIABLES_FRONTEND_NAME "<b>DKTK BioDataHub</b> Data Request"
 setdefault FRONTEND_VARIABLES_PAGE_TITLE "Data Request"
 setdefault FRONTEND_VARIABLES_FEASIBILITY_PAGE_SIZE "5"
+setdefault FRONTEND_VARIABLES_CREATE_REQUEST_ORGANISATION_ROLES "PROJECT_MANAGER_ADMIN"
+setdefault FRONTEND_VARIABLES_CREATE_REQUEST_DEFAULT_QUERY_FORMAT "AST_DATA"
 # Lines shown for a normal form-field description before the UI offers "Show more".
 setdefault FRONTEND_VARIABLES_FORM_FIELD_DESCRIPTION_COLLAPSED_LINES "2"
 setdefault FRONTEND_VARIABLES_DEFAULT_ERROR_MESSAGE_FOR_USER_ACTIONS "The action could not be completed. Please try again. If the problem persists, please contact technical support at biodatahub@dkfz-heidelberg.de."
