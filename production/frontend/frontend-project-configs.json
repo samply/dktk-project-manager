@@ -15,7 +15,7 @@
     "TumorDocumentation": {
       "project": {
         "label": "Clinical Annotation",
-        "description": "Export of the the clinical data for the selected cohort as anonymised tabular files",
+        "description": "Export of the clinical data for the selected cohort as anonymised tabular files",
         "outputs": [
           {
             "projectType": "EXPORT",
