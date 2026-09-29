@@ -18,7 +18,7 @@
         "de": "Ethics Approval Status"
       },
       "description": {
-        "en": "If approved, please attach the Ethics form",
+        "en": "If approved, please attach the Ethics Form",
         "de": "Falls eine Genehmigung vorliegt, fügen Sie bitte das Ethik-Formular bei."
       },
       "allowed_values": [
@@ -50,11 +50,11 @@
       "mandatory": true,
       "data_type": "BOOLEAN",
       "display_name": {
-        "en": "Ethics vote",
+        "en": "Ethics Vote",
         "de": "Ethikabstimmung"
       },
       "description": {
-        "en": "Has an ethics review been conducted for your data request?",
+        "en": "Has an Ethics Review been conducted for your Data Request?",
         "de": "Wurde für Ihr Projekt eine Ethikprüfung durchgeführt?"
       }
     },
@@ -70,7 +70,7 @@
         "de": ""
       },
       "description": {
-        "en": "Upload ethics vote file (optional)",
+        "en": "Upload Ethics Vote file (optional)",
         "de": "Datei zur Ethikabstimmung hochladen (optional)"
       },
       "field_type": "FIXED",
