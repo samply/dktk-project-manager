@@ -4,10 +4,6 @@
     "en": "Conflicts of Interest",
     "de": "Projekt"
   },
-  "description": {
-    "en": "Information about conflicts of interest",
-    "de": "Bitte geben Sie Informationen zu Ihrem Projekt an"
-  },
   "fields": [
     {
       "label": "conflict_declaration",
