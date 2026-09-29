@@ -4,10 +4,6 @@
     "en": "Ethics and Compliance",
     "de": "Projekt"
   },
-  "description": {
-    "en": "Information about ethics and compliance",
-    "de": "Bitte geben Sie Informationen zu Ihrem Projekt an"
-  },
   "fields": [
     {
       "label": "ethics_approval_status",
