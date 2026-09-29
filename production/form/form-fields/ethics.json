@@ -80,7 +80,7 @@
         "CHECK_BOX"
       ],
       "display_name": {
-        "en": "Compliance with Ethics and Data Protection",
+        "en": "Compliance with Data Protection Regulations",
         "de": "Einhaltung der Vorschriften Ethik und Datenschutzes"
       },
       "allowed_values": [
@@ -108,8 +108,8 @@
         {
           "label": "confirmation",
           "display_name": {
-            "en": "If this project results in a manuscript, I agree to notify <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> and <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> in advance. They will then make recommendations regarding the acknowledgement of data owners from different DKTK and NCT sites, and prepare the database upload.",
-            "de": "Sollte aus diesem Projekt ein Manuskript entstehen, verpflichte ich mich, <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> und <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> vorab zu benachrichtigen. Diese werden dann Empfehlungen hinsichtlich der Nennung der Dateneigentümer der verschiedenen DKTK- und NCT-Standorte aussprechen und den Upload in die Datenbank vorbereiten."
+            "en": "If this project results in a manuscript, I agree to notify <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> and <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> in advance. They will then make recommendations regarding the acknowledgement of data owners from different DKTK and NCT sites, and organize the upload to an appropriate genome archive (e.g. GHGA).",
+            "de": "Sollte aus diesem Projekt ein Manuskript entstehen, verpflichte ich mich, <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> und <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> vorab zu benachrichtigen. Diese werden dann Empfehlungen hinsichtlich der Nennung der Dateneigentümer der verschiedenen DKTK- und NCT-Standorte aussprechen und den Upload an ein geeignetes Genomarchiv (bspw. GHGA) organisieren."
           }
         }
       ]
