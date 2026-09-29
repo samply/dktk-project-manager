@@ -124,7 +124,7 @@
         "en": "Selected Sites"
       },
       "description": {
-        "en": "Sites identified via the Explorer as having samples or data matching your search criteria."
+        "en": "Sites identified via the Explorer as having samples or data matching your search criteria. (Note: The numbers are obfuscated and do not correspond to the exact results.)"
       },
       "value": "${queried-sites}"
     },
