@@ -15,10 +15,6 @@
         "en": "Conflict of Interest Declaration",
         "de": "Conflict of Interest Declaration"
       },
-      "description": {
-        "en": "Academic title of the principal investigator",
-        "de": "Akademischer Titel des Hauptverantwortlichen"
-      },
       "allowed_values": [
         {
           "label": "no_conflict",
