@@ -42,7 +42,7 @@
     "Biosamples": {
       "project": {
         "label": "Biosamples",
-        "description": "Based on your selected cohort, please specify next the type of biosample - e.g.: tissue, blood, liquid biopsy, other body fluids, derivates (DNA, RNA, etc.), and the volume, amount or concentration, that you wish to request from the biobanks of the selected sites.",
+        "description": "Please specify next the type of biosample - e.g.: tissue, blood, liquid biopsy, other body fluids, derivates (DNA, RNA, etc.), and the volume, amount or concentration, that you wish to request from the biobanks of the selected sites.",
         "outputs": [
           {
             "projectType": "SAMPLES",
@@ -72,7 +72,7 @@
     "Sequencing": {
       "project": {
         "label": "Molecular Data",
-        "description": "Based on your selected cohort, please specify the datasets you would like to have exported in anonymized form - e.g.: sequencing, expression and methylation data (alt.: and proteomics data) for your research project.\n\nNote: This data is currently only available through DKFZ/NCT/DKTK MASTER.",
+        "description": "Please specify the datasets you would like to have exported in anonymized form - e.g.: sequencing, expression and methylation data for your research project.\n\nNote: This data is currently only available through DKFZ/NCT/DKTK MASTER.",
         "outputs": [
           {
             "projectType": "SEQUENCING",
