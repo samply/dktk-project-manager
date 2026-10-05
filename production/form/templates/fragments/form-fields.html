@@ -28,6 +28,21 @@
     This fragment relies on the caller's Thymeleaf context also exposing the
     "DataType" enum class (added by FormTemplateService), used below to
     switch on a field's type.
+
+    Texts with HTML. Configured texts may contain HTML (a link, <strong>, a
+    list), which the frontend shows with v-html. The same texts are shown as
+    HTML here, through the "html" helper of the context (FormTemplateHtml):
+      - th:utext="${html.xhtml(text)}": the text with its HTML. Never put a
+        text into th:utext without html.xhtml: the page is read as strict XML
+        when it becomes a PDF, and a "<br>", "&nbsp;" or bare "&" in the text
+        would make the whole PDF fail.
+      - th:text="${html.text(text)}": the text without its HTML, for the
+        value of a form widget (a textarea cannot show a link).
+    Shown as HTML, as in the frontend: a field's display name and
+    description, an allowed value's display name and description, a block's
+    description. Shown as plain text, as in the frontend: the headings of
+    sections, groups and blocks, the descriptions of sections and groups, and
+    every value a user entered.
 -->
 <table th:fragment="fieldsTable(document)" class="form-table">
     <!--
@@ -72,7 +87,7 @@
             <td class="group-title-cell" colspan="2">
                 <div class="group-name" th:text="${node.title}">Block Display Name</div>
                 <div class="description" th:if="${node.description != null}"
-                     th:text="${node.description}">Block Description
+                     th:utext="${html.xhtml(node.description)}">Block Description
                 </div>
             </td>
         </tr>
@@ -103,9 +118,9 @@
                 <div class="checkbox-option" th:each="option : ${node.options}">
                     <input type="checkbox" th:name="${option.name}" th:checked="${option.checked}"/>
                     <div class="checkbox-option-text">
-                        <div class="checkbox-option-name" th:text="${option.displayName}">Option</div>
+                        <div class="checkbox-option-name" th:utext="${html.xhtml(option.displayName)}">Option</div>
                         <div class="description" th:if="${option.description != null}"
-                             th:text="${option.description}">Option description</div>
+                             th:utext="${html.xhtml(option.description)}">Option description</div>
                     </div>
                 </div>
             </td>
@@ -155,12 +170,12 @@
     <div th:if="${hasDisplayName}"
          th:classappend="|${field.mandatory ? 'mandatory' : ''} ${ (field.groups != null && field.groups.length > 0) ? 'grouped-label' : '' }|"
          class="display-name"
-         th:text="${(field.multiple != null && field.multiple && field.fieldInstance != null) ? field.labelDisplayName + ' (' + field.fieldInstance + ')' : field.labelDisplayName}">
+         th:utext="${(field.multiple != null && field.multiple && field.fieldInstance != null) ? html.xhtml(field.labelDisplayName) + ' (' + field.fieldInstance + ')' : html.xhtml(field.labelDisplayName)}">
         Label
     </div>
     <div class="description"
          th:classappend="${!hasDisplayName && field.mandatory ? 'mandatory' : ''}"
-         th:utext="${field.fetchFullLabelDescription}">
+         th:utext="${html.xhtml(field.fetchFullLabelDescription)}">
         Description
     </div>
 </th:block>
@@ -217,11 +232,13 @@
             F8/§5: an ENUM field's selected allowed value can carry its own
             description, distinct from the field's labelDescription, so it is
             shown alongside the plain display name rather than dropped.
+            The display name goes into a textarea, which cannot show HTML:
+            html.text leaves only its text.
         -->
         <th:block th:case="${DataType.ENUM}">
-            <textarea th:replace="~{::textareaValue(value=${field.fetchDisplayValue}, key=${key}, minRows=${3})}"></textarea>
+            <textarea th:replace="~{::textareaValue(value=${html.text(field.fetchDisplayValue)}, key=${key}, minRows=${3})}"></textarea>
             <div class="description" th:if="${field.fetchDisplayDescription != null}"
-                 th:text="${field.fetchDisplayDescription}">Value description</div>
+                 th:utext="${html.xhtml(field.fetchDisplayDescription)}">Value description</div>
         </th:block>
         <input th:case="${DataType.INTEGER}" type="text" class="pdf-input-single"
                th:name="${key}" th:value="${field.fetchDisplayValue}"/>
