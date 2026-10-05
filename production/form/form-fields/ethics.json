@@ -9,6 +9,8 @@
       "label": "ethics_approval_status",
       "mandatory": true,
       "data_type": "ENUM",
+      "multiple": false,
+      "properties": ["RADIO_BUTTON"],
       "display_name": {
         "en": "Ethics Approval Status",
         "de": "Ethics Approval Status"
@@ -42,24 +44,6 @@
       ]
     },
     {
-      "label": "ethical_approval",
-      "mandatory": true,
-      "data_type": "BOOLEAN",
-      "display_name": {
-        "en": "Ethics Vote",
-        "de": "Ethikabstimmung"
-      },
-      "description": {
-        "en": "Has an Ethics Review been conducted for your Data Request?",
-        "de": "Wurde für Ihr Projekt eine Ethikprüfung durchgeführt?"
-      }
-    },
-    {
-      "label": "ETHICS_VOTE",
-      "field_type": "FIXED",
-      "active": false
-    },
-    {
       "label": "ETHICS_VOTE_FOR_ALL_SITES",
       "display_name": {
         "en": "",
@@ -70,7 +54,20 @@
         "de": "Datei zur Ethikabstimmung hochladen (optional)"
       },
       "field_type": "FIXED",
-      "condition": "['ethics']['ethical_approval']['value'] == 'true'"
+      "condition": "['ethics']['ethics_approval_status']['value'] matches 'approved'"
+    },
+    {
+      "label": "ETHICS_VOTE_FOR_ALL_SITES",
+      "display_name": {
+        "en": "",
+        "de": ""
+      },
+      "description": {
+        "en": "Upload a statement file, why no Ethics Vote is required.",
+        "de": "Datei mit Stellungnahme hochladen, warum keine Ethikabstimmung notwendig ist."
+      },
+      "field_type": "FIXED",
+      "condition": "['ethics']['ethics_approval_status']['value'] matches 'not_required'"
     },
     {
       "label": "ethics_confirmation",
