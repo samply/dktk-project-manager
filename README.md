@@ -53,6 +53,17 @@ It is a proposal and has not been approved, so it is hidden unless enabled:
 
 It is enabled only in development for now.
 
+## Summary spacing
+
+The summary of the request form and the request view can show their fields close together or with the same space as
+while filling in the draft:
+
+| Variable | Content |
+|---|---|
+| `FRONTEND_VARIABLES_SUMMARY_SPACING` | `compact`: half the draft's space between fields; `airy` (default, also for any other value): the draft's space |
+
+This instance uses `airy`.
+
 ## Exporter query label
 
 `EXPORTER_QUERY_LABEL_TEMPLATE` defines the label of the queries sent to the

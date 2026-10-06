@@ -81,6 +81,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - German translations for action explanations and user-action feedback messages
 - Merge action message proposals into the action message configuration
 - Success and error feedback messages for submitting a project
+- FRONTEND_VARIABLES_SUMMARY_SPACING (compact or airy summary)
 
 ### Changed
 - Replace Minus in bridgeheads

@@ -20,6 +20,8 @@ setdefault FRONTEND_VARIABLES_CREATE_REQUEST_ORGANISATION_ROLES "PROJECT_MANAGER
 setdefault FRONTEND_VARIABLES_CREATE_REQUEST_DEFAULT_QUERY_FORMAT "AST_DATA"
 # Lines shown for a normal form-field description before the UI offers "Show more".
 setdefault FRONTEND_VARIABLES_FORM_FIELD_DESCRIPTION_COLLAPSED_LINES "2"
+# Spacing between the fields of the summary and the request view: compact or airy (the draft's field gap here).
+setdefault FRONTEND_VARIABLES_SUMMARY_SPACING "airy"
 setdefault FRONTEND_VARIABLES_DEFAULT_ERROR_MESSAGE_FOR_USER_ACTIONS "The action could not be completed. Please try again. If the problem persists, please contact technical support at biodatahub@dkfz-heidelberg.de."
 setdefault FRONTEND_VARIABLES_PROJECT_DASHBOARD_CREATED_AT_DISPLAY_FORMAT "DATE_TIME_FORMAT"
 setdefault FRONTEND_VARIABLES_PROJECT_DETAIL_CREATED_AT_DISPLAY_FORMAT "DATE_TIME_FORMAT"
