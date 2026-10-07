@@ -82,6 +82,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Merge action message proposals into the action message configuration
 - Success and error feedback messages for submitting a project
 - FRONTEND_VARIABLES_SUMMARY_SPACING (compact or airy summary)
+- FRONTEND_VARIABLES_FEASIBILITY_TABLE_WIDTH (compact, medium or full feasibility table)
+- FRONTEND_VARIABLES_FEASIBILITY_TABLE_ALIGNMENT (standard, left or right feasibility values)
 
 ### Changed
 - Replace Minus in bridgeheads

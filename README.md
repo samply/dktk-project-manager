@@ -64,6 +64,47 @@ while filling in the draft:
 
 This instance uses `airy`.
 
+## Feasibility table
+
+The feasibility table in the request view has one row per site and one column per value of the feasibility answer.
+Two variables set its width and the alignment of its value columns.
+
+### Width
+
+The table can take only the width its columns need or the whole card. On a wide screen a narrow table keeps each site
+close to its numbers; a wider one leaves more room when the answer has many or long columns (e.g. breakdowns):
+
+| Variable | Content |
+|---|---|
+| `FRONTEND_VARIABLES_FEASIBILITY_TABLE_WIDTH` | `compact`, `medium` or `full`, see below |
+
+| Value | Width | Suited for |
+|---|---|---|
+| `compact` (default, also for no value or any other value) | As wide as the columns need, at least 32rem (512 px) | Few short columns, e.g. Patients and Samples |
+| `medium` | As wide as the columns need, at least 48rem (768 px) | Several columns or longer values |
+| `full` | The whole card; the number columns only as wide as their content, at the right | Many columns, e.g. breakdowns |
+
+With `compact` and `medium` the table is left-aligned in the card and never wider than the card for its minimum. In
+every case, if the columns need more room than the card has, the table scrolls horizontally inside its frame.
+
+This instance uses `compact`.
+
+### Alignment
+
+| Variable | Content |
+|---|---|
+| `FRONTEND_VARIABLES_FEASIBILITY_TABLE_ALIGNMENT` | `standard`, `left` or `right`, see below |
+
+| Value | Value columns (header included) |
+|---|---|
+| `standard` (default, also for no value or any other value) | By content: a column whose values are all numbers is right-aligned, so that units, tens and thousands line up; a column with any text is left-aligned |
+| `left` | All left-aligned |
+| `right` | All right-aligned |
+
+The Site column is always left-aligned. Sites without a value yet (loading, error) do not count for `standard`.
+
+This instance uses `standard`.
+
 ## Exporter query label
 
 `EXPORTER_QUERY_LABEL_TEMPLATE` defines the label of the queries sent to the

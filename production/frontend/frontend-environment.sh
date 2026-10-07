@@ -16,6 +16,10 @@ setdefault FRONTEND_VARIABLES_LOGO_CSS "${BACKEND_BASEURL}/assets/logo.css"
 setdefault FRONTEND_VARIABLES_FRONTEND_NAME "<b>DKTK BioDataHub</b> Data Request"
 setdefault FRONTEND_VARIABLES_PAGE_TITLE "Data Request"
 setdefault FRONTEND_VARIABLES_FEASIBILITY_PAGE_SIZE "5"
+# Width of the feasibility table: compact (at least 32rem, default), medium (at least 48rem) or full (whole card).
+setdefault FRONTEND_VARIABLES_FEASIBILITY_TABLE_WIDTH "compact"
+# Alignment of the feasibility table's value columns: standard (numbers right, text left, default), left or right.
+setdefault FRONTEND_VARIABLES_FEASIBILITY_TABLE_ALIGNMENT "standard"
 setdefault FRONTEND_VARIABLES_CREATE_REQUEST_ORGANISATION_ROLES "PROJECT_MANAGER_ADMIN"
 setdefault FRONTEND_VARIABLES_CREATE_REQUEST_DEFAULT_QUERY_FORMAT "AST_DATA"
 # Lines shown for a normal form-field description before the UI offers "Show more".
