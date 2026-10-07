@@ -17,13 +17,13 @@ setdefault EMAIL_CONTEXT_B64RESEARCHMINUSENVIRONMENTMINUSLINK "$(base64 -w 0 /ap
 # Export other environment variables:
 
 setdefault LOG_LEVEL "INFO"
-setdefault ENABLE_CODER "true"
+setdefault ENABLE_RESEARCH_ENVIRONMENT "false"
 setdefault ENABLE_EMAILS "true"
 setdefault ENABLE_EXPORTER "true"
 setdefault ENABLE_FEASIBILITY "true"
 #setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}, {"label": "Molecular Data", "value": .totals.MolecularMarker}]'
 setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}]'
-setdefault ENABLE_TOKEN_MANAGER "true"
+setdefault ENABLE_DATASHIELD "false"
 setdefault SECURITY_ENABLED "true"
 
 # Select cache policy: beta during active development; stable after release.
@@ -55,18 +55,6 @@ setdefault RESEARCHER_GROUPS "app-ccp-explorer-intern,app-ccp-explorer-public"
 
 setdefault CHECK_EXPIRED_ACTIVE_PROJECTS_CRON_EXPRESSION "30 * * * * *"
 
-setdefault CODER_PATH_DATASHIELD "/app/coder/coder-datashield.json"
-setdefault CODER_PATH_RESEARCHUNDERSCOREENVIRONMENT "/app/coder/coder-research-environment.json"
-setdefault CODER_BASE_URL "https://dev.samply.de"
-setdefault CODER_TEST_FILE_BEAM_ID ""
-# export CODER_BEAM_ID_SUFFIX="proxy1.broker.ccp-it.dktk.dkfz.de" #################################### <= Please configure me
-setdefault CODER_CREATE_PATH "/organizations/{CODER_ORGANISATION_ID}/members/{CODER_MEMBER_ID}/workspaces"
-setdefault CODER_CRON_EXPRESSION "15 * * * * *"
-setdefault CODER_DELETE_PATH "/workspaces/{CODER_WORKSPACE_ID}/builds"
-# export CODER_MEMBER_ID="XXXX" #################################### <= Please configure me
-# export CODER_ORGANISATION_ID="XXXX" #################################### <= Please configure me
-# export CODER_SESSION_TOKEN="XXXX" #################################### <= Please configure me
-setdefault CODER_TEMPLATE_VERSION_ID "b105a87d-19a4-40d0-bc00-f444976868da"
 
 setdefault DATASHIELD_TEMPLATES "opal-ccp"
 setdefault DB_ENCRYPTION_ALGORITHM "AES"
@@ -82,7 +70,6 @@ setdefault EXPORTER_CRON_EXPRESSION "*/30 * * * * *"
 setdefault EXPORT_TEMPLATES "ccp,ccp-exliquid"
 setdefault SAMPLES_TEMPLATES "ccp-sample-list"
 
-setdefault MANAGE_TOKENS_CRON_EXPRESSION "0 * * * * *"
 
 setdefault JWT_GROUPS_CLAIM "groups"
 # export OIDC_CLIENT_ID="XXXX" #################################### <= Please configure me
@@ -101,7 +88,6 @@ setdefault SPRING_MAIL_PRIMARY_HOST "mx-ext.inet.dkfz-heidelberg.de"
 setdefault SPRING_MAIL_PRIMARY_PORT "25"
 # export SPRING_MAIL_PRIMARY_USERNAME=""
 
-# export TOKEN_MANAGER_URL="http://token-manager:3030" #################################### <= Please configure me
 
 # Load frontend-related environment variables into the current shell.
 . /app/frontend/frontend-environment.sh

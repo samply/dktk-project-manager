@@ -107,6 +107,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - PDF design
 - Favicon as environment variable 
 - Localized display-format configuration
+- ENABLE_RESEARCH_ENVIRONMENT (was ENABLE_CODER) and ENABLE_DATASHIELD (was ENABLE_TOKEN_MANAGER); ENABLE_APP_REGISTER removed (app register is part of the research environment)
+- Research environment and DataSHIELD disabled by default (they belong to the future demo-project-manager)
+- Development: ENABLE_EXPORTER, ENABLE_FEASIBILITY and ENABLE_EMAILS = test (test implementations without Beam and SMTP; EMAILS_TEST_LOG=summary); README section "Optional modules"
+- Removed the research environment and DataSHIELD configuration (both disabled here): CODER_*, APP_REGISTER_*, TOKEN_MANAGER_URL, MANAGE_TOKENS_CRON_EXPRESSION, production/coder/*.json. A working version for demo-project-manager: master-project-manager, commit 17579fd (branch feat/optional-modules, 2026-10-08, new variable names; with the old names ENABLE_CODER/ENABLE_TOKEN_MANAGER also on main, d738236)
+- Removed variables the backend does not read: CODER_MEMBER_ID (only a placeholder inside CODER_CREATE_PATH), CODER_TEMPLATE_VERSION_ID, ENABLE_RSTUDIO_GROUP_MANAGER
 - Form texts corrected after the review of 2026-10-07 (collaborator title, ethics status and upload texts, data protection confirmation, minimum tissue weight, plasma and breast milk descriptions, sequencing data formats, example of samples per subject, final periods), American spelling (feces, organization); German texts of the changed fields aligned
 - American spelling in all texts (anonymized, acknowledgment, organization, centered); German form texts: titles of the ethics and funding forms, untranslated ethics status and conflict-of-interest options, data protection confirmation heading
 - German texts for the request metadata (templates/metadata/request.json: request fields shown in the request view and the PDF); German PDF title "DATENANFRAGEFORMULAR", as the UI says "Datenanfrage"

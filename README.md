@@ -1,5 +1,37 @@
 # dktk-project-manager
 
+## Optional modules
+
+The backend switches parts of its functionality on and off with `ENABLE_*` variables. A disabled module needs none of
+its settings. Details: `docs/optional-modules.md` in project-manager.
+
+| Variable | Module | Production | Development |
+|---|---|---|---|
+| `ENABLE_EXPORTER` | Sends the queries to the sites' exporters (through Beam) and follows the exports | `true` | `test` |
+| `ENABLE_FEASIBILITY` | Feasibility counts per site (through Beam) | `true` | `test` |
+| `ENABLE_EMAILS` | Sends the emails (SMTP) | `true` | `test` |
+| `ENABLE_RESEARCH_ENVIRONMENT` | Research environment workspaces (Coder) | `false` | `false` |
+| `ENABLE_DATASHIELD` | DataSHIELD tokens (token manager); needs the research environment | `false` | `false` |
+| `ENABLE_EXTERNAL_EXECUTION` | Site admins execute a request's query at their site directly | `false` (default) | `false` (default) |
+
+Values: `true` (the default, except `ENABLE_EXTERNAL_EXECUTION`), `false`, or `test` for exporter, feasibility and
+emails - a test implementation for development without the external systems:
+
+- `ENABLE_EXPORTER=test`: the queries go through all their states (sent, executed, finished) without Beam; nothing is
+  exported.
+- `ENABLE_FEASIBILITY=test`: random counts from the template `TEST_FEASIBILITY_RESULT` (e.g. `{{INTEGER}}`).
+- `ENABLE_EMAILS=test`: the emails are rendered as in production and written to the backend log instead of sent.
+  `EMAILS_TEST_LOG`: `summary` (receiver and kind of email, the default) or `full` (also subject, text and
+  attachments). `true` with the mail catcher of teiler-docker (port 1025) shows them in the browser instead.
+
+The backend does not start - and says why - when:
+
+- an enabled module needs a disabled one (e.g. DataSHIELD without the research environment), or a value is not valid;
+- `production/frontend/frontend-project-configs.json` offers a request type whose module is disabled (EXPORT, SAMPLES
+  and SEQUENCING need the exporter; DATASHIELD and RESEARCH_ENVIRONMENT their modules);
+- requests that are not finished need a disabled module: the message lists them with the SQL to archive them (drafts:
+  reject). Finished requests stay viewable.
+
 ## Project IDs
 
 Project IDs are generated from `PROJECT_ID_TEMPLATE`. This instance uses
