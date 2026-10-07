@@ -110,6 +110,20 @@
           }
         }
       ]
+    },
+    {
+      "label" : "ethical_approval",
+      "mandatory" : true,
+      "data_type" : "BOOLEAN",
+      "display_name" : {
+        "en" : "Ethics vote",
+        "de" : "Ethikabstimmung"
+      },
+      "description" : {
+        "en" : "Has an ethics review been conducted for your data request?",
+        "de" : "Wurde für Ihr Projekt eine Ethikprüfung durchgeführt?"
+      },
+      "active" : false
     }
   ]
 }
