@@ -26,7 +26,7 @@ creates a draft request with an empty query and no sites and opens it:
 
 | Variable | Content |
 |---|---|
-| `FRONTEND_VARIABLES_CREATE_REQUEST_ORGANISATION_ROLES` | Comma-separated organisation roles allowed to see the dashboard button; unset or empty hides it |
+| `FRONTEND_VARIABLES_CREATE_REQUEST_ORGANISATION_ROLES` | Comma-separated organization roles allowed to see the dashboard button; unset or empty hides it |
 | `FRONTEND_VARIABLES_CREATE_REQUEST_DEFAULT_QUERY_FORMAT` | Format of the new request's query, e.g. `AST_DATA` |
 
 The button is enabled only in development for now. When a request has no

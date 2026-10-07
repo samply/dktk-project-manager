@@ -70,8 +70,8 @@
         "de": "Minimale Anzahl an Patienten"
       },
       "description": {
-        "en": "Minimum number of patients from whom samples are required",
-        "de": "Minimale Anzahl an Patienten, von denen Proben benötigt werden."
+        "en": "Minimum number of patients from whom samples are required.",
+        "de": "Mindestanzahl an Patienten, von denen Proben benötigt werden."
       }
     },
     {
@@ -95,7 +95,7 @@
             "de": "Plasma"
           },
           "description": {
-            "en": "A material entity which corresponds to the fluids component of blood, in which the blood cells are suspended.",
+            "en": "A material entity which corresponds to the fluid component of blood, in which the blood cells are suspended.",
             "de": "Eine materielle Entität, die dem flüssigen Bestandteil des Blutes entspricht, in dem die Blutzellen suspendiert sind."
           }
         },
@@ -183,8 +183,8 @@
             "de": "Muttermilch"
           },
           "description": {
-            "en": "A specimen that is derived from milk.",
-            "de": "Eine aus Milch gewonnene Probe."
+            "en": "A specimen that is derived from breast milk.",
+            "de": "Eine aus Muttermilch gewonnene Probe."
           }
         },
         {
@@ -212,7 +212,7 @@
         {
           "label": "faeces",
           "display_name": {
-            "en": "Faeces",
+            "en": "Feces",
             "de": "Fäzes"
           },
           "description": {
@@ -396,8 +396,8 @@
       "mandatory": false,
       "data_type": "INTEGER",
       "display_name": {
-        "en": "Minimal tissue weight (in mg)",
-        "de": "Minimales Gewicht der Gewebeprobe (in mg)"
+        "en": "Minimum tissue weight (in mg)",
+        "de": "Mindestgewicht der Gewebeprobe (in mg)"
       },
       "description": {
         "en": "",
@@ -469,8 +469,8 @@
         "de": "Anzahl der Proben pro Person"
       },
       "description": {
-        "en": "For example: 1 aliquot of 200 \u00b5l each.",
-        "de": "Zum Beispiel: 1 Aliquot zu je 200 \u00b5l."
+        "en": "For example: 1 aliquot/subject.",
+        "de": "Zum Beispiel: 1 Aliquot/Person."
       },
       "block": "other"
     },

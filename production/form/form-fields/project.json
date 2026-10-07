@@ -5,8 +5,8 @@
     "de": "Ihr Projekt"
   },
   "description": {
-    "en": "Please describe the project for which you are requesting resources",
-    "de": "Bitte beschreiben Sie das Projekt, für das Sie Ressourcen anfordern"
+    "en": "Please describe the project for which you are requesting resources.",
+    "de": "Bitte beschreiben Sie das Projekt, für das Sie Ressourcen anfordern."
   },
   "blocks": [
     {
@@ -42,11 +42,11 @@
       "data_type": "STRING",
       "display_name": {
         "en": "Planned analyses",
-        "de": "Projektmethodik"
+        "de": "Geplante Analysen"
       },
       "description": {
-        "en": "Please describe the analyses to be performed on the requested resources (e.g. federated data analysis, CRP ELISA, Whole Genome Sequencing)",
-        "de": "Bitte geben Sie eine kurze Beschreibung der Analysemethode an, die in Ihrem Projekt zum Einsatz kommen soll (z. B. föderierte Datenanalyse, CRP mit ELISA, Ganzgenomsequenzierung, Gewebemikroarray...)"
+        "en": "Please describe the analyses to be performed on the requested resources (e.g. federated data analysis, CRP ELISA, Whole Genome Sequencing).",
+        "de": "Bitte beschreiben Sie die Analysen, die mit den angeforderten Ressourcen durchgeführt werden sollen (z. B. föderierte Datenanalyse, CRP-ELISA, Ganzgenomsequenzierung)."
       }
     },
     {
@@ -101,7 +101,7 @@
         "de": "Zugehörigkeit"
       },
       "description": {
-        "en": "Institution or organisation of the principal investigator",
+        "en": "Institution or organization of the principal investigator",
         "de": "Institution oder Organisation des Hauptverantwortlichen"
       }
     },
@@ -129,8 +129,8 @@
         "de": "Titel"
       },
       "description": {
-        "en": "Academic title of the principal investigator",
-        "de": "Akademischer Titel des Hauptverantwortlichen"
+        "en": "Academic title of the collaborator",
+        "de": "Akademischer Titel des Kooperationspartners"
       }
     },
     {
@@ -171,7 +171,7 @@
         "de": "Zugehörigkeit"
       },
       "description": {
-        "en": "Institution or organisation of the collaborator",
+        "en": "Institution or organization of the collaborator",
         "de": "Institution oder Organisation des Kooperationspartners"
       }
     },
@@ -199,8 +199,8 @@
         "de": "Datenempfänger"
       },
       "description": {
-        "en": "Participant receives access to the requested data (Export Tumor Documentation)",
-        "de": "Der Teilnehmer erhält Zugriff auf die angeforderten Daten (Export der Tumordokumentation)"
+        "en": "Participant receives access to the requested data (Export Tumor Documentation).",
+        "de": "Der Teilnehmer erhält Zugriff auf die angeforderten Daten (Export der Tumordokumentation)."
       }
     },
     {
@@ -213,7 +213,7 @@
         "de": "Empfänger der Bioprobe"
       },
       "description": {
-        "en": "Participant receives access to the requested biosamples",
+        "en": "Participant receives access to the requested biosamples.",
         "de": "Der Teilnehmer erhält Zugang zu den angeforderten Bioproben."
       }
     },

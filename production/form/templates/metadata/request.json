@@ -2,7 +2,7 @@
   "variables": {
     "form-title": {
       "en": "DATA REQUEST FORM",
-      "de": "DATENANTRAGSFORMULAR"
+      "de": "DATENANFRAGEFORMULAR"
     },
     "page": {
       "en": "Page",
@@ -19,14 +19,16 @@
   "template_file": "request",
   "template": "request",
   "display_name": {
-    "en": "Data request"
+    "en": "Data request",
+    "de": "Datenanfrage"
   },
   "project_fields": [
     {
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Your name and DKTK-affiliation"
+        "en": "Your name and DKTK-affiliation",
+        "de": "Ihr Name und Ihre DKTK-Zugehörigkeit"
       },
       "value": "${creator-name-with-affiliations}"
     },
@@ -34,7 +36,8 @@
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Email address"
+        "en": "Email address",
+        "de": "E-Mail-Adresse"
       },
       "value": "${creator-email}"
     },
@@ -42,10 +45,12 @@
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Request ID"
+        "en": "Request ID",
+        "de": "Anfrage-ID"
       },
       "description": {
-        "en": "Technical ID for the request"
+        "en": "Technical ID for the request",
+        "de": "Technische ID der Anfrage"
       },
       "value": "${project-code}"
     },
@@ -53,7 +58,8 @@
       "mandatory": true,
       "data_type": "DATE",
       "display_name": {
-        "en": "Request application date"
+        "en": "Request application date",
+        "de": "Antragsdatum der Anfrage"
       },
       "value": "${project-creation-date}"
     },
@@ -62,7 +68,8 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Type"
+        "en": "Type",
+        "de": "Typ"
       },
       "value": "${project-types}"
     },
@@ -71,7 +78,8 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Output Format"
+        "en": "Output Format",
+        "de": "Ausgabeformat"
       },
       "value": "${output-formats}"
     },
@@ -80,7 +88,8 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Template ID"
+        "en": "Template ID",
+        "de": "Vorlagen-ID"
       },
       "value": "${template-ids}"
     },
@@ -89,7 +98,8 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Environment Variables"
+        "en": "Environment Variables",
+        "de": "Umgebungsvariablen"
       },
       "value": "${environment-variables}"
     },
@@ -98,7 +108,8 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Configuration"
+        "en": "Configuration",
+        "de": "Konfiguration"
       },
       "value": "${project-configuration}"
     },
@@ -108,10 +119,12 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Selected Cohort"
+        "en": "Selected Cohort",
+        "de": "Ausgewählte Kohorte"
       },
       "description": {
-        "en": "This query was automatically imported from your Explorer session. Use \"Edit in Explorer\" to adjust your search criteria."
+        "en": "This query was automatically imported from your Explorer session. Use \"Edit in Explorer\" to adjust your search criteria.",
+        "de": "Diese Abfrage wurde automatisch aus Ihrer Explorer-Sitzung übernommen. Verwenden Sie \"Edit in Explorer\", um Ihre Suchkriterien anzupassen."
       },
       "value": "${selected-cohort}"
     },
@@ -121,10 +134,12 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Selected Sites"
+        "en": "Selected Sites",
+        "de": "Ausgewählte Standorte"
       },
       "description": {
-        "en": "Sites identified via the Explorer as having samples or data matching your search criteria. (Note: The numbers are obfuscated and do not correspond to the exact results.)"
+        "en": "Sites identified via the Explorer as having samples or data matching your search criteria. (Note: The numbers are obfuscated and do not correspond to the exact results.)",
+        "de": "Standorte, die über den Explorer als Standorte mit Proben oder Daten ermittelt wurden, die Ihren Suchkriterien entsprechen. (Hinweis: Die Zahlen sind verschleiert und entsprechen nicht den genauen Ergebnissen.)"
       },
       "value": "${queried-sites}"
     },
@@ -134,7 +149,8 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Query Format"
+        "en": "Query Format",
+        "de": "Abfrageformat"
       },
       "value": "${query-format}"
     },
@@ -144,10 +160,12 @@
       "mandatory": false,
       "data_type": "LONG_STRING",
       "display_name": {
-        "en": "Additional filter criteria"
+        "en": "Additional filter criteria",
+        "de": "Zusätzliche Filterkriterien"
       },
       "description": {
-        "en": "Please provide filter criteria that could not be selected in the Explorer, or further notes on the resources you want to request"
+        "en": "Please provide filter criteria that could not be selected in the Explorer, or further notes on the resources you want to request.",
+        "de": "Bitte geben Sie Filterkriterien an, die im Explorer nicht ausgewählt werden konnten, oder weitere Hinweise zu den Ressourcen, die Sie anfordern möchten."
       },
       "value": "${additional-filter-criteria}"
     },
@@ -157,10 +175,12 @@
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Request title"
+        "en": "Request title",
+        "de": "Titel der Anfrage"
       },
       "description": {
-        "en": "Please give a short title for your request"
+        "en": "Please give a short title for your request.",
+        "de": "Bitte geben Sie einen kurzen Titel für Ihre Anfrage an."
       },
       "value": "${project-title}"
     },
@@ -170,10 +190,12 @@
       "mandatory": true,
       "data_type": "STRING",
       "display_name": {
-        "en": "Study Objective"
+        "en": "Study Objective",
+        "de": "Studienziel"
       },
       "description": {
-        "en": "Short description of the request: What is the aim/objective of the request?"
+        "en": "Short description of the request: What is the aim/objective of the request?",
+        "de": "Kurze Beschreibung der Anfrage: Was ist das Ziel der Anfrage?"
       },
       "value": "${project-description}"
     },
@@ -183,7 +205,8 @@
       "mandatory": false,
       "data_type": "STRING",
       "display_name": {
-        "en": "Request description document"
+        "en": "Request description document",
+        "de": "Dokument mit der Beschreibung der Anfrage"
       },
       "value": "${description-upload-filename}"
     },
@@ -199,10 +222,12 @@
       "active": false,
       "data_type": "LONG_STRING",
       "display_name": {
-        "en": "Ethics vote per site"
+        "en": "Ethics vote per site",
+        "de": "Ethikvotum pro Standort"
       },
       "description": {
-        "en": "Per-site ethics vote status, where a request may need one per queried site rather than a single vote for all sites"
+        "en": "Per-site ethics vote status, where a request may need one per queried site rather than a single vote for all sites.",
+        "de": "Status des Ethikvotums pro Standort, wenn eine Anfrage statt eines einzigen Votums für alle Standorte eines pro abgefragtem Standort benötigt."
       },
       "value": "${ethics-votes-per-site}"
     }

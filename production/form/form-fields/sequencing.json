@@ -101,12 +101,12 @@
         "data_format"
       ],
       "display_name": {
-        "en": "Raw data ",
+        "en": "Raw data",
         "de": "Rohdaten"
       },
       "description": {
-        "en": "e.g. fastq, bam, ...",
-        "de": "bspw. fastq, bam, ..."
+        "en": "E.g. FASTQ or BAM files.",
+        "de": "Z. B. FASTQ- oder BAM-Dateien."
       }
     },
     {
@@ -121,8 +121,8 @@
         "de": "Analysen"
       },
       "description": {
-        "en": "e.g. variant calls, counts, scores",
-        "de": "bspw. Variant-Calls, Counts, Scores"
+        "en": "E.g. variant calls, counts or scores.",
+        "de": "Z. B. Variant-Calls, Counts oder Scores."
       }
     },
     {

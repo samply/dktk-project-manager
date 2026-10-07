@@ -2,7 +2,7 @@
   "title": "funding",
   "display_name": {
     "en": "Conflicts of Interest",
-    "de": "Projekt"
+    "de": "Interessenkonflikte"
   },
   "fields": [
     {
@@ -13,21 +13,21 @@
       "properties": ["RADIO_BUTTON", "CSS_ENUM"],
       "display_name": {
         "en": "Conflict of Interest Declaration",
-        "de": "Conflict of Interest Declaration"
+        "de": "Erklärung zu Interessenkonflikten"
       },
       "allowed_values": [
         {
           "label": "no_conflict",
           "display_name": {
             "en": "No conflicts of interest",
-            "de": "No conflicts of interest"
+            "de": "Keine Interessenkonflikte"
           }
         },
         {
           "label": "potential_conflicts",
           "display_name": {
             "en": "Potential conflicts disclosed",
-            "de": "Potential conflicts disclosed"
+            "de": "Mögliche Interessenkonflikte offengelegt"
           }
         }
       ]

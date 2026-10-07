@@ -2,7 +2,7 @@
   "title": "ethics",
   "display_name": {
     "en": "Ethics and Compliance",
-    "de": "Projekt"
+    "de": "Ethik und Compliance"
   },
   "fields": [
     {
@@ -13,32 +13,32 @@
       "properties": ["RADIO_BUTTON"],
       "display_name": {
         "en": "Ethics Approval Status",
-        "de": "Ethics Approval Status"
+        "de": "Status des Ethikvotums"
       },
       "description": {
-        "en": "If approved, please attach the Ethics Form",
-        "de": "Falls eine Genehmigung vorliegt, fügen Sie bitte das Ethik-Formular bei."
+        "en": "If approved, please upload the ethics vote. If no ethics vote is required, please upload a statement explaining why.",
+        "de": "Falls ein Ethikvotum vorliegt, laden Sie es bitte hoch. Ist kein Ethikvotum erforderlich, laden Sie bitte eine Stellungnahme hoch, warum."
       },
       "allowed_values": [
         {
           "label": "approved",
           "display_name": {
             "en": "Approved",
-            "de": "Approved"
+            "de": "Genehmigt"
           }
         },
         {
           "label": "pending",
           "display_name": {
             "en": "Pending",
-            "de": "Pending"
+            "de": "Ausstehend"
           }
         },
         {
           "label": "not_required",
           "display_name": {
             "en": "Not Required",
-            "de": "Not Required"
+            "de": "Nicht erforderlich"
           }
         }
       ]
@@ -51,7 +51,7 @@
       },
       "description": {
         "en": "Upload Ethics Vote file (optional)",
-        "de": "Datei zur Ethikabstimmung hochladen (optional)"
+        "de": "Datei mit dem Ethikvotum hochladen (optional)"
       },
       "field_type": "FIXED",
       "condition": "['ethics']['ethics_approval_status']['value'] matches 'approved'"
@@ -63,8 +63,8 @@
         "de": ""
       },
       "description": {
-        "en": "Upload a statement file, why no Ethics Vote is required.",
-        "de": "Datei mit Stellungnahme hochladen, warum keine Ethikabstimmung notwendig ist."
+        "en": "Please upload a statement explaining why no ethics vote is required.",
+        "de": "Bitte laden Sie eine Stellungnahme hoch, warum kein Ethikvotum erforderlich ist."
       },
       "field_type": "FIXED",
       "condition": "['ethics']['ethics_approval_status']['value'] matches 'not_required'"
@@ -78,13 +78,13 @@
       ],
       "display_name": {
         "en": "Compliance with Data Protection Regulations",
-        "de": "Einhaltung der Vorschriften Ethik und Datenschutzes"
+        "de": "Einhaltung der Datenschutzvorschriften"
       },
       "allowed_values": [
         {
           "label": "confirmation",
           "display_name": {
-            "en": "I confirm that the requested data will be used exclusively for the purpose described in this application and in compliance with applicable data protection.",
+            "en": "I confirm that the requested data will be used exclusively for the purpose described in this application and in compliance with applicable data protection regulations.",
             "de": "Ich bestätige, dass die angeforderten Daten ausschließlich für den in diesem Antrag beschriebenen Zweck und unter Einhaltung der geltenden Datenschutzbestimmungen verwendet werden."
           }
         }
@@ -105,7 +105,7 @@
         {
           "label": "confirmation",
           "display_name": {
-            "en": "If this project results in a manuscript, I agree to notify <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> and <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> in advance. They will then make recommendations regarding the acknowledgement of data owners from different DKTK and NCT sites, and organize the upload to an appropriate genome archive (e.g. GHGA).",
+            "en": "If this project results in a manuscript, I agree to notify <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> and <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> in advance. They will then make recommendations regarding the acknowledgment of data owners from different DKTK and NCT sites, and organize the upload to an appropriate genome archive (e.g. GHGA).",
             "de": "Sollte aus diesem Projekt ein Manuskript entstehen, verpflichte ich mich, <a href=\"mailto:biodatahub@dkfz.de\">biodatahub@dkfz.de</a> und <a href=\"mailto:master-projekte@nct-heidelberg.de\">master-projekte@nct-heidelberg.de</a> vorab zu benachrichtigen. Diese werden dann Empfehlungen hinsichtlich der Nennung der Dateneigentümer der verschiedenen DKTK- und NCT-Standorte aussprechen und den Upload an ein geeignetes Genomarchiv (bspw. GHGA) organisieren."
           }
         }
@@ -117,11 +117,11 @@
       "data_type" : "BOOLEAN",
       "display_name" : {
         "en" : "Ethics vote",
-        "de" : "Ethikabstimmung"
+        "de" : "Ethikvotum"
       },
       "description" : {
         "en" : "Has an ethics review been conducted for your data request?",
-        "de" : "Wurde für Ihr Projekt eine Ethikprüfung durchgeführt?"
+        "de" : "Wurde für Ihre Datenanfrage eine Ethikprüfung durchgeführt?"
       },
       "active" : false
     }
