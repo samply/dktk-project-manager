@@ -2,11 +2,11 @@
   "title": "consent",
   "display_name": {
     "en": "Consent",
-    "de": "Konsent"
+    "de": "Einwilligung"
   },
   "description": {
     "en": "Consent",
-    "de": "Konsent"
+    "de": "Einwilligung"
   },
   "fields": [
     {
@@ -15,7 +15,7 @@
       "data_type": "BOOLEAN",
       "display_name": {
         "en": "Consent",
-        "de": "Konsent"
+        "de": "Einwilligung"
       },
       "description": {
         "en": "I confirm that I have read and understood the <a href=\"https://hub.dkfz.de/s/5LPccy6fgRSoD65\" target=\"_blank\" rel=\"noopener noreferrer\">Data Protection Declaration</a>, and that my project complies with the requirements set out therein regarding the processing of personal health data.",
