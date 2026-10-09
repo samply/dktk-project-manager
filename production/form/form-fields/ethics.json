@@ -41,7 +41,14 @@
             "de": "Nicht erforderlich"
           }
         }
-      ]
+      ],
+      "post_info": {
+        "content": {
+          "en": "We cannot share any data or material before the ethics approval.",
+          "de": "Vor dem Ethikvotum können wir keine Daten oder Materialien teilen."
+        },
+        "condition": "['ethics']['ethics_approval_status']['value'] == 'pending'"
+      }
     },
     {
       "label": "ETHICS_VOTE_FOR_ALL_SITES",
