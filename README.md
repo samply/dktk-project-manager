@@ -10,12 +10,12 @@ its settings. Details: `docs/optional-modules.md` in project-manager.
 | `ENABLE_EXPORTER` | Sends the queries to the sites' exporters (through Beam) and follows the exports | `true` | `test` |
 | `ENABLE_FEASIBILITY` | Feasibility counts per site (through Beam) | `true` | `test` |
 | `ENABLE_EMAILS` | Sends the emails (SMTP) | `true` | `test` |
-| `ENABLE_RESEARCH_ENVIRONMENT` | Research environment workspaces (Coder) | `false` | `false` |
-| `ENABLE_DATASHIELD` | DataSHIELD tokens (token manager); needs the research environment | `false` | `false` |
-| `ENABLE_EXTERNAL_EXECUTION` | Site admins execute a request's query at their site directly | `false` (default) | `false` (default) |
+| `ENABLE_RESEARCH_ENVIRONMENT` | Research environment workspaces (Coder) | - | - |
+| `ENABLE_DATASHIELD` | DataSHIELD tokens (token manager); needs the research environment | - | - |
+| `ENABLE_EXTERNAL_EXECUTION` | Site admins execute a request's query at their site directly | - | - |
 
-Values: `true` (the default, except `ENABLE_EXTERNAL_EXECUTION`), `false`, or `test` for exporter, feasibility and
-emails - a test implementation for development without the external systems:
+Modules are opt-in: a module whose variable is not set (`-`) or empty is disabled. Values: `true`, `false`, or `test`
+for exporter, feasibility and emails - a test implementation for development without the external systems:
 
 - `ENABLE_EXPORTER=test`: the queries go through all their states (sent, executed, finished) without Beam; nothing is
   exported.

@@ -17,13 +17,11 @@ setdefault EMAIL_CONTEXT_B64RESEARCHMINUSENVIRONMENTMINUSLINK "$(base64 -w 0 /ap
 # Export other environment variables:
 
 setdefault LOG_LEVEL "INFO"
-setdefault ENABLE_RESEARCH_ENVIRONMENT "false"
 setdefault ENABLE_EMAILS "true"
 setdefault ENABLE_EXPORTER "true"
 setdefault ENABLE_FEASIBILITY "true"
 #setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}, {"label": "Molecular Data", "value": .totals.MolecularMarker}]'
 setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}]'
-setdefault ENABLE_DATASHIELD "false"
 setdefault SECURITY_ENABLED "true"
 
 # Select cache policy: beta during active development; stable after release.
