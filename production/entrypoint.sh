@@ -20,6 +20,7 @@ setdefault LOG_LEVEL "INFO"
 setdefault ENABLE_EMAILS "true"
 setdefault ENABLE_EXPORTER "true"
 setdefault ENABLE_FEASIBILITY "true"
+setdefault ENABLE_LOCAL_APPROVAL "true"
 #setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}, {"label": "Molecular Data", "value": .totals.MolecularMarker}]'
 setdefault FEASIBILITY_MAPPING '[{"label": "Patients", "value": .totals.patients}, {"label": "Samples", "value": .totals.specimen}]'
 setdefault SECURITY_ENABLED "true"

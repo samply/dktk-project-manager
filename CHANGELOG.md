@@ -117,6 +117,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - American spelling in all texts (anonymized, acknowledgment, organization, centered); German form texts: titles of the ethics and funding forms, untranslated ethics status and conflict-of-interest options, data protection confirmation heading
 - German texts for the request metadata (templates/metadata/request.json: request fields shown in the request view and the PDF); German PDF title "DATENANFRAGEFORMULAR", as the UI says "Datenanfrage"
 - Project state APPROVAL renamed CENTRAL_APPROVAL (action messages); needs the backend with the same rename
+- ENABLE_LOCAL_APPROVAL=true (production and development): local approval of each site after the central approval
+- Development: example approval contacts per site (BRIDGEHEADS_CONFIG_<SITE>_APPROVALCONTACTS_<n>_NAME_EN|DE, _DESCRIPTION_EN|DE, _EMAILADDRESS); production: to be added per site
 
 ### Fixed
 - Avoid splitting fields in samples from the template

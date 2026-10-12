@@ -13,6 +13,7 @@ its settings. Details: `docs/optional-modules.md` in project-manager.
 | `ENABLE_RESEARCH_ENVIRONMENT` | Research environment workspaces (Coder) | - | - |
 | `ENABLE_DATASHIELD` | DataSHIELD tokens (token manager); needs the research environment | - | - |
 | `ENABLE_EXTERNAL_EXECUTION` | Site admins execute a request's query at their site directly | - | - |
+| `ENABLE_LOCAL_APPROVAL` | Local approval of each site after the central approval (document per site) | `true` | `true` |
 
 Modules are opt-in: a module whose variable is not set (`-`) or empty is disabled. Values: `true`, `false`, or `test`
 for exporter, feasibility and emails - a test implementation for development without the external systems:
