@@ -116,6 +116,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Form texts corrected after the review of 2026-10-07 (collaborator title, ethics status and upload texts, data protection confirmation, minimum tissue weight, plasma and breast milk descriptions, sequencing data formats, example of samples per subject, final periods), American spelling (feces, organization); German texts of the changed fields aligned
 - American spelling in all texts (anonymized, acknowledgment, organization, centered); German form texts: titles of the ethics and funding forms, untranslated ethics status and conflict-of-interest options, data protection confirmation heading
 - German texts for the request metadata (templates/metadata/request.json: request fields shown in the request view and the PDF); German PDF title "DATENANFRAGEFORMULAR", as the UI says "Datenanfrage"
+- Project state APPROVAL renamed CENTRAL_APPROVAL (action messages); needs the backend with the same rename
 
 ### Fixed
 - Avoid splitting fields in samples from the template

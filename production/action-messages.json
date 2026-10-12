@@ -222,7 +222,7 @@
       },
       {
         "priority": 25,
-        "project-state": "APPROVAL",
+        "project-state": "CENTRAL_APPROVAL",
         "project-role": "PROJECT_MANAGER_ADMIN",
         "project-type": "DATASHIELD",
         "explanation": {
@@ -258,7 +258,7 @@
       },
       {
         "priority": 25,
-        "project-state": "APPROVAL",
+        "project-state": "CENTRAL_APPROVAL",
         "project-role": "PROJECT_MANAGER_ADMIN",
         "project-type": "RESEARCH_ENVIRONMENT",
         "explanation": {
@@ -276,7 +276,7 @@
       },
       {
         "priority": 25,
-        "project-state": "APPROVAL",
+        "project-state": "CENTRAL_APPROVAL",
         "project-role": "PROJECT_MANAGER_ADMIN",
         "project-type": "EXPORT",
         "explanation": {
