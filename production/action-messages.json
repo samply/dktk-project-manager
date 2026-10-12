@@ -201,7 +201,69 @@
         }
       }
     ],
+    "START_LOCAL_APPROVAL_STAGE": [
+      {
+        "priority": 25,
+        "project-state": "CENTRAL_APPROVAL",
+        "project-role": "PROJECT_MANAGER_ADMIN",
+        "explanation": {
+          "en": "Start the local approval once the request has received the central approval. The local approval contacts of the sites receive the request form, and the applicant is informed.",
+          "de": "Starten Sie die lokale Genehmigung, sobald die Anfrage die zentrale Genehmigung erhalten hat. Die Ansprechpersonen für die lokale Genehmigung der Standorte erhalten das Anfrageformular, und die antragstellende Person wird informiert."
+        },
+        "success-message": {
+          "en": "The local approval has been started successfully.",
+          "de": "Die lokale Genehmigung wurde erfolgreich gestartet."
+        },
+        "error-message": {
+          "en": "We couldn't start the local approval. Please try again.",
+          "de": "Die lokale Genehmigung konnte nicht gestartet werden. Bitte versuchen Sie es erneut."
+        }
+      }
+    ],
+    "BACK_TO_REVIEW": [
+      {
+        "priority": 100,
+        "success-message": {
+          "en": "The request has been sent back to review.",
+          "de": "Die Anfrage wurde zur Prüfung zurückgegeben."
+        },
+        "error-message": {
+          "en": "We couldn't send the request back to review. Please try again.",
+          "de": "Die Anfrage konnte nicht zur Prüfung zurückgegeben werden. Bitte versuchen Sie es erneut."
+        }
+      }
+    ],
+    "UPLOAD_LOCAL_APPROVAL": [
+      {
+        "priority": 100,
+        "success-message": {
+          "en": "The local approval has been uploaded.",
+          "de": "Die lokale Genehmigung wurde hochgeladen."
+        },
+        "error-message": {
+          "en": "We couldn't upload the local approval. Please try again.",
+          "de": "Die lokale Genehmigung konnte nicht hochgeladen werden. Bitte versuchen Sie es erneut."
+        }
+      }
+    ],
     "START_FINAL_STAGE": [
+      {
+        "priority": 25,
+        "project-state": "LOCAL_APPROVAL",
+        "project-role": "PROJECT_MANAGER_ADMIN",
+        "explanation": {
+          "en": "Start the final phase once the sites have started their local approval. Each site can export its data as soon as its local approval is uploaded.",
+          "de": "Starten Sie die finale Phase, sobald die Standorte ihre lokale Genehmigung begonnen haben. Jeder Standort kann seine Daten exportieren, sobald seine lokale Genehmigung hochgeladen ist."
+        },
+        "success-message": {
+          "en": "The final stage has been started successfully.",
+          "de": "Die finale Phase wurde erfolgreich gestartet."
+        },
+        "error-message": {
+          "en": "We couldn't start the final stage. Please try again.",
+          "de": "Die finale Phase konnte nicht gestartet werden. Bitte versuchen Sie es erneut."
+        }
+      },
       {
         "priority": 25,
         "project-state": "PILOT",

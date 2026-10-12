@@ -127,6 +127,7 @@ This instance uses `compact`.
 | Variable | Content |
 |---|---|
 | `FRONTEND_VARIABLES_FEASIBILITY_TABLE_ALIGNMENT` | `standard`, `left` or `right`, see below |
+| `FRONTEND_VARIABLES_LOCAL_APPROVAL_REQUIRED` | `true`: every site needs its local approval - the request cannot skip it, a missing one is red, the site cannot send the query without it (only in the UI); otherwise a missing local approval is "not provided" |
 
 | Value | Value columns (header included) |
 |---|---|

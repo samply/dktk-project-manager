@@ -20,6 +20,9 @@ setdefault FRONTEND_VARIABLES_FEASIBILITY_PAGE_SIZE "5"
 setdefault FRONTEND_VARIABLES_FEASIBILITY_TABLE_WIDTH "compact"
 # Alignment of the feasibility table's value columns: standard (numbers right, text left, default), left or right.
 setdefault FRONTEND_VARIABLES_FEASIBILITY_TABLE_ALIGNMENT "standard"
+# Local approval of each site mandatory (true: the request cannot skip it, the site sends the query only with it;
+# UI only) or not (false: a missing one is "not provided"). Not mandatory for now.
+setdefault FRONTEND_VARIABLES_LOCAL_APPROVAL_REQUIRED "false"
 setdefault FRONTEND_VARIABLES_CREATE_REQUEST_ORGANISATION_ROLES "PROJECT_MANAGER_ADMIN"
 setdefault FRONTEND_VARIABLES_CREATE_REQUEST_DEFAULT_QUERY_FORMAT "AST_DATA"
 # Lines shown for a normal form-field description before the UI offers "Show more".

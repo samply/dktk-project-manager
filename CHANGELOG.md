@@ -120,6 +120,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - ENABLE_LOCAL_APPROVAL=true (production and development): local approval of each site after the central approval
 - Development: example approval contacts per site (BRIDGEHEADS_CONFIG_<SITE>_APPROVALCONTACTS_<n>_NAME_EN|DE, _DESCRIPTION_EN|DE, _EMAILADDRESS); production: to be added per site
 - Email templates of the local approval (EN): LOCAL_APPROVAL_STARTED (approval contacts with the form, creator, bridgehead admins), NEW_LOCAL_APPROVAL, NEW_LOCAL_APPROVAL_FINAL (bridgehead admin: export now), PROJECT_BACK_TO_REVIEW (creator)
+- Action messages of the local approval: START_LOCAL_APPROVAL_STAGE, START_FINAL_STAGE in LOCAL_APPROVAL, BACK_TO_REVIEW, UPLOAD_LOCAL_APPROVAL
+- README: FRONTEND_VARIABLES_LOCAL_APPROVAL_REQUIRED (local approval mandatory, UI only)
+- FRONTEND_VARIABLES_LOCAL_APPROVAL_REQUIRED="false" in production (frontend-environment.sh) and development: the local approval is not mandatory for now
 
 ### Fixed
 - Avoid splitting fields in samples from the template
