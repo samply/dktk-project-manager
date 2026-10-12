@@ -232,6 +232,34 @@
         "CREATOR": "creator-send-credentials-from-bridgehead.html",
         "FINAL": "final-send-credentials-from-bridgehead.html"
       }
+    },
+    "LOCAL_APPROVAL_STARTED": {
+      "subject": "Local Approval for Data Request <project-code/>",
+      "attachment_files": ["FORM"],
+      "files": {
+        "BRIDGEHEAD_APPROVAL_CONTACT": "approval-contact-local-approval-started.html",
+        "CREATOR": "creator-local-approval-started.html",
+        "BRIDGEHEAD_ADMIN": "bridgehead-admin-local-approval-started.html"
+      }
+    },
+    "NEW_LOCAL_APPROVAL": {
+      "subject": "Local Approval of <bridgehead/> for Data Request <project-code/>",
+      "files": {
+        "DEFAULT": "default-new-local-approval.html"
+      }
+    },
+    "NEW_LOCAL_APPROVAL_FINAL": {
+      "subject": "Local Approval of <bridgehead/> for Data Request <project-code/>",
+      "files": {
+        "BRIDGEHEAD_ADMIN": "bridgehead-admin-new-local-approval-final.html",
+        "DEFAULT": "default-new-local-approval-final.html"
+      }
+    },
+    "PROJECT_BACK_TO_REVIEW": {
+      "subject": "Data Request <project-code/> Back in Review",
+      "files": {
+        "CREATOR": "creator-project-back-to-review.html"
+      }
     }
   }
 }
