@@ -1,5 +1,6 @@
 {
   "title": "funding",
+  "active": false,
   "display_name": {
     "en": "Conflicts of Interest",
     "de": "Interessenkonflikte"
