@@ -206,7 +206,7 @@ restart.
 
 Presentation patterns do not affect API or stored values. `DATE` uses `yyyy-MM-dd`,
 `TIMESTAMP` uses a UTC instant ending in `Z`, and `LOCAL_DATE_TIME` uses
-`yyyy-MM-ddTHH:mm` without a zone. The current master configuration defines no
+`yyyy-MM-ddTHH:mm` without a zone. The current DKTK configuration defines no
 persisted dynamic fields of these types.
 
 The database schema and form-value persistence are unchanged from `develop`.

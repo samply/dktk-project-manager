@@ -71,7 +71,7 @@
 
         <!--
             Group and block headings span both columns, so each deployment's
-            CSS decides their alignment (e.g. left in master, centered in cce).
+            CSS decides their alignment (e.g. left in dktk, centered in cce).
         -->
         <tr th:if="${node.kind == 'group'}" class="group-header-row"
             th:classappend="${'group-level-' + node.level}">
