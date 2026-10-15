@@ -359,7 +359,7 @@
       "data_type": "STRING",
       "display_name": {
         "en": "Fixation",
-        "de": "Zusatzstoff"
+        "de": "Fixierung"
       },
       "description": {
         "en": "Fixation method, e.g. formalin (FFPE).",
@@ -434,10 +434,6 @@
           "display_name": {
             "en": "DNA",
             "de": "DNA"
-          },
-          "description": {
-            "en": "DNA",
-            "de": "DNA"
           }
         },
         {
@@ -445,19 +441,11 @@
           "display_name": {
             "en": "RNA",
             "de": "RNA"
-          },
-          "description": {
-            "en": "RNA",
-            "de": "RNA"
           }
         },
         {
           "label": "cfdna",
           "display_name": {
-            "en": "cfDNA",
-            "de": "cfDNA"
-          },
-          "description": {
             "en": "cfDNA",
             "de": "cfDNA"
           }
