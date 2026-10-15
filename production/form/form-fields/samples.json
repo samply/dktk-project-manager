@@ -139,8 +139,8 @@
             "de": "Mononukleäre Zellen des peripheren Blutes (PBMC)"
           },
           "description": {
-            "en": "A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.",
-            "de": "Ein Leukozyt mit einem einzelnen, nicht segmentierten Kern in der reifen Form, der im zirkulierenden Blutpool gefunden wird."
+            "en": "Leukocytes with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.",
+            "de": "Leukozyten mit einem einzelnen, nicht segmentierten Kern in der reifen Form, die im zirkulierenden Blutpool gefunden werden."
           }
         },
         {
@@ -238,8 +238,8 @@
             "de": "Sonstiges"
           },
           "description": {
-            "en": "Any other type of material taken from a biological entity, e.g. amniotic fluid, cerebrospinal fluid (CSV), mitochondrial RNA.",
-            "de": "Jede andere Art von Material, das von einer biologischen Entität entnommen wurde, z. B. Fruchtwasser, Liquor, mitochondriale RNA."
+            "en": "Any other type of material taken from a biological entity, e.g. amniotic fluid.",
+            "de": "Jede andere Art von Material, das von einer biologischen Entität entnommen wurde, z. B. Fruchtwasser."
           }
         }
       ]
@@ -361,6 +361,10 @@
         "en": "Fixation",
         "de": "Zusatzstoff"
       },
+      "description": {
+        "en": "Fixation method, e.g. formalin (FFPE).",
+        "de": "Fixierungsmethode, z. B. Formalin (FFPE)."
+      },
       "block": "tissue"
     },
     {
@@ -457,8 +461,34 @@
             "en": "cfDNA",
             "de": "cfDNA"
           }
+        },
+        {
+          "label": "other",
+          "display_name": {
+            "en": "Other",
+            "de": "Sonstiges"
+          },
+          "description": {
+            "en": "Any other sample type. Please describe it in the field below.",
+            "de": "Jeder andere Probentyp. Bitte beschreiben Sie ihn im Feld darunter."
+          }
         }
       ]
+    },
+    {
+      "label": "other_type_description",
+      "mandatory": true,
+      "data_type": "STRING",
+      "display_name": {
+        "en": "Description of the sample type",
+        "de": "Beschreibung des Probentyps"
+      },
+      "description": {
+        "en": "Please describe the sample type you need.",
+        "de": "Bitte beschreiben Sie den benötigten Probentyp."
+      },
+      "block": "other",
+      "condition": "['samples']['other_type']['value'] == 'other'"
     },
     {
       "label": "other_number_of_samples_per_subject",
