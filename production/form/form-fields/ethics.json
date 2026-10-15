@@ -77,6 +77,11 @@
       "condition": "['ethics']['ethics_approval_status']['value'] matches 'not_required'"
     },
     {
+      "label": "ETHICS_VOTE",
+      "field_type": "FIXED",
+      "active": false
+    },
+    {
       "label": "ethics_confirmation",
       "mandatory": true,
       "data_type": "ENUM",
