@@ -5,6 +5,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [1.0.0] - 2026-10-16
 ### Added
 - GitHub repository `samply/dktk-project-manager` (moved from GitLab; secrets removed from the history)
 - GitHub Actions build with the samply `docker-ci.yml`: images `samply/dktk-project-manager:main` and `:develop` on
