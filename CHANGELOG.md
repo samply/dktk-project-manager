@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 ### Added
+- Release workflow: when a new version section of `CHANGELOG.md` reaches `main`, the tag `vX.Y.Z`, the GitHub
+  release (notes = that section) and the version images are created automatically
+
+## [1.0.0] - 2026-10-16
+### Added
 - GitHub repository `samply/dktk-project-manager` (moved from GitLab; secrets removed from the history)
 - GitHub Actions build with the samply `docker-ci.yml`: images `samply/dktk-project-manager:main` and `:develop` on
   Docker Hub, rebuilt every night

@@ -1,0 +1,85 @@
+name: Release
+
+# Releases a version when it reaches main. The version is the first "## [X.Y.Z] - YYYY-MM-DD" section of
+# CHANGELOG.md (below "## [Unreleased]"). If the tag vX.Y.Z does not exist yet, this workflow
+#   1. creates the annotated tag vX.Y.Z on the commit that reached main,
+#   2. creates the GitHub release vX.Y.Z with that CHANGELOG section as notes,
+#   3. starts the image build of the tag (docker-ci.yml): a tag pushed by a workflow does not start other workflows.
+# Every other push to main (the tag exists already) does nothing.
+# Procedure: project-manager-ops, runbooks/release.md, "Config repositories".
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  release:
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","linux","x64"]') || 'ubuntu-latest' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Version and notes from CHANGELOG.md
+        id: changelog
+        run: |
+          version=$(sed -nE 's/^## \[([0-9]+\.[0-9]+\.[0-9]+)\].*/\1/p' CHANGELOG.md | head -n 1)
+          if [ -z "$version" ]; then
+            echo "No released version in CHANGELOG.md: nothing to do."
+            exit 0
+          fi
+          if git rev-parse -q --verify "refs/tags/v$version" > /dev/null; then
+            echo "v$version exists already: nothing to do."
+            exit 0
+          fi
+          # The section of this version, without its heading, up to the next "## [" heading
+          awk -v heading="## [$version]" '
+            index($0, heading) == 1 { found = 1; next }
+            found && /^## \[/ { exit }
+            found { print }
+          ' CHANGELOG.md | sed -e '/./,$!d' > "$RUNNER_TEMP/notes.md"
+          echo "Releasing v$version"
+          cat "$RUNNER_TEMP/notes.md"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+      - name: Tag
+        if: steps.changelog.outputs.version
+        env:
+          VERSION: ${{ steps.changelog.outputs.version }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "v$VERSION" -m "Release v$VERSION"
+          git push origin "v$VERSION"
+
+      - name: GitHub release
+        if: steps.changelog.outputs.version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.changelog.outputs.version }}
+        run: |
+          jq -n --arg tag "v$VERSION" --rawfile notes "$RUNNER_TEMP/notes.md" \
+            '{tag_name: $tag, name: $tag, body: $notes}' > "$RUNNER_TEMP/release.json"
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/releases" \
+            -d "@$RUNNER_TEMP/release.json" > /dev/null
+
+      - name: Build the images of the tag
+        if: steps.changelog.outputs.version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.changelog.outputs.version }}
+        run: |
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/docker-ci.yml/dispatches" \
+            -d "{\"ref\":\"v$VERSION\"}"
