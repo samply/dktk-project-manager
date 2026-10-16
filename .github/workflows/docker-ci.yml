@@ -1,0 +1,60 @@
+name: Docker CI
+
+# Images on Docker Hub (samply/dktk-project-manager):
+#   main    -> :main     production, built on the backend release named in the Dockerfile; built on every merge
+#                        into main (a new backend release arrives as a Dependabot PR, see .github/dependabot.yml)
+#   vX.Y.Z  -> :X.Y.Z, :X.Y, :X, :latest  a release of this configuration (tag on main): what production ran, for
+#                        audits and rollback
+#   develop -> :develop  test system, built on samply/project-manager:develop; built on every merge into develop
+#                        and every night (the backend's develop image changes without a commit here)
+# Pull requests are only built (nothing is pushed).
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+    tags:
+      - 'v*.*.*'
+  pull_request:
+    branches:
+      - main
+      - develop
+  schedule:
+    # Every night, rebuild develop (job nightly-develop). serveros pulls at 3:30 VM time, at the earliest 01:30 UTC;
+    # 00:17 UTC leaves an hour for GitHub's delays (largest at the full hour) and the build (project-manager-ops,
+    # inventory.yaml, servers.serveros).
+    - cron: '17 0 * * *'
+  workflow_dispatch:
+
+jobs:
+  # A schedule only runs on the default branch (main). This starts the same workflow for develop, so the test system
+  # gets the newest samply/project-manager:develop every night.
+  nightly-develop:
+    if: github.event_name == 'schedule'
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","linux","x64"]') || 'ubuntu-latest' }}
+    permissions:
+      actions: write
+    steps:
+      - name: Start the build of develop
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          curl -fsS -X POST \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/workflows/docker-ci.yml/dispatches" \
+            -d '{"ref":"develop"}'
+
+  # Not on the schedule itself: that run is on main, whose backend is a fixed release (nothing new to build).
+  build:
+    if: github.event_name != 'schedule'
+    uses: samply/github-workflows/.github/workflows/docker-ci.yml@main
+    with:
+      image-name: "samply/dktk-project-manager"
+      build-args: BACKEND=${{ (github.ref_name == 'develop' || github.base_ref == 'develop') && 'develop' || 'release' }}
+      push-to: ${{ github.event_name == 'pull_request' && 'none' || 'auto' }}
+      ghcr-retention-policy: keep
+    secrets:
+      DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+      DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
