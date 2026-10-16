@@ -1,4 +1,119 @@
-# dktk-project-manager
+# DKTK Project Manager
+
+The DKTK deployment of the **Samply project manager** (Samply Data Request): researchers of the German Cancer
+Consortium (DKTK) request data and samples from the DKTK sites. A request starts in the Explorer with a query and the
+chosen sites, gets a form (project, ethics, funding, ...), goes through the central and local approvals, and is then
+executed at the sites, which send their results back.
+
+The software is generic; this repository holds what makes it DKTK:
+
+| Folder | Content |
+|---|---|
+| `production/form/` | The request forms and the template of the request PDF |
+| `production/email/` | Email templates and which email goes to whom |
+| `production/action-messages.json` | Texts of the actions users take |
+| `production/display-formats.json` | How dates and times are shown |
+| `production/frontend/` | Frontend settings, request types, logos |
+| `production/cache/` | Cache settings of the backend |
+| `production/entrypoint.sh`, `production/generate_bridgeheads.sh` | Defaults of every setting; the DKTK sites (bridgeheads) |
+| `development/` | Settings for running the backend locally |
+
+Components:
+
+- backend [`samply/project-manager`](https://github.com/samply/project-manager);
+- frontend [`samply/project-manager-ui`](https://github.com/samply/project-manager-ui);
+- this repository builds the image [`samply/dktk-project-manager`](https://hub.docker.com/r/samply/dktk-project-manager):
+  the backend image with `production/` copied to `/app`.
+
+## Branches and images
+
+| Branch | Image | Backend inside | Runs on |
+|---|---|---|---|
+| `main` | `samply/dktk-project-manager:main` | a released version, written in the `Dockerfile` (stage `backend-release`) | production |
+| tag `vX.Y.Z` on `main` | `samply/dktk-project-manager:X.Y.Z` | as `main` at that moment | a release: what production ran (audits, rollback) |
+| `develop` | `samply/dktk-project-manager:develop` | `samply/project-manager:develop` (the backend's development state) | test system |
+
+- Changes go into `develop` through pull requests; `main` (production) changes only through a pull request from
+  `develop`.
+- `main` is built on every merge into `main`. `develop` is built on every merge into `develop` and every night at
+  00:17 UTC, so the test system gets the backend's latest development state without a commit here. The servers pull
+  their images every night.
+- Releases: semantic versions, tag `vX.Y.Z` on `main`, entries in `CHANGELOG.md` (procedure: `runbooks/release.md`,
+  "Config repositories", in project-manager-ops).
+- Locally: `docker build .` builds on the release, `docker build --build-arg BACKEND=develop .` on the development
+  state.
+
+### How a backend release reaches production
+
+1. A new backend version is released (for example `1.1.0`): Docker Hub gets `samply/project-manager:1.1.0`.
+2. Within a day, Dependabot (`.github/dependabot.yml`) opens a pull request into `develop` that changes
+   `samply/project-manager:1.0.0` to `1.1.0` in the `Dockerfile`.
+3. The configuration the new version needs (the `Configuration` section of the backend's CHANGELOG) is added to that
+   pull request, which is then merged.
+4. A pull request `develop` → `main` is merged; this builds `samply/dktk-project-manager:main` on `1.1.0`.
+5. Production pulls it the next night.
+
+The test system had the backend changes before the release: it runs on `samply/project-manager:develop`.
+
+## Minimal docker compose
+
+Backend, frontend and database. Emails, exporter and feasibility run in `test` mode (no SMTP, no Beam; see
+[Optional modules](#optional-modules)). A login server (OIDC) with a public client for the frontend and a client for
+the backend is needed.
+
+```yaml
+services:
+  project-manager-ui:
+    image: docker.io/samply/project-manager-ui:main
+    environment:
+      STANDALONE_SINGLE_SPA: "true"
+      VUE_APP_OIDC_URL: "https://login.example.org/realms/example"  # issuer of the login server
+      VUE_APP_OIDC_CLIENT_ID: "project-manager-ui"                   # public client
+      VUE_APP_FRONTEND_URL: "http://localhost:8080"
+      VUE_APP_BACKEND_URL: "http://localhost:8097/api"
+    ports:
+      - "8080:80"
+
+  project-manager-api:
+    image: docker.io/samply/dktk-project-manager:main
+    environment:
+      FRONTEND_BASEURL: "http://localhost:8080"
+      BACKEND_BASEURL: "http://localhost:8097/api"
+      SERVER_SERVLET_CONTEXT_PATH: "/api"
+      PROJECT_MANAGER_DB_URL: "jdbc:postgresql://project-manager-db:5432/project_manager"
+      PROJECT_MANAGER_DB_USER: "project_manager"
+      PROJECT_MANAGER_DB_PASSWORD: "${PM_DB_PASSWORD}"
+      DB_ENCRYPTION_PRIVATE_KEY_IN_BASE64: "${PM_DB_ENCRYPTION_PRIVATE_KEY_IN_BASE64}"  # AES key; never change it later
+      OIDC_URL: "https://login.example.org/realms/example"
+      OIDC_CLIENT_ID: "project-manager-api"
+      OIDC_CLIENT_SECRET: "${OIDC_CLIENT_SECRET}"
+      ENABLE_EMAILS: "test"
+      ENABLE_EXPORTER: "test"
+      ENABLE_FEASIBILITY: "test"
+    ports:
+      - "8097:8097"
+    volumes:
+      - ./data/documents:/app/documents
+    depends_on:
+      project-manager-db:
+        condition: service_healthy
+
+  project-manager-db:
+    image: docker.io/postgres:18-alpine
+    environment:
+      POSTGRES_USER: "project_manager"
+      POSTGRES_PASSWORD: "${PM_DB_PASSWORD}"
+      POSTGRES_DB: "project_manager"
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U project_manager -d project_manager"]
+      interval: 5s
+      retries: 20
+```
+
+Every other setting has a default in `production/entrypoint.sh` and can be overridden with an environment variable.
+What a deployment must set: `docs/minimal-configuration.md` in project-manager.
 
 ## Optional modules
 

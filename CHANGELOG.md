@@ -4,6 +4,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [Unreleased]
+
+## [1.0.0] - 2026-10-16
+### Added
+- GitHub repository `samply/dktk-project-manager` (moved from GitLab; secrets removed from the history)
+- GitHub Actions build with the samply `docker-ci.yml`: images `samply/dktk-project-manager:main` and `:develop` on
+  Docker Hub, rebuilt every night
+- Dependabot: pull request into `develop` for every new backend release
+- README: branches and images, minimal docker compose
+- LICENSE (Apache 2.0, as the other samply repositories)
+### Changed
+- `main` is built on a released backend (`samply/project-manager:1.0.0`), `develop` on `samply/project-manager:develop`
+- New development database key in `development/development.env`
+### Removed
+- GitLab CI (`.gitlab-ci.yml`)
+- `to-delete/`
+
 ## [0.0.1 - 2026-09-09]
 ### Added
 - CHANGELOG
