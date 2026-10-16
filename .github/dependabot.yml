@@ -1,0 +1,9 @@
+version: 2
+updates:
+  # Raises the backend release in the Dockerfile (stage backend-release) when samply/project-manager publishes a new
+  # version. The PR goes into develop; production gets it with the next develop -> main merge.
+  - package-ecosystem: docker
+    directory: /
+    target-branch: develop
+    schedule:
+      interval: daily
