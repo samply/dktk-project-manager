@@ -82,7 +82,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "A development version of the script has been uploaded. You can download it, make any necessary edits, and then upload your updated version.",
-          "de": "Eine Skriptversion ist verfügbar. Laden Sie sie herunter, nehmen Sie bei Bedarf Änderungen vor und laden Sie die aktualisierte Version anschließend wieder hoch."
+          "de": "Eine Entwicklungsversion des Skripts wurde hochgeladen. Sie können sie herunterladen, die nötigen Änderungen vornehmen und anschließend Ihre aktualisierte Version hochladen."
         }
       },
       {
@@ -91,7 +91,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "The script is ready for testing on your side. Please download it and proceed with the tests (https://dev.samply.de).",
-          "de": "Eine Skriptversion ist verfügbar. Laden Sie sie herunter, nehmen Sie bei Bedarf Änderungen vor und laden Sie die aktualisierte Version anschließend wieder hoch."
+          "de": "Das Skript ist bereit für Ihre Tests. Bitte laden Sie es herunter und führen Sie die Tests durch (https://dev.samply.de)."
         }
       },
       {
@@ -100,7 +100,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "The final script is now available. Please download it and execute it on your development workspace (https://dev.samply.de).",
-          "de": "Eine Skriptversion ist verfügbar. Laden Sie sie herunter, nehmen Sie bei Bedarf Änderungen vor und laden Sie die aktualisierte Version anschließend wieder hoch."
+          "de": "Das finale Skript ist jetzt verfügbar. Bitte laden Sie es herunter und führen Sie es in Ihrem Entwicklungsarbeitsbereich aus (https://dev.samply.de)."
         }
       }
     ],
@@ -151,7 +151,7 @@
         "user-project-state": "CREATED",
         "explanation": {
           "en": "Please accept the results generated after executing the script across all bridgeheads related to the request. If needed, you can request changes to the script by clicking \u0027Request Changes\u0027.",
-          "de": "Bitte prüfen und akzeptieren Sie die Ergebnisse, nachdem das Skript ausgeführt oder alle Exporte von den Bridgehead-Administratoren empfangen wurden. Bei Bedarf können Sie Änderungen an Skript oder Abfrage anfordern."
+          "de": "Bitte akzeptieren Sie die Ergebnisse, die nach der Ausführung des Skripts in allen Bridgeheads der Anfrage erzeugt wurden. Bei Bedarf können Sie mit „Änderungen anfordern“ Änderungen am Skript anfordern."
         },
         "success-message": {
           "en": "The Request results were accepted successfully.",
@@ -170,7 +170,7 @@
         "user-project-state": "CREATED",
         "explanation": {
           "en": "Please accept the results after receiving all exports from the admins of the bridgeheads related to the request. If necessary, you can request changes to the query by clicking \u0027Request Changes\u0027.",
-          "de": "Bitte prüfen und akzeptieren Sie die Ergebnisse, nachdem das Skript ausgeführt oder alle Exporte von den Bridgehead-Administratoren empfangen wurden. Bei Bedarf können Sie Änderungen an Skript oder Abfrage anfordern."
+          "de": "Bitte akzeptieren Sie die Ergebnisse, nachdem Sie alle Exporte von den Administratoren der Bridgeheads der Anfrage erhalten haben. Bei Bedarf können Sie mit „Änderungen anfordern“ Änderungen an der Abfrage anfordern."
         },
         "success-message": {
           "en": "The Request results were accepted successfully.",
@@ -189,7 +189,7 @@
         "user-project-state": "CREATED",
         "explanation": {
           "en": "Please accept the results after receiving all exports from the admins of the bridgeheads related to the request in your Data Request Tool workspace. If necessary, you can request changes to the query by clicking \u0027Request Changes\u0027.",
-          "de": "Bitte prüfen und akzeptieren Sie die Ergebnisse, nachdem das Skript ausgeführt oder alle Exporte von den Bridgehead-Administratoren empfangen wurden. Bei Bedarf können Sie Änderungen an Skript oder Abfrage anfordern."
+          "de": "Bitte akzeptieren Sie die Ergebnisse, nachdem Sie alle Exporte von den Administratoren der Bridgeheads der Anfrage in Ihrem Arbeitsbereich im Data Request Tool erhalten haben. Bei Bedarf können Sie mit „Änderungen anfordern“ Änderungen an der Abfrage anfordern."
         },
         "success-message": {
           "en": "The Request results were accepted successfully.",
@@ -220,16 +220,16 @@
         }
       }
     ],
-    "BACK_TO_REVIEW": [
+    "REQUEST_CHANGES_IN_APPROVAL": [
       {
         "priority": 100,
         "success-message": {
-          "en": "The request has been sent back to review.",
-          "de": "Die Anfrage wurde zur Prüfung zurückgegeben."
+          "en": "The changes have been requested. The applicant has been informed.",
+          "de": "Die Änderungen wurden angefordert. Die antragstellende Person wurde informiert."
         },
         "error-message": {
-          "en": "We couldn't send the request back to review. Please try again.",
-          "de": "Die Anfrage konnte nicht zur Prüfung zurückgegeben werden. Bitte versuchen Sie es erneut."
+          "en": "We couldn't request the changes. Please try again.",
+          "de": "Die Änderungen konnten nicht angefordert werden. Bitte versuchen Sie es erneut."
         }
       }
     ],
@@ -271,7 +271,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "You can start the final stage of the request once the script has been tested in all pilot bridgeheads and accepted by their bridgehead admins.",
-          "de": "Sie können die finale Phase starten, sobald das Skript beziehungsweise der Export in allen Pilot-Bridgeheads getestet oder ausgeführt und von deren Bridgehead-Administratoren akzeptiert wurde. Bei Bedarf kann die Entwicklungs- und Pilotphase übersprungen werden."
+          "de": "Sie können die finale Phase der Anfrage starten, sobald das Skript in allen Pilot-Bridgeheads getestet und von deren Bridgehead-Administratoren akzeptiert wurde."
         },
         "success-message": {
           "en": "The final stage has been started successfully.",
@@ -289,7 +289,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "You can start the final stage of the request directly if you believe the script is mature enough to bypass the development and pilot stages.",
-          "de": "Sie können die finale Phase starten, sobald das Skript beziehungsweise der Export in allen Pilot-Bridgeheads getestet oder ausgeführt und von deren Bridgehead-Administratoren akzeptiert wurde. Bei Bedarf kann die Entwicklungs- und Pilotphase übersprungen werden."
+          "de": "Sie können die finale Phase der Anfrage direkt starten, wenn Sie das Skript für ausgereift genug halten, um die Entwicklungs- und Pilotphase zu überspringen."
         },
         "success-message": {
           "en": "The final stage has been started successfully.",
@@ -307,7 +307,7 @@
         "project-type": "RESEARCH_ENVIRONMENT",
         "explanation": {
           "en": "You can start the final stage of the request once the export has been executed in all pilot bridgeheads and accepted by their bridgehead admins.",
-          "de": "Sie können die finale Phase starten, sobald das Skript beziehungsweise der Export in allen Pilot-Bridgeheads getestet oder ausgeführt und von deren Bridgehead-Administratoren akzeptiert wurde. Bei Bedarf kann die Entwicklungs- und Pilotphase übersprungen werden."
+          "de": "Sie können die finale Phase der Anfrage starten, sobald der Export in allen Pilot-Bridgeheads ausgeführt und von deren Bridgehead-Administratoren akzeptiert wurde."
         },
         "success-message": {
           "en": "The final stage has been started successfully.",
@@ -325,7 +325,7 @@
         "project-type": "RESEARCH_ENVIRONMENT",
         "explanation": {
           "en": "You can start the final stage of the request directly if you believe the query is mature enough to bypass the development and pilot stages.",
-          "de": "Sie können die finale Phase starten, sobald das Skript beziehungsweise der Export in allen Pilot-Bridgeheads getestet oder ausgeführt und von deren Bridgehead-Administratoren akzeptiert wurde. Bei Bedarf kann die Entwicklungs- und Pilotphase übersprungen werden."
+          "de": "Sie können die finale Phase der Anfrage direkt starten, wenn Sie die Abfrage für ausgereift genug halten, um die Entwicklungs- und Pilotphase zu überspringen."
         },
         "success-message": {
           "en": "The final stage has been started successfully.",
@@ -342,8 +342,8 @@
         "project-role": "PROJECT_MANAGER_ADMIN",
         "project-type": "EXPORT",
         "explanation": {
-          "en": "Please start the final stage after reviewing the query and receiving agreement from the Data Science Group, confirming that it is suitable to be executed across all bridgeheads related to the request.",
-          "de": "Sie können die finale Phase starten, sobald das Skript beziehungsweise der Export in allen Pilot-Bridgeheads getestet oder ausgeführt und von deren Bridgehead-Administratoren akzeptiert wurde. Bei Bedarf kann die Entwicklungs- und Pilotphase übersprungen werden."
+          "en": "Please start the final stage after reviewing the query and confirming that it is suitable to be executed across all bridgeheads related to the request.",
+          "de": "Bitte starten Sie die finale Phase, nachdem Sie die Abfrage geprüft und bestätigt haben, dass sie für die Ausführung in allen Bridgeheads der Anfrage geeignet ist."
         },
         "success-message": {
           "en": "The final stage has been started successfully.",
@@ -361,8 +361,8 @@
         "project-state": "REVIEW",
         "project-role": "PROJECT_MANAGER_ADMIN",
         "explanation": {
-          "en": "Please review the application form for this request. If any changes are necessary, contact the request applicant directly. If everything is in order, accept the request for evaluation by the Data Science Group. Once the Data Science Group has given their final approval, you can begin the development or final stage.",
-          "de": "Bitte prüfen Sie das Antragsformular. Wenn Änderungen erforderlich sind, wenden Sie sich direkt an die antragstellende Person. Wenn alles in Ordnung ist, akzeptieren Sie die Anfrage zur Bewertung durch das zuständige Komitee. Eine archivierte Anfrage können Sie jederzeit wieder zur Bewertung öffnen."
+          "en": "Please review the application form for this request. If the applicant has to change something, request the changes: the applicant gets your message. If everything is in order, accept the request. Then you can start its next phase.",
+          "de": "Bitte prüfen Sie das Antragsformular. Wenn die antragstellende Person etwas ändern muss, fordern Sie die Änderungen an: Sie erhält Ihre Nachricht. Wenn alles in Ordnung ist, akzeptieren Sie die Anfrage. Danach können Sie ihre nächste Phase starten."
         },
         "success-message": {
           "en": "The Request was accepted successfully.",
@@ -378,8 +378,8 @@
         "project-state": "ARCHIVED",
         "project-role": "PROJECT_MANAGER_ADMIN",
         "explanation": {
-          "en": "You can reopen this request for evaluation by the Data Science Group at any time.",
-          "de": "Bitte prüfen Sie das Antragsformular. Wenn Änderungen erforderlich sind, wenden Sie sich direkt an die antragstellende Person. Wenn alles in Ordnung ist, akzeptieren Sie die Anfrage zur Bewertung durch das zuständige Komitee. Eine archivierte Anfrage können Sie jederzeit wieder zur Bewertung öffnen."
+          "en": "You can reopen this request at any time.",
+          "de": "Sie können diese Anfrage jederzeit wieder öffnen."
         },
         "success-message": {
           "en": "The Request was accepted successfully.",
@@ -399,7 +399,7 @@
         "user-project-state": "CREATED",
         "explanation": {
           "en": "Please accept the script after reviewing it. If any changes are needed, you can request them. If you believe major changes are required or if the request should be temporarily blocked for significant revisions, please click \u0027Reject\u0027 and contact the Data Request Tool admin.",
-          "de": "Bitte prüfen und akzeptieren Sie das Skript. Wenn Änderungen erforderlich sind, können Sie diese anfordern. Bei größeren Änderungen klicken Sie auf „Ablehnen“ und wenden Sie sich an die Administration des Data-Request-Tools."
+          "de": "Bitte akzeptieren Sie das Skript, nachdem Sie es geprüft haben. Wenn Änderungen nötig sind, können Sie diese anfordern. Wenn Sie größere Änderungen für nötig halten oder die Anfrage für umfangreiche Überarbeitungen vorübergehend gestoppt werden sollte, klicken Sie bitte auf „Ablehnen“ und wenden Sie sich an die Administration des Data Request Tools."
         },
         "success-message": {
           "en": "The script was accepted successfully.",
@@ -417,7 +417,7 @@
         "user-project-state": "CREATED",
         "explanation": {
           "en": "Please test the script in your development workspace, as it is adapted specifically for your bridgehead. If everything is fine, accept the request. If changes are needed, click \u0027Request Changes\u0027 and contact the developer. If you believe major changes are required or if the request should be temporarily blocked for significant revisions, click \u0027Reject\u0027 and contact the Data Request Tool admin.",
-          "de": "Bitte prüfen und akzeptieren Sie das Skript. Wenn Änderungen erforderlich sind, können Sie diese anfordern. Bei größeren Änderungen klicken Sie auf „Ablehnen“ und wenden Sie sich an die Administration des Data-Request-Tools."
+          "de": "Bitte testen Sie das Skript in Ihrem Entwicklungsarbeitsbereich, da es speziell für Ihren Bridgehead angepasst ist. Wenn alles in Ordnung ist, akzeptieren Sie die Anfrage. Wenn Änderungen nötig sind, klicken Sie auf „Änderungen anfordern“ und wenden Sie sich an die Entwicklerin oder den Entwickler. Wenn Sie größere Änderungen für nötig halten oder die Anfrage für umfangreiche Überarbeitungen vorübergehend gestoppt werden sollte, klicken Sie bitte auf „Ablehnen“ und wenden Sie sich an die Administration des Data Request Tools."
         },
         "success-message": {
           "en": "The script was accepted successfully.",
@@ -433,8 +433,8 @@
       {
         "priority": 35,
         "explanation": {
-          "en": "You can start the development stage of the request by clicking \u0027Start Development Stage.\u0027 This can be done after receiving agreement from the Data Science Group or at least local approval from the bridgehead admins for development.",
-          "de": "Sie können die Entwicklungsphase der Anfrage mit „Entwicklungsphase starten“ beginnen, sobald die erforderliche Zustimmung oder die lokale Freigabe der Bridgehead-Administratoren vorliegt."
+          "en": "You can start the development stage of the request by clicking \u0027Start Development Stage.\u0027 This can be done after receiving at least the local approval from the bridgehead admins for development.",
+          "de": "Sie können die Entwicklungsphase der Anfrage mit „Entwicklungsphase starten“ beginnen. Das ist möglich, sobald zumindest die lokale Freigabe der Bridgehead-Administratoren für die Entwicklung vorliegt."
         },
         "success-message": {
           "en": "The development stage has been started successfully.",
@@ -453,7 +453,7 @@
         "user-project-state": "CREATED",
         "explanation": {
           "en": "Please accept the analysis test in the Data Request Tool for your bridgehead after reviewing it. If changes are needed, you can request them. If you believe major changes are necessary or if the request should be temporarily blocked for significant revisions, click \u0027Reject\u0027 and contact the Data Request Tool admin.",
-          "de": "Bitte prüfen und akzeptieren Sie den Analysetest beziehungsweise die Analyse in Ihrem Entwicklungsarbeitsbereich. Wenn Änderungen erforderlich sind, können Sie diese anfordern. Bei größeren Änderungen klicken Sie auf „Ablehnen“ und wenden Sie sich an die Administration des Data-Request-Tools."
+          "de": "Bitte akzeptieren Sie den Analysetest für Ihren Bridgehead im Data Request Tool, nachdem Sie ihn geprüft haben. Wenn Änderungen nötig sind, können Sie diese anfordern. Wenn Sie größere Änderungen für nötig halten oder die Anfrage für umfangreiche Überarbeitungen vorübergehend gestoppt werden sollte, klicken Sie bitte auf „Ablehnen“ und wenden Sie sich an die Administration des Data Request Tools."
         },
         "success-message": {
           "en": "The Request analysis was accepted successfully.",
@@ -470,7 +470,7 @@
         "user-project-state": "CREATED",
         "explanation": {
           "en": "Please test the analysis in your development workspace, as it is adapted specifically for your bridgehead. If everything is fine, accept the request. If changes are needed, click \u0027Request Changes\u0027 and contact the developer. If you believe major changes are required or if the request should be temporarily blocked for significant revisions, click \u0027Reject\u0027 and contact the Data Request Tool admin.",
-          "de": "Bitte prüfen und akzeptieren Sie den Analysetest beziehungsweise die Analyse in Ihrem Entwicklungsarbeitsbereich. Wenn Änderungen erforderlich sind, können Sie diese anfordern. Bei größeren Änderungen klicken Sie auf „Ablehnen“ und wenden Sie sich an die Administration des Data-Request-Tools."
+          "de": "Bitte testen Sie die Analyse in Ihrem Entwicklungsarbeitsbereich, da sie speziell für Ihren Bridgehead angepasst ist. Wenn alles in Ordnung ist, akzeptieren Sie die Anfrage. Wenn Änderungen nötig sind, klicken Sie auf „Änderungen anfordern“ und wenden Sie sich an die Entwicklerin oder den Entwickler. Wenn Sie größere Änderungen für nötig halten oder die Anfrage für umfangreiche Überarbeitungen vorübergehend gestoppt werden sollte, klicken Sie bitte auf „Ablehnen“ und wenden Sie sich an die Administration des Data Request Tools."
         },
         "success-message": {
           "en": "The Request analysis was accepted successfully.",
@@ -491,7 +491,7 @@
         "project-bridgehead-state": "CREATED",
         "explanation": {
           "en": "You have already sent your query to the bridgehead. Please execute it in the Teiler by accessing the Exporter app. Once the execution is complete, verify that the request has been uploaded to your local Opal instance of the bridgehead. If everything is in order, you can click \u0027Authorize\u0027 to allow the developer to execute the script in the development workspace for your bridgehead. You can cancel your permission at any time by clicking \u0027Revoke\u0027. The Opal token will remain active only during the \u0027DEVELOP\u0027 stage of the request.",
-          "de": "Sie haben die Abfrage bereits an den Bridgehead gesendet. Führen Sie sie im Teiler über die Exporter-App aus und prüfen Sie anschließend das Ergebnis. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die weitere Verarbeitung zu erlauben. Die Berechtigung kann jederzeit widerrufen werden."
+          "de": "Sie haben Ihre Abfrage bereits an den Bridgehead gesendet. Bitte führen Sie sie im Teiler in der Exporter-App aus. Prüfen Sie nach der Ausführung, ob die Anfrage in die lokale Opal-Instanz Ihres Bridgeheads hochgeladen wurde. Wenn alles in Ordnung ist, können Sie auf „Autorisieren“ klicken, damit die Entwicklerin oder der Entwickler das Skript im Entwicklungsarbeitsbereich für Ihren Bridgehead ausführen kann. Sie können Ihre Erlaubnis jederzeit mit „Widerrufen“ zurückziehen. Das Opal-Token bleibt nur während der Phase „DEVELOP“ der Anfrage aktiv."
         },
         "success-message": {
           "en": "The bridgehead Request was accepted successfully.",
@@ -510,7 +510,7 @@
         "project-bridgehead-state": "CREATED",
         "explanation": {
           "en": "You have already sent your query to the bridgehead. Please execute it in the Teiler by accessing the Exporter app. Once the execution is complete, verify that the request has been uploaded to your local Opal instance of the bridgehead. If everything is in order, you can click \u0027Authorize\u0027 to allow the pilot tester to execute the script in the development workspace for your bridgehead. You can cancel your permission at any time by clicking \u0027Revoke\u0027. The Opal token will remain active only during the \u0027PILOT\u0027 stage of the request.",
-          "de": "Sie haben die Abfrage bereits an den Bridgehead gesendet. Führen Sie sie im Teiler über die Exporter-App aus und prüfen Sie anschließend das Ergebnis. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die weitere Verarbeitung zu erlauben. Die Berechtigung kann jederzeit widerrufen werden."
+          "de": "Sie haben Ihre Abfrage bereits an den Bridgehead gesendet. Bitte führen Sie sie im Teiler in der Exporter-App aus. Prüfen Sie nach der Ausführung, ob die Anfrage in die lokale Opal-Instanz Ihres Bridgeheads hochgeladen wurde. Wenn alles in Ordnung ist, können Sie auf „Autorisieren“ klicken, damit die Pilot-Testperson das Skript im Entwicklungsarbeitsbereich für Ihren Bridgehead ausführen kann. Sie können Ihre Erlaubnis jederzeit mit „Widerrufen“ zurückziehen. Das Opal-Token bleibt nur während der Phase „PILOT“ der Anfrage aktiv."
         },
         "success-message": {
           "en": "The bridgehead Request was accepted successfully.",
@@ -529,7 +529,7 @@
         "project-bridgehead-state": "CREATED",
         "explanation": {
           "en": "You have already sent your query to the bridgehead. Please execute it in the Teiler by accessing the Exporter app. Once the execution is complete, verify that the request has been uploaded to your local Opal instance of the bridgehead. If everything is in order, click \u0027Authorize\u0027 to allow the final user to execute the script in the development workspace across all bridgeheads related to the request. You can cancel your permission at any time by clicking \u0027Revoke\u0027. The Opal token will remain active only during the \u0027FINAL\u0027 stage of the request.",
-          "de": "Sie haben die Abfrage bereits an den Bridgehead gesendet. Führen Sie sie im Teiler über die Exporter-App aus und prüfen Sie anschließend das Ergebnis. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die weitere Verarbeitung zu erlauben. Die Berechtigung kann jederzeit widerrufen werden."
+          "de": "Sie haben Ihre Abfrage bereits an den Bridgehead gesendet. Bitte führen Sie sie im Teiler in der Exporter-App aus. Prüfen Sie nach der Ausführung, ob die Anfrage in die lokale Opal-Instanz Ihres Bridgeheads hochgeladen wurde. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, damit die finale Benutzerin oder der finale Benutzer das Skript im Entwicklungsarbeitsbereich über alle Bridgeheads der Anfrage hinweg ausführen kann. Sie können Ihre Erlaubnis jederzeit mit „Widerrufen“ zurückziehen. Das Opal-Token bleibt nur während der Phase „FINAL“ der Anfrage aktiv."
         },
         "success-message": {
           "en": "The bridgehead Request was accepted successfully.",
@@ -548,7 +548,7 @@
         "project-bridgehead-state": "CREATED",
         "explanation": {
           "en": "You have already sent your query to the bridgehead. Please execute it in the Teiler by accessing the Exporter app. Once the execution is complete, verify that the request has been executed properly. If everything is in order, click \u0027Authorize\u0027 to automatically send the files to the development workspace, where the developer can proceed with the analysis. You can cancel your permission at any time by clicking \u0027Revoke\u0027. The development workspace with the export will remain active only during the \u0027DEVELOP\u0027 stage of the request and only while you have accepted it in the Data Request Tool. After that, the workspace and the files will be automatically removed.",
-          "de": "Sie haben die Abfrage bereits an den Bridgehead gesendet. Führen Sie sie im Teiler über die Exporter-App aus und prüfen Sie anschließend das Ergebnis. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die weitere Verarbeitung zu erlauben. Die Berechtigung kann jederzeit widerrufen werden."
+          "de": "Sie haben Ihre Abfrage bereits an den Bridgehead gesendet. Bitte führen Sie sie im Teiler in der Exporter-App aus. Prüfen Sie nach der Ausführung, ob die Anfrage korrekt ausgeführt wurde. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die Dateien automatisch an den Entwicklungsarbeitsbereich zu senden, wo die Entwicklerin oder der Entwickler mit der Analyse fortfahren kann. Sie können Ihre Erlaubnis jederzeit mit „Widerrufen“ zurückziehen. Der Entwicklungsarbeitsbereich mit dem Export bleibt nur während der Phase „DEVELOP“ der Anfrage aktiv und nur, solange Sie sie im Data Request Tool akzeptiert haben. Danach werden der Arbeitsbereich und die Dateien automatisch entfernt."
         },
         "success-message": {
           "en": "The bridgehead Request was accepted successfully.",
@@ -567,7 +567,7 @@
         "project-bridgehead-state": "CREATED",
         "explanation": {
           "en": "You have already sent your query to the bridgehead. Please execute it in the Teiler by accessing the Exporter app. Once the execution is complete, verify that the request has been executed properly. If everything is in order, click \u0027Authorize\u0027 to automatically send the files to the development workspace, where the pilot tester can proceed with the analysis. You can cancel your permission at any time by clicking \u0027Revoke\u0027. The development workspace with the export will remain active only during the \u0027PILOT\u0027 stage of the request and only while you have accepted it in the Data Request Tool. After that, the workspace and the files will be automatically removed.",
-          "de": "Sie haben die Abfrage bereits an den Bridgehead gesendet. Führen Sie sie im Teiler über die Exporter-App aus und prüfen Sie anschließend das Ergebnis. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die weitere Verarbeitung zu erlauben. Die Berechtigung kann jederzeit widerrufen werden."
+          "de": "Sie haben Ihre Abfrage bereits an den Bridgehead gesendet. Bitte führen Sie sie im Teiler in der Exporter-App aus. Prüfen Sie nach der Ausführung, ob die Anfrage korrekt ausgeführt wurde. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die Dateien automatisch an den Entwicklungsarbeitsbereich zu senden, wo die Pilot-Testperson mit der Analyse fortfahren kann. Sie können Ihre Erlaubnis jederzeit mit „Widerrufen“ zurückziehen. Der Entwicklungsarbeitsbereich mit dem Export bleibt nur während der Phase „PILOT“ der Anfrage aktiv und nur, solange Sie sie im Data Request Tool akzeptiert haben. Danach werden der Arbeitsbereich und die Dateien automatisch entfernt."
         },
         "success-message": {
           "en": "The bridgehead Request was accepted successfully.",
@@ -586,7 +586,7 @@
         "project-bridgehead-state": "CREATED",
         "explanation": {
           "en": "You have already sent your query to the bridgehead. Please execute it in the Teiler by accessing the Exporter app. Once the execution is complete, verify that the request has been executed properly. If everything is in order, click \u0027Authorize\u0027 to automatically send the files to the development workspace, where the final user can proceed with the analysis. You can cancel your permission at any time by clicking \u0027Revoke\u0027. The development workspace with the export will remain active only during the \u0027FINAL\u0027 stage of the request and only while you have accepted it in the Data Request Tool. After that, the workspace and the files will be automatically removed.",
-          "de": "Sie haben die Abfrage bereits an den Bridgehead gesendet. Führen Sie sie im Teiler über die Exporter-App aus und prüfen Sie anschließend das Ergebnis. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die weitere Verarbeitung zu erlauben. Die Berechtigung kann jederzeit widerrufen werden."
+          "de": "Sie haben Ihre Abfrage bereits an den Bridgehead gesendet. Bitte führen Sie sie im Teiler in der Exporter-App aus. Prüfen Sie nach der Ausführung, ob die Anfrage korrekt ausgeführt wurde. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die Dateien automatisch an den Entwicklungsarbeitsbereich zu senden, wo die finale Benutzerin oder der finale Benutzer mit der Analyse fortfahren kann. Sie können Ihre Erlaubnis jederzeit mit „Widerrufen“ zurückziehen. Der Entwicklungsarbeitsbereich mit dem Export bleibt nur während der Phase „FINAL“ der Anfrage aktiv und nur, solange Sie sie im Data Request Tool akzeptiert haben. Danach werden der Arbeitsbereich und die Dateien automatisch entfernt."
         },
         "success-message": {
           "en": "The bridgehead Request was accepted successfully.",
@@ -605,7 +605,7 @@
         "project-bridgehead-state": "CREATED",
         "explanation": {
           "en": "You have already sent your query to the bridgehead. Please execute it in the Teiler by accessing the Exporter app. Once the execution is complete, verify that the request has been executed properly. If everything is in order, click \u0027Authorize\u0027 so that the final user can contact you to receive the results through a secure channel. You can cancel your permission at any time by clicking \u0027Revoke\u0027.",
-          "de": "Sie haben die Abfrage bereits an den Bridgehead gesendet. Führen Sie sie im Teiler über die Exporter-App aus und prüfen Sie anschließend das Ergebnis. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, um die weitere Verarbeitung zu erlauben. Die Berechtigung kann jederzeit widerrufen werden."
+          "de": "Sie haben Ihre Abfrage bereits an den Bridgehead gesendet. Bitte führen Sie sie im Teiler in der Exporter-App aus. Prüfen Sie nach der Ausführung, ob die Anfrage korrekt ausgeführt wurde. Wenn alles in Ordnung ist, klicken Sie auf „Autorisieren“, damit die finale Benutzerin oder der finale Benutzer Sie kontaktieren kann, um die Ergebnisse über einen sicheren Kanal zu erhalten. Sie können Ihre Erlaubnis jederzeit mit „Widerrufen“ zurückziehen."
         },
         "success-message": {
           "en": "The bridgehead Request was accepted successfully.",
@@ -623,7 +623,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "You can finish the request once the final user has executed the script in the development workspace across all bridgeheads and accepted the results. After clicking \u0027Finish,\u0027 all development workspaces will be removed, and the request will be officially concluded. Please ensure that the request applicant agrees with the results before finalizing the request.",
-          "de": "Sie können die Anfrage abschließen, sobald die Ergebnisse von der antragstellenden Person geprüft und akzeptiert wurden. Nach „Abschließen“ werden die Entwicklungsarbeitsbereiche entfernt und die Anfrage offiziell beendet."
+          "de": "Sie können die Anfrage abschließen, sobald die finale Benutzerin oder der finale Benutzer das Skript im Entwicklungsarbeitsbereich über alle Bridgeheads hinweg ausgeführt und die Ergebnisse akzeptiert hat. Nach einem Klick auf „Abschließen“ werden alle Entwicklungsarbeitsbereiche entfernt und die Anfrage offiziell beendet. Bitte stellen Sie vor dem Abschluss sicher, dass die antragstellende Person mit den Ergebnissen einverstanden ist."
         },
         "success-message": {
           "en": "The Request was finished successfully.",
@@ -639,7 +639,7 @@
         "project-type": "RESEARCH_ENVIRONMENT",
         "explanation": {
           "en": "You can finish the request once the final user has executed the analysis in the development workspace across all bridgeheads and accepted the results. After clicking \u0027Finish,\u0027 all development workspaces and their files will be permanently removed, and the request will be officially concluded. Please ensure that the request applicant agrees with the results before finalizing the request.",
-          "de": "Sie können die Anfrage abschließen, sobald die Ergebnisse von der antragstellenden Person geprüft und akzeptiert wurden. Nach „Abschließen“ werden die Entwicklungsarbeitsbereiche entfernt und die Anfrage offiziell beendet."
+          "de": "Sie können die Anfrage abschließen, sobald die finale Benutzerin oder der finale Benutzer die Analyse im Entwicklungsarbeitsbereich über alle Bridgeheads hinweg ausgeführt und die Ergebnisse akzeptiert hat. Nach einem Klick auf „Abschließen“ werden alle Entwicklungsarbeitsbereiche und ihre Dateien dauerhaft entfernt und die Anfrage offiziell beendet. Bitte stellen Sie vor dem Abschluss sicher, dass die antragstellende Person mit den Ergebnissen einverstanden ist."
         },
         "success-message": {
           "en": "The Request was finished successfully.",
@@ -655,7 +655,7 @@
         "project-type": "EXPORT",
         "explanation": {
           "en": "You can finish the request once the request applicant has received and accepted the results from all bridgeheads related to the request. The bridgehead admin can either send the results directly to the request applicant or to the final user for review, or even allow them to generate new results based on the exports from the bridgehead admins, depending on the request\u0027s specifications. Once the request applicant has accepted the results, click \u0027Finish\u0027 to officially conclude the request. Please ensure that the request applicant agrees with the results before finalizing the request.",
-          "de": "Sie können die Anfrage abschließen, sobald die Ergebnisse von der antragstellenden Person geprüft und akzeptiert wurden. Nach „Abschließen“ werden die Entwicklungsarbeitsbereiche entfernt und die Anfrage offiziell beendet."
+          "de": "Sie können die Anfrage abschließen, sobald die antragstellende Person die Ergebnisse aller Bridgeheads der Anfrage erhalten und akzeptiert hat. Je nach den Vorgaben der Anfrage kann die Bridgehead-Administration die Ergebnisse direkt an die antragstellende Person oder zur Prüfung an die finale Benutzerin oder den finalen Benutzer senden oder ihnen sogar erlauben, auf Grundlage der Exporte der Bridgehead-Administratoren neue Ergebnisse zu erzeugen. Sobald die antragstellende Person die Ergebnisse akzeptiert hat, klicken Sie auf „Abschließen“, um die Anfrage offiziell zu beenden. Bitte stellen Sie vor dem Abschluss sicher, dass die antragstellende Person mit den Ergebnissen einverstanden ist."
         },
         "success-message": {
           "en": "The Request was finished successfully.",
@@ -673,7 +673,7 @@
         "query-state": "CREATED",
         "explanation": {
           "en": "Please send the query to the Teiler by clicking \u0027Send query\u0027. The query will be securely transmitted via the Beam infrastructure to your bridgehead. Once sent, you can find the query in the Teiler within the \u0027Exporter\u0027 app. For data protection reasons, the query will not be executed directly from the Data Request Tool. You will need to manually execute the query within the \u0027Exporter\u0027 app.",
-          "de": "Senden Sie die Abfrage mit „Abfrage senden“ an den Teiler. Sie wird sicher über die Beam-Infrastruktur an Ihren Bridgehead übertragen und muss anschließend manuell in der Exporter-App ausgeführt werden."
+          "de": "Bitte senden Sie die Abfrage mit „Abfrage senden“ an den Teiler. Die Abfrage wird über die Beam-Infrastruktur sicher an Ihren Bridgehead übertragen. Danach finden Sie sie im Teiler in der App „Exporter“. Aus Datenschutzgründen wird die Abfrage nicht direkt aus dem Data Request Tool ausgeführt. Sie müssen sie manuell in der App „Exporter“ ausführen."
         },
         "success-message": {
           "en": "The query was saved successfully.",
@@ -689,7 +689,7 @@
         "query-state": "ERROR",
         "explanation": {
           "en": "An error occurred while sending the query to the Teiler. Please resend the query to the Teiler, then log in to the Teiler, review the query by accessing the Exporter app, and execute it. After the execution is complete, return here for further instructions. If the issue persists, please contact our support team for assistance.",
-          "de": "Senden Sie die Abfrage mit „Abfrage senden“ an den Teiler. Sie wird sicher über die Beam-Infrastruktur an Ihren Bridgehead übertragen und muss anschließend manuell in der Exporter-App ausgeführt werden."
+          "de": "Beim Senden der Abfrage an den Teiler ist ein Fehler aufgetreten. Bitte senden Sie die Abfrage erneut an den Teiler, melden Sie sich dann im Teiler an, prüfen Sie die Abfrage in der Exporter-App und führen Sie sie aus. Kehren Sie nach der Ausführung hierher zurück, um weitere Anweisungen zu erhalten. Wenn das Problem weiterhin besteht, wenden Sie sich bitte an unser Support-Team."
         },
         "success-message": {
           "en": "The query was saved successfully.",
@@ -706,7 +706,7 @@
         "priority": 5,
         "explanation": {
           "en": "You can resend the export files to the development workspace to proceed with the analysis. This is particularly important after importing new data into Blaze or other data sources within the bridgehead that are used in your export template.",
-          "de": "Sie können die Exportdateien erneut an den Entwicklungsarbeitsbereich senden, um mit der Analyse fortzufahren. Dies ist besonders nach dem Import neuer Daten in Blaze oder andere verwendete Datenquellen wichtig."
+          "de": "Sie können die Exportdateien erneut an den Entwicklungsarbeitsbereich senden, um mit der Analyse fortzufahren. Das ist besonders wichtig, nachdem neue Daten in Blaze oder andere Datenquellen des Bridgeheads importiert wurden, die Ihre Exportvorlage verwendet."
         },
         "success-message": {
           "en": "The export files were sent successfully to the research environment.",
@@ -724,7 +724,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "Please assign a user as the pilot tester for the request. The pilot user must belong to the bridgehead they will test in to ensure access. They will test the script in the development workspace for their bridgehead after the bridgehead admin has sent the query, executed it, and accepted it.",
-          "de": "Bitte weisen Sie der Anfrage eine Person als Pilot-Testperson zu. Diese Person muss dem Bridgehead angehören, in dem sie testen wird."
+          "de": "Bitte weisen Sie der Anfrage eine Person als Pilot-Testperson zu. Die Pilot-Testperson muss dem Bridgehead angehören, in dem sie testet, damit sie Zugriff hat. Sie testet das Skript im Entwicklungsarbeitsbereich ihres Bridgeheads, nachdem die Bridgehead-Administration die Abfrage gesendet, ausgeführt und akzeptiert hat."
         },
         "success-message": {
           "en": "The pilot user was assigned successfully.",
@@ -740,7 +740,7 @@
         "project-type": "RESEARCH_ENVIRONMENT",
         "explanation": {
           "en": "Please assign a user as the pilot tester for the request. The pilot tester must belong to the bridgehead they will test in to ensure access. They will execute and validate the analysis in the development workspace for their bridgehead after the bridgehead admin has sent the query, executed it, and accepted it.",
-          "de": "Bitte weisen Sie der Anfrage eine Person als Pilot-Testperson zu. Diese Person muss dem Bridgehead angehören, in dem sie testen wird."
+          "de": "Bitte weisen Sie der Anfrage eine Person als Pilot-Testperson zu. Die Pilot-Testperson muss dem Bridgehead angehören, in dem sie testet, damit sie Zugriff hat. Sie führt die Analyse im Entwicklungsarbeitsbereich ihres Bridgeheads aus und validiert sie, nachdem die Bridgehead-Administration die Abfrage gesendet, ausgeführt und akzeptiert hat."
         },
         "success-message": {
           "en": "The pilot user was assigned successfully.",
@@ -758,7 +758,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "Please assign a user as the developer for the request. The developer must belong to the bridgehead they will test in to ensure access. They will test the script in the development workspace for their bridgehead after the bridgehead admin has sent the query, executed it, and accepted it.",
-          "de": "Bitte weisen Sie der Anfrage eine Person als Entwicklerin oder Entwickler zu. Diese Person muss dem Bridgehead angehören, in dem sie testen wird."
+          "de": "Bitte weisen Sie der Anfrage eine Person als Entwicklerin oder Entwickler zu. Diese Person muss dem Bridgehead angehören, in dem sie testet, damit sie Zugriff hat. Sie testet das Skript im Entwicklungsarbeitsbereich ihres Bridgeheads, nachdem die Bridgehead-Administration die Abfrage gesendet, ausgeführt und akzeptiert hat."
         },
         "success-message": {
           "en": "The developer was assigned successfully.",
@@ -774,7 +774,7 @@
         "project-type": "RESEARCH_ENVIRONMENT",
         "explanation": {
           "en": "Please assign a user as the developer for the request. The developer must belong to the bridgehead they will test in to ensure access. They will execute and validate the analysis in the development workspace for their bridgehead after the bridgehead admin has sent the query, executed it, and accepted it.",
-          "de": "Bitte weisen Sie der Anfrage eine Person als Entwicklerin oder Entwickler zu. Diese Person muss dem Bridgehead angehören, in dem sie testen wird."
+          "de": "Bitte weisen Sie der Anfrage eine Person als Entwicklerin oder Entwickler zu. Diese Person muss dem Bridgehead angehören, in dem sie testet, damit sie Zugriff hat. Sie führt die Analyse im Entwicklungsarbeitsbereich ihres Bridgeheads aus und validiert sie, nachdem die Bridgehead-Administration die Abfrage gesendet, ausgeführt und akzeptiert hat."
         },
         "success-message": {
           "en": "The developer was assigned successfully.",
@@ -792,7 +792,7 @@
         "project-type": "DATASHIELD",
         "explanation": {
           "en": "Please assign a user as the final user for the request. The final user must belong to at least one of the bridgeheads they will test in to ensure access. They will validate the script in the development workspace across all bridgeheads after the bridgehead admins have sent the query, executed it, and accepted it.",
-          "de": "Bitte weisen Sie der Anfrage eine Person als finale Benutzerin oder finalen Benutzer zu. Diese Person muss mindestens einem der beteiligten Bridgeheads angehören."
+          "de": "Bitte weisen Sie der Anfrage eine Person als finale Benutzerin oder finalen Benutzer zu. Diese Person muss mindestens einem der Bridgeheads angehören, in denen sie testet, damit sie Zugriff hat. Sie validiert das Skript im Entwicklungsarbeitsbereich über alle Bridgeheads hinweg, nachdem die Bridgehead-Administratoren die Abfrage gesendet, ausgeführt und akzeptiert haben."
         },
         "success-message": {
           "en": "The final user was assigned successfully.",
@@ -808,7 +808,7 @@
         "project-type": "RESEARCH_ENVIRONMENT",
         "explanation": {
           "en": "Please assign a user as the final user for the request. The final user must belong to at least one of the bridgeheads they will test in to ensure access. They will execute and validate the analysis in the development workspace across all bridgeheads after the bridgehead admins have sent the query, executed it, and accepted it.",
-          "de": "Bitte weisen Sie der Anfrage eine Person als finale Benutzerin oder finalen Benutzer zu. Diese Person muss mindestens einem der beteiligten Bridgeheads angehören."
+          "de": "Bitte weisen Sie der Anfrage eine Person als finale Benutzerin oder finalen Benutzer zu. Diese Person muss mindestens einem der Bridgeheads angehören, in denen sie testet, damit sie Zugriff hat. Sie führt die Analyse im Entwicklungsarbeitsbereich über alle Bridgeheads hinweg aus und validiert sie, nachdem die Bridgehead-Administratoren die Abfrage gesendet, ausgeführt und akzeptiert haben."
         },
         "success-message": {
           "en": "The final user was assigned successfully.",
@@ -824,7 +824,7 @@
         "project-type": "EXPORT",
         "explanation": {
           "en": "Please assign a user as the final user for the request. The final user must belong to at least one of the bridgeheads they will test in to ensure access. They will receive all the exports across all bridgeheads and validate the results after the bridgehead admins have sent the query, executed it, and accepted it.",
-          "de": "Bitte weisen Sie der Anfrage eine Person als finale Benutzerin oder finalen Benutzer zu. Diese Person muss mindestens einem der beteiligten Bridgeheads angehören."
+          "de": "Bitte weisen Sie der Anfrage eine Person als finale Benutzerin oder finalen Benutzer zu. Diese Person muss mindestens einem der Bridgeheads angehören, in denen sie testet, damit sie Zugriff hat. Sie erhält alle Exporte aller Bridgeheads und validiert die Ergebnisse, nachdem die Bridgehead-Administratoren die Abfrage gesendet, ausgeführt und akzeptiert haben."
         },
         "success-message": {
           "en": "The final user was assigned successfully.",
@@ -852,7 +852,7 @@
         "project-role": "BRIDGEHEAD_ADMIN",
         "explanation": {
           "en": "Thank you for generating the export file(s). Please ensure that the results URL is secured with a password before sharing it with the intended recipients. You can share the secured URL through this interface, and the app will notify the designated recipients (e.g., the Request Applicant and, if applicable, the Final User). Alternatively, you can share the URL and credentials separately using the \u0027Credentials Sharing Tool,\u0027 email, or other communication methods. We recommend using the \u0027Credentials Sharing Tool\u0027 for enhanced security. Recipient details, such as email addresses, can be found in the \u0027Results\u0027 section of the app. Depending on the request characteristics, an authorized Final User may review the results data, combine exports from all the bridgeheads involved in the request to generate new results, or perform analyses on the data and share only the analysis results. If there is no Final User, the Request Applicant remains the primary recipient of the results.",
-          "de": "Vielen Dank für die Erstellung der Exportdateien. Sichern Sie die Ergebnis-URL vor dem Teilen mit einem Passwort und geben Sie URL und Zugangsdaten immer getrennt weiter."
+          "de": "Vielen Dank für die Erstellung der Exportdatei(en). Bitte stellen Sie sicher, dass die Ergebnis-URL mit einem Passwort geschützt ist, bevor Sie sie mit den vorgesehenen Empfängerinnen und Empfängern teilen. Sie können die geschützte URL über diese Oberfläche teilen; die Anwendung benachrichtigt dann die vorgesehenen Empfängerinnen und Empfänger (z. B. die antragstellende Person und gegebenenfalls die finale Benutzerin oder den finalen Benutzer). Alternativ können Sie URL und Zugangsdaten getrennt teilen, mit dem „Credentials Sharing Tool“, per E-Mail oder auf anderem Weg. Für mehr Sicherheit empfehlen wir das „Credentials Sharing Tool“. Angaben zu den Empfängerinnen und Empfängern, etwa ihre E-Mail-Adressen, finden Sie im Bereich „Ergebnisse“ der Anwendung. Je nach Art der Anfrage kann eine berechtigte finale Benutzerin oder ein berechtigter finaler Benutzer die Ergebnisdaten prüfen, die Exporte aller beteiligten Bridgeheads zu neuen Ergebnissen zusammenführen oder die Daten analysieren und nur die Analyseergebnisse teilen. Gibt es keine finale Benutzerin und keinen finalen Benutzer, bleibt die antragstellende Person die Hauptempfängerin der Ergebnisse."
         },
         "success-message": {
           "en": "The bridgehead results URL was added successfully.",
@@ -871,7 +871,7 @@
         "project-role": "FINAL",
         "explanation": {
           "en": "Please wait until the exports from the Bridgehead Admins are available. Once the exports are ready, you can either check the results or perform an analysis to create new results, depending on the request specifications. If you are only reviewing the results, mark them as accepted in the app once you have checked them. If changes are required, contact the Bridgehead Admin(s). You can find their contact information in the app. If you need to create a results file based on the exports, secure the results URL with a password before sharing it. You can save the URL in the app, and the system will notify the Request Applicant automatically. Alternatively, you can send the URL and credentials separately. You can send the URL by sharing it directly (outside the app). For the credentials, you can use the \u0027Credentials Sharing Tool\u0027 or send them independently through email or other methods. The \u0027Credentials Sharing Tool\u0027 can only send the credentials, not the results URL. Never send the results URL and the credentials together. Always send them separately for enhanced security.",
-          "de": "Warten Sie, bis die Exporte der Bridgehead-Administratoren verfügbar sind. Prüfen oder analysieren Sie die Ergebnisse und speichern Sie eine gegebenenfalls passwortgeschützte Ergebnis-URL in der Anwendung."
+          "de": "Bitte warten Sie, bis die Exporte der Bridgehead-Administratoren verfügbar sind. Sobald die Exporte bereitstehen, können Sie je nach den Vorgaben der Anfrage entweder die Ergebnisse prüfen oder eine Analyse durchführen, um neue Ergebnisse zu erzeugen. Wenn Sie die Ergebnisse nur prüfen, markieren Sie sie nach der Prüfung in der Anwendung als akzeptiert. Wenn Änderungen nötig sind, wenden Sie sich an die Bridgehead-Administratoren; ihre Kontaktdaten finden Sie in der Anwendung. Wenn Sie auf Grundlage der Exporte eine Ergebnisdatei erstellen müssen, schützen Sie die Ergebnis-URL vor dem Teilen mit einem Passwort. Sie können die URL in der Anwendung speichern; das System benachrichtigt dann automatisch die antragstellende Person. Alternativ können Sie URL und Zugangsdaten getrennt versenden: Die URL teilen Sie direkt (außerhalb der Anwendung), die Zugangsdaten mit dem „Credentials Sharing Tool“ oder separat per E-Mail oder auf anderem Weg. Das „Credentials Sharing Tool“ kann nur die Zugangsdaten senden, nicht die Ergebnis-URL. Senden Sie die Ergebnis-URL und die Zugangsdaten nie zusammen, sondern aus Sicherheitsgründen immer getrennt."
         },
         "success-message": {
           "en": "The Request results URL was added successfully.",
@@ -888,7 +888,7 @@
         "project-role": "FINAL",
         "explanation": {
           "en": "Perform analysis in the DataSHIELD research environment using the available data. If you are only reviewing the results, mark them as accepted in the app once you have checked them. If changes are required, contact the Bridgehead Admin(s). You can find their contact information in the app. After completing the analysis, secure the results URL with a password before sharing it. You can save the URL in the app, and the system will notify the Request Applicant automatically. Alternatively, you can send the URL and credentials separately. You can send the URL by sharing it directly (outside the app). For the credentials, you can use the \u0027Credentials Sharing Tool\u0027 or send them independently through email or other methods. The \u0027Credentials Sharing Tool\u0027 can only send the credentials, not the results URL. Never send the results URL and the credentials together. Always send them separately for enhanced security.",
-          "de": "Warten Sie, bis die Exporte der Bridgehead-Administratoren verfügbar sind. Prüfen oder analysieren Sie die Ergebnisse und speichern Sie eine gegebenenfalls passwortgeschützte Ergebnis-URL in der Anwendung."
+          "de": "Führen Sie die Analyse mit den verfügbaren Daten in der DataSHIELD-Forschungsumgebung durch. Wenn Sie die Ergebnisse nur prüfen, markieren Sie sie nach der Prüfung in der Anwendung als akzeptiert. Wenn Änderungen nötig sind, wenden Sie sich an die Bridgehead-Administratoren; ihre Kontaktdaten finden Sie in der Anwendung. Schützen Sie die Ergebnis-URL nach Abschluss der Analyse vor dem Teilen mit einem Passwort. Sie können die URL in der Anwendung speichern; das System benachrichtigt dann automatisch die antragstellende Person. Alternativ können Sie URL und Zugangsdaten getrennt versenden: Die URL teilen Sie direkt (außerhalb der Anwendung), die Zugangsdaten mit dem „Credentials Sharing Tool“ oder separat per E-Mail oder auf anderem Weg. Das „Credentials Sharing Tool“ kann nur die Zugangsdaten senden, nicht die Ergebnis-URL. Senden Sie die Ergebnis-URL und die Zugangsdaten nie zusammen, sondern aus Sicherheitsgründen immer getrennt."
         },
         "success-message": {
           "en": "The Request results URL was added successfully.",
