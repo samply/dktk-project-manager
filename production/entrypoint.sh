@@ -62,11 +62,12 @@ setdefault EXPORTER_QUERY_LABEL_TEMPLATE "[{{PROJECT_CODE}}] {{QUERY_LABEL}}"
 # export BEAM_URL="http://beam-proxy:8081" #################################### <= Please configure me
 
 # Groups are Keycloak (VerbIS realm) paths as Keycloak shows them; the backend ignores the leading slash.
-# The same groups serve test and production. Site admins: /projects/dktk/sites/<bridgehead id>/admin.
-setdefault BK_ADMIN_GROUP_PREFIX "/projects/dktk/sites/"
+# The same groups serve test and production. Bridgehead users: /projects/dktk/bridgeheads/<group>/user, admins:
+# /projects/dktk/bridgeheads/<group>/admin (<group>: BRIDGEHEADS_CONFIG_<ID>_GROUP, default the bridgehead id).
+setdefault BK_ADMIN_GROUP_PREFIX "/projects/dktk/bridgeheads/"
 setdefault BK_ADMIN_GROUP_SUFFIX "/admin"
-setdefault BK_USER_GROUP_PREFIX "/projects/dktk/sites/"
-setdefault BK_USER_GROUP_SUFFIX ""
+setdefault BK_USER_GROUP_PREFIX "/projects/dktk/bridgeheads/"
+setdefault BK_USER_GROUP_SUFFIX "/user"
 # Comma-separated groups allowed to create requests without bridgehead membership.
 # Everyone who can use the Explorer of the server: production dktk-prod-explorer, test dktk-dev-explorer.
 setdefault RESEARCHER_GROUPS "/apps/dktk-prod-explorer" "/apps/dktk-dev-explorer"

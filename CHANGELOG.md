@@ -18,6 +18,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Site groups: `berlin-test` uses the group `berlin` (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site
   groups)
 ### Changed
+- Keycloak groups of the bridgeheads (VerbIS realm, serveros `bridgehead-groups-dktk-cce`):
+  `/projects/dktk/bridgeheads/<group>/user` (bridgehead user, `BK_USER_GROUP_SUFFIX=/user`) and
+  `/projects/dktk/bridgeheads/<group>/admin` (bridgehead admin), instead of `/projects/dktk/sites/<group>` and
+  `/projects/dktk/sites/<group>/admin`. Needs a backend that gives the admin role to an admin group not matching the user
+  pattern (project-manager CHANGELOG, Fixed "Bridgehead admin groups ...")
 - Bridgeheads follow the Explorer (project-manager-ops `bridgeheads/dktk.md`): production berlin-test, bonn, dresden,
   essen, frankfurt, freiburg, hamburg, hannover, luebeck, mainz, mannheim, marburg, muenchen-lmu, muenchen-tum, ulm,
   wuerzburg; test the same without bonn and marburg, plus berlin, dktk-test, dktk-datashield-test and master.
