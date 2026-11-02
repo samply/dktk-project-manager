@@ -1,10 +1,24 @@
 #!/bin/sh
 
+# PROD (default) or TEST: test servers set DEPLOYMENT_ENVIRONMENT=TEST and get the test defaults below.
+DEPLOYMENT_ENVIRONMENT="${DEPLOYMENT_ENVIRONMENT:-PROD}"
+case "$DEPLOYMENT_ENVIRONMENT" in
+  PROD|TEST) ;;
+  *) echo "DEPLOYMENT_ENVIRONMENT must be PROD or TEST, not '$DEPLOYMENT_ENVIRONMENT'" >&2; exit 1 ;;
+esac
+
 # Every default below is applied with setdefault, so values supplied through
 # the container environment can override image defaults.
+# Usage: setdefault <variable> <production default> [<test default>]
+# Without a test default, test servers get the production default.
 setdefault() {
   eval "[ -n \"\${$1:-}\" ]" && return 0
-  eval "export $1=\"\$2\""
+  if [ "$DEPLOYMENT_ENVIRONMENT" = "TEST" ] && [ $# -ge 3 ]; then
+    setdefault_value="$3"
+  else
+    setdefault_value="$2"
+  fi
+  eval "export $1=\"\$setdefault_value\""
 }
 
 # Export environment variables with base64-encoded content
@@ -52,10 +66,8 @@ setdefault BK_ADMIN_GROUP_SUFFIX "/admin"
 setdefault BK_USER_GROUP_PREFIX "/projects/dktk/sites/"
 setdefault BK_USER_GROUP_SUFFIX ""
 # Comma-separated groups allowed to create requests without bridgehead membership.
-# Everyone who can use the Explorer of the server (production: dktk-prod-explorer, test: dktk-dev-explorer). Only
-# members of the server's own Keycloak app (dktk-prod-request, dktk-dev-request) can log in at all, so one default
-# serves both servers.
-setdefault RESEARCHER_GROUPS "/apps/dktk-prod-explorer,/apps/dktk-dev-explorer"
+# Everyone who can use the Explorer of the server: production dktk-prod-explorer, test dktk-dev-explorer.
+setdefault RESEARCHER_GROUPS "/apps/dktk-prod-explorer" "/apps/dktk-dev-explorer"
 
 setdefault CHECK_EXPIRED_ACTIVE_PROJECTS_CRON_EXPRESSION "30 * * * * *"
 
