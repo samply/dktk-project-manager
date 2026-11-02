@@ -115,6 +115,23 @@ services:
 Every other setting has a default in `production/entrypoint.sh` and can be overridden with an environment variable.
 What a deployment must set: `docs/minimal-configuration.md` in project-manager.
 
+## Roles
+
+Login goes through Keycloak (VerbIS realm, `login.verbis.dkfz.de/realms/verbis`); the accounts and groups are managed
+in the account portal (mcauth). The defaults in `production/entrypoint.sh` map these groups to the roles, the same
+for the test server and production:
+
+| Role | Keycloak group |
+|---|---|
+| Project manager admin | `/projects/dktk/project-manager-admin` |
+| Site admin | `/projects/dktk/sites/<bridgehead id>/admin` |
+| Site user | `/projects/dktk/sites/<bridgehead id>` |
+| Researcher | `/apps/dktk-prod-explorer`, `/apps/dktk-dev-explorer` |
+
+Who may log in is decided by the Keycloak apps `dktk-prod-request` (production) and `dktk-dev-request` (test server),
+defined in serveros (`vms/login`). Local development still logs in through Authentik and sets its own group names in
+`development/development.env` (flat names like `DKTK_CCP_<bridgehead id>` instead of paths).
+
 ## Optional modules
 
 The backend switches parts of its functionality on and off with `ENABLE_*` variables. A disabled module needs none of
