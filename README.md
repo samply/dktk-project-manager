@@ -135,6 +135,20 @@ Who may log in is decided by the Keycloak apps `dktk-prod-request` (production) 
 defined in serveros (`vms/login`). Local development still logs in through Authentik and sets its own group names in
 `development/development.env` (flat names like `DKTK_CCP_<bridgehead id>` instead of paths).
 
+## Bridgeheads
+
+`production/generate_bridgeheads.sh` holds every bridgehead of DKTK in one list, `id|human-readable|environments|group`:
+
+- **human-readable**: the display name of the Explorer (the Explorer has preference).
+- **environments**: `prod`, `test` or `prod,test`; a server offers the bridgeheads of its `DEPLOYMENT_ENVIRONMENT`.
+- **group**: the site group in Keycloak (`/projects/dktk/sites/<group>`, `BRIDGEHEADS_CONFIG_<ID>_GROUP`); empty = the
+  bridgehead id. Several bridgeheads of one site share its group (needs a backend with site groups,
+  project-manager `docs/bridgeheads.md`).
+- Commented rows: bridgeheads not offered at the moment.
+
+Contacts of a bridgehead the server does not offer are left out. The list per bridgehead and the reasons:
+project-manager-ops `bridgeheads/dktk.md`.
+
 ## Optional modules
 
 The backend switches parts of its functionality on and off with `ENABLE_*` variables. A disabled module needs none of

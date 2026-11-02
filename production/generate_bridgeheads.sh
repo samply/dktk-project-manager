@@ -1,13 +1,22 @@
 #!/bin/bash
 
+# Prints the BRIDGEHEADS_CONFIG_<ID>_* exports of the bridgeheads of this server (DEPLOYMENT_ENVIRONMENT: PROD or
+# TEST, default PROD). Inventory and the reasons per bridgehead: project-manager-ops bridgeheads/dktk.md.
+deployment_environment=$(echo "${DEPLOYMENT_ENVIRONMENT:-PROD}" | tr '[:upper:]' '[:lower:]')
+
+upper_id() {
+    echo "$1" \
+        | tr '[:lower:]' '[:upper:]' \
+        | sed 's/-/MINUS/g'
+}
+
 generate_bridgehead() {
     local id="$1"
     local human="$2"
+    local group="$3"
 
     local upper_id
-    upper_id=$(echo "$id" \
-        | tr '[:lower:]' '[:upper:]' \
-        | sed 's/-/MINUS/g')
+    upper_id=$(upper_id "$id")
 
     cat <<EOF
 export BRIDGEHEADS_CONFIG_${upper_id}_EXPLORERID="lens-${id}"
@@ -16,8 +25,11 @@ export BRIDGEHEADS_CONFIG_${upper_id}_FOCUSBEAMID="focus.${id}.broker.ccp-it.dkt
 export BRIDGEHEADS_CONFIG_${upper_id}_HUMANREADABLE="${human}"
 export BRIDGEHEADS_CONFIG_${upper_id}_AFFILIATION="${human}"
 export BRIDGEHEADS_CONFIG_${upper_id}_TOKENMANAGERID="token-manager.${id}.broker.ccp-it.dktk.dkfz.de"
-
 EOF
+    if [[ -n "$group" ]]; then
+        echo "export BRIDGEHEADS_CONFIG_${upper_id}_GROUP=\"${group}\""
+    fi
+    echo
 }
 
 generate_bridgehead_contact_language() {
@@ -29,9 +41,7 @@ generate_bridgehead_contact_language() {
     local email_address="$6"
 
     local upper_id
-    upper_id=$(echo "$id" \
-        | tr '[:lower:]' '[:upper:]' \
-        | sed 's/-/MINUS/g')
+    upper_id=$(upper_id "$id")
     local upper_language
     upper_language=$(echo "$language" | tr '[:lower:]' '[:upper:]')
 
@@ -48,38 +58,52 @@ EOF
 fi
 }
 
-# List of sites: id|human-readable
-while IFS='|' read -r id human; do
-    generate_bridgehead "$id" "$human"
+# Bridgeheads: id|human-readable|environments|group
+# - human-readable: the display name of the Explorer.
+# - environments: prod, test or prod,test (the servers that offer the bridgehead).
+# - group: the site group of the identity provider (/projects/dktk/sites/<group>); empty = the id.
+# Commented rows: bridgeheads not offered at the moment (test instances, not in any Explorer yet).
+active_bridgeheads=" "
+while IFS='|' read -r id human environments group; do
+    [[ -z "$id" || "$id" == \#* ]] && continue
+    [[ ",${environments}," == *",${deployment_environment},"* ]] || continue
+    generate_bridgehead "$id" "$human" "$group"
+    active_bridgeheads+="${id} "
 done <<EOF
-berlin|Berlin
-bonn|Bonn
-dktk-test|DKTK Test
-dktk-datashield-test|DKTK DataSHIELD Test
-dresden|Dresden
-dresden-test|Dresden Test
-essen|Essen
-frankfurt|Frankfurt
-freiburg|Freiburg
-hamburg|Hamburg
-hannover|Hannover
-luebeck|Lübeck
-mainz|Mainz
-mannheim|Mannheim
-marburg|Marburg
-master|MASTER
-muenchen-lmu|München LMU
-muenchen-tum|München TUM
-tuebingen|Tübingen
-ulm|Ulm
-wuerzburg|Würzburg
+berlin|Berlin (OBDS)|test|
+berlin-test|Berlin|prod,test|berlin
+bonn|Bonn|prod|
+dktk-test|DKTK-Test|test|
+dktk-datashield-test|DKTK Datashield Test|test|
+dresden|Dresden|prod,test|
+#dresden-test|Dresden-Test|test|dresden
+essen|Essen|prod,test|
+#essen-test|Essen-Test|test|essen
+frankfurt|Frankfurt|prod,test|
+freiburg|Freiburg|prod,test|
+#goettingen|Göttingen|prod,test|
+hamburg|Hamburg|prod,test|
+hannover|Hannover|prod,test|
+luebeck|UKSH|prod,test|
+#luebeck-test|UKSH-Test|test|luebeck
+mainz|Mainz|prod,test|
+mannheim|Mannheim|prod,test|
+marburg|Marburg|prod|
+master|MASTER|test|
+muenchen-lmu|München(LMU)|prod,test|
+muenchen-tum|München(TUM)|prod,test|
+#tuebingen|Tübingen|prod,test|
+ulm|Ulm|prod,test|
+wuerzburg|Würzburg|prod,test|
 EOF
 
 # Contact data: bridgehead-id|contact-index|language|name|description|email-address
 # Add one row for each translated contact variant. Put the email address on one
-# row per contact (normally the first language row).
+# row per contact (normally the first language row). Rows of bridgeheads that this
+# server does not offer are skipped (any variable of a bridgehead registers it).
 while IFS='|' read -r id index language name description email_address; do
     [[ -z "$id" || "$id" == \#* ]] && continue
+    [[ "$active_bridgeheads" == *" ${id} "* ]] || continue
     generate_bridgehead_contact_language \
         "$id" "$index" "$language" "$name" "$description" "$email_address"
 done <<EOF
