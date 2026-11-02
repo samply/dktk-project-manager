@@ -10,6 +10,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   `production/` restart the backend started from the IDE; needs a backend with `spring-boot-devtools`
 - Release workflow: when a new version section of `CHANGELOG.md` reaches `main`, the tag `vX.Y.Z`, the GitHub
   release (notes = that section) and the version images are created automatically
+- README: section "Roles" (Keycloak groups of each role)
+- `DEPLOYMENT_ENVIRONMENT` (`PROD` by default, `TEST` on test servers; any other value stops the start):
+  `setdefault <variable> <production default> [<test default>]` gives test servers their own defaults
+### Changed
+- Group defaults are Keycloak (VerbIS realm) paths, like in CCE: `PM_ADMIN_GROUPS=/projects/dktk/project-manager-admin`,
+  site admins `/projects/dktk/sites/<bridgehead id>/admin`, site users `/projects/dktk/sites/<bridgehead id>`,
+  `RESEARCHER_GROUPS` production `/apps/dktk-prod-explorer`, test `/apps/dktk-dev-explorer`. Needs the groups of the
+  serveros realm
+  model; a deployment still on Authentik must set the old group names explicitly
 
 ## [1.0.0] - 2026-10-16
 ### Added

@@ -1,10 +1,24 @@
 #!/bin/sh
 
+# PROD (default) or TEST: test servers set DEPLOYMENT_ENVIRONMENT=TEST and get the test defaults below.
+DEPLOYMENT_ENVIRONMENT="${DEPLOYMENT_ENVIRONMENT:-PROD}"
+case "$DEPLOYMENT_ENVIRONMENT" in
+  PROD|TEST) ;;
+  *) echo "DEPLOYMENT_ENVIRONMENT must be PROD or TEST, not '$DEPLOYMENT_ENVIRONMENT'" >&2; exit 1 ;;
+esac
+
 # Every default below is applied with setdefault, so values supplied through
 # the container environment can override image defaults.
+# Usage: setdefault <variable> <production default> [<test default>]
+# Without a test default, test servers get the production default.
 setdefault() {
   eval "[ -n \"\${$1:-}\" ]" && return 0
-  eval "export $1=\"\$2\""
+  if [ "$DEPLOYMENT_ENVIRONMENT" = "TEST" ] && [ $# -ge 3 ]; then
+    setdefault_value="$3"
+  else
+    setdefault_value="$2"
+  fi
+  eval "export $1=\"\$setdefault_value\""
 }
 
 # Export environment variables with base64-encoded content
@@ -45,12 +59,15 @@ setdefault EXPORTER_QUERY_LABEL_TEMPLATE "[{{PROJECT_CODE}}] {{QUERY_LABEL}}"
 # export BEAM_PROJECT_MANAGER_ID="project-manager.proxy.broker.ccp-it.dktk.dkfz.de" #################################### <= Please configure me
 # export BEAM_URL="http://beam-proxy:8081" #################################### <= Please configure me
 
-setdefault BK_ADMIN_GROUP_PREFIX "DKTK_CCP_"
-setdefault BK_ADMIN_GROUP_SUFFIX "_Verwalter"
-setdefault BK_USER_GROUP_PREFIX "DKTK_CCP_"
+# Groups are Keycloak (VerbIS realm) paths as Keycloak shows them; the backend ignores the leading slash.
+# The same groups serve test and production. Site admins: /projects/dktk/sites/<bridgehead id>/admin.
+setdefault BK_ADMIN_GROUP_PREFIX "/projects/dktk/sites/"
+setdefault BK_ADMIN_GROUP_SUFFIX "/admin"
+setdefault BK_USER_GROUP_PREFIX "/projects/dktk/sites/"
 setdefault BK_USER_GROUP_SUFFIX ""
 # Comma-separated groups allowed to create requests without bridgehead membership.
-setdefault RESEARCHER_GROUPS "app-ccp-explorer-intern,app-ccp-explorer-public"
+# Everyone who can use the Explorer of the server: production dktk-prod-explorer, test dktk-dev-explorer.
+setdefault RESEARCHER_GROUPS "/apps/dktk-prod-explorer" "/apps/dktk-dev-explorer"
 
 setdefault CHECK_EXPIRED_ACTIVE_PROJECTS_CRON_EXPRESSION "30 * * * * *"
 
@@ -75,7 +92,8 @@ setdefault JWT_GROUPS_CLAIM "groups"
 # export OIDC_CLIENT_SECRET="XXXX" #################################### <= Please configure me
 # export OIDC_URL="XXX" #################################### <= Please configure me
 
-setdefault PM_ADMIN_GROUPS "admin-ccp-office"
+# Keycloak group path (see the site groups above).
+setdefault PM_ADMIN_GROUPS "/projects/dktk/project-manager-admin"
 setdefault PROJECT_DOCUMENTS_DIRECTORY "/app/documents"
 
 setdefault PROJECT_MANAGER_EMAIL_FROM "noreply-verbis@dkfz-heidelberg.de"
