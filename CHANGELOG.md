@@ -13,7 +13,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README: section "Roles" (Keycloak groups of each role)
 - `DEPLOYMENT_ENVIRONMENT` (`PROD` by default, `TEST` on test servers; any other value stops the start):
   `setdefault <variable> <production default> [<test default>]` gives test servers their own defaults
+- Bridgeheads per server: `production/generate_bridgeheads.sh` lists `id|human-readable|environments|group`; a server
+  offers the bridgeheads of its `DEPLOYMENT_ENVIRONMENT` (README "Bridgeheads")
+- Site groups: `berlin-test` uses the group `berlin` (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site
+  groups)
 ### Changed
+- Bridgeheads follow the Explorer (project-manager-ops `bridgeheads/dktk.md`): production berlin-test, bonn, dresden,
+  essen, frankfurt, freiburg, hamburg, hannover, luebeck, mainz, mannheim, marburg, muenchen-lmu, muenchen-tum, ulm,
+  wuerzburg; test the same without bonn and marburg, plus berlin, dktk-test, dktk-datashield-test and master.
+  dresden-test and tuebingen are commented out (no longer offered); essen-test, goettingen, luebeck-test added
+  commented out. Names of the Explorer: Berlin (OBDS) (berlin), Berlin (berlin-test), UKSH, München(LMU),
+  München(TUM), DKTK-Test, DKTK Datashield Test. berlin-test sends the collection `lens-berlin-test`: needs the
+  ccp-explorer release with that collection id
+- Contacts are exported only for the bridgeheads the server offers
 - Group defaults are Keycloak (VerbIS realm) paths, like in CCE: `PM_ADMIN_GROUPS=/projects/dktk/project-manager-admin`,
   site admins `/projects/dktk/sites/<bridgehead id>/admin`, site users `/projects/dktk/sites/<bridgehead id>`,
   `RESEARCHER_GROUPS` production `/apps/dktk-prod-explorer`, test `/apps/dktk-dev-explorer`. Needs the groups of the

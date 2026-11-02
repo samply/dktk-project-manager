@@ -6,6 +6,8 @@ case "$DEPLOYMENT_ENVIRONMENT" in
   PROD|TEST) ;;
   *) echo "DEPLOYMENT_ENVIRONMENT must be PROD or TEST, not '$DEPLOYMENT_ENVIRONMENT'" >&2; exit 1 ;;
 esac
+# Exported for generate_bridgeheads.sh (bridgeheads per environment).
+export DEPLOYMENT_ENVIRONMENT
 
 # Every default below is applied with setdefault, so values supplied through
 # the container environment can override image defaults.
