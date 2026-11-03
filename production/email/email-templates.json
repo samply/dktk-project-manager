@@ -258,7 +258,8 @@
     "PROJECT_BACK_TO_REVIEW": {
       "subject": "Data Request <project-code/> Back in Review",
       "files": {
-        "CREATOR": "creator-project-back-to-review.html"
+        "CREATOR": "creator-project-back-to-review.html",
+        "PROJECT_MANAGER_ADMIN": "project-manager-admin-project-back-to-review.html"
       }
     }
   }

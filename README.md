@@ -130,6 +130,7 @@ for the test server and production:
 | Bridgehead admin | `/projects/dktk/bridgeheads/<group>/admin` |
 | Bridgehead user | `/projects/dktk/bridgeheads/<group>/user` |
 | Researcher | production: `/apps/dktk-prod-explorer`; test (`DEPLOYMENT_ENVIRONMENT=TEST`): `/apps/dktk-dev-explorer` |
+| Central approval committee | none: DKTK has no committee (`CENTRAL_APPROVAL_COMMITTEE_GROUPS` unset; only local development sets `dev-central-committee`) |
 
 Who may log in is decided by the Keycloak apps `dktk-prod-request` (production) and `dktk-dev-request` (test server),
 defined in serveros (`vms/login`). Local development still logs in through Authentik and sets its own group names in

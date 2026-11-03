@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
   (`CENTRAL_APPROVAL_COMMITTEE_GROUPS` in `development/development.env`); needs a backend with the committee role
 - Messages of the new action "Request changes" (`REQUEST_CHANGES_IN_APPROVAL` in `production/action-messages.json`);
   `BACK_TO_REVIEW` removed with the action it belonged to
+- Email to the project manager admins when changes are requested (`PROJECT_BACK_TO_REVIEW`), with the message.
+  No central approval committee in DKTK: no committee group, texts or emails
 - Hot reload for local development (`development/development.env`, `SPRING_DEVTOOLS_*`): changes in
   `production/` restart the backend started from the IDE; needs a backend with `spring-boot-devtools`
 - Release workflow: when a new version section of `CHANGELOG.md` reaches `main`, the tag `vX.Y.Z`, the GitHub
@@ -22,6 +24,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Site groups: `berlin-test` uses the group `berlin` (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site
   groups)
 ### Changed
+- The applicant's "back in review" email shows the requested changes (the message of "Request changes") instead of
+  "the BioDataHub Team will contact you"
 - Keycloak groups of the bridgeheads (VerbIS realm, serveros `bridgehead-groups-dktk-cce`):
   `/projects/dktk/bridgeheads/<group>/user` (bridgehead user, `BK_USER_GROUP_SUFFIX=/user`) and
   `/projects/dktk/bridgeheads/<group>/admin` (bridgehead admin), instead of `/projects/dktk/sites/<group>` and
