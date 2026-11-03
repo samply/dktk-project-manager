@@ -127,8 +127,8 @@ for the test server and production:
 | Role | Keycloak group |
 |---|---|
 | Project manager admin | `/projects/dktk/project-manager-admin` |
-| Site admin | `/projects/dktk/sites/<bridgehead id>/admin` |
-| Site user | `/projects/dktk/sites/<bridgehead id>` |
+| Bridgehead admin | `/projects/dktk/bridgeheads/<group>/admin` |
+| Bridgehead user | `/projects/dktk/bridgeheads/<group>/user` |
 | Researcher | production: `/apps/dktk-prod-explorer`; test (`DEPLOYMENT_ENVIRONMENT=TEST`): `/apps/dktk-dev-explorer` |
 
 Who may log in is decided by the Keycloak apps `dktk-prod-request` (production) and `dktk-dev-request` (test server),
@@ -141,7 +141,7 @@ defined in serveros (`vms/login`). Local development still logs in through Authe
 
 - **human-readable**: the display name of the Explorer (the Explorer has preference).
 - **environments**: `prod`, `test` or `prod,test`; a server offers the bridgeheads of its `DEPLOYMENT_ENVIRONMENT`.
-- **group**: the site group in Keycloak (`/projects/dktk/sites/<group>`, `BRIDGEHEADS_CONFIG_<ID>_GROUP`); empty = the
+- **group**: the group in Keycloak (`/projects/dktk/bridgeheads/<group>/user`, `/admin`, `BRIDGEHEADS_CONFIG_<ID>_GROUP`); empty = the
   bridgehead id. Several bridgeheads of one site share its group (needs a backend with site groups,
   project-manager `docs/bridgeheads.md`).
 - Commented rows: bridgeheads not offered at the moment.

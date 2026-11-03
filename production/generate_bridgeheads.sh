@@ -61,7 +61,7 @@ fi
 # Bridgeheads: id|human-readable|environments|group
 # - human-readable: the display name of the Explorer.
 # - environments: prod, test or prod,test (the servers that offer the bridgehead).
-# - group: the site group of the identity provider (/projects/dktk/sites/<group>); empty = the id.
+# - group: the group of the identity provider (/projects/dktk/bridgeheads/<group>/user, .../admin); empty = the id.
 # Commented rows: bridgeheads not offered at the moment (test instances, not in any Explorer yet).
 active_bridgeheads=" "
 while IFS='|' read -r id human environments group; do
