@@ -55,6 +55,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - No central committee in DKTK: the Data Science Group is gone from the action texts (accept, archived request,
   start develop / final phase) and from the emails "request accepted" (creator, bridgehead admins: no committee
   meeting any more) and "new ethics vote"
+### Fixed
+- Emails to test accounts (`@test.dkfz.de`) go to the test SMTP server (`SPRING_MAIL_TEST_*`) by default
+  (`TEST_EMAIL_DOMAINS=test.dkfz.de`, like CCE). dktk-test did not set it, so they went to the DKFZ mail server and
+  bounced
 
 ## [1.0.0] - 2026-10-16
 ### Added
