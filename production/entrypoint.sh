@@ -29,6 +29,8 @@ setdefault EMAIL_CONTEXT_B64TEAMMINUSSIGNATURE "$(base64 -w 0 /app/email/templat
 setdefault EMAIL_CONTEXT_B64PROJECTMINUSVIEWMINUSLINK "$(base64 -w 0 /app/email/templates/project-view-link.html)"
 setdefault EMAIL_CONTEXT_B64RESEARCHMINUSENVIRONMENTMINUSLINK "$(base64 -w 0 /app/email/templates/research-environment-link.html)"
 
+setdefault TEST_EMAIL_DOMAINS "test.dkfz.de"
+
 
 # Export other environment variables:
 
