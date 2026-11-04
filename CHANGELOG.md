@@ -24,6 +24,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Site groups: `berlin-test` uses the group `berlin` (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site
   groups)
 ### Changed
+- Local development: the email texts in base64 (`EMAIL_CONTEXT_B64*`: signature, support contacts, request link)
+  are those of `production/email/templates/` again (they still named the CCP team), with a comment to keep them
+  in step
 - The applicant's "back in review" email shows the requested changes (the message of "Request changes") instead of
   "the BioDataHub Team will contact you"
 - Keycloak groups of the bridgeheads (VerbIS realm, serveros `bridgehead-groups-dktk-cce`):
