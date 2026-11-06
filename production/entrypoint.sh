@@ -60,19 +60,19 @@ setdefault PROJECT_ID_TEMPLATE "REQ-{{YEAR}}-{{SEQUENCE:4}}"
 setdefault EXPORTER_QUERY_LABEL_TEMPLATE "[{{PROJECT_CODE}}] {{QUERY_LABEL}}"
 
 # export BEAM_API_KEY="App1Secret" #################################### <= Please configure me
-# export BEAM_PROJECT_MANAGER_ID="project-manager.proxy.broker.ccp-it.dktk.dkfz.de" #################################### <= Please configure me
+# BEAM_PROJECT_MANAGER_ID (<app>.<proxy>.<broker>) and BROKER_ID: set by the server (serveros compose), not here.
 # export BEAM_URL="http://beam-proxy:8081" #################################### <= Please configure me
 
 # Groups are Keycloak (VerbIS realm) paths as Keycloak shows them; the backend ignores the leading slash.
-# The same groups serve test and production. Bridgehead users: /projects/dktk/bridgeheads/<group>/user, admins:
-# /projects/dktk/bridgeheads/<group>/admin (<group>: BRIDGEHEADS_CONFIG_<ID>_GROUP, default the bridgehead id).
-setdefault BK_ADMIN_GROUP_PREFIX "/projects/dktk/bridgeheads/"
-setdefault BK_ADMIN_GROUP_SUFFIX "/admin"
-setdefault BK_USER_GROUP_PREFIX "/projects/dktk/bridgeheads/"
-setdefault BK_USER_GROUP_SUFFIX "/user"
+# The same groups serve test and production. Bridgehead users: /projects/dktk/sites/<group>/teiler-user, admins:
+# /projects/dktk/sites/<group>/bridgehead-admin (<group>: BRIDGEHEADS_CONFIG_<ID>_GROUP, default the bridgehead id).
+setdefault BK_ADMIN_GROUP_PREFIX "/projects/dktk/sites/"
+setdefault BK_ADMIN_GROUP_SUFFIX "/bridgehead-admin"
+setdefault BK_USER_GROUP_PREFIX "/projects/dktk/sites/"
+setdefault BK_USER_GROUP_SUFFIX "/teiler-user"
 # Comma-separated groups allowed to create requests without bridgehead membership.
-# Everyone who can use the Explorer of the server: production dktk-prod-explorer, test dktk-dev-explorer.
-setdefault RESEARCHER_GROUPS "/apps/dktk-prod-explorer" "/apps/dktk-dev-explorer"
+# Everyone who can use the Explorer of the server: production dktk-prod-explorer, test dktk-test-explorer.
+setdefault RESEARCHER_GROUPS "/apps/dktk-prod-explorer" "/apps/dktk-test-explorer"
 
 setdefault CHECK_EXPIRED_ACTIVE_PROJECTS_CRON_EXPRESSION "30 * * * * *"
 

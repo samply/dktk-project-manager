@@ -19,11 +19,23 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - README: section "Roles" (Keycloak groups of each role)
 - `DEPLOYMENT_ENVIRONMENT` (`PROD` by default, `TEST` on test servers; any other value stops the start):
   `setdefault <variable> <production default> [<test default>]` gives test servers their own defaults
-- Bridgeheads per server: `production/generate_bridgeheads.sh` lists `id|human-readable|environments|group`; a server
-  offers the bridgeheads of its `DEPLOYMENT_ENVIRONMENT` (README "Bridgeheads")
+- Bridgeheads per server: `production/generate_bridgeheads.sh` lists one line per site,
+  `site|human-readable|production bridgehead|test bridgehead` (one line per bridgehead when a site has two in the
+  same environment); a server offers the bridgeheads of its `DEPLOYMENT_ENVIRONMENT` (README
+  "Bridgeheads"). Contacts are listed per site
 - Site groups: `berlin-test` uses the group `berlin` (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site
   groups)
 ### Changed
+- Keycloak groups per site (serveros, to be merged together with this change):
+  `/projects/dktk/sites/<group>/teiler-user` (bridgehead user, `BK_USER_GROUP_SUFFIX=/teiler-user`) and
+  `/projects/dktk/sites/<group>/bridgehead-admin` (bridgehead admin) instead of `/projects/dktk/bridgeheads/<group>/user`
+  and `/admin` (the PSP group is now `psp-admin`), so that a site can also have groups that are not about a
+  bridgehead. Only servers that read Keycloak are affected; dktk-test still reads Authentik
+- The Beam ids of the bridgeheads (`focus.`, `beam-file.`, `token-manager.<id>.<broker>`) use `BROKER_ID` of the
+  server (serveros compose) instead of a fixed `broker.ccp-it.dktk.dkfz.de`, as in CCE: the broker is configured in
+  one place. A server must set `BROKER_ID` (dktk-test does)
+- Test researchers: `RESEARCHER_GROUPS` test default `/apps/dktk-test-explorer` (Keycloak app renamed from
+  `dktk-dev-explorer`, serveros `dktk-test-app-names`). No effect on dktk-test while it reads Authentik
 - Local development: the email texts in base64 (`EMAIL_CONTEXT_B64*`: signature, support contacts, request link)
   are those of `production/email/templates/` again (they still named the CCP team), with a comment to keep them
   in step
