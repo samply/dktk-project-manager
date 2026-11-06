@@ -127,8 +127,8 @@ for the test server and production:
 | Role | Keycloak group |
 |---|---|
 | Project manager admin | `/projects/dktk/project-manager-admin` |
-| Bridgehead admin | `/projects/dktk/bridgeheads/<group>/admin` |
-| Bridgehead user | `/projects/dktk/bridgeheads/<group>/user` |
+| Bridgehead admin | `/projects/dktk/sites/<group>/bridgehead-admin` |
+| Bridgehead user (Teiler user) | `/projects/dktk/sites/<group>/teiler-user` |
 | Researcher | production: `/apps/dktk-prod-explorer`; test (`DEPLOYMENT_ENVIRONMENT=TEST`): `/apps/dktk-dev-explorer` |
 | Central approval committee | none: DKTK has no committee (`CENTRAL_APPROVAL_COMMITTEE_GROUPS` unset; only local development sets `dev-central-committee`) |
 
@@ -142,7 +142,7 @@ defined in serveros (`vms/login`). Local development still logs in through Authe
 
 - **human-readable**: the display name of the Explorer (the Explorer has preference).
 - **environments**: `prod`, `test` or `prod,test`; a server offers the bridgeheads of its `DEPLOYMENT_ENVIRONMENT`.
-- **group**: the group in Keycloak (`/projects/dktk/bridgeheads/<group>/user`, `/admin`, `BRIDGEHEADS_CONFIG_<ID>_GROUP`); empty = the
+- **group**: the group in Keycloak (`/projects/dktk/sites/<group>/teiler-user`, `/bridgehead-admin`, `BRIDGEHEADS_CONFIG_<ID>_GROUP`); empty = the
   bridgehead id. Several bridgeheads of one site share its group (needs a backend with site groups,
   project-manager `docs/bridgeheads.md`).
 - Commented rows: bridgeheads not offered at the moment.

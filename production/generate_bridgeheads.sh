@@ -20,11 +20,11 @@ generate_bridgehead() {
 
     cat <<EOF
 export BRIDGEHEADS_CONFIG_${upper_id}_EXPLORERID="lens-${id}"
-export BRIDGEHEADS_CONFIG_${upper_id}_FILEDISPATCHERBEAMID="beam-file.${id}.broker.ccp-it.dktk.dkfz.de"
-export BRIDGEHEADS_CONFIG_${upper_id}_FOCUSBEAMID="focus.${id}.broker.ccp-it.dktk.dkfz.de"
+export BRIDGEHEADS_CONFIG_${upper_id}_FILEDISPATCHERBEAMID="beam-file.${id}.${BROKER_ID}"
+export BRIDGEHEADS_CONFIG_${upper_id}_FOCUSBEAMID="focus.${id}.${BROKER_ID}"
 export BRIDGEHEADS_CONFIG_${upper_id}_HUMANREADABLE="${human}"
 export BRIDGEHEADS_CONFIG_${upper_id}_AFFILIATION="${human}"
-export BRIDGEHEADS_CONFIG_${upper_id}_TOKENMANAGERID="token-manager.${id}.broker.ccp-it.dktk.dkfz.de"
+export BRIDGEHEADS_CONFIG_${upper_id}_TOKENMANAGERID="token-manager.${id}.${BROKER_ID}"
 EOF
     if [[ -n "$group" ]]; then
         echo "export BRIDGEHEADS_CONFIG_${upper_id}_GROUP=\"${group}\""
@@ -61,7 +61,7 @@ fi
 # Bridgeheads: id|human-readable|environments|group
 # - human-readable: the display name of the Explorer.
 # - environments: prod, test or prod,test (the servers that offer the bridgehead).
-# - group: the group of the identity provider (/projects/dktk/bridgeheads/<group>/user, .../admin); empty = the id.
+# - group: the group of the identity provider (/projects/dktk/sites/<group>/teiler-user, .../bridgehead-admin); empty = the id.
 # Commented rows: bridgeheads not offered at the moment (test instances, not in any Explorer yet).
 active_bridgeheads=" "
 while IFS='|' read -r id human environments group; do

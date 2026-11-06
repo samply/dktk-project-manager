@@ -24,6 +24,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Site groups: `berlin-test` uses the group `berlin` (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site
   groups)
 ### Changed
+- Keycloak groups per site (serveros, to be merged together with this change):
+  `/projects/dktk/sites/<group>/teiler-user` (bridgehead user, `BK_USER_GROUP_SUFFIX=/teiler-user`) and
+  `/projects/dktk/sites/<group>/bridgehead-admin` (bridgehead admin) instead of `/projects/dktk/bridgeheads/<group>/user`
+  and `/admin` (the PSP group is now `psp-admin`), so that a site can also have groups that are not about a
+  bridgehead. Only servers that read Keycloak are affected; dktk-test still reads Authentik
+- The Beam ids of the bridgeheads (`focus.`, `beam-file.`, `token-manager.<id>.<broker>`) use `BROKER_ID` of the
+  server (serveros compose) instead of a fixed `broker.ccp-it.dktk.dkfz.de`, as in CCE: the broker is configured in
+  one place. A server must set `BROKER_ID` (dktk-test does)
 - Local development: the email texts in base64 (`EMAIL_CONTEXT_B64*`: signature, support contacts, request link)
   are those of `production/email/templates/` again (they still named the CCP team), with a comment to keep them
   in step
