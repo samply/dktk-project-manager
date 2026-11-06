@@ -118,6 +118,31 @@ What a deployment must set: `docs/minimal-configuration.md` in project-manager.
 `DEPLOYMENT_ENVIRONMENT` is `PROD` (default) or `TEST`; test servers set `TEST`. A default can differ between the two:
 `setdefault <variable> <production default> [<test default>]` (without a test default both get the production one).
 
+## Variables the server must set
+
+This configuration has no default for the variables below; the server sets them (VerbIS servers: serveros, the
+compose file of the VM, with the secrets from OpenBao). Everything else has a default in `production/entrypoint.sh`
+(e.g. `EXPLORER_URL`).
+
+| Variable | Secret | What |
+|---|---|---|
+| `DEPLOYMENT_ENVIRONMENT` | no | test servers: `TEST` (default `PROD`); chooses test defaults and the bridgeheads |
+| `FRONTEND_BASEURL`, `BACKEND_BASEURL` | no | public URLs of the UI and of the API (links in emails, redirects) |
+| `SERVER_SERVLET_CONTEXT_PATH` | no | path of the API, e.g. `/api` |
+| `SERVER_FORWARD_HEADERS_STRATEGY` | no | `framework` behind a reverse proxy (HTTPS redirects to the login server) |
+| `PROJECT_MANAGER_DB_URL`, `PROJECT_MANAGER_DB_USER` | no | PostgreSQL database |
+| `PROJECT_MANAGER_DB_PASSWORD` | yes | password of the database |
+| `DB_ENCRYPTION_PRIVATE_KEY_IN_BASE64` | yes | AES key of the encrypted columns; never change it once data exists |
+| `OIDC_URL`, `OIDC_CLIENT_ID` | no | issuer and confidential client of the API at the login server |
+| `OIDC_CLIENT_SECRET` | yes | secret of that client |
+| `BEAM_URL` | no | the Beam proxy of the server, e.g. `http://beam-proxy:8081` |
+| `BEAM_API_KEY` | yes | the key of the project manager's app in that proxy (`APP_<app>_KEY` of the proxy) |
+| `BEAM_PROJECT_MANAGER_ID` | no | the app: `<app>.<proxy name>.<broker id>`; `<app>` as in `APP_<app>_KEY` |
+| `BROKER_ID` | no | the broker of the proxy; builds the Beam ids of the bridgeheads (`focus.<id>.<broker id>`, ...) |
+| `SPRING_MAIL_TEST_HOST`, `SPRING_MAIL_TEST_PORT` | no | test servers only: SMTP server that receives the emails (e.g. Mailpit) |
+
+The UI (`project-manager-ui`) has its own variables (`VUE_APP_*`, see the compose example above).
+
 ## Roles
 
 Login goes through Keycloak (VerbIS realm, `login.verbis.dkfz.de/realms/verbis`); the accounts and groups are managed
@@ -129,26 +154,31 @@ for the test server and production:
 | Project manager admin | `/projects/dktk/project-manager-admin` |
 | Bridgehead admin | `/projects/dktk/sites/<group>/bridgehead-admin` |
 | Bridgehead user (Teiler user) | `/projects/dktk/sites/<group>/teiler-user` |
-| Researcher | production: `/apps/dktk-prod-explorer`; test (`DEPLOYMENT_ENVIRONMENT=TEST`): `/apps/dktk-dev-explorer` |
+| Researcher | production: `/apps/dktk-prod-explorer`; test (`DEPLOYMENT_ENVIRONMENT=TEST`): `/apps/dktk-test-explorer` |
 | Central approval committee | none: DKTK has no committee (`CENTRAL_APPROVAL_COMMITTEE_GROUPS` unset; only local development sets `dev-central-committee`) |
 
-Who may log in is decided by the Keycloak apps `dktk-prod-request` (production) and `dktk-dev-request` (test server),
+Who may log in is decided by the Keycloak apps `dktk-prod-request` (production) and `dktk-test-request` (test server),
 defined in serveros (`vms/login`). Local development still logs in through Authentik and sets its own group names in
 `development/development.env` (flat names like `DKTK_CCP_<bridgehead id>` instead of paths).
 
 ## Bridgeheads
 
-`production/generate_bridgeheads.sh` holds every bridgehead of DKTK in one list, `id|human-readable|environments|group`:
+`production/generate_bridgeheads.sh` holds one line per DKTK site, `site|human-readable|production bridgehead|test
+bridgehead`:
 
-- **human-readable**: the display name of the Explorer (the Explorer has preference).
-- **environments**: `prod`, `test` or `prod,test`; a server offers the bridgeheads of its `DEPLOYMENT_ENVIRONMENT`.
-- **group**: the group in Keycloak (`/projects/dktk/sites/<group>/teiler-user`, `/bridgehead-admin`, `BRIDGEHEADS_CONFIG_<ID>_GROUP`); empty = the
-  bridgehead id. Several bridgeheads of one site share its group (needs a backend with site groups,
+- **site**: the site in Keycloak (`/projects/dktk/sites/<site>/teiler-user`, `/bridgehead-admin`),
+  shared by the site's bridgeheads (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site groups,
   project-manager `docs/bridgeheads.md`).
+- **human-readable**: the display name of the Explorer (the Explorer has preference).
+- **production / test bridgehead**: the `SITE_ID` of the site's bridgehead in that environment (empty = none); its
+  Explorer collection id is `lens-<bridgehead id>`. A server offers the bridgeheads of its `DEPLOYMENT_ENVIRONMENT`.
+  A site with two bridgeheads in the same environment has one line per bridgehead.
 - Commented rows: bridgeheads not offered at the moment.
 
-Contacts of a bridgehead the server does not offer are left out. The list per bridgehead and the reasons:
-project-manager-ops `bridgeheads/dktk.md`.
+Example: Berlin has two lines, `berlin|Berlin (OBDS)||berlin` and `berlin|Berlin|berlin-test|berlin-test`:
+production offers `berlin-test`, the test server both; both use the Keycloak site `berlin`.
+Contacts are listed per site and go to every bridgehead of the site that the server offers. The list per bridgehead
+and the reasons: project-manager-ops `bridgeheads/dktk.md`.
 
 ## Optional modules
 

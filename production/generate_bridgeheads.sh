@@ -58,54 +58,61 @@ EOF
 fi
 }
 
-# Bridgeheads: id|human-readable|environments|group
-# - human-readable: the display name of the Explorer.
-# - environments: prod, test or prod,test (the servers that offer the bridgehead).
-# - group: the group of the identity provider (/projects/dktk/sites/<group>/teiler-user, .../bridgehead-admin); empty = the id.
-# Commented rows: bridgeheads not offered at the moment (test instances, not in any Explorer yet).
-active_bridgeheads=" "
-while IFS='|' read -r id human environments group; do
-    [[ -z "$id" || "$id" == \#* ]] && continue
-    [[ ",${environments}," == *",${deployment_environment},"* ]] || continue
+# Sites: site|human-readable|production bridgehead|test bridgehead
+# - site: the site in Keycloak (/projects/dktk/sites/<site>/...), shared by the site's bridgeheads.
+# - human-readable: the display name of the Explorer (without the flag).
+# - production / test bridgehead: the SITE_ID of the site's bridgehead on the broker of that environment (empty =
+#   none); its Explorer collection id is lens-<bridgehead id>. A server offers the bridgeheads of its
+#   DEPLOYMENT_ENVIRONMENT (PROD or TEST).
+# A site with two bridgeheads in the same environment has one line per bridgehead.
+# Commented rows: bridgeheads not offered at the moment (test instances not used, sites in no Explorer yet).
+declare -A site_bridgeheads=()
+while IFS='|' read -r site human production test; do
+    [[ -z "$site" || "$site" == \#* ]] && continue
+    if [[ "$deployment_environment" == "test" ]]; then id="$test"; else id="$production"; fi
+    [[ -z "$id" ]] && continue
+    # The group defaults to the bridgehead id; set it only when they differ.
+    group=""
+    [[ "$id" != "$site" ]] && group="$site"
     generate_bridgehead "$id" "$human" "$group"
-    active_bridgeheads+="${id} "
+    site_bridgeheads[$site]+="$id "
 done <<EOF
-berlin|Berlin (OBDS)|test|
-berlin-test|Berlin|prod,test|berlin
-bonn|Bonn|prod|
-dktk-test|DKTK-Test|test|
-dktk-datashield-test|DKTK Datashield Test|test|
-dresden|Dresden|prod,test|
-#dresden-test|Dresden-Test|test|dresden
-essen|Essen|prod,test|
-#essen-test|Essen-Test|test|essen
-frankfurt|Frankfurt|prod,test|
-freiburg|Freiburg|prod,test|
-#goettingen|Göttingen|prod,test|
-hamburg|Hamburg|prod,test|
-hannover|Hannover|prod,test|
-luebeck|UKSH|prod,test|
-#luebeck-test|UKSH-Test|test|luebeck
-mainz|Mainz|prod,test|
-mannheim|Mannheim|prod,test|
-marburg|Marburg|prod|
-master|MASTER|test|
-muenchen-lmu|München(LMU)|prod,test|
-muenchen-tum|München(TUM)|prod,test|
-#tuebingen|Tübingen|prod,test|
-ulm|Ulm|prod,test|
-wuerzburg|Würzburg|prod,test|
+berlin|Berlin (OBDS)||berlin
+berlin|Berlin|berlin-test|berlin-test
+bonn|Bonn|bonn|
+dktk-test|DKTK-Test||dktk-test
+dktk-datashield-test|DKTK Datashield Test||dktk-datashield-test
+dresden|Dresden|dresden|dresden
+#dresden|Dresden-Test||dresden-test
+essen|Essen|essen|essen
+#essen|Essen-Test||essen-test
+frankfurt|Frankfurt|frankfurt|frankfurt
+freiburg|Freiburg|freiburg|freiburg
+#goettingen|Göttingen|goettingen|goettingen
+hamburg|Hamburg|hamburg|hamburg
+hannover|Hannover|hannover|hannover
+luebeck|UKSH|luebeck|luebeck
+#luebeck|UKSH-Test||luebeck-test
+mainz|Mainz|mainz|mainz
+mannheim|Mannheim|mannheim|mannheim
+marburg|Marburg|marburg|
+master|MASTER||master
+muenchen-lmu|München(LMU)|muenchen-lmu|muenchen-lmu
+muenchen-tum|München(TUM)|muenchen-tum|muenchen-tum
+#tuebingen|Tübingen|tuebingen|tuebingen
+ulm|Ulm|ulm|ulm
+wuerzburg|Würzburg|wuerzburg|wuerzburg
 EOF
 
-# Contact data: bridgehead-id|contact-index|language|name|description|email-address
-# Add one row for each translated contact variant. Put the email address on one
-# row per contact (normally the first language row). Rows of bridgeheads that this
-# server does not offer are skipped (any variable of a bridgehead registers it).
-while IFS='|' read -r id index language name description email_address; do
-    [[ -z "$id" || "$id" == \#* ]] && continue
-    [[ "$active_bridgeheads" == *" ${id} "* ]] || continue
-    generate_bridgehead_contact_language \
-        "$id" "$index" "$language" "$name" "$description" "$email_address"
+# Contact data: site|contact-index|language|name|description|email-address
+# One row for each translated contact variant; the email address on one row per contact (normally the first
+# language row). A contact goes to every bridgehead of its site that this server offers.
+while IFS='|' read -r site index language name description email_address; do
+    [[ -z "$site" || "$site" == \#* ]] && continue
+    for id in ${site_bridgeheads[$site]:-}; do
+        generate_bridgehead_contact_language \
+            "$id" "$index" "$language" "$name" "$description" "$email_address"
+    done
 done <<EOF
 master|0|en|DKFZ/NCT/DKTK MASTER|DKFZ NCT MASTER team|master-projekte@nct-heidelberg.de
 master|0|de|DKFZ/NCT/DKTK MASTER|DKFZ-NCT-MASTER-Team|
