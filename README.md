@@ -157,7 +157,7 @@ for the test server and production:
 | Researcher | production: `/apps/dktk-prod-explorer`; test (`DEPLOYMENT_ENVIRONMENT=TEST`): `/apps/dktk-test-explorer` |
 | Central approval committee | none: DKTK has no committee (`CENTRAL_APPROVAL_COMMITTEE_GROUPS` unset; only local development sets `dev-central-committee`) |
 
-Who may log in is decided by the Keycloak apps `dktk-prod-request` (production) and `dktk-test-request` (test server),
+Who may log in is decided by the Keycloak apps `dktk-prod-project-manager` (production) and `dktk-test-project-manager` (test server),
 defined in serveros (`vms/login`). Local development still logs in through Authentik and sets its own group names in
 `development/development.env` (flat names like `DKTK_CCP_<bridgehead id>` instead of paths).
 
