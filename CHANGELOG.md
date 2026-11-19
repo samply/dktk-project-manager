@@ -26,8 +26,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Site groups: `berlin-test` uses the group `berlin` (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site
   groups)
 ### Changed
-- Keycloak groups per site (serveros, to be merged together with this change):
-  `/projects/dktk/sites/<group>/teiler-user` (bridgehead user, `BK_USER_GROUP_SUFFIX=/teiler-user`) and
+- Keycloak groups per site (serveros, to be merged together with this change; the user group is `researcher`, serveros
+  `rename-teiler-user-to-researcher`):
+  `/projects/dktk/sites/<group>/researcher` (bridgehead user, `BK_USER_GROUP_SUFFIX=/researcher`) and
   `/projects/dktk/sites/<group>/bridgehead-admin` (bridgehead admin) instead of `/projects/dktk/bridgeheads/<group>/user`
   and `/admin` (the PSP group is now `psp-admin`), so that a site can also have groups that are not about a
   bridgehead. Only servers that read Keycloak are affected; dktk-test still reads Authentik
