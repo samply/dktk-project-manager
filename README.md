@@ -153,7 +153,7 @@ for the test server and production:
 |---|---|
 | Project manager admin | `/projects/dktk/project-manager-admin` |
 | Bridgehead admin | `/projects/dktk/sites/<group>/bridgehead-admin` |
-| Bridgehead user (Teiler user) | `/projects/dktk/sites/<group>/teiler-user` |
+| Bridgehead user (site researcher) | `/projects/dktk/sites/<group>/researcher` |
 | Researcher | production: `/apps/dktk-prod-explorer`; test (`DEPLOYMENT_ENVIRONMENT=TEST`): `/apps/dktk-test-explorer` |
 | Central approval committee | none: DKTK has no committee (`CENTRAL_APPROVAL_COMMITTEE_GROUPS` unset; only local development sets `dev-central-committee`) |
 
@@ -166,7 +166,7 @@ defined in serveros (`vms/login`). Local development still logs in through Authe
 `production/generate_bridgeheads.sh` holds one line per DKTK site, `site|human-readable|production bridgehead|test
 bridgehead`:
 
-- **site**: the site in Keycloak (`/projects/dktk/sites/<site>/teiler-user`, `/bridgehead-admin`),
+- **site**: the site in Keycloak (`/projects/dktk/sites/<site>/researcher`, `/bridgehead-admin`),
   shared by the site's bridgeheads (`BRIDGEHEADS_CONFIG_<ID>_GROUP`; needs a backend with site groups,
   project-manager `docs/bridgeheads.md`).
 - **human-readable**: the display name of the Explorer (the Explorer has preference).
