@@ -19,7 +19,7 @@
 
 ARG BACKEND=release
 
-FROM docker.io/samply/project-manager:1.0.0 AS backend-release
+FROM docker.io/samply/project-manager:1.0.1 AS backend-release
 
 FROM docker.io/samply/project-manager:develop AS backend-develop
 

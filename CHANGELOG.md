@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-11-21
+### Security
+- Backend `samply/project-manager:1.0.1`: the same backend, rebuilt on the patched JDK 25.0.5.1+2 (Java4Shell,
+  CVE-2026-114938). Description: https://calif.io/java4shell/, OpenJDK advisory:
+  https://openjdk.org/groups/vulnerability/advisories/2026-11-17
+
 ## [1.0.0] - 2026-10-16
 ### Added
 - GitHub repository `samply/dktk-project-manager` (moved from GitLab; secrets removed from the history)
