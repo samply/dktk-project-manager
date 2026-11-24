@@ -72,6 +72,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - Emails to test accounts (`@test.dkfz.de`) go to the test SMTP server (`SPRING_MAIL_TEST_*`) by default
   (`TEST_EMAIL_DOMAINS=test.dkfz.de`, like CCE). dktk-test did not set it, so they went to the DKFZ mail server and
   bounced
+- Services: the inactive `funding` form is no longer listed in the services' forms
+  (`production/frontend/frontend-project-configs.json`). Inactive forms are not added to new requests, so no service
+  matched and a selected service appeared unselected after going back. `funding` stays in `formTitleOrder` for the
+  requests that already use it
 
 ## [1.0.1] - 2026-11-21
 ### Security
