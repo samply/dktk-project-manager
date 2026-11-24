@@ -33,9 +33,6 @@
         },
         {
           "title": "ethics"
-        },
-        {
-          "title": "funding"
         }
       ]
     },
@@ -63,9 +60,6 @@
         },
         {
           "title": "ethics"
-        },
-        {
-          "title": "funding"
         }
       ]
     },
@@ -93,9 +87,6 @@
         },
         {
           "title": "ethics"
-        },
-        {
-          "title": "funding"
         }
       ]
     },
@@ -120,9 +111,6 @@
         },
         {
           "title": "ethics"
-        },
-        {
-          "title": "funding"
         }
       ]
     },
@@ -130,8 +118,7 @@
       "forms": [
         { "title": "query" },
         { "title": "project" },
-        { "title": "ethics" },
-        { "title": "funding" }
+        { "title": "ethics" }
       ]
     }
   }
